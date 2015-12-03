@@ -13,6 +13,7 @@ MODE's front-end toolkit
 
 ## TODOs
 
+- Add markup partials (e.g., ZorroSVG)
 - Remove B&B-specific Sass
 - Clean up / add generic JS modules
 
