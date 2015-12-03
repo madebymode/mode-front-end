@@ -1,0 +1,23 @@
+/**
+ * Alignment utilities
+ * @param  {String}  $alignment
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-align($alignment, $at-breakpoint: null) {
+  $class-name: 'u-align-#{$alignment}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    text-align: #{$alignment};
+  }
+}
+
+@include u-align('right');
+@include u-align('right', 'md');
+@include u-align('right', 'lt-md');
+
+@include u-align('left');
+@include u-align('left', 'md');
+@include u-align('left', 'lt-md');
+
+@include u-align('center');
+@include u-align('center', 'md');
+@include u-align('center', 'lt-md');

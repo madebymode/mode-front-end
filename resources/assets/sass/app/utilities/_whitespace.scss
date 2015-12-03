@@ -1,0 +1,8 @@
+.u-nowrap {
+  white-space: nowrap;
+}
+.u-nowrap\@md {
+  @include mq('md') {
+    white-space: nowrap;
+  }
+}

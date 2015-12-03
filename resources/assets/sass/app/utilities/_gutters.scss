@@ -1,0 +1,90 @@
+/**
+ * Gutter utilities
+ * @param  {String}  $gutter
+ * @param  {Number}  $gutter-val
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-gutter($gutter, $gutter-val, $at-breakpoint: null) {
+  $class-name: 'u-gutter-#{$gutter}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    padding: em($gutter-val);
+  }
+}
+
+@include u-gutter('xs', $gutter-sm);
+// TODO: Refactor lt-md gutters to be mobile-first
+@include u-gutter('xs', $gutter-sm, 'lt-md');
+@include u-gutter('sm', $gutter, 'md');
+@include u-gutter('md', $gutter-lg, 'md');
+
+.u-gutter-xs-top{
+  padding-top: em($gutter-sm);
+}
+
+.u-gutter-right\@md {
+  @include mq('md'){
+    padding-right: em($gutter-lg);
+  }
+}
+
+// TODO: Mixin to generate direction-based gutters
+.u-gutter {
+  // padding: em($gutter);
+  padding: 3.5em 2.5em;
+
+  @include mq('md') {
+    padding: em($gutter-lg);
+  }
+}
+
+.u-gutter-horizontal {
+  padding-right: em($gutter);
+  padding-left: em($gutter);
+
+  @include mq('md') {
+    padding-right: em($gutter-lg);
+    padding-left: em($gutter-lg);
+  }
+}
+
+// .u-gutter-vertical {
+//   padding-top: em($gutter);
+//   padding-bottom: em($gutter);
+//
+//   @include mq('md') {
+//     padding-top: em($gutter-lg);
+//     padding-bottom: em($gutter-lg);
+//   }
+// }
+
+.u-gutter-left {
+  padding-left: em($gutter);
+
+  @include mq('md') {
+    padding-left: em($gutter-lg);
+  }
+}
+
+.u-gutter-right {
+  padding-right: em($gutter);
+
+  @include mq('md') {
+    padding-right: em($gutter-lg);
+  }
+}
+
+.u-gutter-top {
+  padding-top: em($gutter);
+
+  @include mq('md') {
+    padding-top: em($gutter-lg);
+  }
+}
+
+.u-gutter-bottom {
+  padding-bottom: em($gutter);
+
+  @include mq('md') {
+    padding-bottom: em($gutter-lg);
+  }
+}

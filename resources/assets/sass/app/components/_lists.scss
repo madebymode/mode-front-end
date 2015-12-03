@@ -1,0 +1,52 @@
+.c-list-heading {
+  margin-top: em(30);
+  margin-bottom: em(15);
+  font-size: em(15);
+  font-style: italic;
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+.c-list-heading--lg {
+  margin-bottom: em(5);
+  font-size: em(26);
+}
+
+.c-list {
+  font-size: em(15);
+  font-style: italic;
+
+  li {
+    position: relative;
+    margin-bottom: em(10);
+    margin-left: em(20);
+
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: -20px;
+      width: 10px;
+      height: 10px;
+      background: url('/img/list-icon.png') center center / 7px 13px no-repeat;
+      content: '';
+    }
+  }
+}
+
+.c-list--disc {
+  list-style-type: disc;
+
+  li {
+    margin-bottom: em(8);
+    font-size: em(18);
+    font-style: italic;
+    font-weight: 600;
+
+    &::before {
+      content: none;
+    }
+  }
+}

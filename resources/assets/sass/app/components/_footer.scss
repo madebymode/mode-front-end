@@ -1,0 +1,95 @@
+.c-wood-background {
+  background: url('/img/backgrounds/wood.jpg');
+
+  @include mq('md') {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@import 'footer-newsletter';
+
+.c-footer {
+  width: 100%;
+  padding: em($gutter-sm) em($gutter);
+  background: rgba($gold, 0.5);
+  text-align: center;
+
+  @include mq('md') {
+    text-align: left;
+  }
+
+  // TODO: Copy modifier for this
+  .c-copy {
+    padding: em(10) 0 0;
+    font-style: italic;
+  }
+
+  // TODO: Button modifier for this
+  .c-button {
+    font-size: em(21);
+
+    &:not(:last-of-type) {
+      padding-right: em(20, 21);
+    }
+  }
+}
+
+
+
+.c-footer__logo {
+  display: inline-block;
+  margin: 0 em($gutter-sm) 0.5em;
+  vertical-align: middle;
+
+  @include mq('md') {
+    margin-right: 0;
+  }
+
+  @media (min-width: em(830, 16)) {
+    margin-left: em($gutter);
+  }
+
+  svg {
+    transition: opacity 0.3s ease;
+    opacity: 0.6;
+    fill: #fff;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.c-footer__logo--bb {
+  width: em(84);
+  margin: 0;
+  // margin: 0 em(30) 1em;
+
+  // @include mq('sm') {
+  //   margin-bottom: 0;
+  //   margin-left: 0;
+  // }
+}
+
+
+
+// .c-footer-copyright {
+// }
+.c-footer-copyright__logo,
+.c-footer-copyright__info {
+  display: block;
+  margin-bottom: 1em;
+}
+@media (min-width: em(530, 16)) {
+  .c-footer-copyright__logo,
+  .c-footer-copyright__info {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .c-footer-copyright__logo {
+    margin-right: em(30);
+  }
+}
+

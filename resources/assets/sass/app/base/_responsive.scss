@@ -1,0 +1,106 @@
+/**
+ * Global breakpoints for your application.
+ *
+ * Note: Always set the `em` context to 16 when you're using them for media
+ * queries. Otherwise, if you change `$font-size` you'll get wonky values that
+ * technically work but aren't what you wanted.
+ */
+$breakpoints: (
+  xs: em(320, 16),
+  sm: em(480, 16),
+  '560': em(560, 16),
+  '650': em(650, 16),
+  md: em(768, 16),
+  lg: em(980, 16),
+  xl: em(1200, 16)
+);
+
+/**
+ * Generate media queries based on a map of `$breakpoints`. Defaults to
+ * mobile- first, min-width queries. But you can use prefixes for other
+ * queries. E.g. `lt-` makes `max-width` queries (and automatically removes
+ * 1px to avoid query overlap).
+ *
+ * TODO: `btwn-*-and-*` prefix for min+max queries.
+ *   What about retina? Etc.
+ *
+ * Based on Inuit's responsive tools:
+ * - https://github.com/inuitcss/settings.responsive/blob/master/_settings.responsive.scss
+ * - https://github.com/inuitcss/tools.responsive/blob/master/_tools.responsive.scss
+ */
+@mixin mq($breakpoint-name) {
+  // Modifier prefixes
+  $prefixes: (
+    'lt-'
+  );
+  $prefix: null;
+
+  // Check if $breakpoint-name starts with a prefix
+  @each $x-prefix in $prefixes {
+    @if not $prefix and str-index($breakpoint-name, $x-prefix) {
+      // @debug '#{$breakpoint-name} is using the #{$x-prefix} prefix';
+      $prefix: $x-prefix;
+    }
+  }
+
+  // Strip prefix from $breakpoint-name
+  @if $prefix {
+    $breakpoint-name: str-slice($breakpoint-name, str-length($prefix) + 1);
+    // @debug 'Found #{$prefix}, so $breakpoint-name is now #{$breakpoint-name}';
+  }
+
+  // Now make sure breakpoint exists
+  @if not map-has-key($breakpoints, $breakpoint-name) {
+    @error 'Oops! Breakpoint ‘#{$breakpoint-name}’ does not exist.'
+  }
+
+  $breakpoint: map-get($breakpoints, $breakpoint-name);
+
+  // Default: mobile-first, min-width queries
+  @if not $prefix {
+
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+
+  // Max-width queries start with the `lt-` prefix
+  } @else if $prefix == 'lt-' {
+
+    // @debug 'Breakpoint is #{$breakpoint}';
+
+    // Subtract 1px from $breakpoint so min/max queries don't overlap
+    @if unit($breakpoint) == 'em' {
+      $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
+    } @else if unit($breakpoint) == 'px' {
+      $breakpoint: $breakpoint - 1px;
+    } @else {
+      @error 'Breakpoints must be in em or px. "#{$breakpoint-name}" is currently #{$breakpoint}.'
+    }
+
+    @media (max-width: #{$breakpoint}) {
+      @content;
+    }
+
+  } @else {
+    @error 'What devilry is this? Somehow you managed to make a media query for an undefined prefix, "#{$prefix}".'
+  }
+}
+
+/**
+ * Mixin to generate breakpoint-specific classes.
+ * @param  {Map}     $params
+ * @param  {String}  $at-breakpoint
+ */
+@mixin breakpoints($name, $at-breakpoint: null) {
+  @if ($at-breakpoint) {
+    @include mq($at-breakpoint) {
+      .#{$name}\@#{$at-breakpoint} {
+        @content;
+      }
+    }
+  } @else {
+    .#{$name} {
+      @content;
+    }
+  }
+}

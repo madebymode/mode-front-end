@@ -1,0 +1,14 @@
+/vendor
+/node_modules
+/public/build
+/public/css
+/public/img
+/public/js
+Homestead.yaml
+Homestead.json
+*.map
+*.build.css
+*.build.js
+.env
+/resources/assets/bower_components/
+/resources/assets/img/responsive/

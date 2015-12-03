@@ -1,0 +1,84 @@
+/**
+ * Fluid position utilities
+ * @param  {Number}  $size
+ * @param  {Number}  $out-of
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-position($size, $out-of, $at-breakpoint: null) {
+  $class-name: 'u-position-#{$size}#{\/}#{$out-of}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    left: percentage($size / $out-of);
+  }
+}
+
+// TODO: For loop to get all the combos we need
+@include u-position(1, 2);
+
+// And the weird ones... (for crease positions)
+@include u-position(7, 30); // 280, 1200
+@include u-position(5, 12); // 500, 1200
+@include u-position(7, 12); // 700, 1200
+
+
+
+// TODO: Better way to handle named positions
+@mixin u-position-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.u-position-center {
+  @include u-position-center();
+
+  // @include breakpoints('u-position-center', 'md') {
+  //   @include u-position-center();
+  // }
+}
+
+// .u-position-top-center {
+//   position: absolute;
+//   top: 0;
+//   left: 50%;
+//   transform: translate(-50%, 0);
+// }
+
+// .u-position-center-right {
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   transform: translate(0, -50%);
+// }
+
+// .u-position-center-left {
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   transform: translate(0, -50%);
+// }
+
+// .u-position-top-left {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+// .u-position-top-right {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }
+
+.u-position-bottom-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.u-position-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+

@@ -1,0 +1,133 @@
+/**
+ * Button color and hover styles.
+ * @param  {String}  $color
+ * @param  {String}  $color-hover
+ */
+@mixin button-theme($color, $color-hover) {
+  color: $color;
+
+  svg {
+    fill: $color;
+  }
+
+  @include hover {
+    color: $color-hover;
+
+    svg {
+      fill: $color-hover;
+    }
+  }
+}
+
+.c-icon {
+  display: inline-block;
+  margin-right: em(7);
+  vertical-align: middle;
+}
+
+// svg buttons
+.c-button {
+  @include button-theme($gold-dk, $gold-dk-hover);
+  font-family: $font-family--display;
+  font-size: em(28);
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(50);
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.9;
+
+  &,
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  .c-icon {
+    margin-right: 3px;
+    opacity: 0.6;
+  }
+}
+.c-button--sm {
+  $size: 21;
+  margin-bottom: em(40, $size);
+  font-size: em($size);
+  letter-spacing: tracking(90);
+}
+
+// Make SVGs without a set `height` visible until JS resizes them
+.js-resize-button:not(.is-resized) {
+  height: em(43, 30);
+}
+
+
+// text arrow buttons
+.c-button--arrow {
+  &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    margin-left: 7px;
+    border-width: 5px 0 5px 6px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: transparent;
+    border-left-color: currentColor;
+    content: '';
+    vertical-align: middle;
+  }
+
+  &.c-button--sm::after {
+    margin-left: 1px;
+  }
+}
+
+
+// ------------------------------
+// Themes
+// ------------------------------
+
+.t-color-brown {
+  .c-button {
+    @include button-theme($brown-lt, $brown-accent-hover);
+
+    &.t-color--lt-bg { // color for lighter backgrounds, per design request
+      @include button-theme($brown-lt, $brown-lt-hover);
+    }
+  }
+
+  .c-button--subaccent {
+    @include button-theme($brown-lt, $brown-subaccent-hover);
+
+    &.t-color--lt-bg { // color for lighter backgrounds, per design request
+      @include button-theme($brown-subaccent-lt, $brown-subaccent-lt-hover);
+    }
+  }
+}
+
+// white buttons
+.t-color-white {
+  .c-button {
+    color: #fff;
+    opacity: 0.8;
+
+    @include hover {
+      opacity: 1;
+    }
+  }
+  .c-icon path,
+  .c-button polygon {
+    fill: #fff;
+  }
+  svg {
+    fill: #fff;
+
+    @include hover {
+      color: #fff;
+      fill: #fff;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+}

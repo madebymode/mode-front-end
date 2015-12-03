@@ -1,0 +1,36 @@
+/**
+ * Hidden utilities
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-hidden($at-breakpoint: null) {
+  $class-name: 'u-hidden';
+  @include breakpoints($class-name, $at-breakpoint) {
+    // scss-lint:disable ImportantRule
+    display: none !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+@include u-hidden('lt-560');
+@include u-hidden('lt-650');
+@include u-hidden('lt-md');
+@include u-hidden('md');
+
+
+
+/**
+ * Display utilities
+ * @param  {Number}  $display
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-display($display, $at-breakpoint: null) {
+  $class-name: 'u-display-#{$display}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    // scss-lint:disable ImportantRule
+    display: #{$display} !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+@include u-display('block');
+@include u-display('inline-block');

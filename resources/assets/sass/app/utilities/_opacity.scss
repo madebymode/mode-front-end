@@ -1,0 +1,6 @@
+@for $i from 1 through 10 {
+  $value: $i / 10;
+  .u-opacity-#{$i}0 {
+    opacity: $value !important;
+  }
+}

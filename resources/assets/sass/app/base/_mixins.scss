@@ -1,0 +1,53 @@
+/**
+ * Clear floated elements.
+ */
+@mixin clearfix() {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+/**
+ * Accessible hover styles. Applies :hover styles to :focus and :active.
+ * http://24ways.org/2007/css-for-accessibility
+ */
+@mixin hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    @content;
+  }
+}
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+@mixin visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/**
+ * Scrolling
+ */
+@mixin scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin scroll-disabled {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}

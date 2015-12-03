@@ -1,0 +1,76 @@
+/**
+ * Style Guide
+ *
+ * ## [BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
+ *
+ * `block__element--modifier\@breakpoint`
+ *
+ * ## [Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
+ *
+ * - `o-`   Object     : Generic styles that can be reused in multiple, unrelated contexts.
+ * - `u-`   Utility    : "A very specific role [that is] not tied to any specific piece of UI."
+ * - `c-`   Component  : "A concrete, implementation-specific piece of UI."
+ * - `t-`   Theme      : Use to affect the appearance of components.
+ * - `is-`,
+ *   `has-` State      : "Temporary, optional, or short-lived style."
+ * -  `_`   Hack       : The worst (hopefully temporary) styles.
+ * - `js-`  JavaScript : Use to bind behaviors to the DOM. (This makes for more flexible styling.)
+ * - `qa-`  QA         : Use to bind automated UI tests to the DOM. "Basically just reserves hooks in the DOM for non-CSS purposes."
+ */
+
+// Base / Layout
+@import 'app/base/variables';
+@import 'app/base/functions';
+@import 'app/base/responsive';
+@import 'app/base/mixins';
+@import 'app/base/normalize';
+@import 'app/base/reset';
+
+// Objects
+@import 'app/objects/grids';
+@import 'app/objects/section';
+// TODO: Rename these objects
+@import 'app/objects/overlapping';
+@import 'app/objects/overlay-backgrounds';
+
+// Utilities
+@import 'app/utilities/width';
+@import 'app/utilities/height';
+@import 'app/utilities/depth';
+@import 'app/utilities/gutters';
+@import 'app/utilities/position';
+@import 'app/utilities/alignment';
+@import 'app/utilities/order';
+@import 'app/utilities/visibility';
+@import 'app/utilities/opacity';
+@import 'app/utilities/whitespace';
+
+// TODO: Move responsive image object to its own partial (note: depends on `.lazyload`)
+.o-responsive-image {
+  position: relative;
+  overflow: hidden;
+}
+.o-responsive-image__placeholder {
+  width: 100%;
+  filter: blur(22px);
+}
+.o-responsive-image__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Components
+// TODO: Add component example
+// @import 'app/components/example';
+
+// Themes
+@import 'app/themes/colors';
+
+// Javascript
+@import 'app/js/animations';
+
+// Views
+@import 'app/views/home';

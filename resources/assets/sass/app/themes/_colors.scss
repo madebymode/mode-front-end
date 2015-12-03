@@ -1,0 +1,27 @@
+// TODO: This is a funny one for file placement. Does it go in `themes/` or in `utilities/`? The world may never know...
+.u-color-primary {
+  color: $color-primary;
+}
+.u-color-accent {
+  color: $color-accent; // $gold;
+}
+
+
+
+// ------------------------------
+// Themes
+// ------------------------------
+
+// .t-color-gold {
+//   &,
+//   .u-color-primary {
+//     color: #fff;
+//   }
+//   .u-color-accent {
+//     color: $brown-dk;
+//
+//     &:hover {
+//       color: $brown-dk-hover;
+//     }
+//   }
+// }

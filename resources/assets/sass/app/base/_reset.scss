@@ -1,0 +1,435 @@
+// ------------------------------
+// Universal Rules
+// ------------------------------
+
+/**
+ * Reset box-model for everything
+ */
+* {
+  margin: 0;
+  padding: 0;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+/**
+ * 1. Ensure the page always fills at least the entire height of the viewport.
+ * 2. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ * 3. Prevent certain mobile browsers from automatically zooming fonts.
+ */
+html {
+  min-height: 100%; /* [1] */
+  background: $background-primary;
+  color: $color-primary;
+  font-family: $font-family;
+  font-size: 90%;
+  // scss-lint:disable VendorPrefix
+  -moz-osx-font-smoothing: grayscale; /* [2] */
+  -webkit-font-smoothing: antialiased; /* [2] */
+  -webkit-text-size-adjust: 100%; /* [3] */
+  -ms-text-size-adjust: 100%; /* [3] */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  // scss-lint:enable VendorPrefix
+
+  @include mq('560') {
+    font-size: (15 / 760) * 100vw;
+  }
+
+  // TODO: Should we use these other Inuit styles?
+  // https://github.com/inuitcss/base.page/blob/master/_base.page.scss
+  // overflow-y: scroll;
+  // font-size: ($inuit-base-font-size / 16px) * 1em;
+  // line-height: $inuit-base-line-height / $inuit-base-font-size;
+
+  // Set mininum font size (smallest type—`.c-sub`—should be 9px)
+  // 9px / 0.75em = 12px
+  @include mq('md') {
+    font-size: 12px;
+  }
+  // Start scaling once this expression equals 12px
+  // $breakpoint = (9 / 12) * 1200
+  @media (min-width: em(900, 16)) {
+    font-size: ($font-size / 1200) * 100vw; // Font is 16px when the screen is 1200px wide
+  }
+  @include mq('xl') {
+    font-size: $font-size * 1px;
+  }
+}
+
+
+
+// ------------------------------
+// Block Elements
+// ------------------------------
+
+#{headings()} {
+  font-family: $font-family--display;
+  font-size: 100%;
+  font-weight: 500;
+}
+
+// TODO: Vertical rhythm?
+// #{headings()},
+// p {
+//   margin-bottom: 1em;
+// }
+
+figure {
+  margin: 0; // Reset normalize's `figure` margins
+  font-size: 0; // Remove whitespace around `img`s
+
+  > figcaption {
+    font-size: 1rem;
+  }
+}
+
+// blockquote,
+// q {
+//   font-family: $font-family;
+//   font-weight: $font-weight;
+//   quotes: none;
+//
+//   &::before,
+//   &::after {
+//     content: '';
+//   }
+// }
+
+h1 {
+  margin: 0;
+}
+
+p {
+  font-family: $font-family;
+}
+
+p a {
+  vertical-align: baseline;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+// pre,
+// code {
+//   font-family: monospace, monospace;
+// }
+
+// hr {
+//   border: 0;
+// }
+
+// table {
+//   border-collapse: collapse;
+//   border-spacing: 0;
+// }
+
+// th {
+//   font-weight: normal;
+//   text-align: left;
+// }
+
+
+
+// ------------------------------
+// Form Elements
+// ------------------------------
+
+// scss-lint:disable all
+
+input[type="submit"],
+label {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: rgba(#fff, 0.6);
+  color: $color-primary;
+  font-family: $font-family;
+  font-size: em(14);
+  vertical-align: top;
+  transition: background .3s ease;
+
+  &:focus,
+  &:hover {
+    background: rgba(#fff, 1);
+
+    + input[type="submit"] {
+      background: $background-primary;
+    }
+  }
+}
+
+select {
+  height: 40px;
+}
+
+label {
+  display: block;
+  margin: 10px auto;
+}
+
+input {
+  height: 40px;
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  color: $color-primary;
+  font-style: italic;
+}
+
+:-moz-placeholder {
+  color: $color-primary;
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  color: $color-primary;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: $color-primary;
+  font-style: italic;
+}
+
+textarea {
+  overflow: auto;
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  padding: 40px / 5;
+  border: 0;
+  border-radius: 0;
+  background: rgba($background-primary, 0.5);
+  color: $color-primary;
+  font: 500 em(19) $font-family--display;
+  letter-spacing: em(1.5);
+  text-transform: uppercase;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: rgba($background-primary, 1);
+  color: $color-primary;
+}
+
+// scss-lint:enable all
+
+
+/**
+* Custom Select Styles
+* http://tympanus.net/codrops/2014/07/10/inspiration-for-custom-select-elements/comment-page-1/#comments
+*/
+
+/* Default custom select styles */
+.cs-select {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  transition: background 0.3s ease;
+  background: rgba($background-primary, 0.5);
+  color: $color-primary;
+  font: 500 em(19) $font-family--display;
+  letter-spacing: em(1.5);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  z-index: 10;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  &:focus {
+    outline: none; /* For better accessibility add a style for this in your skin */
+  }
+
+  &:hover {
+    background: rgba($background-primary, 0.9);
+  }
+
+  select {
+    display: none;
+  }
+
+  span {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px 10px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+  }
+}
+
+.cs-select > span::after,
+.cs-select .cs-selected span::after {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  speak: none;
+}
+
+.cs-select > span::after {
+  right: 15px;
+  content: '\25BE';
+}
+
+.cs-select.cs-active > span::after {
+  transform: rotate(180deg);
+}
+
+.cs-active {
+  background: rgba($background-primary, 0.9);
+  z-index: 20;
+}
+
+/* Options */
+.cs-select .cs-options {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.cs-select.cs-active .cs-options {
+  visibility: visible;
+}
+
+.cs-select ul {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  background: rgba($background-primary, 0.8);
+
+  span {
+    height: auto;
+    padding: 5px 10px;
+    font-size: em(10);
+    font-family: $font-family;
+    color: #fff;
+    font-weight: $font-weight--bold;
+    letter-spacing: 0.075em;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 19px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .cs-focus span {
+    background-color: #ddd;
+  }
+}
+
+// ------------------------------
+// Inline Elements
+// ------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+address,
+cite {
+  font-style: normal;
+}
+
+// TODO: Default link hover
+a {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+
+  p & {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+
+
+// ------------------------------
+// Miscellaneous
+// ------------------------------
+
+// // TODO: Move this to a utilities or helpers partial
+// // https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+// // Originally based on https://gist.github.com/unruthless/413930
+// sup,
+// sub,
+// .sup,
+// .sub {
+//   font-size: 50%;
+// }
+// sup,
+// .sup {
+//   vertical-align: super;
+// }
+// sub,
+// .sub {
+//   vertical-align: sub;
+// }
+
+// // Remove text-shadow in selection highlight:
+// // https://twitter.com/miketaylr/status/12228805301
+// ::selection {
+//   background: #b3d4fc;
+//   text-shadow: none;
+// }
+
+// // Browser Upgrade Prompt
+// .browserupgrade {
+//   margin: 0.2em 0;
+//   padding: 0.2em 0;
+//   background: #ccc;
+//   color: #000;
+//   text-align: center;
+// }

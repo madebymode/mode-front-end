@@ -1,0 +1,24 @@
+/**
+ * Order utilities
+ * @param  {Number}  $order
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-order($order, $at-breakpoint: null) {
+  $class-name: 'u-order-#{$order}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    order: $order;
+  }
+}
+
+@include u-order(1, 'lt-650');
+@include u-order(2, 'lt-650');
+
+@include u-order(1, 'lt-md');
+@include u-order(2, 'lt-md');
+@include u-order(3, 'lt-md');
+@include u-order(4, 'lt-md');
+
+@include u-order(1, 'md');
+@include u-order(2, 'md');
+// @include u-order(3, 'md');
+// @include u-order(4, 'md');

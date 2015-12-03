@@ -1,0 +1,49 @@
+# SCSS-Lint Config
+# Based on default settings: https://github.com/brigade/scss-lint/blob/master/config/default.yml
+linters:
+  ColorVariable:
+    enabled: false
+
+  Comment:
+    enabled: false
+
+  EmptyLineBetweenBlocks:
+    enabled: false
+    ignore_single_line_blocks: true
+
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space
+    width: 2
+
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  MergeableSelector:
+    enabled: false
+
+  NameFormat:
+    enabled: false
+
+  PlaceholderInExtend:
+    enabled: false
+
+  # SMACSS: https://github.com/brigade/scss-lint/blob/master/data/property-sort-orders/smacss.txt
+  # Other presets available at: https://github.com/brigade/scss-lint/tree/master/data/property-sort-orders
+  PropertySortOrder:
+    order: smacss
+
+  # BEMIT: block__element--modifier\@breakpoint
+  # Based on default conventions: https://github.com/brigade/scss-lint/blob/a76fe7399c82c0ecb31e0eef6b49154c5b652b38/lib/scss_lint/linter/selector_format.rb#L43-L70
+  SelectorFormat:
+    enabled: false
+    # convention: ([a-z][a-zA-Z0-9]*)(-([a-z][a-zA-Z0-9]*))?(--([a-z][a-zA-Z0-9]*))? # hyphenated_BEM
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: false
+
+  SpaceAfterVariableName:
+    enabled: false

@@ -1,0 +1,175 @@
+.c-heading {
+  margin-bottom: em(20, 57.04);
+  font-family: $font-family--display;
+  font-size: 3.7em;
+  font-weight: 500;
+  letter-spacing: tracking(40);
+  line-height: (58 / 65);
+  text-transform: uppercase;
+
+  @include mq('md') {
+    font-size: 3.7em;
+  }
+}
+
+.c-heading__lead {
+  display: block;
+  margin-bottom: 0.1em;
+  font-family: $font-family;
+  // TODO: Is lead size always relative to the heading? Or does it change (i.e. is relative to :root instead)?
+  // font-size: em(34.23);
+  // font-size: em(34.23, 57.04);
+  // 0.600105189
+  font-size: 0.53em;
+  font-style: italic;
+  font-weight: $font-weight--bold; // TODO: Where does this font-weight fit in with the other global vars?
+  // letter-spacing: tracking(20); // <-- Font treated differently in web
+  letter-spacing: tracking(-50);
+  // line-height: (58 / 34.23);
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.c-heading-copy {
+  $size: 18;
+  // TODO: Move `max-width` to an as-needed component—shouldn't be the default for all sections
+  // max-width: em(280, $size);
+  margin-bottom: em(40, 18);
+  font-size: em($size);
+}
+
+.c-subheading {
+  $size: 24;
+  margin-bottom: em(12, $size);
+  font-family: $font-family;
+  font-size: em($size);
+  font-style: italic;
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(-50);
+  line-height: 1;
+  text-transform: none;
+
+  @include mq('md') {
+    font-size: em(24);
+  }
+}
+
+// TODO: Tell the designers to always set text's antialiasing method to "Strong" instead of "Mac LCD", etc.
+.c-copy {
+  font-family: $font-family;
+  font-size: em(18);
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(15);
+  line-height: 1.5;
+
+  @include mq('md') {
+    font-size: em(18);
+  }
+}
+.c-copy--sm {
+  font-size: em(15) !important;
+}
+
+// TODO: Should probably make a separate `excerpt` component to handle margins.
+
+.c-emphasis {
+  $size: 18;
+  margin-top: em(25);
+  color: #6c2f07;
+  font-size: em($size);
+  font-style: italic;
+  font-weight: 700;
+  line-height: (26 / $size);
+
+  &.c-emphasis--sm {
+    font-size: em(16);
+  }
+
+  a {
+    color: #955700;
+    text-decoration: none;
+
+    &:hover {
+      color: #6e4216;
+    }
+  }
+}
+
+
+// text in "colums" ex-about us
+.c-copy--col {
+  margin-bottom: em(20);
+
+  @include mq('md') {
+    padding-right: em(50);
+  }
+}
+//.o-grid__cell:last-of-type .c-copy--col {
+//  margin-bottom: 0;
+//}
+
+
+.c-copy--excerpt {
+  $size: 14;
+  margin-bottom: em(4, $size);
+  font-size: em($size);
+  font-style: italic;
+  font-weight: $font-weight--bold;
+  line-height: (23.36 / $size);
+
+  @include mq('md') {
+    margin-bottom: em(24, $size);
+  }
+}
+
+
+
+// all caps header
+// TODO: Rename and refactor overrides
+.c-heading--sm {
+  font-family: $font-family--display;
+  font-size: em(28);
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(50);
+  text-transform: uppercase;
+  opacity: 0.8; // TODO: Handle opacity separately
+}
+.c-heading--md {
+  font-family: $font-family--display;
+  font-size: em(40);
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(50);
+  text-transform: uppercase;
+  opacity: 0.8; // TODO: Handle opacity separately
+}
+
+// small all caps text
+.c-sub {
+  font-family: $font-family;
+  font-size: em(11);
+  font-style: normal;
+  font-weight: $font-weight--bold;
+  letter-spacing: tracking(60);
+  text-transform: uppercase;
+
+  &.c-sub--lowercase {
+    font-size: em(13);
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: em(5);
+    letter-spacing: normal;
+    text-transform: none;
+  }
+}
+
+// all caps anchor
+// TODO: Move as much of this as makes sense to the `a` defaults in `_reset`, then use utilities, etc. for coloring.
+  // Then again, should our color themes also affect the default anchor colors?
+.c-anchor--display {
+  padding-right: em(20);
+  color: $gold;
+  font: 500 em(27) $font-family--display;
+  letter-spacing: em(1.1);
+  text-transform: uppercase;
+}
