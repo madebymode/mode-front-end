@@ -5,32 +5,3 @@
   background-size: cover;
   overflow: hidden;
 }
-
-// TODO: Another name, maybe `.o-landing`? Otherwise, convert to a modifier. With this many rules, probably makes more sense as a component.
-.o-section-intro {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-height: em(400);
-  padding: em($gutter-sm);
-  background-position: center;
-  background-size: cover;
-
-  @include mq('md') {
-    height: em(650);
-  }
-
-  .o-section-intro__inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%) translateY(-50%);
-
-    .c-heading {
-      position: static;
-      transform: none;
-    }
-  }
-}

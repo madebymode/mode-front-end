@@ -39,8 +39,8 @@
 // ------------------------------
 
 /**
-* Flex Grid
-*/
+ * Flex Grid
+ */
 .o-grid--flex {
   display: flex;
   flex-direction: horizontal;
@@ -63,8 +63,8 @@
 
 
 /**
-* Float Grid
-*/
+ * Float Grid
+ */
 .o-grid--float {
   @include clearfix;
   display: block;
@@ -77,8 +77,8 @@
 
 
 /**
-* Table Grid
-*/
+ * Table Grid
+ */
 .o-grid--table {
   display: table;
   width: 100%;
@@ -92,61 +92,5 @@
   &.o-grid--top > .o-grid__cell,
   > .o-grid__cell--top {
     vertical-align: top;
-  }
-}
-
-// TODO: Better way to manage different display types at responsive breakpoints
-.o-grid--table\@650 {
-  @include mq('650') {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-
-    > .o-grid__cell {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    &.o-grid--top > .o-grid__cell,
-    > .o-grid__cell--top {
-      vertical-align: top;
-    }
-  }
-}
-
-.o-grid--table\@sm {
-  @include mq('sm') {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-
-    > .o-grid__cell {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    &.o-grid--top > .o-grid__cell,
-    > .o-grid__cell--top {
-      vertical-align: top;
-    }
-  }
-}
-
-
-.o-grid--table\@md {
-  @include mq('md') {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-
-    > .o-grid__cell {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    &.o-grid--top > .o-grid__cell,
-    > .o-grid__cell--top {
-      vertical-align: top;
-    }
   }
 }

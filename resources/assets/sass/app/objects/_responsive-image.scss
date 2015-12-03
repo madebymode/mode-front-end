@@ -1,0 +1,28 @@
+.o-responsive-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.o-responsive-image__placeholder {
+  width: 100%;
+  filter: blur(22px);
+}
+
+.o-responsive-image__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// TODO: Include lazysizes dependency
+/* fade image in after load */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  transition: opacity 300ms;
+  opacity: 1;
+}
