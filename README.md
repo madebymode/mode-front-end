@@ -24,21 +24,10 @@ stylesheet is in `resources/assets/sass/`.
 
 ### Variables Needed
 
-$font-size
-Defaults to 16
-Used by `em` function
-base/_functions.scss
-
-$breakpoints
-Defaults to (
-  xs: em(320, 16),
-  sm: em(480, 16),
-  md: em(768, 16),
-  lg: em(980, 16),
-  xl: em(1200, 16)
-)
-Used by `mq` and `breakpoints`
-base/_responsive.scss
+- `$font-size`: Used by `em` in `base/_functions.scss`. Defaults to `16`.
+- `$breakpoints`: Used by `mq` and `breakpoints` in `base/_responsive.scss`.
+  Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
+  16), xl: em(1200, 16) )`.
 
 ### Mixins
 
