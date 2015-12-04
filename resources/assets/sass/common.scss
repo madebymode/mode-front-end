@@ -19,42 +19,31 @@
  */
 
 // TODO: Break out variables into `settings/`
-// @import 'app/base/variables';
+// @import 'base/variables';
 
-@import 'app/base/functions';
-@import 'app/base/responsive';
-@import 'app/base/mixins';
-@import 'app/base/normalize';
-@import 'app/base/reset';
+// Base
+@import 'base/functions';
+@import 'base/responsive';
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/reset';
 
-@import 'app/objects/grids';
-@import 'app/objects/section';
-@import 'app/objects/responsive-image';
+// Objects
+@import 'objects/grids';
+@import 'objects/section';
+@import 'objects/responsive-image';
 // TODO: Rename these objects
-@import 'app/objects/overlapping';
-// @import 'app/objects/overlay-backgrounds';
+@import 'objects/overlapping';
+// @import 'objects/overlay-backgrounds';
 
 // Utilities
-@import 'app/utilities/width';
-@import 'app/utilities/height';
-@import 'app/utilities/depth';
-@import 'app/utilities/gutters';
-@import 'app/utilities/position';
-@import 'app/utilities/alignment';
-@import 'app/utilities/order';
-@import 'app/utilities/visibility';
-@import 'app/utilities/opacity';
-@import 'app/utilities/whitespace';
-
-// Components
-// TODO: Add component example
-// @import 'app/components/example';
-
-// Themes
-@import 'app/themes/colors';
-
-// Javascript
-@import 'app/js/animations';
-
-// Views
-@import 'app/views/home';
+@import 'utilities/alignment';
+@import 'utilities/depth';
+@import 'utilities/gutters';
+@import 'utilities/height';
+@import 'utilities/opacity';
+@import 'utilities/order';
+@import 'utilities/position';
+@import 'utilities/visibility';
+@import 'utilities/whitespace';
+@import 'utilities/width';

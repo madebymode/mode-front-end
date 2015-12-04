@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MODE Front-end Toolkit</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/example.css">
 </head>
 <body>
     <h1>MODE Front-end Toolkit</h1>

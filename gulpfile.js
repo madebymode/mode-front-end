@@ -57,7 +57,7 @@ elixir.config.js.browserify.transformers.push({
  * Elixir Build
  */
 elixir(function(mix) {
-  mix.sass('app.scss');
+  mix.sass('example.scss');
   mix.browserify('app.js');
 
   mix.imagemin();
@@ -65,7 +65,7 @@ elixir(function(mix) {
 
   if (inProduction) {
     mix.version([
-      'css/app.css',
+      'css/example.css',
       'js/app.js',
     ]);
   }
