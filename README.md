@@ -2,6 +2,10 @@
 
 MODE's front-end toolkit
 
+```
+npm install --save-dev mode-front-end
+```
+
 ## Includes
 
 - EditorCongif
