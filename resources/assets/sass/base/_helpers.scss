@@ -1,7 +1,7 @@
 /**
  * Clear floated elements.
  */
-@mixin clearfix() {
+@mixin clearfix {
   &::before,
   &::after {
     display: table;
