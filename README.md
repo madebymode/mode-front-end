@@ -13,6 +13,15 @@ MODE's front-end toolkit
 
 ## Sass
 
+Import `common.scss` into your app's stylesheet:
+
+```
+@import '../../../node_modules/mode-front-end/resources/assets/sass/common';
+```
+
+**Note**: You might need to update that import path. It assumes you're
+stylesheet is in `resources/assets/sass/`.
+
 ### Variables Needed
 
 $font-size
