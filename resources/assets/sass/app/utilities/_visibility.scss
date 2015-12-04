@@ -11,12 +11,10 @@
   }
 }
 
-@include u-hidden('lt-560');
-@include u-hidden('lt-650');
-@include u-hidden('lt-md');
-@include u-hidden('md');
+// Examples:
 
-
+// @include u-hidden('md');
+// @include u-hidden('lt-md');
 
 /**
  * Display utilities
@@ -32,5 +30,7 @@
   }
 }
 
-@include u-display('block');
-@include u-display('inline-block');
+// Examples:
+
+// @include u-display('block');
+// @include u-display('block', 'md');

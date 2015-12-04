@@ -10,15 +10,9 @@
   }
 }
 
-@include u-order(1, 'lt-650');
-@include u-order(2, 'lt-650');
+// Examples:
 
-@include u-order(1, 'lt-md');
-@include u-order(2, 'lt-md');
-@include u-order(3, 'lt-md');
-@include u-order(4, 'lt-md');
-
-@include u-order(1, 'md');
-@include u-order(2, 'md');
-// @include u-order(3, 'md');
-// @include u-order(4, 'md');
+// @include u-order(1);
+// @include u-order(2);
+// @include u-order(1, 'md');
+// @include u-order(2, 'md');

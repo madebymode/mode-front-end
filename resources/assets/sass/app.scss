@@ -18,20 +18,21 @@
  * - `qa-`  QA         : Use to bind automated UI tests to the DOM. "Basically just reserves hooks in the DOM for non-CSS purposes."
  */
 
-// Base / Layout
-@import 'app/base/variables';
+// TODO: Break out variables into `settings/`
+// @import 'app/base/variables';
+
 @import 'app/base/functions';
 @import 'app/base/responsive';
 @import 'app/base/mixins';
 @import 'app/base/normalize';
 @import 'app/base/reset';
 
-// Objects
 @import 'app/objects/grids';
 @import 'app/objects/section';
+@import 'app/objects/responsive-image';
 // TODO: Rename these objects
 @import 'app/objects/overlapping';
-@import 'app/objects/overlay-backgrounds';
+// @import 'app/objects/overlay-backgrounds';
 
 // Utilities
 @import 'app/utilities/width';
@@ -44,23 +45,6 @@
 @import 'app/utilities/visibility';
 @import 'app/utilities/opacity';
 @import 'app/utilities/whitespace';
-
-// TODO: Move responsive image object to its own partial (note: depends on `.lazyload`)
-.o-responsive-image {
-  position: relative;
-  overflow: hidden;
-}
-.o-responsive-image__placeholder {
-  width: 100%;
-  filter: blur(22px);
-}
-.o-responsive-image__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 // Components
 // TODO: Add component example

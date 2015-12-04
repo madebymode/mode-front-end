@@ -10,14 +10,16 @@
   }
 }
 
-@include u-align('right');
-@include u-align('right', 'md');
-@include u-align('right', 'lt-md');
+// Examples:
 
-@include u-align('left');
-@include u-align('left', 'md');
-@include u-align('left', 'lt-md');
+// @include u-align('right');
+// @include u-align('right', 'md');
+// @include u-align('right', 'lt-md');
 
-@include u-align('center');
-@include u-align('center', 'md');
-@include u-align('center', 'lt-md');
+// @include u-align('left');
+// @include u-align('left', 'md');
+// @include u-align('left', 'lt-md');
+
+// @include u-align('center');
+// @include u-align('center', 'md');
+// @include u-align('center', 'lt-md');

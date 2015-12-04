@@ -1,5 +1,18 @@
-@for $i from 1 through 10 {
-  .u-depth-#{$i} {
-    z-index: #{$i};
+/**
+ * Depth utilities (z-index)
+ * @param  {String}  $depth
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-depth($depth, $at-breakpoint: null) {
+  $class-name: 'u-depth-#{$depth}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    z-index: #{$depth};
   }
 }
+
+// Examples:
+
+// @for $i from 1 through 10 {
+//   @include u-depth($i);
+//   @include u-depth($i, 'md');
+// }
