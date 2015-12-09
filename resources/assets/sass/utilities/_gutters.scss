@@ -2,6 +2,7 @@
  * Gutter utilities
  *
  * TODOs:
+ * - Base gutters an a map of dimensions, similar to $breakpoints
  * - Refactor gutters so that names and values match up (e.g., `xs` uses `$gutter-sm`—why?)
  * - Adjust mixin to generate:
  *   - Directional gutters
@@ -12,7 +13,12 @@
  * @param  {String}  $at-breakpoint
  */
 @mixin u-gutter($gutter, $gutter-val, $at-breakpoint: null) {
-  $class-name: 'u-gutter-#{$gutter}';
+  $class-name: 'u-gutter';
+
+  @if (str-length($gutter) > 0) {
+    $class-name: '#{$class-name}-#{$gutter}';
+  }
+
   @include breakpoints($class-name, $at-breakpoint) {
     padding: em($gutter-val);
   }
