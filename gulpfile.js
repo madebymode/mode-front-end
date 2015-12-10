@@ -13,6 +13,12 @@ require('laravel-elixir-livereload');
  */
 var inProduction = elixir.config.production;
 
+// Disable media query merging from clean-css
+// https://github.com/jakubpawlowicz/clean-css/blob/626480c057ddf13bc0b0135e9a12eeb975c17be3/README.md#how-to-use-clean-css-api
+elixir.config.css.minifyCss.pluginOptions = {
+  "mediaMerging": false
+};
+
 elixir.config.images = {
   folder: 'img',
   outputFolder: 'img'
