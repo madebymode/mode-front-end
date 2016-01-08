@@ -25,8 +25,7 @@ Import `common.scss` into your app's stylesheet:
 @import '../../../node_modules/mode-front-end/resources/assets/sass/common';
 ```
 
-**Note**: You might need to update that import path. It assumes you're
-stylesheet is in `resources/assets/sass/`.
+**Note**: This path assumes you're stylesheet is in `resources/assets/sass/`.
 
 ### Variables Needed
 
@@ -75,9 +74,3 @@ stylesheet is in `resources/assets/sass/`.
 - Add markup partials (e.g., ZorroSVG)
 - Remove B&B-specific Sass
 - Clean up / add generic JS modules
-
-### For B&B project
-
-- `js/_slider.scss` Too complex, not JS-specific. `js-` rules shouldn't have
-  any CSS related to them—they should *only* be used by JavaScript to identify
-  elements.
