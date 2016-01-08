@@ -6,6 +6,7 @@ MODE's front-end toolkit
 
 ```
 npm install --save-dev mode-front-end
+npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload
 ```
 
 ## Includes
