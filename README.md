@@ -1,5 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/tannerhodges/mode-front-end.png?label=ready&title=Ready)](https://waffle.io/tannerhodges/mode-front-end)
 # mode-front-end
+
+[![Stories in Ready](https://badge.waffle.io/tannerhodges/mode-front-end.png?label=ready&title=Ready)](https://waffle.io/tannerhodges/mode-front-end)
 
 MODE's front-end toolkit
 
