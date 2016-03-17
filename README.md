@@ -5,8 +5,21 @@
 MODE's front-end toolkit
 
 ```
+# Install mode-front-end
 npm install --save-dev mode-front-end
-npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload
+# Install dependencies
+npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-hologram laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore
+# Copy starter files to project
+## System files
+cp node_modules/mode-front-end/.editorconfig .editorconfig
+cp node_modules/mode-front-end/.gitignore .gitignore
+cp node_modules/mode-front-end/.jshintrc .jshintrc
+cp node_modules/mode-front-end/.scss-lint.yml .scss-lint.yml
+## Gulp
+cp node_modules/mode-front-end/gulpfile.js gulpfile.js
+## Assets
+mkdir -p resources/
+cp node_modules/mode-front-end/resources/assets/ resources/assets/
 ```
 
 ## Includes
