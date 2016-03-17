@@ -20,7 +20,8 @@
   &:hover,
   &:focus,
   &:active,
-  &.active {
+  // TODO: Make class configurable, and allow multiple
+  &.is-active {
     @content;
   }
 }
