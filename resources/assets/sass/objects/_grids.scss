@@ -14,7 +14,7 @@
 
 ## Modifiers
 
-- `.o-grid--top`
+- `.o-grid--center`
 */
 
 
@@ -45,10 +45,10 @@
   display: flex;
   flex-direction: horizontal;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
 
-  &.o-grid--top {
-    align-items: flex-start;
+  &.o-grid--center {
+    align-items: center;
   }
 
   // > .o-grid__cell {
@@ -86,11 +86,10 @@
 
   > .o-grid__cell {
     display: table-cell;
-    vertical-align: middle;
   }
 
-  &.o-grid--top > .o-grid__cell,
-  > .o-grid__cell--top {
-    vertical-align: top;
+  &.o-grid--center > .o-grid__cell,
+  > .o-grid__cell--center {
+    vertical-align: middle;
   }
 }
