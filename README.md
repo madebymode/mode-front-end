@@ -48,19 +48,16 @@ Import `common.scss` into your app's stylesheet:
   Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
   16), xl: em(1200, 16) )`.
 
-### Classes
+### Functions
 
-- `.o-grid`
-    - `.o-grid__cell`
-    - `.o-grid--flex`
-    - `.o-grid--float`
-    - `.o-grid--table`
-    - `.o-grid--center` (applies to flex and table, not float)
-    - `.o-grid--nowrap` (applies to flex)
-- `.o-responsive-image`
-    - `.o-responsive-image__placeholder`
-    - `.o-responsive-image__image`
-- `.o-section`
+- Math
+    - `strip-unit($value)`
+- Strings
+    - `explode($string, [$delimiter])`
+    - `str-replace($string, $search, [$replace])`
+- Fonts
+    - `em($pixels, [$context])`
+    - `tracking($tracking)`
 
 ### Mixins
 
@@ -95,6 +92,20 @@ Import `common.scss` into your app's stylesheet:
 - `u-position-center()`
 - `u-text-align($alignment, [$at-breakpoint])`
 - `u-width($size, $out-of, [$at-breakpoint])`
+
+### Classes
+
+- `.o-grid`
+    - `.o-grid__cell`
+    - `.o-grid--flex`
+    - `.o-grid--float`
+    - `.o-grid--table`
+    - `.o-grid--center` (applies to flex and table, not float)
+    - `.o-grid--nowrap` (applies to flex)
+- `.o-responsive-image`
+    - `.o-responsive-image__placeholder`
+    - `.o-responsive-image__image`
+- `.o-section`
 
 ---
 
