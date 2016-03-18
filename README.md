@@ -85,11 +85,12 @@ Import `common.scss` into your app's stylesheet:
 
 - `u-depth($depth, [$at-breakpoint])`
 - `u-display($display, [$at-breakpoint])`
-- `u-gutter($gutter, $gutter-val, [$at-breakpoint])`
 - `u-height($size, [$at-breakpoint])`
 - `u-hidden([$at-breakpoint])`
+- `u-margin($alias, $size, [$at-breakpoint])`
 - `u-opacity($opacity, [$at-breakpoint])`
 - `u-order($order, [$at-breakpoint])`
+- `u-padding($alias, $size, [$at-breakpoint])`
 - `u-position($size, $out-of, [$at-breakpoint])`
 - `u-position-center()`
 - `u-text-align($alignment, [$at-breakpoint])`
