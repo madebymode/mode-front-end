@@ -26,24 +26,26 @@
 @import 'base/responsive';
 @import 'base/helpers';
 @import 'base/normalize';
+// TODO: Make reset optional (or create mixins)
 @import 'base/reset';
 
 // Objects
 @import 'objects/grids';
 @import 'objects/section';
+// TODO: Make responsive image and overlapping optional includes (at least use mixins instead)
 @import 'objects/responsive-image';
 // TODO: Rename these objects
 @import 'objects/overlapping';
 // @import 'objects/overlay-backgrounds';
 
 // Utilities
-@import 'utilities/alignment';
 @import 'utilities/depth';
 @import 'utilities/gutters';
 @import 'utilities/height';
 @import 'utilities/opacity';
 @import 'utilities/order';
 @import 'utilities/position';
+@import 'utilities/text-align';
 @import 'utilities/visibility';
 @import 'utilities/whitespace';
 @import 'utilities/width';

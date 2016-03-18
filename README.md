@@ -48,6 +48,20 @@ Import `common.scss` into your app's stylesheet:
   Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
   16), xl: em(1200, 16) )`.
 
+### Classes
+
+- `.o-grid`
+    - `.o-grid__cell`
+    - `.o-grid--flex`
+    - `.o-grid--float`
+    - `.o-grid--table`
+    - `.o-grid--center` (applies to flex and table, not float)
+    - `.o-grid--nowrap` (applies to flex)
+- `.o-responsive-image`
+    - `.o-responsive-image__placeholder`
+    - `.o-responsive-image__image`
+- `.o-section`
+
 ### Mixins
 
 #### Helpers
@@ -69,22 +83,26 @@ Import `common.scss` into your app's stylesheet:
 
 #### Utilities
 
-- `u-align($alignment, [$at-breakpoint])`
 - `u-depth($depth, [$at-breakpoint])`
+- `u-display($display, [$at-breakpoint])`
 - `u-gutter($gutter, $gutter-val, [$at-breakpoint])`
 - `u-height($size, [$at-breakpoint])`
+- `u-hidden([$at-breakpoint])`
 - `u-opacity($opacity, [$at-breakpoint])`
 - `u-order($order, [$at-breakpoint])`
 - `u-position($size, $out-of, [$at-breakpoint])`
 - `u-position-center()`
-- `u-hidden([$at-breakpoint])`
-- `u-display($display, [$at-breakpoint])`
+- `u-text-align($alignment, [$at-breakpoint])`
 - `u-width($size, $out-of, [$at-breakpoint])`
 
 ---
 
 ## TODOs
 
+- Make reset optional (or create mixins)
+- Make responsive image and overlapping optional includes (at least use `@mixin`s instead)
+    - If responsive images are included, add lazysizes as a dependency
+- Either replace Hologram with Pattern Lab or make an option to choose
 - Add markup partials (e.g., ZorroSVG)
 - Remove B&B-specific Sass
 - Clean up / add generic JS modules
