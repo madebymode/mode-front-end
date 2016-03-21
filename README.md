@@ -108,14 +108,37 @@ Import `common.scss` into your app's stylesheet:
     - `.o-responsive-image__image`
 - `.o-section`
 
+## JavaScript
+
+Use namespacing to require helper functions in your application:
+
+### DOM Helpers
+
+```
+var dom = require('mode-front-end/dom/all');
+```
+
+- `childDepth`
+- `children`
+- `closest`
+- `index`
+- `isElementInBounds`
+- `matches`
+- `offset`
+- `outerHeight`
+- `outerWidth`
+- `parents`
+- `position`
+- `window`
+
 ---
 
 ## TODOs
 
-- Make reset optional (or create mixins)
+- Remove B&B-specific Sass
+- Make CSS reset optional (or create mixins)
 - Make responsive image and overlapping optional includes (at least use `@mixin`s instead)
     - If responsive images are included, add lazysizes as a dependency
-- Either replace Hologram with Pattern Lab or make an option to choose
 - Add markup partials (e.g., ZorroSVG)
-- Remove B&B-specific Sass
-- Clean up / add generic JS modules
+- Add JavaScript tests
+- Either replace Hologram with Pattern Lab or make an option to choose
