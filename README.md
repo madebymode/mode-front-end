@@ -112,14 +112,20 @@ Import `common.scss` into your app's stylesheet:
 
 Use namespacing to require helper functions in your application:
 
-### DOM Helpers
-
 ```
 var dom = require('mode-front-end/resources/assets/js/dom/all');
 ```
 
+### Array
+
+- `map`
+- `inArray`
+
+### DOM
+
 - `childDepth`
 - `children`
+- `classList`
 - `closest`
 - `index`
 - `isElementInBounds`
@@ -130,6 +136,11 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `parents`
 - `position`
 - `window`
+
+## Event
+
+- `clearStack`
+- `throttle`
 
 ---
 
