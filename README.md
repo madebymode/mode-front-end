@@ -65,7 +65,7 @@ Import `common.scss` into your app's stylesheet:
 
 - `clearfix`
 - `hover`
-- `visuallyhidden`
+- `visually-hidden`
 - `scroll`
 - `scroll-disabled`
 
