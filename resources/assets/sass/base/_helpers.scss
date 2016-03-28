@@ -25,8 +25,6 @@
 
   // Allow multiple, configurable classes
   @if (length($active-classes) > 0) {
-    @debug "#{$active-classes}";
-
     @each $class in $active-classes {
       &.#{$class} {
         @content;
