@@ -16,16 +16,21 @@
  * Accessible hover styles. Applies :hover styles to :focus and :active.
  * http://24ways.org/2007/css-for-accessibility
  */
-@mixin hover($is-active: false) {
+@mixin hover($active-classes...) {
   &:hover,
   &:focus,
   &:active {
     @content;
   }
-  // TODO: Make class configurable, and allow multiple
-  @if ($is-active) {
-    &.is-active {
-      @content;
+
+  // Allow multiple, configurable classes
+  @if (length($active-classes) > 0) {
+    @debug "#{$active-classes}";
+
+    @each $class in $active-classes {
+      &.#{$class} {
+        @content;
+      }
     }
   }
 }
