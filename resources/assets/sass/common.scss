@@ -18,8 +18,7 @@
  * - `qa-`  QA         : Use to bind automated UI tests to the DOM. "Basically just reserves hooks in the DOM for non-CSS purposes."
  */
 
-// TODO: Break out variables into `settings/`
-// @import 'base/variables';
+// TODO: Defaults for `settings/`
 
 // Base
 @import 'base/functions';

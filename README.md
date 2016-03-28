@@ -150,7 +150,6 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ## TODOs
 
-- Remove B&B-specific Sass
 - Make CSS reset optional (or create mixins)
 - Make responsive image and overlapping optional includes (at least use `@mixin`s instead)
     - If responsive images are included, add lazysizes as a dependency
