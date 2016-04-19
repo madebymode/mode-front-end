@@ -20,6 +20,6 @@ for (t in transitions) {
   }
 }
 
-module.exports.transitionEvent = function(eventName) {
+module.exports = function(eventName) {
   return eventName.match(/end$/i) && prefixedTransitionEvent.end || prefixedTransitionEvent.start;
 };
