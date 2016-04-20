@@ -1,3 +1,4 @@
+// TODO: Graceful fail + error message when a DOM element is passed instead of a selector
 module.exports = (function() {
   function matches(elem, selector) {
     if (!selector || !elem || elem.nodeType !== 1) {
