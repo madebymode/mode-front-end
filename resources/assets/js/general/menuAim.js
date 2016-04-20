@@ -1,4 +1,4 @@
-var dom = require('./dom/all');
+var dom = require('../dom/all');
 
 /**
  * menu-aim is a jQuery plugin for dropdown menus that can differentiate
