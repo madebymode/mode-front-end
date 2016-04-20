@@ -1,4 +1,12 @@
 module.exports = (function() {
+  function isWindow(obj) {
+    return obj !== null && obj === obj.window;
+  }
+
+  function getWindow(elem) {
+    return isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
+  }
+
   /**
    * Offset based on http://stackoverflow.com/a/18452333/176192
    * @param  {Element}  elem
