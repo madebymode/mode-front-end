@@ -4,11 +4,11 @@ module.exports = (function() {
    * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
    * @return {Number}
    */
-  function windowWidth() {
+  function width() {
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   }
 
   return {
-    windowWidth: windowWidth
+    width: width
   };
-});
+})();
