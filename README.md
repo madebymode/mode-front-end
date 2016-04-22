@@ -118,8 +118,9 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ### Array
 
-- `map`
 - `inArray`
+- `map`
+- `reduce`
 
 ### DOM
 
