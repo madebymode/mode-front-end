@@ -279,7 +279,7 @@ var menuAim = {
     // increase (somewhat counterintuitively).
     function slope(a, b) {
       return (b.y - a.y) / (b.x - a.x);
-    };
+    }
 
     var decreasingCorner = upperRight,
     increasingCorner = lowerRight;
@@ -329,6 +329,7 @@ module.exports = {
 
     var self = this;
 
+    // TODO: If element is not an Array (e.g., from `querySelector`), either convert to array or avoid looping
     Array.prototype.forEach.call(elems, function(menu) {
       self.init(menu, opts);
     });
@@ -341,7 +342,7 @@ module.exports = {
     instance.menu = menu;
 
     // set options on the menu aim object
-    opts = opts || {}
+    opts = opts || {};
     for (var prop in opts) {
       if (opts.hasOwnProperty(prop)) {
         instance.options[prop] = opts[prop];
@@ -350,12 +351,12 @@ module.exports = {
 
     menu.addEventListener('mouseleave', function(e) {
       instance.onMouseLeaveMenu(e);
-    })
+    });
 
-    // should probably switch this to event delegation
     var children = dom.children(menu, instance.options.rowSelector);
-    for(var i = 0; i < children.length; i++) {
 
+    // TODO: Switch this to event delegation
+    for (var i = 0; i < children.length; i++) {
       var row = children[i];
 
       row.addEventListener('mouseenter', function(e) {
