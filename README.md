@@ -148,6 +148,10 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 - `menuAim`
 
+## Shim
+
+- `requestAnimationFrame`
+
 ## Typography
 
 - `balancetext`
