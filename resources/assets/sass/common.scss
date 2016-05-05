@@ -20,10 +20,14 @@
 
 // TODO: Defaults for `settings/`
 
+// Functions
+@import 'base/functions/math';
+@import 'base/functions/strings';
+@import 'base/functions/typography';
+
 // Base
-@import 'base/functions';
 @import 'base/responsive';
-@import 'base/helpers';
+@import 'base/mixins';
 @import 'base/normalize';
 // TODO: Make reset optional (or create mixins)
 @import 'base/reset';

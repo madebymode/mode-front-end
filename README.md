@@ -43,7 +43,7 @@ Import `common.scss` into your app's stylesheet:
 
 ### Variables Needed
 
-- `$font-size`: Used by `em` in `base/_functions.scss`. Defaults to `16`.
+- `$font-size`: Used by `em` in `functions/_typography.scss`. Defaults to `16`.
 - `$breakpoints`: Used by `mq` and `breakpoints` in `base/_responsive.scss`.
   Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
   16), xl: em(1200, 16) )`.
