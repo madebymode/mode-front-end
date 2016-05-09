@@ -8,7 +8,17 @@ module.exports = (function() {
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   }
 
+  /**
+   * Get current viewport height.
+   * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
+   * @return {Number}
+   */
+  function height() {
+    return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  }
+
   return {
-    width: width
+    width: width,
+    height: height
   };
 })();
