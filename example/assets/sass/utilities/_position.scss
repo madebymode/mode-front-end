@@ -1,0 +1,49 @@
+/**
+ * Fluid position utilities
+ *
+ * TODOs:
+ * - Position aliases (e.g., center; see below)
+ * - Absolute positions (maybe?)
+ *
+ * @param  {Number}  $size
+ * @param  {Number}  $out-of
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-position($size, $out-of, $at-breakpoint: null) {
+  $class-name: 'u-position-#{$size}#{\/}#{$out-of}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    left: percentage($size / $out-of);
+  }
+}
+
+// Examples:
+
+// @include u-position(1, 2);
+// @include u-position(7, 30); // 280, 1200
+// @include u-position(5, 12); // 500, 1200
+
+
+
+/*
+Potential position aliases:
+
+- .u-position-center
+- .u-position-top-center
+- .u-position-center-right
+- .u-position-center-left
+- .u-position-top-left
+- .u-position-top-right
+- .u-position-bottom-right
+- .u-position-bottom-left
+
+For example:
+
+```
+@mixin u-position-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+ */

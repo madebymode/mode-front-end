@@ -1,0 +1,16 @@
+.o-overlapping {
+  position: relative;
+  overflow: visible;
+}
+
+.o-overlapping--contained {
+  overflow: hidden;
+}
+
+.o-overlapping__ignore {
+  position: static;
+}
+
+.o-overlapping__element {
+  position: absolute;
+}

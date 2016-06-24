@@ -1,0 +1,84 @@
+/**
+ * Clear floated elements.
+ */
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+/**
+ * Accessible hover styles. Applies :hover styles to :focus and :active.
+ * http://24ways.org/2007/css-for-accessibility
+ */
+@mixin hover($active-classes...) {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+
+  // Allow multiple, configurable classes
+  @if (length($active-classes) > 0) {
+    @each $class in $active-classes {
+      &.#{$class} {
+        @content;
+      }
+    }
+  }
+}
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/**
+ * Input placeholders
+ * Based on https://github.com/twbs/bootstrap/blob/c04aa41ee2744b769be38526bbdef11e5be9421b/less/mixins/vendor-prefixes.less#L100-L109
+ */
+@mixin placeholder {
+  // scss-lint:disable VendorPrefix
+  // Firefox
+  &::-moz-placeholder {
+    @content;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    opacity: 1;
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    @content;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  // scss-lint:enable VendorPrefix
+}
+
+/**
+ * Scrolling
+ */
+@mixin scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin scroll-disabled {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}

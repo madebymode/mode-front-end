@@ -1,0 +1,95 @@
+/*
+# Grids
+
+## Basic Module
+
+- `.o-grid`
+- `.o-grid__cell`
+
+## Grid Types
+
+- `.o-grid--flex`
+- `.o-grid--float`
+- `.o-grid--table`
+
+## Modifiers
+
+- `.o-grid--center`
+*/
+
+
+
+// ------------------------------
+// Basic Module
+// ------------------------------
+
+.o-grid {
+  @extend .o-grid--flex;
+}
+
+.o-grid__cell {
+  display: block;
+  position: relative;
+}
+
+
+
+// ------------------------------
+// Grid Types
+// ------------------------------
+
+/**
+ * Flex Grid
+ */
+.o-grid--flex {
+  display: flex;
+  flex-direction: horizontal;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  &.o-grid--center {
+    align-items: center;
+  }
+
+  // > .o-grid__cell {
+  //   flex: 0 0 auto;
+  // }
+}
+
+.o-grid--nowrap {
+  flex-wrap: nowrap;
+}
+
+
+
+/**
+ * Float Grid
+ */
+.o-grid--float {
+  @include clearfix;
+  display: block;
+
+  > .o-grid__cell {
+    float: left;
+  }
+}
+
+
+
+/**
+ * Table Grid
+ */
+.o-grid--table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  > .o-grid__cell {
+    display: table-cell;
+  }
+
+  &.o-grid--center > .o-grid__cell,
+  > .o-grid__cell--center {
+    vertical-align: middle;
+  }
+}

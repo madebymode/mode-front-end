@@ -1,0 +1,21 @@
+/**
+ * Height utilities
+ *
+ * TODO: Allow any value for height. But how to handle `%`—just escape it so
+ * that markup would be written as `u-height-100%@sm`?
+ *
+ * @param  {Number}  $size
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-height($size, $at-breakpoint: null) {
+  $class-name: 'u-height-#{$size}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    height: #{$size}vh;
+  }
+}
+
+// Examples:
+
+// @include u-height('90');
+// @include u-height('100');
+// @include u-height('100', 'sm');
