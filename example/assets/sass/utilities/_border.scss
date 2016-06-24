@@ -1,0 +1,71 @@
+// TODO: Make border a global setting, or something
+$border: 1px solid $gray-border;
+
+.u-border-all {
+  border: $border;
+}
+
+.u-border-vertical {
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.u-border-horizontal {
+  border-right: $border;
+  border-left: $border;
+}
+
+.u-border-top {
+  border-top: $border;
+}
+
+.u-border-right {
+  border-right: $border;
+}
+
+.u-border-bottom {
+  border-bottom: $border;
+}
+
+.u-border-bottom\@lt-sm {
+  @include mq('lt-sm') {
+    border-bottom: $border;
+  }
+}
+
+.u-border-left {
+  border-left: $border;
+}
+
+.u-border-left\@md {
+  @include mq('md') {
+    border-left: $border;
+  }
+}
+
+.u-border-left\@lg {
+  @include mq('lg') {
+    border-left: $border;
+  }
+}
+
+.u-border-top\@md {
+  @include mq('md') {
+    border-top: $border;
+  }
+}
+
+.u-border-bottom\@lt-md {
+  @include mq('lt-md') {
+    border-bottom: $border;
+  }
+}
+
+.u-border-bottom-none {
+  border-bottom: none !important;
+}
+
+// white borders
+.u-border-white-all {
+  border: 1px solid #fff;
+}
