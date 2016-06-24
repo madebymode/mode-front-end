@@ -19,7 +19,7 @@ cp node_modules/mode-front-end/.scss-lint.yml .scss-lint.yml
 cp node_modules/mode-front-end/gulpfile.js gulpfile.js
 ## Assets
 mkdir -p resources/
-cp node_modules/mode-front-end/resources/assets/ resources/assets/
+cp node_modules/mode-front-end/example/assets/ resources/assets/
 ```
 
 ## Includes
