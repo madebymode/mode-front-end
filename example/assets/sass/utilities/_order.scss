@@ -1,15 +1,3 @@
-/**
- * Order utilities
- * @param  {Number}  $order
- * @param  {String}  $at-breakpoint
- */
-@mixin u-order($order, $at-breakpoint: null) {
-  $class-name: 'u-order-#{$order}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    order: $order;
-  }
-}
-
 // Examples:
 
 // @include u-order(1);

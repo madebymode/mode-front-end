@@ -1,18 +1,3 @@
-/**
- * Depth utilities (z-index)
- * @param  {String}  $depth
- * @param  {String}  $at-breakpoint
- */
-@mixin u-depth($depth, $at-breakpoint: null) {
-  $class-name: 'u-depth-#{$depth}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    z-index: #{$depth};
-  }
+@for $i from 1 through 30 {
+  @include u-depth($i);
 }
-
-// Examples:
-
-// @for $i from 1 through 10 {
-//   @include u-depth($i);
-//   @include u-depth($i, 'md');
-// }

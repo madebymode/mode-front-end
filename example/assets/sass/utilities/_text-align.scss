@@ -1,25 +1,11 @@
-/**
- * Text alignment utilities
- * @param  {String}  $alignment
- * @param  {String}  $at-breakpoint
- */
-@mixin u-text-align($alignment, $at-breakpoint: null) {
-  $class-name: 'u-text-align-#{$alignment}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    text-align: #{$alignment};
-  }
-}
+@include u-text-align('right');
+@include u-text-align('right', 'lt-md');
+@include u-text-align('right', 'md');
 
-// Examples:
+@include u-text-align('left');
+@include u-text-align('left', 'lt-md');
+@include u-text-align('left', 'md');
 
-// @include u-text-align('right');
-// @include u-text-align('right', 'md');
-// @include u-text-align('right', 'lt-md');
-
-// @include u-text-align('left');
-// @include u-text-align('left', 'md');
-// @include u-text-align('left', 'lt-md');
-
-// @include u-text-align('center');
-// @include u-text-align('center', 'md');
-// @include u-text-align('center', 'lt-md');
+@include u-text-align('center');
+@include u-text-align('center', 'lt-md');
+@include u-text-align('center', 'md');
