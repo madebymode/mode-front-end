@@ -1,0 +1,83 @@
+/* Example Use:
+
+  <label class="c-checkbox">
+    <input type="checkbox" class="c-checkbox__input" name="form_field[]" value="form_value">
+    <span class="c-checkbox__box"></span>
+    <span class="c-checkbox__copy">Label</span>
+  </label>
+
+*/
+
+
+.c-checkbox {
+  display: flex;
+  flex-wrap: nowrap;
+  // TODO: Should checkboxes center next to their labels or match the first line?
+  align-items: center;
+  cursor: pointer;
+
+  @include hover {
+    .c-checkbox__box {
+      border-color: $blue-4;
+    }
+  }
+
+  &.is-disabled {
+    cursor: default;
+
+    @include hover {
+      .c-checkbox__box {
+        border-color: $gray-border;
+      }
+    }
+
+    .c-checkbox__input {
+      display: none;
+
+      &:checked + .c-checkbox__box {
+        border-color: $gray-border;
+        background-image: none;
+      }
+    }
+
+    .c-checkbox__copy {
+      opacity: 0.5;
+    }
+  }
+}
+
+.c-checkbox__input {
+  display: none;
+
+  &:checked + .c-checkbox__box {
+    border-color: $blue-4;
+    // check
+    // preserveAspectRatio="xMinYMin meet"
+    background-image: svg(_buildSvg("<path fill='#{$blue-4}' d='M27.1 60.1l-22-22 8.6-8.5L27.1 43l31.2-31.1 8.6 8.5z'/>", 72, 72));
+  }
+}
+
+.c-checkbox__box {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  border: 2px solid $gray-border;
+  background: center / 10px 10px no-repeat;
+  vertical-align: middle;
+
+  // TODO: Larger checkboxes for mobile
+  // @include mq('lt-md') {
+  //   width: 40px;
+  //   height: 40px;
+  // }
+}
+
+// Keep multiline labels from breaking into a new line
+.c-checkbox__copy {
+  padding-right: em(8, 13);
+  padding-left: em(8, 13);
+  font-size: em(13);
+  letter-spacing: tracking(60);
+  user-select: none;
+}
