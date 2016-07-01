@@ -1,0 +1,35 @@
+// TODO: For loop to get all the combos we need
+@include u-width(1, 1);
+@include u-width(1, 2);
+@include u-width(2, 3);
+@include u-width(1, 3);
+@include u-width(3, 4);
+@include u-width(1, 4);
+
+@include u-width(1, 1, 'sm');
+@include u-width(1, 2, 'sm');
+@include u-width(2, 3, 'sm');
+@include u-width(1, 3, 'sm');
+@include u-width(3, 4, 'sm');
+@include u-width(1, 4, 'sm');
+
+@include u-width(1, 1, 'lt-md');
+@include u-width(1, 2, 'lt-md');
+@include u-width(2, 3, 'lt-md');
+@include u-width(1, 3, 'lt-md');
+@include u-width(3, 4, 'lt-md');
+@include u-width(1, 4, 'lt-md');
+
+@include u-width(1, 1, 'md');
+@include u-width(1, 2, 'md');
+@include u-width(2, 3, 'md');
+@include u-width(1, 3, 'md');
+@include u-width(3, 4, 'md');
+@include u-width(1, 4, 'md');
+
+@include u-width(1, 1, 'lg');
+@include u-width(1, 2, 'lg');
+@include u-width(2, 3, 'lg');
+@include u-width(1, 3, 'lg');
+@include u-width(3, 4, 'lg');
+@include u-width(1, 4, 'lg');

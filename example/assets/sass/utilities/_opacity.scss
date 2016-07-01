@@ -1,0 +1,7 @@
+// Examples:
+
+// @for $opacity from 10 through 100 {
+//   @if ($opacity % 10 == 0) {
+//     @include u-opacity($opacity);
+//   }
+// }

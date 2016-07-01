@@ -1,0 +1,57 @@
+.c-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ccc;
+  z-index: 1000;
+}
+
+@include mq('lt-md') {
+  .headroom--pinned {
+    transform: translate(0, 0);
+  }
+
+  .headroom--unpinned {
+    transform: translate(0, -120%);
+  }
+}
+
+@include mq('md') {
+  .c-header {
+    transition: transform 400ms ease,
+      height 400ms ease,
+      border-color 400ms ease,
+      opacity 400ms ease;
+  }
+
+  .c-header > * {
+    transition: opacity 400ms ease;
+    opacity: 1;
+  }
+
+  .c-header--fade-contents > * {
+    opacity: 0;
+  }
+
+  .c-header--fade-all {
+    transition: opacity 200ms ease-out;
+    opacity: 0;
+  }
+
+  .c-header {
+    position: absolute;
+    transform: translate(0, 0);
+    transition: transform 400ms ease,
+      opacity 400ms ease;
+  }
+
+  .c-header--sticky {
+    position: fixed;
+  }
+
+  .c-header--slide-up {
+    transform: translate(0, -120%);
+  }
+}
