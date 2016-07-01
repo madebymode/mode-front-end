@@ -428,8 +428,9 @@ module.exports = (function(window, document) {
     window.addEventListener('resize', debounce(applyBalanceText));
 
     return {
-      balanceText: balanceText,
-      balancedElements: balancedElements,
+      init: balanceText,
+      apply: applyBalanceText,
+      elements: balancedElements
     };
 
 }(window, document));
