@@ -1,13 +1,19 @@
-/* Example Use:
+/**
+ * Variables
+ */
+$ch-primary-color  : #5ab3e8 !default;
+$ch-disabled-color : #e1e0df !default;
 
-  <label class="c-checkbox">
+/**
+ * Sample Markup
+
+<label class="c-checkbox">
     <input type="checkbox" class="c-checkbox__input" name="form_field[]" value="form_value">
     <span class="c-checkbox__box"></span>
     <span class="c-checkbox__copy">Label</span>
-  </label>
+</label>
 
-*/
-
+ */
 
 .c-checkbox {
   display: flex;
@@ -18,7 +24,7 @@
 
   @include hover {
     .c-checkbox__box {
-      border-color: $blue-4;
+      border-color: $ch-primary-color;
     }
   }
 
@@ -27,7 +33,7 @@
 
     @include hover {
       .c-checkbox__box {
-        border-color: $gray-border;
+        border-color: $ch-disabled-color;
       }
     }
 
@@ -35,7 +41,7 @@
       display: none;
 
       &:checked + .c-checkbox__box {
-        border-color: $gray-border;
+        border-color: $ch-disabled-color;
         background-image: none;
       }
     }
@@ -50,10 +56,10 @@
   display: none;
 
   &:checked + .c-checkbox__box {
-    border-color: $blue-4;
+    border-color: $ch-primary-color;
     // check
     // preserveAspectRatio="xMinYMin meet"
-    background-image: svg(_buildSvg("<path fill='#{$blue-4}' d='M27.1 60.1l-22-22 8.6-8.5L27.1 43l31.2-31.1 8.6 8.5z'/>", 72, 72));
+    background-image: svg("<path fill='#{$ch-primary-color}' d='M27.1 60.1l-22-22 8.6-8.5L27.1 43l31.2-31.1 8.6 8.5z'/>", 72, 72);
   }
 }
 
@@ -62,7 +68,7 @@
   flex: 0 0 auto;
   width: 14px;
   height: 14px;
-  border: 2px solid $gray-border;
+  border: 2px solid $ch-disabled-color;
   background: center / 10px 10px no-repeat;
   vertical-align: middle;
 

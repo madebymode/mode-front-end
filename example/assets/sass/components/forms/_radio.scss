@@ -1,12 +1,19 @@
-/* Example Use:
+/**
+ * Variables
+ */
+$rd-primary-color  : #5ab3e8 !default;
+$rd-disabled-color : #e1e0df !default;
 
-  <label class="c-radio">
+/**
+ * Sample Markup
+
+<label class="c-radio">
     <input type="radio" class="c-radio__input" name="form_field[]" value="form_value">
     <span class="c-radio__box"></span>
     <span class="c-radio__copy">Label</span>
-  </label>
+</label>
 
-*/
+ */
 
 .c-radio {
   display: flex;
@@ -16,7 +23,7 @@
 
   @include hover {
     .c-radio__box {
-      border-color: $blue-4;
+      border-color: $rd-primary-color;
     }
   }
 }
@@ -25,7 +32,7 @@
   display: none;
 
   &:checked + .c-radio__box {
-    border-color: $blue-4;
+    border-color: $rd-primary-color;
 
     &::before {
       content: '';
@@ -33,7 +40,7 @@
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      background: $blue-4;
+      background: $rd-primary-color;
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -48,7 +55,7 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 2px solid $gray-border;
+  border: 2px solid $rd-disabled-color;
   background: center / 10px 10px no-repeat;
   vertical-align: middle;
 }

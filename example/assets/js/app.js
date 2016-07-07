@@ -1,1 +1,2 @@
-require('./sticky-nav');
+// Note: Requires `headroom.js`
+// require('./sticky-nav');
