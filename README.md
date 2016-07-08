@@ -86,6 +86,7 @@ Import `common.scss` into your app's stylesheet:
 - `u-height($size, [$at-breakpoint])`
 - `u-hidden([$at-breakpoint])`
 - `u-margin($alias, $size, [$at-breakpoint])`
+- `u-max-width($size, [$at-breakpoint])`
 - `u-opacity($opacity, [$at-breakpoint])`
 - `u-order($order, [$at-breakpoint])`
 - `u-padding($alias, $size, [$at-breakpoint])`
@@ -121,6 +122,12 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `inArray`
 - `map`
 - `reduce`
+
+### Browser Detect
+
+- `internet-explorer`
+- `ios`
+- `font-features`
 
 ### DOM
 
