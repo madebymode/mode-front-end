@@ -36,16 +36,12 @@
 // Objects
 @import 'objects/grids';
 @import 'objects/section';
-// TODO: Make responsive image and overlapping optional includes (at least use mixins instead)
-// @import 'objects/responsive-image';
-// TODO: Rename these objects
-// @import 'objects/overlapping';
-// @import 'objects/overlay-backgrounds';
 
 // Utilities
 @import 'utilities/depth';
 @import 'utilities/height';
 @import 'utilities/margin';
+@import 'utilities/max-width';
 @import 'utilities/opacity';
 @import 'utilities/order';
 @import 'utilities/padding';

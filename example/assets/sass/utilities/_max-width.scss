@@ -1,7 +1,8 @@
-[class*='u-max-width--'] {
+// TODO: Should this be a default for all max-widths?
+[class*='u-max-width-'] {
   margin: 0 auto;
 }
 
-.u-max-width--750 {
-  max-width: em(750);
-}
+@include u-max-width(350);
+@include u-max-width(700);
+@include u-max-width(750);

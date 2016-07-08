@@ -1,0 +1,17 @@
+/**
+ * Fluid width utilities
+ * @param  {Number}  $size
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-max-width($size, $at-breakpoint: null) {
+  $class-name: 'u-max-width-#{$size}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    max-width: em($size);
+  }
+}
+
+// Examples:
+
+// @include u-max-width(350);
+// @include u-max-width(700);
+// @include u-max-width(700, 'md');
