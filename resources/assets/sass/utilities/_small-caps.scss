@@ -1,0 +1,77 @@
+// OpenType Features: Small Caps (sets default active class to Typekit)
+// scss-lint:disable PropertySpelling
+@mixin u-small-caps($active-class: 'wf-active') {
+  font-variant: small-caps;
+  text-transform: lowercase;
+
+  // Use CSS.supports API to check for font-feature-settings
+  .supports-font-features.#{$active-class} & {
+    font-variant: normal;
+    font-variant-caps: small-caps; // Firefox 34+
+    font-feature-settings: 'smcp'; // Safari 9.1+; Everything else
+  }
+}
+
+@mixin u-small-caps__symbol($active-class: 'wf-active') {
+  font-size: 80%;
+
+  .supports-font-features.#{$active-class} & {
+    font-size: 100%;
+  }
+}
+
+// Mixins to add custom (in)active properties to small caps fonts
+// Would be great if we could pass via `@content`:
+//   https://github.com/sass/sass/issues/1943#issuecomment-165912990
+// But it looks like we'll get something close by calling `@content` with arguments:
+//   https://github.com/sass/sass/issues/871#issue-17401909
+@mixin u-small-caps--inactive {
+  @content;
+}
+@mixin u-small-caps--active($active-class: 'wf-active') {
+  .supports-font-features.#{$active-class} & {
+    @content;
+  }
+}
+
+// Note: Reset for `u-small-caps__symbol` will need to be added manually
+@mixin u-small-caps--reset($active-class: 'wf-active') {
+  font-variant: normal;
+  text-transform: none;
+
+  .supports-font-features.#{$active-class} & {
+    font-variant-caps: initial;
+    font-feature-settings: initial;
+  }
+}
+
+
+
+// Examples:
+
+/*
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.u-small-caps {
+  @include u-small-caps;
+}
+.u-small-caps\@lt-md {
+  @include mq('lt-md') {
+    @include u-small-caps;
+  }
+}
+
+.u-small-caps--reset {
+  @include u-small-caps--reset;
+}
+
+.u-small-caps__symbol {
+  @include u-small-caps__symbol;
+}
+
+*/
