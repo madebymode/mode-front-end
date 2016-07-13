@@ -94,6 +94,11 @@ Import `common.scss` into your app's stylesheet:
 - `u-padding($alias, $size, [$at-breakpoint])`
 - `u-position($size, $out-of, [$at-breakpoint])`
 - `u-position-center()`
+- `u-small-caps([$active-class])`
+- `u-small-caps__symbol([$active-class])`
+- `u-small-caps--inactive`
+- `u-small-caps--active([$active-class])`
+- `u-small-caps--reset([$active-class])`
 - `u-text-align($alignment, [$at-breakpoint])`
 - `u-width($size, $out-of, [$at-breakpoint])`
 
