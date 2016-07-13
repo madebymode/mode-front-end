@@ -77,6 +77,8 @@ Import `common.scss` into your app's stylesheet:
 
 #### Objects
 
+- `o-grid--reverse([$at-breakpoint])`
+- `o-grid--gutters($alias, $size, [$at-breakpoint])`
 - ~~`overlay-bg($img-width, $img-height, $offset, $overlay-direction, [$is-responsive])`~~
 
 #### Utilities
