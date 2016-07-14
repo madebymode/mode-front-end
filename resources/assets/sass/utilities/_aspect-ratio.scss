@@ -1,0 +1,27 @@
+/**
+ * Preserve aspect ratio of an element.
+ * @param  {Number}  $width
+ * @param  {Number}  $height
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-aspect-ratio($width, $height, $at-breakpoint: null) {
+  $class-name: 'u-aspect-ratio-#{$width}x#{$height}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    width: 100%;
+    height: 0;
+    padding: 0 0 percentage($height / $width);
+  }
+}
+
+// Examples:
+
+// @include u-aspect-ratio(2, 1);
+// @include u-aspect-ratio(16, 9);
+// @include u-aspect-ratio(16, 9, 'md');
+
+// TODO: Make `btwn` alias for mq
+// .u-aspect-ratio--3x2\@btwn-sm-and-md {
+//   @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md') - 0.0625em) {
+//     padding: 0 0 percentage(2 / 3);
+//   }
+// }
