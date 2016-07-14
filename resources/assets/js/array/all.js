@@ -1,6 +1,7 @@
 module.exports = (function() {
   return {
     inArray: require('./inArray'),
-    map: require('./map')
+    map: require('./map'),
+    reduce: require('./reduce')
   };
 })();

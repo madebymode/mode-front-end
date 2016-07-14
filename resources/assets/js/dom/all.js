@@ -2,6 +2,7 @@ module.exports = (function() {
   return {
     childDepth: require('./childDepth'),
     children: require('./children'),
+    classList: require('./classList'),
     closest: require('./closest'),
     index: require('./index'),
     isElementInBounds: require('./isElementInBounds'),

@@ -1,5 +1,5 @@
 module.exports = (function() {
   return {
-    balancetext: require('./balancetext')
+    balanceText: require('./balanceText')
   };
 })();

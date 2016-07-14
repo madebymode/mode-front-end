@@ -141,9 +141,9 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ### Browser Detect
 
-- `internet-explorer`
+- `internetExplorer`
 - `ios`
-- `font-features`
+- `fontFeatures`
 
 ### DOM
 
@@ -163,9 +163,10 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ## Event
 
-- `transitionEvents`
+- `animationEvents`
 - `clearStack`
 - `throttle`
+- `transitionEvents`
 
 ## General
 

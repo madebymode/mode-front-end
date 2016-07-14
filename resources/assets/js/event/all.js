@@ -1,7 +1,8 @@
 module.exports = (function() {
   return {
-    transitionEvents: require('./transitionEvents'),
+    animationEvents: require('./animationEvents'),
     clearStack: require('./clearStack'),
-    throttle: require('./throttle')
+    throttle: require('./throttle'),
+    transitionEvents: require('./transitionEvents')
   };
 })();
