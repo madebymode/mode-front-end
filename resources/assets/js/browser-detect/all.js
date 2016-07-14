@@ -1,7 +1,7 @@
 module.exports = (function() {
   return {
-    fontFeatures: require('./font-features'),
-    internetExplorer: require('./internet-explorer'),
+    fontFeatures: require('./fontFeatures'),
+    internetExplorer: require('./internetExplorer'),
     ios: require('./ios')
   };
 })();

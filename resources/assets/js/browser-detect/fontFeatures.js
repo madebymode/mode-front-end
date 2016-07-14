@@ -1,4 +1,4 @@
-var internetExplorer = require('./internet-explorer');
+var internetExplorer = require('./internetExplorer');
 
 // TODO: Move to mode-front-end
 module.exports = (function(window, document) {
