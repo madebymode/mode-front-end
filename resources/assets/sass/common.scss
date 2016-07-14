@@ -21,6 +21,7 @@
 // TODO: Defaults for `settings/`
 
 // Functions
+@import 'functions/assets';
 @import 'functions/math';
 @import 'functions/strings';
 @import 'functions/svg';
@@ -40,6 +41,7 @@
 
 // Utilities
 @import 'utilities/depth';
+@import 'utilities/flex';
 @import 'utilities/height';
 @import 'utilities/margin';
 @import 'utilities/max-width';
