@@ -29,8 +29,8 @@
 // Base
 @import 'base/responsive';
 @import 'base/mixins';
+// TODO: Make normalize and reset optional (or create mixins)
 @import 'base/normalize';
-// TODO: Make reset optional (or create mixins)
 @import 'base/reset';
 
 // Objects

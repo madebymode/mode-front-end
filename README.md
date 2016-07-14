@@ -77,6 +77,7 @@ Import `common.scss` into your app's stylesheet:
 
 #### Objects
 
+- `o-media([$at-breakpoint])`
 - `o-grid--reverse([$at-breakpoint])`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
 - ~~`overlay-bg($img-width, $img-height, $offset, $overlay-direction, [$is-responsive])`~~
@@ -111,9 +112,9 @@ Import `common.scss` into your app's stylesheet:
     - `.o-grid--table`
     - `.o-grid--center` (applies to flex and table, not float)
     - `.o-grid--nowrap` (applies to flex)
-- `.o-responsive-image`
-    - `.o-responsive-image__placeholder`
-    - `.o-responsive-image__image`
+- ~~`.o-responsive-image`~~
+    - ~~`.o-responsive-image__placeholder`~~
+    - ~~`.o-responsive-image__image`~~
 - `.o-section`
 
 ## JavaScript
