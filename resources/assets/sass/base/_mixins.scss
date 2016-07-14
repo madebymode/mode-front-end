@@ -1,4 +1,17 @@
 /**
+ * Generic property utilities.
+ * @param  {String}  $property
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-property($property, $value, $at-breakpoint: null) {
+  $class-name: 'u-#{$property}-#{$value}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    #{$property}: #{$value};
+  }
+}
+
+/**
  * Clear floated elements.
  */
 @mixin clearfix {

@@ -1,0 +1,35 @@
+/**
+ * Flexbox utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-flex-direction($value, $at-breakpoint: null) {
+  @include u-property('flex-direction', $value, $at-breakpoint);
+}
+@mixin u-flex-wrap($value, $at-breakpoint: null) {
+  @include u-property('flex-wrap', $value, $at-breakpoint);
+}
+@mixin u-align-items($value, $at-breakpoint: null) {
+  @include u-property('align-items', $value, $at-breakpoint);
+}
+@mixin u-justify-content($value, $at-breakpoint: null) {
+  @include u-property('justify-content', $value, $at-breakpoint);
+}
+
+// Examples:
+// @include u-align-items('center');
+// @include u-justify-content('center');
+// @include u-justify-content('space-between');
+// @include u-flex-direction('column');
+// @include u-flex-wrap('wrap');
+// @include u-flex-wrap('nowrap');
+
+// TODO: Flex
+// .u-flex-1-1-auto {
+//   flex: 1 1 auto;
+// }
+// .u-flex-1\@md {
+//   @include mq('md') {
+//     flex: 1;
+//   }
+// }

@@ -8,7 +8,7 @@ MODE's front-end toolkit
 # Install mode-front-end
 npm install --save-dev mode-front-end
 # Install dependencies
-npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-hologram laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore
+npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore
 # Copy starter files to project
 ## System files
 cp node_modules/mode-front-end/.editorconfig .editorconfig
@@ -47,9 +47,13 @@ Import `common.scss` into your app's stylesheet:
 - `$breakpoints`: Used by `mq` and `breakpoints` in `base/_responsive.scss`.
   Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
   16), xl: em(1200, 16) )`.
+- `$images-path`: Used by `image-url` in `functions/_assets.scss`. Defaults to
+  `/img`.
 
 ### Functions
 
+- Assets
+    - `image-url($path)`
 - Math
     - `strip-unit($value)`
 - Strings
@@ -60,6 +64,10 @@ Import `common.scss` into your app's stylesheet:
     - `tracking($tracking)`
 
 ### Mixins
+
+#### Generators
+
+- `u-property`
 
 #### Helpers
 
@@ -175,9 +183,8 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ## TODOs
 
-- Make CSS reset optional (or create mixins)
-- Make responsive image and overlapping optional includes (at least use `@mixin`s instead)
-    - If responsive images are included, add lazysizes as a dependency
+- Make normalize and reset optional via mixins
+- Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
 - Add markup partials (e.g., ZorroSVG)
 - Add JavaScript tests
-- Either replace Hologram with Pattern Lab or make an option to choose
+- Decide on standard style guide library (Hologram, Pattern Lab, etc.)

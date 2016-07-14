@@ -1,0 +1,9 @@
+/**
+ * Get full path to image file.
+ * @param  {String}  $path
+ * @return {String}
+ */
+$images-path: '/img' !default;
+@function image-url($path) {
+  @return url('#{$images-path}/#{$path}');
+}
