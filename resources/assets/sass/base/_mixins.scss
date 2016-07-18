@@ -1,11 +1,12 @@
 /**
  * Generic property utilities.
  * @param  {String}  $property
+ * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-property($property, $value, $at-breakpoint: null) {
-  $class-name: 'u-#{$property}-#{$value}';
+@mixin u-property($property, $alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-#{$property}-#{$alias}';
   @include breakpoints($class-name, $at-breakpoint) {
     #{$property}: #{$value};
   }

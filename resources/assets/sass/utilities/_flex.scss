@@ -4,16 +4,16 @@
  * @param  {String}  $at-breakpoint
  */
 @mixin u-flex-direction($value, $at-breakpoint: null) {
-  @include u-property('flex-direction', $value, $at-breakpoint);
+  @include u-property('flex-direction', $value, $value, $at-breakpoint);
 }
 @mixin u-flex-wrap($value, $at-breakpoint: null) {
-  @include u-property('flex-wrap', $value, $at-breakpoint);
+  @include u-property('flex-wrap', $value, $value, $at-breakpoint);
 }
 @mixin u-align-items($value, $at-breakpoint: null) {
-  @include u-property('align-items', $value, $at-breakpoint);
+  @include u-property('align-items', $value, $value, $at-breakpoint);
 }
 @mixin u-justify-content($value, $at-breakpoint: null) {
-  @include u-property('justify-content', $value, $at-breakpoint);
+  @include u-property('justify-content', $value, $value, $at-breakpoint);
 }
 
 // Examples:
