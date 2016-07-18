@@ -93,6 +93,7 @@ Import `common.scss` into your app's stylesheet:
 #### Utilities
 
 - `u-aspect-ratio($width, $height, [$at-breakpoint])`
+- `u-border($alias, $size, [$at-breakpoint])`
 - `u-depth($depth, [$at-breakpoint])`
 - `u-display($display, [$at-breakpoint])`
 - `u-height($size, [$at-breakpoint])`
