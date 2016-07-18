@@ -1,85 +1,11 @@
 /**
  * Margin utilities
- *
- * TODOs:
- * - Base margin an a map of dimensions, similar to $breakpoints
- *
  * @param  {String}  $alias
- * @param  {Number}  $size
+ * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-margin($alias, $size, $at-breakpoint: null) {
-  // Vars
-  $class-name: 'u-margin';
-  $directions: (
-    'vertical',
-    'horizontal',
-    'top',
-    'right',
-    'bottom',
-    'left'
-  );
-  $direction: null;
-
-
-
-  $alias-parts: explode($alias, '-');
-
-  @if (not $alias) {
-
-    // ?
-
-  // If alias has 1 part, then it's either a direction or an alias
-  // (Could be direction if alias is blank; meant to be the default value)
-  } @else if (length($alias-parts) == 1) {
-    @each $temp-direction in $directions {
-      @if not $direction and $temp-direction == nth($alias-parts, 1) {
-        $direction: $temp-direction;
-      }
-    }
-    @if not $direction {
-      $alias: nth($alias-parts, 1);
-    } @else {
-      $alias: '';
-    }
-  // If alias is 2 parts, then first is direction and second is alias
-  } @else if (length($alias-parts) == 2) {
-    $direction: nth($alias-parts, 1);
-    $alias: nth($alias-parts, 2);
-  }
-
-
-
-  // Update class name
-  @if ($direction and str-length($direction) > 0) {
-    $class-name: '#{$class-name}-#{$direction}';
-  }
-  // If alias was given, append it to the default class name
-  // (Allows default gutter to be used instead of custom size)
-  // ... which now that I think of it is stupid. All values should have an alias, just like our responsive utility.
-  // TODO: Refactor values as maps
-  @if ($alias and str-length($alias) > 0) {
-    $class-name: '#{$class-name}-#{$alias}';
-  }
-
-
-
-  @include breakpoints($class-name, $at-breakpoint) {
-    // TODO: Should margin be unitless or not?
-    // margin: em($size);
-
-    @if ($direction == 'vertical') {
-      margin-top: $size;
-      margin-bottom: $size;
-    } @else if ($direction == 'horizontal') {
-      margin-right: $size;
-      margin-left: $size;
-    } @else if ($direction) {
-      margin-#{$direction}: $size;
-    } @else {
-      margin: $size;
-    }
-  }
+@mixin u-margin($alias, $value, $at-breakpoint: null) {
+  @include u-property-directional('margin', $alias, $value, $at-breakpoint);
 }
 
 // Examples:
