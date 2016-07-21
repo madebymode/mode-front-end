@@ -99,17 +99,20 @@ Import `common.scss` into your app's stylesheet:
 - `u-height($size, [$at-breakpoint])`
 - `u-hidden([$at-breakpoint])`
 - `u-margin($alias, $size, [$at-breakpoint])`
+- `u-max-height($size, [$at-breakpoint])`
 - `u-max-width($size, [$at-breakpoint])`
+- `u-min-height($size, [$at-breakpoint])`
+- `u-min-width($size, [$at-breakpoint])`
 - `u-opacity($opacity, [$at-breakpoint])`
 - `u-order($order, [$at-breakpoint])`
 - `u-padding($alias, $size, [$at-breakpoint])`
 - `u-position($size, $out-of, [$at-breakpoint])`
 - `u-position-center()`
 - `u-small-caps([$active-class])`
-- `u-small-caps__symbol([$active-class])`
-- `u-small-caps--inactive`
 - `u-small-caps--active([$active-class])`
+- `u-small-caps--inactive`
 - `u-small-caps--reset([$active-class])`
+- `u-small-caps__symbol([$active-class])`
 - `u-text-align($alignment, [$at-breakpoint])`
 - `u-width($size, $out-of, [$at-breakpoint])`
 

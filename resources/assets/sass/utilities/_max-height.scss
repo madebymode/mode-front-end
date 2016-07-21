@@ -1,0 +1,17 @@
+/**
+ * Max-height utilities
+ * @param  {Number}  $size
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-max-height($size, $at-breakpoint: null) {
+  $class-name: 'u-max-height-#{$size}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    max-height: em($size);
+  }
+}
+
+// Examples:
+
+// @include u-max-height(350);
+// @include u-max-height(700);
+// @include u-max-height(700, 'md');

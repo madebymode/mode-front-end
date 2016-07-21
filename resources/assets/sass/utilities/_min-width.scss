@@ -1,0 +1,17 @@
+/**
+ * Min-width utilities
+ * @param  {Number}  $size
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-min-width($size, $at-breakpoint: null) {
+  $class-name: 'u-min-width-#{$size}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    min-width: em($size);
+  }
+}
+
+// Examples:
+
+// @include u-min-width(350);
+// @include u-min-width(700);
+// @include u-min-width(700, 'md');

@@ -1,0 +1,17 @@
+/**
+ * Min-height utilities
+ * @param  {Number}  $size
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-min-height($size, $at-breakpoint: null) {
+  $class-name: 'u-min-height-#{$size}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    min-height: em($size);
+  }
+}
+
+// Examples:
+
+// @include u-min-height(350);
+// @include u-min-height(700);
+// @include u-min-height(700, 'md');
