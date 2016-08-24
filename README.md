@@ -171,6 +171,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 - `animationEvents`
 - `clearStack`
+- `customEvent`
 - `throttle`
 - `transitionEvents`
 
