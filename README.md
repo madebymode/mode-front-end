@@ -142,6 +142,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 - `inArray`
 - `map`
+- `mapObj`
 - `reduce`
 
 ### Browser Detect
