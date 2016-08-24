@@ -1,7 +1,7 @@
 /**
-* Hide only visually, but have it available for screen readers:
-* http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-*/
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
 @mixin visuallyhidden {
   position: absolute;
   width: 1px;
@@ -14,9 +14,9 @@
 }
 
 /**
-* Hidden utilities
-* @param  {String}  $at-breakpoint
-*/
+ * Hidden utilities
+ * @param  {String}  $at-breakpoint
+ */
 @mixin u-visually-hidden($at-breakpoint: null) {
   $class-name: 'u-visually-hidden';
   @include breakpoints($class-name, $at-breakpoint) {
