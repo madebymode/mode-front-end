@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = (function(window, document, undefined) {
   return {
     /**
      * Create a custom event.
@@ -22,4 +22,4 @@ module.exports = function() {
 
   // Trigger
   // elem.dispatchEvent(event);
-};
+})(window, document);
