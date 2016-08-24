@@ -12,6 +12,8 @@ module.exports = (function(window, document, undefined) {
 
       var event = document.createEvent('Event');
       event.initEvent(name, true, true);
+
+      return event;
     }
   };
 
