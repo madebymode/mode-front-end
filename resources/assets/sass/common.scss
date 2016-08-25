@@ -28,9 +28,9 @@
 @import 'functions/typography';
 
 // Base
+// TODO: Reorganize base partials (e.g., mixins)
 @import 'base/responsive';
 @import 'base/mixins';
-// TODO: Make normalize and reset optional via mixins
 @import 'base/normalize';
 @import 'base/reset';
 

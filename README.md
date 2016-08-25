@@ -37,6 +37,8 @@ Import `common.scss` into your app's stylesheet:
 
 ```
 @import '../../../node_modules/mode-front-end/resources/assets/sass/common';
+@include css-normalize;
+@include css-reset;
 ```
 
 **Note**: This path assumes you're stylesheet is in `resources/assets/sass/`.
@@ -64,6 +66,11 @@ Import `common.scss` into your app's stylesheet:
     - `tracking($tracking)`
 
 ### Mixins
+
+#### Base CSS
+
+- `css-normalize`
+- `css-reset`
 
 #### Generators
 
