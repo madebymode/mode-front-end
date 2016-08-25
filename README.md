@@ -154,7 +154,7 @@ Import `common.scss` into your app's stylesheet:
 ### Classes
 
 - `.o-grid`
-    - `.o-grid__cell`
+    - `.o-grid__item`
     - `.o-grid--flex`
     - `.o-grid--float`
     - `.o-grid--table`

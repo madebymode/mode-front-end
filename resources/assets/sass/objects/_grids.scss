@@ -4,7 +4,7 @@
 ## Basic Module
 
 - `.o-grid`
-- `.o-grid__cell`
+- `.o-grid__item`
 
 ## Grid Types
 
@@ -55,7 +55,7 @@
     margin-right: 0;
     margin-left: -$size;
 
-    > .o-grid__cell {
+    > .o-grid__item {
       padding-right: 0;
       padding-left: $size;
     }
@@ -76,7 +76,7 @@
   @extend .o-grid--flex;
 }
 
-.o-grid__cell {
+.o-grid__item {
   display: block;
   position: relative;
 }
@@ -106,7 +106,7 @@
   @include clearfix;
   display: block;
 
-  > .o-grid__cell {
+  > .o-grid__item {
     float: left;
   }
 }
@@ -121,7 +121,7 @@
   width: 100%;
   table-layout: fixed;
 
-  > .o-grid__cell {
+  > .o-grid__item {
     display: table-cell;
   }
 }
