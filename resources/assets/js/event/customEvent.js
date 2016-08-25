@@ -10,7 +10,7 @@ module.exports = (function(window, document, undefined) {
     create: function(name, context) {
       if (!context) { context = window; }
 
-      var event = document.createEvent('Event');
+      var event = document.createEvent('CustomEvent');
       event.initEvent(name, true, true);
 
       return event;
