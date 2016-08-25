@@ -1,44 +1,13 @@
-/**
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-@mixin visuallyhidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
-/**
- * Hidden utilities
- * @param  {String}  $at-breakpoint
- */
-@mixin u-visually-hidden($at-breakpoint: null) {
-  $class-name: 'u-visually-hidden';
-  @include breakpoints($class-name, $at-breakpoint) {
-    @include visuallyhidden();
-  }
-}
-
 @include u-visually-hidden();
 @include u-visually-hidden('md');
 
-// TODO: Either merge display:none utilities or use hidden for something else (e.g., visuallyhidden)
-@include u-hidden();
-
-@include u-display('none');
 @include u-display('inline-block');
 @include u-display('block');
-@include u-display('flex');
 @include u-display('inline-flex');
+@include u-display('flex');
+@include u-display('none');
 
 // Keep responsive below default utilities so that media queries act as overrides
-@include u-hidden('lt-md');
-@include u-hidden('md');
 @include u-display('none', 'md');
 @include u-display('none', 'lt-sm');
 @include u-display('none', 'lt-md');

@@ -1,0 +1,14 @@
+/**
+ * Font weight utilities.
+ * @param  {String}  $alias
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-font-weight($alias, $value, $at-breakpoint: null) {
+  @include u-property('font-weight', $alias, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-font-weight('normal', 'normal');
+// @include u-font-weight('bold', 'bold');

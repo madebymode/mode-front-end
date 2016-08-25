@@ -1,13 +1,10 @@
 /**
  * Opacity utilities
- * @param  {Number}  $opacity
+ * @param  {Number}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-opacity($opacity, $at-breakpoint: null) {
-  $class-name: 'u-opacity-#{$opacity}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    opacity: ($opacity / 100);
-  }
+@mixin u-opacity($value, $at-breakpoint: null) {
+  @include u-property('opacity', $value, ($value / 100), $at-breakpoint);
 }
 
 // Examples:

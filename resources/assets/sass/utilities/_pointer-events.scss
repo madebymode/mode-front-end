@@ -1,0 +1,13 @@
+/**
+ * Pointer-events utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-pointer-events($value, $at-breakpoint: null) {
+  @include u-property('pointer-events', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-pointer-events('none');
+// @include u-pointer-events('none', 'sm');

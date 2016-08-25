@@ -1,0 +1,15 @@
+/**
+ * Color utilities.
+ * @param  {String}  $alias
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-color($alias, $value, $at-breakpoint: null) {
+  @include u-property('color', $alias, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-color('white-1', $color-white-1);
+// @include u-color('primary', $color-blue-6);
+// @include u-color('facebook', $color-facebook);

@@ -1,18 +1,22 @@
+// TODO: How should we handle negative values? For example:
+// .u-order\(-1\) {
+//   order: -1;
+// }
+
+// TODO: Should we rename this to `flex-order` so that it's clear what this applies to?
+
 /**
  * Order utilities
- * @param  {Number}  $order
+ * @param  {Number}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-order($order, $at-breakpoint: null) {
-  $class-name: 'u-order-#{$order}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    order: $order;
-  }
+@mixin u-order($value, $at-breakpoint: null) {
+  @include u-property('order', $value, $value, $at-breakpoint);
 }
 
 // Examples:
 
 // @include u-order(1);
 // @include u-order(2);
-// @include u-order(1, 'md');
-// @include u-order(2, 'md');
+// @include u-order(1, 'sm');
+// @include u-order(2, 'sm');

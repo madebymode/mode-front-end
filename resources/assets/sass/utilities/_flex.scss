@@ -1,3 +1,30 @@
+// TODO: `flex` mixins
+// .u-flex-1 {
+//   flex: 1;
+// }
+// .u-flex-1-1-auto {
+//   flex: 1 1 auto;
+// }
+// .u-flex-1-1-1\/3 {
+//   flex: 1 1 percentage(1 / 3);
+// }
+// .u-flex-1-1-1\/3\@sidebar {
+//   @include mq('sidebar') {
+//     flex: 1 1 percentage(1 / 3);
+//   }
+// }
+
+// TODO: Should we rename the `flex-wrap` utility so the classes are
+// easier to type out, or should we keep conventions
+// consistent (i.e., `property-value`)?
+
+// .u-flex-wrap {
+//   flex-wrap: wrap;
+// }
+// .u-flex-nowrap {
+//   flex-wrap: nowrap;
+// }
+
 /**
  * Flexbox utilities.
  * @param  {String}  $value
@@ -9,6 +36,9 @@
 @mixin u-flex-wrap($value, $at-breakpoint: null) {
   @include u-property('flex-wrap', $value, $value, $at-breakpoint);
 }
+@mixin u-align-self($value, $at-breakpoint: null) {
+  @include u-property('align-self', $value, $value, $at-breakpoint);
+}
 @mixin u-align-items($value, $at-breakpoint: null) {
   @include u-property('align-items', $value, $value, $at-breakpoint);
 }
@@ -17,19 +47,10 @@
 }
 
 // Examples:
+// @include u-align-self('flex-end');
 // @include u-align-items('center');
 // @include u-justify-content('center');
 // @include u-justify-content('space-between');
 // @include u-flex-direction('column');
 // @include u-flex-wrap('wrap');
 // @include u-flex-wrap('nowrap');
-
-// TODO: Flex
-// .u-flex-1-1-auto {
-//   flex: 1 1 auto;
-// }
-// .u-flex-1\@md {
-//   @include mq('md') {
-//     flex: 1;
-//   }
-// }

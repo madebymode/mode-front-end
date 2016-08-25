@@ -1,0 +1,13 @@
+/**
+ * Float utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-float($value, $at-breakpoint: null) {
+  @include u-property('float', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-float('right');
+// @include u-float('right', 'sm');

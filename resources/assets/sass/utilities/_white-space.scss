@@ -1,0 +1,12 @@
+/**
+ * White space utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-white-space($value, $at-breakpoint: null) {
+  @include u-property('white-space', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-white-space('nowrap', 'sm');

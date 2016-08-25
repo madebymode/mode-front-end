@@ -1,0 +1,43 @@
+/**
+ * Display utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-display($value, $at-breakpoint: null) {
+  // TODO: Should we drop the `!important` flag?
+  // @include u-property('display', $alias, $value, $at-breakpoint);
+
+  $class-name: 'u-display-#{$value}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    // scss-lint:disable ImportantRule
+    display: #{$value} !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+// Examples:
+
+// @include u-display('inline-block');
+// @include u-display('block');
+// @include u-display('inline-flex');
+// @include u-display('flex');
+// @include u-display('visually-hidden'); <-- Should this be a `display` value or separate?
+// @include u-display('none');
+
+
+
+/**
+ * Visually hidden utilities.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-visually-hidden($at-breakpoint: null) {
+  $class-name: 'u-visually-hidden';
+  @include breakpoints($class-name, $at-breakpoint) {
+    @include visually-hidden();
+  }
+}
+
+// Examples:
+
+// @include u-visually-hidden();
+// @include u-visually-hidden('sm');

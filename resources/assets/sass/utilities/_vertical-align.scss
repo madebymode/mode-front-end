@@ -1,0 +1,13 @@
+/**
+ * Vertical align utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-vertical-align($value, $at-breakpoint: null) {
+  @include u-property('vertical-align', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-vertical-align('middle');
+// @include u-vertical-align('middle', 'sm');

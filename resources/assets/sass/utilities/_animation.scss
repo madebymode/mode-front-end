@@ -1,0 +1,32 @@
+// TODO: This is experimental. Try out in a project and circle back around on
+// implementation (e.g., should `animation` be set by `$value` or should we
+// assume it will be part of `@content`?).
+
+/**
+ * Animation utilities.
+ * @param  {String}  $alias
+ * @param  {String}  $class
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-animation($alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-animation-#{$alias}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    @content;
+    animation: #{$value};
+  }
+}
+
+// Examples:
+
+// @include u-animation('fade-in', '200ms fade-in linear forwards') {
+//   opacity: 1;
+// }
+//
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

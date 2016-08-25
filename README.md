@@ -67,16 +67,18 @@ Import `common.scss` into your app's stylesheet:
 
 #### Generators
 
-- `u-property`
+- `u-property($property, $alias, $value, [$at-breakpoint])`
+- `u-property-directional($property, $alias, $value, [$at-breakpoint])`
 
 #### Helpers
 
 - `clearfix`
-- `hover`
-- `visually-hidden`
+- `hover([$active-classes...])`
 - `placeholder`
-- `scroll`
+- `object-fit([$value])`
 - `scroll-disabled`
+- `scroll`
+- `visually-hidden`
 
 #### Responsive
 
@@ -86,34 +88,60 @@ Import `common.scss` into your app's stylesheet:
 #### Objects
 
 - `o-media([$at-breakpoint])`
+    - `.o-media`
+    - `.o-media__figure`
+    - `.o-media__body`
 - `o-grid--reverse([$at-breakpoint])`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
-- ~~`overlay-bg($img-width, $img-height, $offset, $overlay-direction, [$is-responsive])`~~
 
 #### Utilities
 
+- `u-align-items($value, [$at-breakpoint])`
+- `u-align-self($value, [$at-breakpoint])`
+- `u-animation($alias, $value, [$at-breakpoint]) { @content; }`
 - `u-aspect-ratio($width, $height, [$at-breakpoint])`
-- `u-border($alias, $size, [$at-breakpoint])`
-- `u-depth($depth, [$at-breakpoint])`
+- `u-background-color($alias, $value, [$at-breakpoint])`
+- `u-background-position($alias, $value, [$at-breakpoint])`
+- `u-border($alias, $value, [$at-breakpoint])`
+- `u-box-shadow($alias, $value, [$at-breakpoint])`
+- `u-color($alias, $value, [$at-breakpoint])`
+- `u-content($alias, [$pseudo-element], [$at-breakpoint]) { @content; }`
+- `u-depth($z-index, [$at-breakpoint])`
 - `u-display($display, [$at-breakpoint])`
-- `u-height($size, [$at-breakpoint])`
-- `u-hidden([$at-breakpoint])`
+- `u-flex-direction($value, [$at-breakpoint])`
+- `u-flex-wrap($value, [$at-breakpoint])`
+- `u-float($value, [$at-breakpoint])`
+- `u-font-size($alias, $value, [$at-breakpoint])`
+- `u-font-weight($alias, $value, [$at-breakpoint])`
+- `u-height($alias, $value, [$at-breakpoint])`
+- `u-hover($alias, [$active-class], [$at-breakpoint]) { @content; }`
+- `u-justify-content($value, [$at-breakpoint])`
 - `u-margin($alias, $size, [$at-breakpoint])`
 - `u-max-height($size, [$at-breakpoint])`
 - `u-max-width($size, [$at-breakpoint])`
 - `u-min-height($size, [$at-breakpoint])`
 - `u-min-width($size, [$at-breakpoint])`
-- `u-opacity($opacity, [$at-breakpoint])`
-- `u-order($order, [$at-breakpoint])`
-- `u-padding($alias, $size, [$at-breakpoint])`
+- ~~`u-object-fit($value)`~~
+- `u-opacity($value, [$at-breakpoint])`
+- `u-order($value, [$at-breakpoint])`
+- `u-overflow($value, [$at-breakpoint])`
+- `u-padding($alias, $value, [$at-breakpoint])`
+- `u-pointer-events($value, [$at-breakpoint])`
 - `u-position($size, $out-of, [$at-breakpoint])`
-- `u-position-center()`
+- `u-position($size, $out-of, [$at-breakpoint])`
+- `u-small-caps()`
 - `u-small-caps([$active-class])`
 - `u-small-caps--active([$active-class])`
 - `u-small-caps--inactive`
 - `u-small-caps--reset([$active-class])`
 - `u-small-caps__symbol([$active-class])`
-- `u-text-align($alignment, [$at-breakpoint])`
+- `u-text-align($value, [$at-breakpoint])`
+- `u-text-overflow($value, [$at-breakpoint])`
+- `u-text-transform($value, [$at-breakpoint])`
+~~- `u-transform($value, [$at-breakpoint])`~~
+- `u-vertical-align($value, [$at-breakpoint])`
+- `u-visually-hidden([$at-breakpoint])`
+- `u-white-space($value, [$at-breakpoint])`
 - `u-width($size, $out-of, [$at-breakpoint])`
 
 ### Classes
@@ -123,12 +151,9 @@ Import `common.scss` into your app's stylesheet:
     - `.o-grid--flex`
     - `.o-grid--float`
     - `.o-grid--table`
-    - `.o-grid--center` (applies to flex and table, not float)
-    - `.o-grid--nowrap` (applies to flex)
-- ~~`.o-responsive-image`~~
-    - ~~`.o-responsive-image__placeholder`~~
-    - ~~`.o-responsive-image__image`~~
 - `.o-section`
+- `.u-object-fit-cover`
+- `.u-transform-center`
 
 ## JavaScript
 
@@ -191,8 +216,12 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ## TODOs
 
-- Make normalize and reset optional via mixins
-- Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
+- Better setup (e.g., single command to run like `mode-front-end init`)
+    - Update example files
+    - Move resources to root directory (avoid really long paths in includes)
+    - Make normalize and reset optional via mixins
+    - Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
+- Document each mixin with examples
 - Add markup partials (e.g., ZorroSVG)
 - Add JavaScript tests
 - Decide on standard style guide library (Hologram, Pattern Lab, etc.)

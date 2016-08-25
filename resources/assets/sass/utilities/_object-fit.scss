@@ -1,0 +1,6 @@
+// TODO: Generic size utility (similar to `u-property-directional`)
+.u-object-fit-cover {
+  @include object-fit('cover');
+  width: 100%;
+  height: 100%;
+}

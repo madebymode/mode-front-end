@@ -1,0 +1,13 @@
+/**
+ * Text transform utilities
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-text-transform($value, $at-breakpoint: null) {
+  @include u-property('text-transform', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-text-transform('uppercase');
+// @include u-text-transform('uppercase', 'sm');

@@ -137,18 +137,13 @@
 }
 
 /**
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * Polyfill object-fit and object-position.
+ * https://github.com/bfred-it/object-fit-images
+ * @param  {String}  $value
  */
-@mixin visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+@mixin object-fit($value: 'cover') {
+  object-fit: #{$value};
+  font-family: 'object-fit: #{$value};';
 }
 
 /**
@@ -177,11 +172,26 @@
 /**
  * Scrolling
  */
+@mixin scroll-disabled {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
 @mixin scroll {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-@mixin scroll-disabled {
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
   overflow: hidden;
-  -webkit-overflow-scrolling: auto;
+  clip: rect(0 0 0 0);
 }

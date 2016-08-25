@@ -1,12 +1,19 @@
+// TODO: How should we handle negative values? For example:
+// .u-depth\(-1\) {
+//   z-index: -1;
+// }
+
+// TODO: Should we rename this to `z-index` or is `depth` clear enough?
+
 /**
- * Depth utilities (z-index)
- * @param  {String}  $depth
+ * Depth utilities.
+ * @param  {String}  $z-index
  * @param  {String}  $at-breakpoint
  */
-@mixin u-depth($depth, $at-breakpoint: null) {
-  $class-name: 'u-depth-#{$depth}';
+@mixin u-depth($z-index, $at-breakpoint: null) {
+  $class-name: 'u-depth-#{$z-index}';
   @include breakpoints($class-name, $at-breakpoint) {
-    z-index: #{$depth};
+    z-index: #{$z-index};
   }
 }
 

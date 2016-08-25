@@ -1,0 +1,33 @@
+// TODO: This is experimental. Try out in a project and circle back around on
+// implementation (e.g., whether we need additional params for default
+// properties like `transition`, and whether `$active-class` should be
+// a map, `$active-classes`).
+
+// .u-hover-opacity {
+//   transition: opacity 200ms ease;
+//
+//   @include hover('is-active') {
+//     opacity: 0.6;
+//   }
+// }
+
+/**
+ * Hover utilities.
+ * @param  {String}  $alias
+ * @param  {String}  $active-class
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-hover($alias, $active-class: '', $at-breakpoint: null) {
+  $class-name: 'u-hover-#{$alias}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    @include hover($active-class) {
+      @content;
+    }
+  }
+}
+
+// Examples:
+
+// @include u-hover('opacity', 'is-active') {
+//   opacity: 0.6;
+// }

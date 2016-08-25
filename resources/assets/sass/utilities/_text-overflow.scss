@@ -1,0 +1,13 @@
+/**
+ * Text-overflow utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-text-overflow($value, $at-breakpoint: null) {
+  @include u-property('text-overflow', $value, $value, $at-breakpoint);
+}
+
+// Examples
+
+// @include u-text-overflow('ellipsis');
+// @include u-text-overflow('ellipsis', 'sm');

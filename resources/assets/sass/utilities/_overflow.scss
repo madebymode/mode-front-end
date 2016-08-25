@@ -1,0 +1,14 @@
+/**
+ * Overflow utilities.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-overflow($value, $at-breakpoint: null) {
+  @include u-property('overflow', $value, $value, $at-breakpoint);
+}
+
+// Examples:
+
+// @include u-overflow('hidden');
+// @include u-overflow('scroll');
+// @include u-overflow('auto');
