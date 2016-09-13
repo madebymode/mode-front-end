@@ -44,11 +44,13 @@
  * @return {String}
  */
 @function svg($svg, $width, $height) {
+  $svg: _buildSvg($svg, $width, $height);
+
   $svg: str-replace($svg, '"', "'");
   $svg: str-replace($svg, '<', '%3C');
   $svg: str-replace($svg, '>', '%3E');
   $svg: str-replace($svg, '&', '%26');
   $svg: str-replace($svg, '#', '%23');
 
-  @return url("data:image/svg+xml;charset=utf8,#{_buildSvg($svg, $width, $height)}");
+  @return url("data:image/svg+xml;charset=utf8,#{$svg}");
 }
