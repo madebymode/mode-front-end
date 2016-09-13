@@ -40,17 +40,35 @@ module.exports = (function(window, document) {
 
   /**
    * Add helper classes to document.
-   * @return {void}
+   * @return {Boolean}
    */
-  function addClassesToDocument() {
-    var activeClass = 'ie-lt-11';
+  function addClassToDocument(className) {
+    return (document.documentElement.className = document.documentElement.className + ' ' + className);
+  }
 
-    if (isLessThanIE11()) {
-      document.documentElement.className = document.documentElement.className + ' ' + activeClass;
+  /**
+   * Update document classes based on browser version.
+   * @return {Boolean}
+   */
+  function updateDocumentClasses() {
+    var version = getVersion();
+
+    // Return false for non-IE browsers
+    if (version < 0) {
+      return false;
+    }
+
+    addClassToDocument('ie');
+
+    if (version < 11.0) {
+      addClassToDocument('ie-lt-11');
+    }
+    if (version < 10.0) {
+      addClassToDocument('ie-lt-10');
     }
   }
 
-  window.addEventListener('DOMContentLoaded', addClassesToDocument);
+  window.addEventListener('DOMContentLoaded', updateDocumentClasses);
 
   return {
     version: getVersion,
