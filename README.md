@@ -219,6 +219,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 ## Typography
 
 - `balanceText`
+- `shorten`
 
 ## Video
 
