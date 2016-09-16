@@ -35,9 +35,10 @@
 @import 'base/reset';
 
 // Objects
-@import 'objects/grids';
+@import 'objects/grid/index';
 @import 'objects/media';
 @import 'objects/section';
+@import 'objects/table';
 
 // Utilities
 @import 'utilities/animation';

@@ -1,0 +1,14 @@
+/**
+ * Reverse grid.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-grid--reverse($at-breakpoint: null) {
+  $class-name: 'o-grid--reverse';
+  @include breakpoints($class-name, $at-breakpoint) {
+    flex-direction: row-reverse;
+  }
+}
+
+// Examples:
+// @include o-grid--reverse();
+// @include o-grid--reverse('sm');

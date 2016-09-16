@@ -1,0 +1,40 @@
+/**
+ * Grid object.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-grid($at-breakpoint: null) {
+  @include breakpoints('o-grid', $at-breakpoint) {
+    display: flex;
+    flex-direction: horizontal;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+
+// Examples:
+// @include o-grid();
+// @include o-grid('sm');
+
+/**
+ * Grid object item.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-grid__item($at-breakpoint: null) {
+  @include breakpoints('o-grid__item', $at-breakpoint) {
+    display: block;
+    position: relative;
+  }
+}
+
+// Examples:
+// @include o-grid();
+// @include o-grid('sm');
+
+
+
+// ------------------------------
+// Modifiers
+// ------------------------------
+
+@import 'grid--gutters';
+@import 'grid--reverse';
