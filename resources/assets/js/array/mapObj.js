@@ -10,12 +10,12 @@ module.exports = (function() {
 
     // Loop through object properties
     for (var prop in obj) {
-        if (!obj.hasOwnProperty(prop)) {
-          continue;
-        }
+      if (!obj.hasOwnProperty(prop)) {
+        continue;
+      }
 
-        // Pass prop to callback; Add to result
-        result.push(callback(obj[prop]));
+      // Pass prop to callback; Add to result
+      result.push(callback(obj[prop], prop, obj));
     }
 
     return result;
