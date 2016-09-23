@@ -198,6 +198,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `outerWidth`
 - `parents`
 - `position`
+- `ResizeSensor`
 - `window`
 
 ## Event

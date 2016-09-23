@@ -12,6 +12,7 @@ module.exports = (function() {
     outerWidth: require('./outerWidth'),
     parents: require('./parents'),
     position: require('./position'),
+    ResizeSensor: require('./ResizeSensor'),
     window: require('./window')
   };
 })();
