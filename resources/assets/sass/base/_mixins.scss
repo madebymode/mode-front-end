@@ -137,13 +137,21 @@
 }
 
 /**
- * Polyfill object-fit and object-position.
- * https://github.com/bfred-it/object-fit-images
- * @param  {String}  $value
+ * Keep an element invisible until an active class is added to it.
+ * @param  {String}  $active-class
  */
-@mixin object-fit($value: 'cover') {
-  object-fit: #{$value};
-  font-family: 'object-fit: #{$value};';
+@mixin invisible-until-active($active-class: 'is-active') {
+  transition: opacity 500ms ease,
+    visibility 500ms linear 0s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.#{$active-class} {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 /**
@@ -167,6 +175,16 @@
     @content;
   }
   // scss-lint:enable VendorPrefix
+}
+
+/**
+ * Polyfill object-fit and object-position.
+ * https://github.com/bfred-it/object-fit-images
+ * @param  {String}  $value
+ */
+@mixin object-fit($value: 'cover') {
+  object-fit: #{$value};
+  font-family: 'object-fit: #{$value};';
 }
 
 /**

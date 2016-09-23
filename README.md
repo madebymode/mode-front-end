@@ -81,8 +81,9 @@ Import `common.scss` into your app's stylesheet:
 
 - `clearfix`
 - `hover([$active-classes...])`
-- `placeholder`
+- `invisible-until-active`
 - `object-fit([$value])`
+- `placeholder`
 - `scroll-disabled`
 - `scroll`
 - `visually-hidden`
