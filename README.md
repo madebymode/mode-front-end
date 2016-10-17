@@ -95,13 +95,15 @@ Import `common.scss` into your app's stylesheet:
 
 #### Objects
 
+- `o-icon([$at-breakpoint])`
+- `o-icon--size($width, $height, [$at-breakpoint])`
+- `o-grid([$at-breakpoint])`
+- `o-grid__item([$at-breakpoint])`
+- `o-grid--gutters($alias, $size, [$at-breakpoint])`
 - `o-media([$at-breakpoint])`
     - `.o-media`
     - `.o-media__figure`
     - `.o-media__body`
-- `o-grid([$at-breakpoint])`
-- `o-grid__item([$at-breakpoint])`
-- `o-grid--gutters($alias, $size, [$at-breakpoint])`
 
 #### Utilities
 

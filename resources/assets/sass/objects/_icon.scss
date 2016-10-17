@@ -1,0 +1,53 @@
+/**
+ * Icon object.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-icon($at-breakpoint: null) {
+  @include breakpoints('o-icon', $at-breakpoint) {
+    display: inline-block;
+    max-width: 100%;
+    background-position: center;
+    background-size: contain;
+
+    /**
+     * IMPORTANT:
+     * 1. Remove `fill` and `stroke` attributes from your SVGs that can be
+     *    applied with CSS.
+     * 2. Set `fill="none"` and `stroke="none"` in your SVGs to avoid unwanted
+     *    fills and strokes being applied to your icons.
+     */
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      stroke: currentColor;
+      pointer-events: none;
+    }
+  }
+}
+
+// Examples:
+// @include o-icon();
+// @include o-icon('sm');
+
+
+
+/**
+ * Icon size helper.
+ * @param  {Number}  $width
+ * @param  {Number}  $height
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-icon--size($width, $height, $at-breakpoint: null) {
+  $class-name: 'o-icon--#{$width}x#{$height}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    width: $width * 1px;
+    height: $height * 1px;
+  }
+}
+
+// Examples:
+// @include o-icon--size(10, 10);
+// @include o-icon--size(400, 300);
+// @include o-icon--size(400, 300, 'sm');
