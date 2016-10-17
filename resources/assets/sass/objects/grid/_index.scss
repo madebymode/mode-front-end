@@ -15,6 +15,8 @@
 // @include o-grid();
 // @include o-grid('sm');
 
+
+
 /**
  * Grid object item.
  * @param  {String}  $at-breakpoint
@@ -27,8 +29,8 @@
 }
 
 // Examples:
-// @include o-grid();
-// @include o-grid('sm');
+// @include o-grid__item();
+// @include o-grid__item('sm');
 
 
 

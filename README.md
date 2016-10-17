@@ -99,7 +99,8 @@ Import `common.scss` into your app's stylesheet:
     - `.o-media`
     - `.o-media__figure`
     - `.o-media__body`
-- `o-grid--reverse([$at-breakpoint])`
+- `o-grid([$at-breakpoint])`
+- `o-grid__item([$at-breakpoint])`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
 
 #### Utilities
