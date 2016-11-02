@@ -175,6 +175,10 @@ Use namespacing to require helper functions in your application:
 var dom = require('mode-front-end/resources/assets/js/dom/all');
 ```
 
+### Analytics
+
+- `trackEvent`
+
 ### Array
 
 - `inArray`
@@ -217,6 +221,10 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 ## General
 
 - `menuAim`
+
+## Object
+
+- `extend`
 
 ## Shim
 

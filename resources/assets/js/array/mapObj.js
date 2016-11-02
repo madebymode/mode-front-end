@@ -1,3 +1,4 @@
+// TODO: Move to objects
 module.exports = (function() {
 
   function mapObj(obj, callback) {
