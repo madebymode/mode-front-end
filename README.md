@@ -80,6 +80,7 @@ Import `common.scss` into your app's stylesheet:
 #### Helpers
 
 - `clearfix`
+- `font-smoothing([$is_bold])`
 - `hover([$active-classes...])`
 - `invisible-until-active`
 - `object-fit([$value])`

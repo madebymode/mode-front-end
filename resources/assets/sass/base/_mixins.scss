@@ -116,6 +116,22 @@
 }
 
 /**
+ * Font smoothing on OS X.
+ * Based on https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+ * @param  {Boolean}  $value
+ * @return {[type]}
+ */
+@mixin font-smoothing($is_bold: false) {
+  @if $is_bold {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  } @else {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/**
  * Accessible hover styles. Applies :hover styles to :focus and :active.
  * http://24ways.org/2007/css-for-accessibility
  */
