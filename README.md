@@ -1,4 +1,4 @@
-# mode-front-end
+# MODE Front-end
 
 [![Stories in Ready](https://badge.waffle.io/tannerhodges/mode-front-end.png?label=ready&title=Ready)](https://waffle.io/tannerhodges/mode-front-end)
 
