@@ -6,6 +6,7 @@ module.exports = (function() {
     closest: require('./closest'),
     index: require('./index'),
     isInBounds: require('./isInBounds'),
+    isVisible: require('./isVisible'),
     matches: require('./matches'),
     offset: require('./offset'),
     outerHeight: require('./outerHeight'),
