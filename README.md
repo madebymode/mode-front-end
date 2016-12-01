@@ -184,6 +184,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 ### Array
 
+- `filter`
 - `inArray`
 - `map`
 - `mapObj`
