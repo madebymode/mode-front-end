@@ -5,7 +5,7 @@ module.exports = (function() {
     classList: require('./classList'),
     closest: require('./closest'),
     index: require('./index'),
-    isElementInBounds: require('./isElementInBounds'),
+    isInBounds: require('./isInBounds'),
     matches: require('./matches'),
     offset: require('./offset'),
     outerHeight: require('./outerHeight'),

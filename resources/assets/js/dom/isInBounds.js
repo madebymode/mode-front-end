@@ -8,7 +8,7 @@ module.exports = (function() {
    * @param  {Element}  parent
    * @return {Boolean}
    */
-  function isElementInBounds(el, parent) {
+  function isInBounds(el, parent) {
     if (typeof jQuery === 'function') {
       if (el instanceof jQuery) {
         el = el[0];
@@ -30,5 +30,5 @@ module.exports = (function() {
     );
   }
 
-  return isElementInBounds;
+  return isInBounds;
 })();

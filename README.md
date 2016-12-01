@@ -204,7 +204,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `classList`
 - `closest`
 - `index`
-- `isElementInBounds`
+- `isInBounds`
 - `matches`
 - `offset`
 - `outerHeight`
