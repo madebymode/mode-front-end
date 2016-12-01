@@ -186,6 +186,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 
 - `filter`
 - `inArray`
+- `isArray`
 - `map`
 - `mapObj`
 - `reduce`
