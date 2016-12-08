@@ -12,4 +12,6 @@ module.exports = (function() {
       rect.top < (window.innerHeight + offset || document.documentElement.clientHeight + offset)
     );
   }
+
+  return isVisible;
 })();
