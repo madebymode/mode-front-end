@@ -14,6 +14,7 @@ module.exports = (function() {
     parents: require('./parents'),
     position: require('./position'),
     ResizeSensor: require('./ResizeSensor'),
+    Visibility: require('./Visibility'),
     window: require('./window')
   };
 })();

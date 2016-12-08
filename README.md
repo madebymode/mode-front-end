@@ -213,6 +213,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `parents`
 - `position`
 - `ResizeSensor`
+- `Visibility`
 - `window`
 
 ## Event
