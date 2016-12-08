@@ -5,12 +5,17 @@ module.exports = (function() {
    * @return {Boolean}
    */
   function isVisible(el, offset) {
-    var rect = el.getBoundingClientRect();
+    // Defaults
     var offset = offset || 0;
 
-    return (
-      rect.top < (window.innerHeight + offset || document.documentElement.clientHeight + offset)
-    );
+    // Variables
+    var rect = el.getBoundingClientRect();
+
+    // Calculate visibility
+    var hasDimensions = rect.width > 0 && rect.height > 0;
+    var isInBounds = rect.top < (window.innerHeight + offset || document.documentElement.clientHeight + offset);
+
+    return hasDimensions && isInBounds;
   }
 
   return isVisible;
