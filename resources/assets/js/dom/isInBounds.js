@@ -18,7 +18,6 @@ module.exports = (function() {
       }
     }
 
-    // TODO: If parent is window
     var elRect = el.getBoundingClientRect(),
       parentRect = parent.getBoundingClientRect();
 

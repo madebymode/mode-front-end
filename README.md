@@ -205,6 +205,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `closest`
 - `index`
 - `isInBounds`
+- `isInViewport`
 - `isVisible`
 - `matches`
 - `offset`

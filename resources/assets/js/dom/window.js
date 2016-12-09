@@ -4,7 +4,7 @@ module.exports = (function() {
    * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
    * @return {Number}
    */
-  function width() {
+  function getWidth() {
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   }
 
@@ -13,9 +13,17 @@ module.exports = (function() {
    * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
    * @return {Number}
    */
-  function height() {
+  function getHeight() {
     return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   }
+
+  var width = getWidth();
+  var height = getHeight();
+
+  window.addEventListener('resize', function() {
+    width = getWidth();
+    height = getHeight();
+  });
 
   return {
     width: width,
