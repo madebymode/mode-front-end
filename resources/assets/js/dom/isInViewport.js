@@ -19,8 +19,8 @@ module.exports = (function() {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= getWindow.height &&
-      rect.right <= getWindow.width
+      rect.bottom <= getWindow.height() &&
+      rect.right <= getWindow.width()
     );
   }
 
