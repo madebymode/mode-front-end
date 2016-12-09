@@ -14,7 +14,7 @@ module.exports = (function() {
     var rect = el.getBoundingClientRect();
     var hasDimensions = rect.width > 0 && rect.height > 0;
 
-    return hasDimensions && isInViewport(el);
+    return hasDimensions && isInViewport(el, true);
   }
 
   return isVisible;
