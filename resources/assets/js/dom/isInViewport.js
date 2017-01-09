@@ -22,12 +22,12 @@ module.exports = (function() {
 
     if (allowPartial) {
       var outsideOfVerticalBounds = (
-        (rect.top > height && rect.bottom > height) ||
-        (rect.top < 0 && rect.bottom < 0)
+        (rect.top >= height && rect.bottom >= height) ||
+        (rect.top <= 0 && rect.bottom <= 0)
       );
       var outsideOfHorizontalBounds = (
-        (rect.left > width && rect.right > width) ||
-        (rect.left < 0 && rect.right < 0)
+        (rect.left >= width && rect.right >= width) ||
+        (rect.left <= 0 && rect.right <= 0)
       );
 
       return !(outsideOfVerticalBounds || outsideOfHorizontalBounds);
