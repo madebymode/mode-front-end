@@ -203,7 +203,7 @@ var dom = require('mode-front-end/resources/assets/js/dom/all');
 - `children`
 - `classList`
 - `closest`
-- `index`
+- `getIndex`
 - `isInBounds`
 - `isInViewport`
 - `isVisible`
