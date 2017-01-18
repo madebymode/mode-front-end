@@ -1,3 +1,5 @@
+var matches = require('./matches');
+
 module.exports = (function() {
   /**
    * Get the number of nested layers between an element and its ancestor.
@@ -22,7 +24,7 @@ module.exports = (function() {
     if (!selector) {
       count++;
     // Otherwise, only count matching layers
-    } else if (this.matches(elem, selector)) {
+    } else if (matches(elem, selector)) {
       count++;
     }
 
