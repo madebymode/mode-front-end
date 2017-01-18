@@ -175,7 +175,7 @@ Import `common.scss` into your app's stylesheet:
 Use namespacing to require helper functions in your application:
 
 ```
-var dom = require('mode-front-end/resources/assets/js/dom/all');
+var dom = require('mode-front-end/resources/assets/js/dom');
 ```
 
 ### Analytics
