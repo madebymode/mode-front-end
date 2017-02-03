@@ -13,7 +13,7 @@ PATH_TO_ROOT='../..';
 
 # Starter files
 mkdir -p "$PATH_TO_ROOT/resources/assets/"
-rsync -avz "$PATH_TO_FILES/example/assets/" "$PATH_TO_ROOT/resources/assets/"
+rsync -avz "$PATH_TO_FILES/starter-kit/assets/" "$PATH_TO_ROOT/resources/assets/"
 echo "✔ Copied resources/assets/";
 
 echo "";
