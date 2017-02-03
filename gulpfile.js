@@ -1,77 +1,81 @@
-/**
- * Dependencies
- */
-var gulp = require('gulp');
 var elixir = require('laravel-elixir');
-require('laravel-elixir-imagemin');
-require('laravel-elixir-livereload');
-var responsive = require('gulp-responsive');
+var gulp = require('gulp');
 
-/**
- * Config
- */
+require('laravel-elixir-imagemin');
+require('laravel-elixir-svgstore');
+require('laravel-elixir-livereload');
+
+
+
+// ------------------------------
+// Config
+// ------------------------------
+
 var inProduction = elixir.config.production;
 
 // CSS
 // Disable media query merging from clean-css
-// https://github.com/jakubpawlowicz/clean-css/blob/626480c057ddf13bc0b0135e9a12eeb975c17be3/README.md#how-to-use-clean-css-api
-elixir.config.css.cssnano.pluginOptions = {
-  "mediaMerging": false
-};
+elixir.config.css.minifier.pluginOptions.mediaMerging = false;
+// https://www.npmjs.com/package/gulp-autoprefixer#api
+elixir.config.css.autoprefix.options.remove = false;
+// https://github.com/ai/browserslist#browserslist-
+elixir.config.css.autoprefix.options.browsers = [
+  '> 1%',
+  'last 2 versions',
+  'Firefox ESR',
+  'Opera 12.1',
+  'ie 8',
+  'ie 9',
+  'iOS >= 7'
+];
 
 // JS
-elixir.config.js.browserify.transformers.push({
-  name: 'browserify-shim',
-  options: {}
-});
+// Webpack config is stored in `webpack.config.js`
 
 // Images
 elixir.config.images = {
   folder: 'img',
   outputFolder: 'img'
 };
+var svgSpritePath = 'public/img/svg/sprites';
+var svgminPlugins = [
+  { removeUnknownsAndDefaults: false },
+  { removeUselessStrokeAndFill: false },
+  { collapseGroups: false }
+];
 
-/**
- * Responsive Images
- */
-elixir.extend('responsiveImgs', function() {
-  var config = elixir.config;
-  var src = [
-    'public/img/**/*.jpg',
-    '!public/img/**/*@27.jpg',
-    '!public/img/**/*@half.jpg'
-  ];
 
-  new elixir.Task('responsive-imgs', function() {
-    return gulp.src(src)
-      .pipe(responsive({
-        '**/*.jpg': [{
-          width: '50%',
-          rename: { suffix: '@half' }
-        }, {
-          width: 27,
-          rename: { suffix: '@27' }
-        }]
-      }))
-      .pipe(gulp.dest('public/img'))
-      .pipe(new elixir.Notification('Responsive images created'));
-  }).watch(src);
-});
 
-/**
- * Elixir Build
- */
+// ------------------------------
+// Helper Tasks
+// ------------------------------
+
+require('./gulp-tasks/responsive-images');
+require('./gulp-tasks/gzip');
+
+
+
+// ------------------------------
+// Build Tasks
+// ------------------------------
+
 elixir(function(mix) {
-  mix.sass('example.scss');
+  // Sass
+  mix.sass('app.scss');
 
-  mix.browserify('app.js');
+  // JavaScript
+  mix.webpack('app.js');
 
+  // Images
   mix.imagemin();
-  mix.responsiveImgs();
+  mix.responsiveImages();
+  mix.svgstore('resources/assets/img/svg/global', svgSpritePath, 'global.svg', svgminPlugins);
+  mix.gzip(['public/img/**/*.svg', '!public/img/**/*.svg.gz'], 'public/img/');
 
+  // Production Tasks
   if (inProduction) {
     mix.version([
-      'css/example.css',
+      'css/app.css',
       'js/app.js',
     ]);
   }
@@ -80,8 +84,6 @@ elixir(function(mix) {
     'resources/views/**/*.php',
     'resources/lang/**/*.php',
     'public/css/*.css',
-    '!public/css/*.build.css',
-    'public/js/*.js',
-    '!public/js/*.build.js',
+    'public/js/*.js'
   ]);
 });

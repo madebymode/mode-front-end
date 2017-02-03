@@ -1,0 +1,75 @@
+/**
+ * Accessible hover styles. Applies :hover styles to :focus and :active.
+ * @see http://24ways.org/2007/css-for-accessibility
+ */
+@mixin hover($active-classes...) {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+
+  // Allow multiple, configurable classes
+  @if (length($active-classes) > 0) {
+    @each $class in $active-classes {
+      &.#{$class} {
+        @content;
+      }
+    }
+  }
+}
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/**
+ * Keep an element invisible until an active class is added to it.
+ * @param  {String}  $active-class
+ */
+@mixin invisible-until-active($active-class: 'is-active') {
+  transition: opacity 500ms ease,
+    visibility 500ms linear 0s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.#{$active-class} {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/**
+ * From Foundation's visibility classes
+ * @see https://github.com/zurb/foundation-sites/blob/develop/scss/components/_visibility.scss
+ * @see http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
+ */
+@mixin show-on-focus {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+
+  &:focus,
+  &:active {
+    position: static !important;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}

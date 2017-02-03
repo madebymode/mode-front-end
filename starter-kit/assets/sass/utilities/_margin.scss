@@ -1,0 +1,16 @@
+@include u-margin('horizontal-auto', 'auto');
+
+@include u-margin('bottom-xs', $gutter-xs);
+@include u-margin('bottom', $gutter);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-margin('horizontal-auto', 'auto', 'lt-md');
+
+// Min-width
+@include u-margin('horizontal-auto', 'auto', 'md');

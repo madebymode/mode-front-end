@@ -1,0 +1,26 @@
+.u-flex-0 {
+  flex: 0;
+}
+.u-flex-1 {
+  flex: 1;
+}
+
+@include u-flex-wrap('nowrap');
+@include u-align-items('center');
+@include u-justify-content('center');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-flex-wrap('nowrap', 'lt-md');
+@include u-align-items('center', 'lt-md');
+@include u-justify-content('center', 'lt-md');
+
+// Min-width
+@include u-flex-wrap('nowrap', 'md');
+@include u-align-items('center', 'md');
+@include u-justify-content('center', 'md');

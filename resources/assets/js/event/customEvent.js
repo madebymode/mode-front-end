@@ -2,7 +2,7 @@ module.exports = (function(window, document, undefined) {
   return {
     /**
      * Create a custom event.
-     * https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
+     * @see https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
      * @param  {String}  name
      * @param  {Element} context
      * @return {Event}

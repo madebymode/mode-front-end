@@ -1,6 +1,21 @@
 /**
  * Grid object.
  * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-grid();
+ * @include o-grid('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <div class="o-grid">
+ *   <div class="o-grid__item"></div>
+ * </div>
+ * ```
  */
 @mixin o-grid($at-breakpoint: null) {
   @include breakpoints('o-grid', $at-breakpoint) {
@@ -11,15 +26,26 @@
   }
 }
 
-// Examples:
-// @include o-grid();
-// @include o-grid('sm');
-
 
 
 /**
  * Grid object item.
  * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-grid__item();
+ * @include o-grid__item('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <div class="o-grid">
+ *   <div class="o-grid__item"></div>
+ * </div>
+ * ```
  */
 @mixin o-grid__item($at-breakpoint: null) {
   @include breakpoints('o-grid__item', $at-breakpoint) {
@@ -27,10 +53,6 @@
     position: relative;
   }
 }
-
-// Examples:
-// @include o-grid__item();
-// @include o-grid__item('sm');
 
 
 

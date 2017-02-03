@@ -1,0 +1,14 @@
+@include u-padding('horizontal-sm', $gutter-sm);
+@include u-padding('right-sm', $gutter-sm);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-padding('horizontal-sm', $gutter-md, 'lt-sm');
+
+// Min-width
+@include u-padding('horizontal-md', $gutter-md, 'sm');

@@ -4,6 +4,9 @@
   "description": "MODE's front-end toolkit",
   "main": "gulpfile.js",
   "scripts": {
+    "init-config": "sh ./bin/init-config.sh",
+    "init-gulp": "sh ./bin/init-gulp.sh",
+    "init-starter-kit": "sh ./bin/init-starter-kit.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,14 +19,6 @@
     "url": "https://github.com/tannerhodges/mode-front-end/issues"
   },
   "homepage": "https://github.com/tannerhodges/mode-front-end#readme",
-  "devDependencies": {
-    "browserify": "^12.0.1",
-    "browserify-shim": "^3.8.11",
-    "gulp": "^3.9.0",
-    "gulp-responsive": "^1.2.1",
-    "laravel-elixir": "^4.2.0",
-    "laravel-elixir-imagemin": "^0.2.3",
-    "laravel-elixir-livereload": "^1.1.4"
-  },
-  "browserify-shim": {}
+  "dependencies": {
+  }
 }

@@ -19,7 +19,7 @@ category: Objects
 
 /**
  * Flexible media objects.
- * Based on https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
+ * @see https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
  * @param  {String}  $at-breakpoint
  */
 @mixin o-media($at-breakpoint: null) {

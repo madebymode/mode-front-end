@@ -1,11 +1,12 @@
-// Based on marcj/css-element-queries
-// https://github.com/marcj/css-element-queries/blob/bfa9a7ffbe61ceda37403aca927904f0fd11cb7f/src/ResizeSensor.js
+/**
+ * ResizeSensor.
+ * @see https://github.com/marcj/css-element-queries/blob/bfa9a7ffbe61ceda37403aca927904f0fd11cb7f/src/ResizeSensor.js
+ */
 
 /* jshint ignore:start */
 
 /**
- * Copyright Marc J. Schmidt. See the LICENSE file at the top-level
- * directory of this distribution and at
+ * Copyright Marc J. Schmidt. See the LICENSE file at
  * https://github.com/marcj/css-element-queries/blob/master/LICENSE.
  */
 ;

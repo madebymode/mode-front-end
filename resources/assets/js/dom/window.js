@@ -1,7 +1,7 @@
 module.exports = (function() {
   /**
    * Get current viewport width.
-   * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
+   * @see https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
    * @return {Number}
    */
   function width() {
@@ -10,7 +10,7 @@ module.exports = (function() {
 
   /**
    * Get current viewport height.
-   * https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
+   * @see https://plainjs.com/javascript/styles/getting-width-and-height-of-an-element-23/
    * @return {Number}
    */
   function height() {

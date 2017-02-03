@@ -5,9 +5,7 @@ module.exports = (function() {
    * Check whether an element is inside the viewport. By default, checks
    * whether the whole element is in the viewport. Optionally checks whether
    * element is partially in the viewport.
-   *
-   * Based on `isElementInViewport`: http://stackoverflow.com/a/7557433/1786459
-   *
+   * @see http://stackoverflow.com/a/7557433/1786459
    * @param  {Element}  el
    * @return {Boolean}
    */

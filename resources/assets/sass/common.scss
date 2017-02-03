@@ -18,21 +18,34 @@
  * - `qa-`  QA         : Use to bind automated UI tests to the DOM. "Basically just reserves hooks in the DOM for non-CSS purposes."
  */
 
-// TODO: Defaults for `settings/`
+// Core
+@import 'core/functions';
+@import 'core/math';
+@import 'core/strings';
 
-// Functions
-@import 'functions/assets';
-@import 'functions/math';
-@import 'functions/strings';
-@import 'functions/svg';
-@import 'functions/typography';
+// Settings
+@import 'settings/breakpoints';
+@import 'settings/colors';
+@import 'settings/gutters';
+@import 'settings/typography';
 
-// Base
-// TODO: Reorganize base partials (e.g., mixins)
-@import 'base/responsive';
-@import 'base/mixins';
-@import 'base/normalize';
-@import 'base/reset';
+// Tools
+@import 'tools/accessibility';
+@import 'tools/assets';
+@import 'tools/clearfix';
+@import 'tools/math';
+@import 'tools/object-fit';
+@import 'tools/placeholder';
+@import 'tools/properties';
+@import 'tools/responsive';
+@import 'tools/scroll';
+@import 'tools/strings';
+@import 'tools/svg';
+@import 'tools/typography';
+
+// Generic
+@import 'generic/normalize';
+@import 'generic/reset';
 
 // Objects
 @import 'objects/grid/index';
@@ -40,6 +53,9 @@
 @import 'objects/media';
 @import 'objects/section';
 @import 'objects/table';
+
+// Components
+@import 'components/browser-upgrade';
 
 // Utilities
 @import 'utilities/animation';

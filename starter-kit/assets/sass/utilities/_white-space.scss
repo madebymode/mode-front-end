@@ -1,0 +1,13 @@
+@include u-white-space('nowrap');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-white-space('nowrap', 'lt-md');
+
+// Min-width
+@include u-white-space('nowrap', 'md');
