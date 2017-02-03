@@ -18,6 +18,9 @@ copy_file_to_root() {
 
 # Gulp build
 copy_file_to_root gulpfile.js
+mkdir -p "$PATH_TO_ROOT/gulp-tasks/"
+rsync -avz "$PATH_TO_FILES/gulp-tasks/" "$PATH_TO_ROOT/gulp-tasks/"
+echo "✔ Copied gulp-tasks/";
 
 echo "";
 echo "Success!";
