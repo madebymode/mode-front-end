@@ -1,4 +1,11 @@
 // TODO: Make a non-Elixir fallback for responsive-images
+// TODO: Make settings configurable
+
+// TODO: Fix deprecation warnings
+// (node:78647) DeprecationWarning: quality: use jpeg({ quality: ... }), webp({ quality: ... }) and/or tiff({ quality: ... }) instead
+// (node:78647) DeprecationWarning: progressive: use jpeg({ progressive: ... }) and/or png({ progressive: ... }) instead
+// (node:78647) DeprecationWarning: withoutChromaSubsampling: use jpeg({ chromaSubsampling: "4:4:4" }) instead
+// (node:78647) DeprecationWarning: compressionLevel: use png({ compressionLevel: ... }) instead
 
 var gulp = require('gulp');
 var responsive = require('gulp-responsive');
@@ -18,17 +25,15 @@ elixir.extend('responsiveImages', function() {
   new elixir.Task('responsive-images', function() {
     return gulp.src(src)
       .pipe(responsive({
-        // Lazy-load placeholders
-        '**/*.{jpg,png}': [
-          { width: 27, rename: { suffix: '@27' } }
-        ],
         // Full-width images
-        '{full-width,svg-mask}/**/*.{jpg,png}': [
+        '**/*.{jpg,png}': [
           { width: 1200, rename: { suffix: '@1200' } },
           { width: 1000, rename: { suffix: '@1000' } },
           { width: 800, rename: { suffix: '@800' } },
           { width: 600, rename: { suffix: '@600' } },
-          { width: 400, rename: { suffix: '@400' } }
+          { width: 400, rename: { suffix: '@400' } },
+          // Lazy-load placeholders
+          { width: 27, rename: { suffix: '@27' } }
         ]
       // Global Settings
       }, {
