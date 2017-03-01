@@ -1,3 +1,5 @@
+var transitionEvent = require('../event/transitionEvent');
+
 module.exports = (function() {
   /**
    * Slide an element down like jQuery's slideDown function using CSS3 transitions.
