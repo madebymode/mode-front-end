@@ -1,3 +1,5 @@
+var transitionEvent = require('../event/transitionEvent');
+
 module.exports = (function() {
   /**
    * Slide an element up like jQuery's slideUp function using CSS3 transitions.
