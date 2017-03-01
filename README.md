@@ -195,6 +195,11 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 
 - `trackEvent`
 
+### Animation
+
+- `slideDown`
+- `slideUp`
+
 ### Array
 
 - `filter`
