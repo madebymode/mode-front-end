@@ -248,6 +248,10 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 
 - `menuAim`
 
+## HTTP
+
+- `ajax`
+
 ## Object
 
 - `extend`
