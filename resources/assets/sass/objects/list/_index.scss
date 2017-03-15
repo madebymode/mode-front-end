@@ -1,0 +1,62 @@
+/**
+ * List object.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list();
+ * @include o-list('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ul class="o-list"></ul>
+ * ```
+ */
+@mixin o-list($at-breakpoint: null) {
+  @include breakpoints('o-list', $at-breakpoint) {
+    // ...
+  }
+}
+
+/**
+ * List object item.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list__item();
+ * @include o-list__item('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ul class="o-list">
+ *   <li class="o-list__item"></li>
+ * </ul>
+ * ```
+ */
+@mixin o-list__item($at-breakpoint: null) {
+  @include breakpoints('o-list__item', $at-breakpoint) {
+    break-inside: avoid;
+  }
+}
+
+
+
+// ------------------------------
+// Modifiers
+// ------------------------------
+
+@import 'list--bullets';
+@import 'list--commas';
+@import 'list--disc';
+@import 'list--inline';
+@import 'list--leading-zero';
+@import 'list--numbers';
+@import 'list--numbers-roman';
+@import 'list--slashes';

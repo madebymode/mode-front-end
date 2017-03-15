@@ -120,6 +120,19 @@ Import `common.scss` into your app’s stylesheet:
   - `.o-grid`
   - `.o-grid__item`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
+- `o-list([$at-breakpoint])`
+  - `.o-list`
+  - `.o-list__item`
+  - `.o-list__counter`
+  - `.o-list__content`
+- `o-list--bullets([$at-breakpoint])`
+- `o-list--commas([$at-breakpoint])`
+- `o-list--disc([$at-breakpoint])`
+- `o-list--inline([$at-breakpoint])`
+- `o-list--leading([$at-breakpoint-zero])`
+- `o-list--numbers([$at-breakpoint-roman])`
+- `o-list--numbers([$at-breakpoint])`
+- `o-list--slashes([$at-breakpoint])`
 - `o-media([$at-breakpoint])`
     - `.o-media`
     - `.o-media__figure`
