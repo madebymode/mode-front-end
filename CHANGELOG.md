@@ -1,76 +1,71 @@
-# CHANGELOG
+# Change Log
 
-**TODO**: Note which classes can be converted to mixins.
+All notable changes to this project will be documented in this file.
 
-## 1.0.0
+The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-- New install notes
-- Update .gitignore
-- Add yarn
-- Remove extra dependencies (from package.json and README install notes)
-- Update gulpfile.js with latest practices
-- Replace browserify with webpack
-- Add gzip task
-- Add svgstore task
-- Move responsive-images and gzip to separate gulp-task files
-- Replace example files with default app files
-- Add new starter kit files
-- Add init commands to run on install (e.g., `init-config`)
-- Add `@see` docblock annotations
-- Remove old `menuAim` comments
-- Add placeholder `app.js`
-- Reorganize Sass files (core, settings, tools, and generic)
+## [Unreleased]
+
+## 1.0.0 - 2017-03-15
+
+### Added
+
+- New install notes and commands:
+  - `init-config`
+- New starter kit files
+- `yarn.lock`
+- gulp tasks:
+  - `gzip`
+  - `svgstore`
+- `@see` docblock annotations
 - Add `.c-browser-upgrade` component
-- Convert `.o-section` to a mixin
 - Add markup examples to grid mixin comments
 - Add position mixin placeholder
 - Add meta and examples to example page
 - Added CHANGELOG
 
-## 0.41.0
+### Changed
 
-Renamed `all.js` files to `index.js` for simpler namespaces:
+- `.gitignore`
+- Update `gulpfile.js` with latest practices
+- Replace Browserify with Webpack
+- Move responsive-images and gzip to separate gulp-task files
+- Replace example files with default app files
+- Reorganize Sass files (core, settings, tools, and generic)
+- Convert `.o-section` to a mixin
 
-```js
-var dom = require('mode-front-end/resources/assets/js/dom/all');
-```
+### Removed
 
-becomes:
+- Remove extra dependencies (from package.json and README install notes)
+- Remove old `menuAim` comments
 
-```js
-var dom = require('mode-front-end/resources/assets/js/dom');
-```
+## 0.41.0 - 2017-01-18
 
-## 0.31.0
+### Changed
 
-Converted `.o-grid` styles to mixins:
+- Renamed `all.js` files to `index.js` for simpler namespaces:
+  - For example, `var dom = require('mode-front-end/resources/assets/js/dom/all');` becomes `var dom = require('mode-front-end/resources/assets/js/dom');`.
 
-```scss
-@include o-grid;
-@include o-grid__item;
-```
+## 0.31.0 - 2016-09-16
 
-## 0.27.0
+### Changed
 
-Converted `normalize` and `reset` to mixins:
+- Converted `.o-grid` styles to mixins:
+  - `@include o-grid;`
+  - `@include o-grid__item;`
 
-```scss
-@include css-normalize;
-@include css-reset;
-```
+## 0.27.0 - 2016-08-25
 
-Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (use "item" as often as possible):
+### Changed
 
-```html
-<div class="o-grid__cell"></div>
-```
+- Converted `normalize` and `reset` to mixins:
+  - `@include css-normalize;`
+  - `@include css-reset;`
+- Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible).
+  - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
-becomes:
-
-```html
-<div class="o-grid__item"></div>
-```
-
-## Between 0.1.3 and 0.11.2
-
-Change `.o-grid` changes to `display: flex;`, which can cause stretching issues for `img` elements that are direct children of `.o-grid`.
+[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.41.0...v1.0.0
+[0.41.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.31.0...v0.41.0
+[0.31.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.27.0...v0.31.0
+[0.27.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.0.1...v0.27.0
