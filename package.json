@@ -1,6 +1,6 @@
 {
   "name": "mode-front-end",
-  "version": "0.43.1",
+  "version": "1.0.0",
   "description": "MODE's front-end toolkit",
   "main": "gulpfile.js",
   "scripts": {
@@ -19,6 +19,5 @@
     "url": "https://github.com/tannerhodges/mode-front-end/issues"
   },
   "homepage": "https://github.com/tannerhodges/mode-front-end#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
