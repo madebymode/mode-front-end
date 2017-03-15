@@ -10,8 +10,20 @@ $font-size: 16 !default; // Define in `settings/typography`
  */
 @function em($pixels, $context: $font-size) {
   // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
-  // @return strip-units($pixels) / strip-units($context) * 1rem;
+  // @return strip-units($pixels) / strip-units($context) * 1em;
   @return $pixels / $context * 1em;
+}
+
+/**
+ * Convert px values (e.g. from a PSD) to rems.
+ * @see http://viljamis.com/blog/2013/prototyping-responsive-typography/
+ * @param  {Number}  $pixels
+ * @return {Number}           rem value
+ */
+@function rem($pixels) {
+  // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
+  // @return strip-units($pixels) / strip-units($font-size) * 1rem;
+  @return $pixels / $font-size * 1rem;
 }
 
 /**

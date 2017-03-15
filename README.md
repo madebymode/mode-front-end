@@ -1,4 +1,4 @@
-# MODE Front-end
+# MODE Front-End
 
 MODE’s front-end toolkit. Heavily influenced by [@csswizardy](http://csswizardry.com/)’s [inuitcss](https://github.com/inuitcss/inuitcss) framework.
 
@@ -80,6 +80,7 @@ Import `common.scss` into your app’s stylesheet:
     - `str-replace($string, $search, [$replace])`
 - Fonts
     - `em($pixels, [$context])`
+    - `rem($pixels)`
     - `tracking($tracking)`
 
 ### Mixins
