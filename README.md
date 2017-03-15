@@ -30,9 +30,13 @@ npm run init-gulp --prefix ./node_modules/mode-front-end
 
 ## TODO
 
-- [ ] Starter kit
-- [ ] Document modules
-- [ ] Switch from [scss-lint]() to either [sass-lint](https://github.com/sasstools/sass-lint) or [stylelint](https://stylelint.io/).
+- [ ] Document each mixin with examples
+- [ ] Add markup partials (e.g., ZorroSVG)
+- [ ] Switch from [scss-lint](https://github.com/brigade/scss-lint) to either [sass-lint](https://github.com/sasstools/sass-lint) or [stylelint](https://stylelint.io/).
+- [ ] Decide on standard style guide library (Hologram, Pattern Lab, etc.)
+- [ ] Add JavaScript tests
+- [ ] Move resources to root directory (avoid really long paths in includes)
+- [ ] Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
 
 ## Features
 
@@ -283,16 +287,3 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 ## Video
 
 - `youTubeReady`
-
----
-
-## TODOs
-
-- Better setup
-    - Update example files
-    - Move resources to root directory (avoid really long paths in includes)
-    - Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
-- Document each mixin with examples
-- Add markup partials (e.g., ZorroSVG)
-- Add JavaScript tests
-- Decide on standard style guide library (Hologram, Pattern Lab, etc.)
