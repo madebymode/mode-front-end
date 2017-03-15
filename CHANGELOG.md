@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-## 1.0.0 - 2017-03-15
+## [1.0.0] - 2017-03-15
 
 ### Added
 
@@ -39,14 +39,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Remove extra dependencies (from package.json and README install notes)
 - Remove old `menuAim` comments
 
-## 0.41.0 - 2017-01-18
+## [0.41.0] - 2017-01-18
 
 ### Changed
 
 - Renamed `all.js` files to `index.js` for simpler namespaces:
   - For example, `var dom = require('mode-front-end/resources/assets/js/dom/all');` becomes `var dom = require('mode-front-end/resources/assets/js/dom');`.
 
-## 0.31.0 - 2016-09-16
+## [0.31.0] - 2016-09-16
 
 ### Changed
 
@@ -54,7 +54,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - `@include o-grid;`
   - `@include o-grid__item;`
 
-## 0.27.0 - 2016-08-25
+## [0.27.0] - 2016-08-25
 
 ### Changed
 
