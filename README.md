@@ -117,7 +117,8 @@ Import `common.scss` into your app’s stylesheet:
 - `o-icon([$at-breakpoint])`
 - `o-icon--size($width, $height, [$at-breakpoint])`
 - `o-grid([$at-breakpoint])`
-- `o-grid__item([$at-breakpoint])`
+  - `.o-grid`
+  - `.o-grid__item`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
 - `o-media([$at-breakpoint])`
     - `.o-media`

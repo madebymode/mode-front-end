@@ -23,34 +23,11 @@
     flex-direction: horizontal;
     flex-wrap: wrap;
     align-items: stretch;
-  }
-}
 
-
-
-/**
- * Grid object item.
- * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-grid__item();
- * @include o-grid__item('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <div class="o-grid">
- *   <div class="o-grid__item"></div>
- * </div>
- * ```
- */
-@mixin o-grid__item($at-breakpoint: null) {
-  @include breakpoints('o-grid__item', $at-breakpoint) {
-    display: block;
-    position: relative;
+    > .o-grid__item {
+      display: block;
+      position: relative;
+    }
   }
 }
 
