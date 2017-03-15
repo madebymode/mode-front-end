@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 
+- [Remove `o-grid__item` mixin](https://github.com/tannerhodges/mode-front-end/commit/702c80db3e691d78fcb72594c4d56ce9365381fe).
 - Remove extra dependencies (from package.json and README install notes)
 - Remove old `menuAim` comments
 
