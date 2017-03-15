@@ -1,0 +1,9 @@
+@mixin scroll-disabled {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+@mixin scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

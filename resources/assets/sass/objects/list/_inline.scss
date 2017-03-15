@@ -1,0 +1,28 @@
+/**
+ * Inline list.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list--inline();
+ * @include o-list--inline('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ul class="o-list  o-list--inline">
+ *   <li class="o-list__item">
+ *     List Item Content
+ *   </li>
+ * </ul>
+ * ```
+ */
+@mixin o-list--inline($at-breakpoint: null) {
+  @include breakpoints('o-list--inline', $at-breakpoint) {
+    > .o-list__item {
+      display: inline-block;
+    }
+  }
+}

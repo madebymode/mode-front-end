@@ -1,0 +1,9 @@
+/**
+ * Polyfill object-fit and object-position.
+ * @see https://github.com/bfred-it/object-fit-images
+ * @param  {String}  $value
+ */
+@mixin object-fit($value: 'cover') {
+  object-fit: #{$value};
+  font-family: 'object-fit: #{$value};';
+}

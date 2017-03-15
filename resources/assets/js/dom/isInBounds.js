@@ -1,9 +1,7 @@
 module.exports = (function() {
   /**
    * Check whether an element is inside the visible bounds of another element.
-   *
-   * Based on `isElementInViewport`: http://stackoverflow.com/a/7557433/1786459
-   *
+   * @see http://stackoverflow.com/a/7557433/1786459
    * @param  {Element}  el
    * @param  {Element}  parent
    * @return {Boolean}

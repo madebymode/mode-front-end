@@ -1,3 +1,18 @@
+// TODO: Make `u-position` an overloaded method, else make multiple position classes.
+/**
+ * Assign common position values.
+ * @param  {String}  $alias
+ */
+// @mixin u-position($alias: 'cover') {
+//   @if ($alias == 'cover') {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//   }
+// }
+
 /**
  * Fluid position utilities
  *

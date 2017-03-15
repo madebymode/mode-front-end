@@ -1,0 +1,45 @@
+/*doc
+---
+title: Media
+name: media
+category: Objects
+---
+
+```html_example
+<div class="o-media  o-media--center">
+  <figure class="o-media__figure">
+    <img src="http://placehold.it/200" alt="">
+  </figure>
+  <p class="o-media__body">
+    Lorem ipsum Do voluptate deserunt dolor sunt nostrud magna sunt Excepteur ut eiusmod amet adipisicing.
+  </p>
+</div>
+```
+*/
+
+/**
+ * Flexible media objects.
+ * @see https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-media($at-breakpoint: null) {
+  $class-name: 'o-media';
+  @include breakpoints($class-name, $at-breakpoint) {
+    display: flex;
+    align-items: flex-start;
+
+    > .o-media__figure {
+      flex: 0 1 auto;
+    }
+
+    > .o-media__body {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+// Examples:
+
+// @include o-media();
+// @include o-media('sm');
+// @include o-media('lt-sm');

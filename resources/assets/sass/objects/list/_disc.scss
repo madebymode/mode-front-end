@@ -1,0 +1,31 @@
+/**
+ * Bulleted list with default disc style.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list--disc();
+ * @include o-list--disc('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ul class="o-list  o-list--disc">
+ *   <li class="o-list__item">
+ *     List Item Content
+ *   </li>
+ * </ul>
+ * ```
+ */
+@mixin o-list--disc($at-breakpoint: null) {
+  @include breakpoints('o-list--disc', $at-breakpoint) {
+    padding-left: 1.125em;
+    list-style: disc;
+
+    > .o-list__item {
+      padding-bottom: em(6);
+    }
+  }
+}

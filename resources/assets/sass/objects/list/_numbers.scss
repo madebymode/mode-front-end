@@ -1,0 +1,38 @@
+/**
+ * Numbered list.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list--numbers();
+ * @include o-list--numbers('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ol class="o-list  o-list--numbers">
+ *   <li class="o-list__item">
+ *     <p class="o-list__counter">
+ *       List Item Heading
+ *     </p>
+ *     <p class="o-list__content">
+ *       List Item Content
+ *     </p>
+ *   </li>
+ * </ol>
+ * ```
+ */
+@mixin o-list--numbers($at-breakpoint: null) {
+  @include breakpoints('o-list--numbers', $at-breakpoint) {
+    > .o-list__item {
+      counter-increment: list-numbers;
+    }
+
+    .o-list__counter::before {
+      display: inline-block;
+      content: counter(list-numbers) '. ';
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/**
+ * Section object.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-section();
+ * @include o-section('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <section class="o-section">
+ *   <h1>Section Heading</h1>
+ *   <p>Section copy.</p>
+ * </section>
+ * ```
+ */
+@mixin o-section($at-breakpoint: null) {
+  @include breakpoints('o-section', $at-breakpoint) {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

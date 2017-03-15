@@ -1,0 +1,40 @@
+/**
+ * Numbered list with Roman numerals.
+ * @param  {String}  $at-breakpoint
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include o-list--numbers-roman();
+ * @include o-list--numbers-roman('sm');
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <ol class="o-list  o-list--numbers-roman">
+ *   <li class="o-list__item">
+ *     <p class="o-list__counter">
+ *       List Item Heading
+ *     </p>
+ *     <p class="o-list__content">
+ *       List Item Content
+ *     </p>
+ *   </li>
+ * </ol>
+ * ```
+ */
+@mixin o-list--numbers-roman($at-breakpoint: null) {
+  @include breakpoints('o-list--numbers-roman', $at-breakpoint) {
+    > .o-list__item {
+      margin-left: em(20);
+      counter-increment: list-numbers-roman;
+
+      &::before {
+        display: inline-block;
+        margin-right: em(5);
+        content: counter(list-numbers-roman, lower-roman) '. ';
+      }
+    }
+  }
+}

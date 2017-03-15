@@ -1,0 +1,24 @@
+// Reset font size (useful for headings)
+.u-font-size-100\% {
+  font-size: 100%;
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+.u-font-size-100\%\@lt-md {
+  @include mq('lt-md') {
+    font-size: 100%;
+  }
+}
+
+// Min-width
+.u-font-size-100\%\@md {
+  @include mq('md') {
+    font-size: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+/**
+ * Global breakpoints for your application.
+ * @type {Map}
+ *
+ * NOTE: Always set the `em` context to 16 when you're using them for media
+ * queries. Otherwise, if you change `$font-size` you'll get wonky values that
+ * technically work but aren't what you wanted.
+ *
+ * TODO: Would using px values for aliases lend to better practice? E.g.,
+ * `u-width-1/2@620` makes it more obvious that you can create queries as
+ * needed, not only base them around common device sizes.
+ */
+$breakpoints: (
+  xs: em(320, 16),
+  sm: em(480, 16),
+  md: em(768, 16),
+  lg: em(980, 16),
+  xl: em(1200, 16)
+) !default;
+
+/**
+ * Functional breakpoint aliases.
+ * @type {String}
+ */
+$bp-sidebar-layout: 'lg' !default;

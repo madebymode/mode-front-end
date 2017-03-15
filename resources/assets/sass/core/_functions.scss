@@ -1,0 +1,36 @@
+// Required variables
+$font-size: 16 !default; // Define in `settings/typography`
+
+/**
+ * Convert px values (e.g. from a PSD) to ems.
+ * @see http://viljamis.com/blog/2013/prototyping-responsive-typography/
+ * @param  {Number}  $pixels
+ * @param  {Number}  $context  Defaults to $font-size
+ * @return {Number}            em value
+ */
+@function em($pixels, $context: $font-size) {
+  // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
+  // @return strip-units($pixels) / strip-units($context) * 1em;
+  @return $pixels / $context * 1em;
+}
+
+/**
+ * Convert px values (e.g. from a PSD) to rems.
+ * @see http://viljamis.com/blog/2013/prototyping-responsive-typography/
+ * @param  {Number}  $pixels
+ * @return {Number}           rem value
+ */
+@function rem($pixels) {
+  // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
+  // @return strip-units($pixels) / strip-units($font-size) * 1rem;
+  @return $pixels / $font-size * 1rem;
+}
+
+/**
+ * Convert tracking (e.g. from a PSD) to ems for letter-spacing.
+ * @param  {Number} $tracking
+ * @return {Number}            em value
+ */
+@function tracking($tracking) {
+  @return ($tracking / 1000) * 1em;
+}

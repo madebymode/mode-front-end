@@ -1,0 +1,13 @@
+@include u-max-width(640);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-max-width(640, 'lt-md');
+
+// Min-width
+@include u-max-width(640, 'md');

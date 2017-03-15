@@ -2,7 +2,7 @@ module.exports = (function() {
   /**
    * Is value an array?
    * Based on AngularJS's `isArray` function as documented here:
-   * https://www.binpress.com/tutorial/angular-js-looking-under-the-hood/153
+   * @see https://www.binpress.com/tutorial/angular-js-looking-under-the-hood/153
    * @param  {mixed}
    * @return {Boolean}
    */

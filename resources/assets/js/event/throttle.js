@@ -1,7 +1,7 @@
 module.exports = (function() {
   /**
    * Throttle functions by a given number of milliseconds.
-   * From https://remysharp.com/2010/07/21/throttling-function-calls
+   * @see https://remysharp.com/2010/07/21/throttling-function-calls
    * @param  {Function}  fn
    * @param  {Number}    threshhold
    * @param  {Function}  scope

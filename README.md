@@ -1,39 +1,53 @@
-# MODE Front-end
+# MODE Front-End
 
-[![Stories in Ready](https://badge.waffle.io/tannerhodges/mode-front-end.png?label=ready&title=Ready)](https://waffle.io/tannerhodges/mode-front-end)
+MODE’s front-end toolkit. Heavily influenced by [@csswizardy](http://csswizardry.com/)’s [inuitcss](https://github.com/inuitcss/inuitcss) framework.
 
-MODE's front-end toolkit
+## Install
 
 ```
-# Install mode-front-end
-npm install --save-dev mode-front-end
-# Install dependencies
-npm install --save-dev browserify browserify-shim gulp gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore
-# Copy starter files to project
-## System files
-cp node_modules/mode-front-end/.editorconfig .editorconfig
-cp node_modules/mode-front-end/.gitignore .gitignore
-cp node_modules/mode-front-end/.jshintrc .jshintrc
-cp node_modules/mode-front-end/.scss-lint.yml .scss-lint.yml
-## Gulp
-cp node_modules/mode-front-end/gulpfile.js gulpfile.js
-## Assets
-mkdir -p resources/
-rsync -avz node_modules/mode-front-end/example/assets/ resources/assets/
+yarn add mode-front-end
+npm run init-config --prefix ./node_modules/mode-front-end
 ```
 
-## Includes
+The `init-config` script will install the following in your project root:
 
-- EditorCongif
-- scss-lint config
-- Gulp build (using Laravel Elixir)
-- Base Sass files
-- Base JS (at least, an example JS file)
-- Example preview page
+- [EditorCongif](http://editorconfig.org/)
+- [JSHint config](https://github.com/jshint/jshint)
+- [scss-lint config](https://github.com/brigade/scss-lint)
+
+### Starter Kit
+
+```
+npm run init-starter-kit --prefix ./node_modules/mode-front-end
+```
+
+### Gulp Tasks (via [Elixir](http://laravel.com/docs/elixir))
+
+```
+yarn add gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack
+npm run init-gulp --prefix ./node_modules/mode-front-end
+```
+
+## TODO
+
+- [ ] Starter kit
+- [ ] Document modules
+- [ ] Switch from [scss-lint]() to either [sass-lint](https://github.com/sasstools/sass-lint) or [stylelint](https://stylelint.io/).
+
+## Features
+
+```
+yarn add fontfaceobserver
+yarn add lazysizes
+yarn add object-fit-images
+yarn add picturefill
+yarn add svg4everybody
+yarn add viewport-units-buggyfill
+```
 
 ## Sass
 
-Import `common.scss` into your app's stylesheet:
+Import `common.scss` into your app’s stylesheet:
 
 ```
 @import '../../../node_modules/mode-front-end/resources/assets/sass/common';
@@ -41,11 +55,11 @@ Import `common.scss` into your app's stylesheet:
 @include css-reset;
 ```
 
-**Note**: This path assumes you're stylesheet is in `resources/assets/sass/`.
+**Note**: This path assumes you’re stylesheet is in `resources/assets/sass/`.
 
 ### Variables Needed
 
-- `$breakpoints`: Used by `mq` and `breakpoints` in `base/_responsive.scss`.
+- `$breakpoints`: Used by `mq` and `breakpoints` in `tools/_responsive.scss`.
   Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
   16), xl: em(1200, 16) )`.
 - `$font-size`: Used by `em` in `functions/_typography.scss`. Defaults to `16`.
@@ -66,6 +80,7 @@ Import `common.scss` into your app's stylesheet:
     - `str-replace($string, $search, [$replace])`
 - Fonts
     - `em($pixels, [$context])`
+    - `rem($pixels)`
     - `tracking($tracking)`
 
 ### Mixins
@@ -102,12 +117,31 @@ Import `common.scss` into your app's stylesheet:
 - `o-icon([$at-breakpoint])`
 - `o-icon--size($width, $height, [$at-breakpoint])`
 - `o-grid([$at-breakpoint])`
-- `o-grid__item([$at-breakpoint])`
+  - `.o-grid`
+  - `.o-grid__item`
 - `o-grid--gutters($alias, $size, [$at-breakpoint])`
+- `o-list([$at-breakpoint])`
+  - `.o-list`
+  - `.o-list__item`
+  - `.o-list__counter`
+  - `.o-list__content`
+- `o-list--bullets([$at-breakpoint])`
+- `o-list--commas([$at-breakpoint])`
+- `o-list--disc([$at-breakpoint])`
+- `o-list--inline([$at-breakpoint])`
+- `o-list--leading([$at-breakpoint-zero])`
+- `o-list--numbers([$at-breakpoint-roman])`
+- `o-list--numbers([$at-breakpoint])`
+- `o-list--slashes([$at-breakpoint])`
 - `o-media([$at-breakpoint])`
     - `.o-media`
     - `.o-media__figure`
     - `.o-media__body`
+- `o-section([$at-breakpoint])`
+
+#### Components
+
+- `c-browser-upgrade()`
 
 #### Utilities
 
@@ -161,12 +195,6 @@ Import `common.scss` into your app's stylesheet:
 
 ### Classes
 
-- `.o-grid`
-    - `.o-grid__item`
-    - `.o-grid--flex`
-    - `.o-grid--float`
-    - `.o-grid--table`
-- `.o-section`
 - `.u-object-fit-cover`
 - `.u-transform-center`
 
@@ -260,10 +288,9 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 
 ## TODOs
 
-- Better setup (e.g., single command to run like `mode-front-end init`)
+- Better setup
     - Update example files
     - Move resources to root directory (avoid really long paths in includes)
-    - Make normalize and reset optional via mixins
     - Drop Elixir as a dependency (use generic, reusable gulp tasks instead)
 - Document each mixin with examples
 - Add markup partials (e.g., ZorroSVG)

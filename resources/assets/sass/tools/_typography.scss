@@ -1,0 +1,15 @@
+/**
+ * Font smoothing on OS X.
+ * @see https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+ * @param  {Boolean}  $value
+ * @return {[type]}
+ */
+@mixin font-smoothing($is_bold: false) {
+  @if $is_bold {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  } @else {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}

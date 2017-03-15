@@ -1,7 +1,7 @@
 module.exports = (function() {
   /**
    * Extend a JavaScript object
-   * https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/
+   * @see https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/
    * @param  {Object} obj
    * @param  {Object} src
    * @return {Object}

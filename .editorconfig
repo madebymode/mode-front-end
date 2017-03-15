@@ -9,5 +9,8 @@ insert_final_newline = true
 [*.php]
 indent_size = 4
 
+[*.{html,blade.php}]
+indent_size = 2
+
 [*.{js,scss}]
 indent_size = 2

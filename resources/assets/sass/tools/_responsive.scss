@@ -1,0 +1,92 @@
+/**
+ * Generate media queries based on a map of `$breakpoints`. Defaults to
+ * mobile- first, min-width queries. But you can use prefixes for other
+ * queries. E.g. `lt-` makes `max-width` queries (and automatically removes
+ * 1px to avoid query overlap). Based on Inuit's responsive tools.
+ * @see https://github.com/inuitcss/settings.responsive/blob/master/_settings.responsive.scss
+ * @see https://github.com/inuitcss/tools.responsive/blob/master/_tools.responsive.scss
+ * @param  {String}  $breakpoint-name
+ *
+ * NOTE: `$breakpoints` is defined in `resources/assets/sass/settings/_breakpoints.scss`
+ *
+ * TODO: How to handle query ranges? E.g., `btwn-*-and-*` prefix for min+max queries.
+ * TODO: Consider switching to https://github.com/sass-mq/sass-mq
+ */
+@mixin mq($breakpoint-name) {
+  // Modifier prefixes
+  $prefixes: (
+    'lt-'
+  );
+  $prefix: null;
+
+  // Check if $breakpoint-name starts with a prefix
+  @each $x-prefix in $prefixes {
+    @if not $prefix and str-index($breakpoint-name, $x-prefix) {
+      // @debug '#{$breakpoint-name} is using the #{$x-prefix} prefix';
+      $prefix: $x-prefix;
+    }
+  }
+
+  // Strip prefix from $breakpoint-name
+  @if $prefix {
+    $breakpoint-name: str-slice($breakpoint-name, str-length($prefix) + 1);
+    // @debug 'Found #{$prefix}, so $breakpoint-name is now #{$breakpoint-name}';
+  }
+
+  // Now make sure breakpoint exists
+  @if not map-has-key($breakpoints, $breakpoint-name) {
+    @error 'Oops! Breakpoint ‘#{$breakpoint-name}’ does not exist.'
+  }
+
+  $breakpoint: map-get($breakpoints, $breakpoint-name);
+
+  // Default: mobile-first, min-width queries
+  @if not $prefix {
+
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+
+  // Max-width queries start with the `lt-` prefix
+  } @else if $prefix == 'lt-' {
+
+    // @debug 'Breakpoint is #{$breakpoint}';
+
+    // Subtract 1px from $breakpoint so min/max queries don't overlap
+    @if type-of($breakpoint) != 'number' {
+      @error 'Breakpoints must be a number value. "#{$breakpoint}" is not a valid number.'
+    } @else if unit($breakpoint) == 'em' {
+      $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
+    } @else if unit($breakpoint) == 'px' {
+      $breakpoint: $breakpoint - 1px;
+    } @else {
+      @error 'Breakpoints must be in em or px. "#{$breakpoint-name}" is currently #{$breakpoint}.'
+    }
+
+    @media (max-width: #{$breakpoint}) {
+      @content;
+    }
+
+  } @else {
+    @error 'What devilry is this? Somehow you managed to make a media query for an undefined prefix, "#{$prefix}".'
+  }
+}
+
+/**
+ * Mixin to generate breakpoint-specific classes.
+ * @param  {Map}     $params
+ * @param  {String}  $at-breakpoint
+ */
+@mixin breakpoints($name, $at-breakpoint: null) {
+  @if ($at-breakpoint) {
+    @include mq($at-breakpoint) {
+      .#{$name}\@#{$at-breakpoint} {
+        @content;
+      }
+    }
+  } @else {
+    .#{$name} {
+      @content;
+    }
+  }
+}
