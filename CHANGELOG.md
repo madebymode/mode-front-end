@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.2] - 2017-03-16
+
+### Changed
+
+- Remove default display/position from `.o-grid__item`
+- Update changelog notes w/ footnote links
+- Update todos in readme
+
 ## [1.0.0] - 2017-03-15
 
 ### Added
@@ -66,6 +74,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
 [Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...HEAD
+[1.0.2]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...v1.0.2
 [1.0.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.41.0...v1.0.0
 [0.41.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.31.0...v0.41.0
 [0.31.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.27.0...v0.31.0
