@@ -1,35 +1,38 @@
 /**
- * Block list separated by borders.
+ * Inline list separated by slashes.
  * @param  {String}  $at-breakpoint
  *
  * ## Sass
  *
  * ```scss
- * @include o-list--borders('', '1px solid #000');
- * @include o-list--borders('', '1px solid #000', 'sm');
+ * @include o-list--slashes();
+ * @include o-list--slashes('sm');
  * ```
  *
  * ## Markup
  *
  * ```html
- * <ul class="o-list  o-list--borders">
+ * <ul class="o-list  o-list--slashes">
+ *   <li class="o-list__item">
+ *     List Item Content
+ *   </li>
+ *   <li class="o-list__item">
+ *     List Item Content
+ *   </li>
  *   <li class="o-list__item">
  *     List Item Content
  *   </li>
  * </ul>
  * ```
  */
-// TODO: Allow directional aliases (like margin and padding utilities)
-@mixin o-list--borders($alias, $value, $at-breakpoint: null) {
-  $class-name: 'o-list--borders';
-
-  @if ($alias and str-length($alias) > 0) {
-    $class-name: '#{$class-name}-#{$alias}';
-  }
-
-  @include breakpoints($class-name, $at-breakpoint) {
-    > .o-list__item:not(:first-child) {
-      border-top: #{$value};
+@mixin o-list--slashes($at-breakpoint: null) {
+  @include breakpoints('o-list--slashes', $at-breakpoint) {
+    > .o-list__item {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    > .o-list__item:not(:last-child)::after {
+      content: '/';
     }
   }
 }
