@@ -6,15 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.1.0] - 2017-03-21
+
 ### Fixed
 
 - Fix legacy grid item mixin in starter kit
 - Fix broken list imports
+- Fix starter SVG sprite task failing (move starter SVGs to `global` folder)
 
 ### Added
 
 - Syntax highlighting in README
 - Add example markup to starter kit (replaces default Laravel welcome view)
+- Add more utility helpers (e.g., display) to starter kit
 - `@icon` Blade helper (see install notes in `resources/views/elements/icon.blade.php`)
 
 ### Changed
@@ -99,6 +103,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
 [Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...HEAD
+[1.1.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.1.0...v1.1.0
+[1.0.3]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...v1.0.2
 [1.0.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.41.0...v1.0.0
 [0.41.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.31.0...v0.41.0
