@@ -1,6 +1,9 @@
 @include u-display('none');
+@include u-display('inline-block');
+@include u-display('block');
 @include u-display('flex');
 
+@include u-visually-hidden();
 
 
 // ------------------------------
@@ -9,8 +12,22 @@
 
 // Max-width
 @include u-display('none', 'lt-md');
+@include u-display('inline-block', 'lt-md');
+@include u-display('block', 'lt-md');
 @include u-display('flex', 'lt-md');
 
+@include u-display('none', 'lt-sm');
+@include u-display('inline-block', 'lt-sm');
+@include u-display('block', 'lt-sm');
+@include u-display('flex', 'lt-sm');
+
 // Min-width
+@include u-display('none', 'sm');
+@include u-display('inline-block', 'sm');
+@include u-display('block', 'sm');
+@include u-display('flex', 'sm');
+
 @include u-display('none', 'md');
+@include u-display('inline-block', 'md');
+@include u-display('block', 'md');
 @include u-display('flex', 'md');
