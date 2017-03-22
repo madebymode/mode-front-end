@@ -4,7 +4,7 @@ MODE’s front-end toolkit. Heavily influenced by [@csswizardy](http://csswizard
 
 ## Install
 
-```
+```bash
 yarn add mode-front-end
 npm run init-config --prefix ./node_modules/mode-front-end
 ```
@@ -17,7 +17,7 @@ The `init-config` script will install the following in your project root:
 
 ### Starter Kit
 
-```
+```bash
 npm run init-starter-kit --prefix ./node_modules/mode-front-end
 ```
 
@@ -28,9 +28,9 @@ yarn add gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin l
 npm run init-gulp --prefix ./node_modules/mode-front-end
 ```
 
-## Features
+### Other Common Packages
 
-```
+```bash
 yarn add fontfaceobserver
 yarn add lazysizes
 yarn add object-fit-images
@@ -43,7 +43,7 @@ yarn add viewport-units-buggyfill
 
 Import `common.scss` into your app’s stylesheet:
 
-```
+```scss
 @import '../../../node_modules/mode-front-end/resources/assets/sass/common';
 @include css-normalize;
 @include css-reset;
@@ -196,7 +196,7 @@ Import `common.scss` into your app’s stylesheet:
 
 Use namespacing to require helper functions in your application:
 
-```
+```js
 var dom = require('mode-front-end/resources/assets/js/dom');
 ```
 
