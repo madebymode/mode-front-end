@@ -16,11 +16,11 @@
 // ------------------------------
 
 // Max-width
-@include u-flex-wrap('nowrap', 'lt-md');
-@include u-align-items('center', 'lt-md');
-@include u-justify-content('center', 'lt-md');
+@include u-flex-wrap('nowrap', 'lt-sm');
+@include u-align-items('center', 'lt-sm');
+@include u-justify-content('center', 'lt-sm');
 
 // Min-width
-@include u-flex-wrap('nowrap', 'md');
-@include u-align-items('center', 'md');
-@include u-justify-content('center', 'md');
+@include u-flex-wrap('nowrap', 'sm');
+@include u-align-items('center', 'sm');
+@include u-justify-content('center', 'sm');

@@ -10,15 +10,15 @@
 // ------------------------------
 
 // Max-width
-.u-font-size-100\%\@lt-md {
-  @include mq('lt-md') {
+.u-font-size-100\%\@lt-sm {
+  @include mq('lt-sm') {
     font-size: 100%;
   }
 }
 
 // Min-width
-.u-font-size-100\%\@md {
-  @include mq('md') {
+.u-font-size-100\%\@sm {
+  @include mq('sm') {
     font-size: 100%;
   }
 }

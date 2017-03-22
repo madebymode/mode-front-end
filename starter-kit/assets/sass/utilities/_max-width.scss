@@ -7,7 +7,7 @@
 // ------------------------------
 
 // Max-width
-@include u-max-width(640, 'lt-md');
+@include u-max-width(640, 'lt-sm');
 
 // Min-width
-@include u-max-width(640, 'md');
+@include u-max-width(640, 'sm');

@@ -10,7 +10,7 @@
 // ------------------------------
 
 // Max-width
-@include u-margin('horizontal-auto', 'auto', 'lt-md');
+@include u-margin('horizontal-auto', 'auto', 'lt-sm');
 
 // Min-width
-@include u-margin('horizontal-auto', 'auto', 'md');
+@include u-margin('horizontal-auto', 'auto', 'sm');
