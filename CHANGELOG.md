@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix legacy grid item mixin in starter kit
+- Fix broken list imports
+
+### Added
+
+- Syntax highlighting in README
+- Add example markup to starter kit (replaces default Laravel welcome view)
+
+### Changed
+
+- Replace starter kit SVGs with single MODE logo file
+
+### Removed
+
+- Delete unused `svg-mask` images
+
 ## [1.0.3] - 2017-03-21
 
 ### Added
@@ -18,7 +36,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Remove default display/position from `.o-grid__item`
 - Update changelog notes w/ footnote links
-- Update todos in readme
+- Update todos in README
 
 ## [1.0.0] - 2017-03-15
 
