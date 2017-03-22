@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.3] - 2017-03-21
+
+### Added
+
+- `o-list` mixins
+
 ## [1.0.2] - 2017-03-16
 
 ### Changed
