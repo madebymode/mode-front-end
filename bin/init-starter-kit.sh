@@ -15,6 +15,8 @@ PATH_TO_ROOT='../..';
 mkdir -p "$PATH_TO_ROOT/resources/assets/"
 rsync -avz "$PATH_TO_FILES/starter-kit/assets/" "$PATH_TO_ROOT/resources/assets/"
 echo "✔ Copied resources/assets/";
+cp "$PATH_TO_FILES/resources/views/pages/index.php" "$PATH_TO_ROOT/resources/views/welcome.blade.php"
+echo "✔ Copied resources/views/welcome.blade.php";
 
 echo "";
 echo "Success!";
