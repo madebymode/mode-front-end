@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Syntax highlighting in README
 - Add example markup to starter kit (replaces default Laravel welcome view)
+- `@icon` Blade helper (see install notes in `resources/views/elements/icon.blade.php`)
 
 ### Changed
 

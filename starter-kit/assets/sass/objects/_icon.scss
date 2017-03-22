@@ -1,0 +1,16 @@
+@include o-icon();
+
+// Sizes
+@include o-icon--size(70, 70);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+// @include o-icon--size(70, 70, 'lt-sm');
+
+// Min-width
+// @include o-icon--size(70, 70, 'sm');

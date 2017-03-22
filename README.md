@@ -244,7 +244,7 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 - `Visibility`
 - `window`
 
-## Event
+### Event
 
 - `animationEvents`
 - `clearStack`
@@ -253,30 +253,36 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 - `throttle`
 - `transitionEvents`
 
-## General
+### General
 
 - `menuAim`
 
-## HTTP
+### HTTP
 
 - `ajax`
 
-## Object
+### Object
 
 - `extend`
 
-## Shim
+### Shim
 
 - `requestAnimationFrame`
 
-## Typography
+### Typography
 
 - `balanceText`
 - `shorten`
 
-## Video
+### Video
 
 - `youTubeReady`
+
+## Laravel
+
+### Blade Helpers
+
+- `@icon` (see install notes in `resources/views/elements/icon.blade.php`)
 
 ---
 
