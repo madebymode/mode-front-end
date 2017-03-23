@@ -45,7 +45,8 @@
  * @icon('mode-logo', [
  *   'sprite' => 'global',
  *   'class' => 'u-display-block  /  u-text-align-center',
- *   'attributes' => ['data-name' => 'Example Icon']
+ *   'sprite_path' => 'path/to/sprites',
+ *   'attributes' => ['data-name' => 'Example Icon'],
  * ])
  * ```
  *
@@ -60,17 +61,47 @@
  *
  * - $class
  * - $attributes
+ * - $sprite_path
  */
 
-$class = empty($class) ? [] : [$class];
-array_unshift($class, 'o-icon  o-icon--' . $icon);
-$class = implode('  /  ', $class);
+
+$_icon_id = implode('-', ['svg', $icon, uniqid()]);
+$_sprite_path = '/img/svg/sprites';
+
+// allow overriding the default sprite path
+if (!empty($sprite_path)) {
+  $_sprite_path = $sprite_path;
+}
 
 $attributes = empty($attributes) ? [] : $attributes;
-$attributes = implode(' ', $attributes);
+if (empty($attributes['class'])) {
+  $attributes['class'] = [];
+}
 
-?><i class="{{ $class }}" {!! $attributes !!}>
+// ensure the class attribute is an array
+if (!is_array($attributes['class'])) {
+  $attributes['class'] = [$attributes['class']];
+}
+
+// Sprite
+$sprite = empty($sprite) ? 'global' : $sprite;
+
+// Class
+// class attribute gets merged with a class key on the attributes key.
+// this allows all HTML attributes to be rendered with the renderAttributes helper
+$class = empty($class) ? [] : [$class];
+$attributes['class'] = array_merge($class, $attributes['class']);
+array_unshift($attributes['class'], 'o-icon  o-icon--' . pathinfo($icon, PATHINFO_FILENAME));
+
+// convert the class array to a string
+$attributes['class'] = implode(" ", $attributes['class']);
+?>
+<i{!! renderAttributes($attributes) !!}>
+  @if (!empty($source))
+  {!! $source !!}
+  @else
   <svg>
-    <use xlink:href="{{ asset('img/svg/sprites/' . $sprite . '.svg') . '#' . $icon }}"></use>
+    <use xlink:href="{{ $_sprite_path }}/{{ $sprite }}.svg#{{ $icon }}"></use>
   </svg>
+  @endif
 </i>
