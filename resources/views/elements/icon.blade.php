@@ -1,34 +1,22 @@
 <?php
 /**
- * ## App Config
+ * ## Install
  *
- * In `config/app.php`:
+ * Make sure you've updated your `composer.json` to autoload MODE Front-End's PHP helpers (see README.md for details).
+ *
+ * In `config/app.php`, add the `IconServiceProvider`:
  *
  * ```php
  * // Application Service Providers...
  * App\Providers\IconServiceProvider::class,
  * ```
  *
- * In `composer.json`:
- *
- * ```php
- * "autoload": {
- *     "files": [
- *         "app/Support/helpers.php"
- *     ]
- * }
- * ```
- *
- * Then copy the helper functions, the service provider, and update the autoloader:
+ * Then copy the service provider and the template and update the autoloader:
  *
  * ```bash
  * # Provider
  * cp node_modules/mode-front-end/laravel/Providers/IconServiceProvider.php app/Providers/IconServiceProvider.php
- * # Helper
- * mkdir -p app/Support/helpers
- * cp node_modules/mode-front-end/laravel/Support/helpers.php app/Support/helpers.php
- * cp node_modules/mode-front-end/laravel/Support/helpers/icon.php app/Support/helpers/icon.php
- * # View
+ * # Template
  * mkdir -p resources/views/elements
  * cp node_modules/mode-front-end/resources/views/elements/icon.blade.php resources/views/elements/icon.blade.php
  * # Autoloader
@@ -43,11 +31,14 @@
  *
  * Example with verbose options:
  * @icon('mode-logo', [
- *   'sprite' => 'global',
- *   'class' => 'u-display-block  /  u-text-align-center',
+ *   'sprite'      => 'global',
  *   'sprite_path' => 'path/to/sprites',
- *   'attributes' => ['data-name' => 'Example Icon'],
+ *   'class'       => 'u-display-block  /  u-text-align-center',
+ *   'attributes'  => ['data-name' => 'Example Icon'],
  * ])
+ *
+ * Example with inline source:
+ * @icon('/img/svg/mode-logo.svg')
  * ```
  *
  * ## Variables
@@ -59,49 +50,25 @@
  *
  * Optional:
  *
+ * - $sprite_path
  * - $class
  * - $attributes
- * - $sprite_path
+ * - $source
  */
 
+// PRIVATE
+// $_icon_id = implode('-', ['svg', $icon, uniqid()]);
 
-$_icon_id = implode('-', ['svg', $icon, uniqid()]);
-$_sprite_path = '/img/svg/sprites';
-
-// allow overriding the default sprite path
-if (!empty($sprite_path)) {
-  $_sprite_path = $sprite_path;
-}
-
-$attributes = empty($attributes) ? [] : $attributes;
-if (empty($attributes['class'])) {
-  $attributes['class'] = [];
-}
-
-// ensure the class attribute is an array
-if (!is_array($attributes['class'])) {
-  $attributes['class'] = [$attributes['class']];
-}
-
-// Sprite
+// DEFAULTS
 $sprite = empty($sprite) ? 'global' : $sprite;
+$sprite_path = empty($sprite_path) ? '/img/svg/sprites' : $sprite_path;
+$class = 'o-icon  o-icon--' . pathinfo($icon, PATHINFO_FILENAME) . (empty($class) ? '' : $class);
 
-// Class
-// class attribute gets merged with a class key on the attributes key.
-// this allows all HTML attributes to be rendered with the renderAttributes helper
-$class = empty($class) ? [] : [$class];
-$attributes['class'] = array_merge($class, $attributes['class']);
-array_unshift($attributes['class'], 'o-icon  o-icon--' . pathinfo($icon, PATHINFO_FILENAME));
+// OPTIONS
+$attributes = empty($attributes) ? [] : $attributes;
+$attributes['class'] = empty($attributes['class']) ? $class : ($class . ' ' . $attributes['class']);
 
-// convert the class array to a string
-$attributes['class'] = implode(" ", $attributes['class']);
-?>
-<i{!! renderAttributes($attributes) !!}>
-  @if (!empty($source))
-  {!! $source !!}
-  @else
-  <svg>
-    <use xlink:href="{{ $_sprite_path }}/{{ $sprite }}.svg#{{ $icon }}"></use>
-  </svg>
-  @endif
-</i>
+// OUTPUT
+echo '<i' . render_attributes($attributes) . '>';
+echo !empty($source) ? $source : '<svg><use xlink:href="' . $sprite_path . '/' . $sprite . '.svg#' . $icon . '"></use></svg>';
+echo '</i>';

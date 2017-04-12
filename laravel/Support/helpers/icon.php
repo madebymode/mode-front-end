@@ -2,6 +2,10 @@
 
 if (!function_exists('icon')) {
 
+// TODO: Either remove dependence on Laravel helpers or include core fallbacks:
+// - base_path
+// - view
+
     /**
      * Render icons.
      * @param  string  $name
@@ -13,8 +17,7 @@ if (!function_exists('icon')) {
         $data['sprite'] = empty($data['sprite']) ? 'global' : $data['sprite'];
         $data['icon'] = $name;
 
-        // check if the name contains the base path. If so, assume it's the full path
-        // to a file and load it's source.
+        // Load the file's source when `$name` contains the full path of a file
         if (stripos($name, base_path()) !== false && file_exists($name)) {
             $data['source'] = file_get_contents($name);
         }
