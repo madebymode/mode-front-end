@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.2.0] - 2017-04-12
+
+### Added
+
+- PHP helpers:
+  - `render_attributes`
+  - `asset_url`
+  - `fix_widows`
+
+### Changed
+
+- Simplify icon helper
+- Make `$name` required for icon helper
+- Use `snake_case` for PHP helper methods
+
 ## [1.1.0] - 2017-03-21
 
 ### Fixed
@@ -102,8 +117,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible).
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
-[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...HEAD
-[1.1.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.1.0...v1.1.0
+[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.3...v1.1.0
 [1.0.3]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...v1.0.2
 [1.0.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.41.0...v1.0.0
