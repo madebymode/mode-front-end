@@ -32,7 +32,7 @@
  * Example with verbose options:
  * @icon('mode-logo', [
  *   'sprite'      => 'global',
- *   'sprite_path' => 'path/to/sprites',
+ *   'sprite_path' => '/img/svg/sprites',
  *   'class'       => 'u-display-block  /  u-text-align-center',
  *   'attributes'  => ['data-name' => 'Example Icon'],
  * ])
