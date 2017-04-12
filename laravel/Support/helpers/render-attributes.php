@@ -1,7 +1,7 @@
 <?php
 
-if (!function_exists('renderAttributes')) {
-    function renderAttributes(array $attrs, $prefix = '') {
+if (!function_exists('render_attributes')) {
+    function render_attributes(array $attrs, $prefix = '') {
 
         if (empty($attrs)) {
             return '';
