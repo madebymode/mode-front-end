@@ -290,8 +290,6 @@ To use the laravel helpers, update the "autoload" key in your composer.json file
 
 ### Blade Helpers
 
-
-
 - `@icon` (see install notes in `resources/views/elements/icon.blade.php`)
 
 ---
