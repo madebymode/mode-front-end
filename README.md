@@ -278,9 +278,9 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 
 - `youTubeReady`
 
-## Laravel
+## PHP
 
-To use the laravel helpers, update the "autoload" key in your composer.json file to include the following files block.
+In your `composer.json`, update the `autoload` key to include the following `files` block:
 
 ```json
 "files": [
@@ -288,7 +288,17 @@ To use the laravel helpers, update the "autoload" key in your composer.json file
 ]
 ```
 
-### Blade Helpers
+### General
+
+- `fix_widows($text, [$minWords])`
+- `render-attributes()`
+
+### Laravel
+
+- `asset_url($src, [$buildDirectory])`
+- `icon($name, [$data])`
+
+### Laravel Blade
 
 - `@icon` (see install notes in `resources/views/elements/icon.blade.php`)
 
