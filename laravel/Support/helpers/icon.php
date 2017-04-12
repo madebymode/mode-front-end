@@ -4,11 +4,11 @@ if (!function_exists('icon')) {
 
     /**
      * Render icons.
-     * @param  string $name
-     * @param  array  $data
+     * @param  string  $name
+     * @param  array   $data
      * @return string
      */
-    function icon($name = '', array $data = [])
+    function icon($name, array $data = [])
     {
         $data['sprite'] = empty($data['sprite']) ? 'global' : $data['sprite'];
         $data['icon'] = $name;
