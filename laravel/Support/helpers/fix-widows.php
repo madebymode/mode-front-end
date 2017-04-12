@@ -1,8 +1,15 @@
 <?php
 
 if (!function_exists('fix_widows')) {
-    function fix_widows($text, $minWords = 2) {
 
+    /**
+     * Fix widows.
+     * @param  string   $text
+     * @param  integer  $minWords
+     * @return string
+     */
+    function fix_widows($text, $minWords = 2)
+    {
         $words = preg_split('/\s+/', $text);
         $textLength = count($words);
 
