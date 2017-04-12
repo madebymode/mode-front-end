@@ -280,6 +280,14 @@ var dom = require('mode-front-end/resources/assets/js/dom');
 
 ## Laravel
 
+To use the laravel helpers, update the "autoload" key in your composer.json file to include the following files block.
+
+```json
+"files": [
+    "./node_modules/mode-front-end/laravel/Support/helpers.php"
+]
+```
+
 ### Blade Helpers
 
 - `@icon` (see install notes in `resources/views/elements/icon.blade.php`)
