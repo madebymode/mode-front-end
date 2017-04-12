@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tannerhodges/mode-front-end.git"
+    "url": "git+https://github.com/madebymode/mode-front-end.git"
   },
   "author": "MODE <developers@madebymode.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tannerhodges/mode-front-end/issues"
+    "url": "https://github.com/madebymode/mode-front-end/issues"
   },
-  "homepage": "https://github.com/tannerhodges/mode-front-end#readme",
+  "homepage": "https://github.com/madebymode/mode-front-end#readme",
   "dependencies": {}
 }
