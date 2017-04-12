@@ -291,7 +291,7 @@ In your `composer.json`, update the `autoload` key to include the following `fil
 ### General
 
 - `fix_widows($text, [$minWords])`
-- `render-attributes()`
+- `render_attributes($attrs, [$prefix])`
 
 ### Laravel
 
