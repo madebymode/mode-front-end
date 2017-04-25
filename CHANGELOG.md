@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.3.0] - 2017-04-25
+
+### Added
+
+- Add `getYouTubeId` helper
+
 ## [1.2.1] - 2017-04-12
 
 ### Changed
