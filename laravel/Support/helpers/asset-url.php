@@ -26,7 +26,7 @@ if (!function_exists('asset_url')) {
     {
         $path = ltrim(str_replace(public_path(), '', public_path($src)), '/');
 
-        $found_in_manifest = false;
+        $foundInManifest = false;
 
         /**
          * 1. Elixir
@@ -37,9 +37,9 @@ if (!function_exists('asset_url')) {
 
                 // Newer versions of Laravel look for an unversioned asset if it's not found in the manifest.
                 // Older versions would just throw the InvalidArgumentException. Here we're making sure the returned
-                // path is within the $buildDirectory directory before setting $found_in_manifest.
+                // path is within the $buildDirectory directory before setting $foundInManifest.
                 if (stripos($path, rtrim($buildDirectory, '/') . '/') !== false) {
-                    $found_in_manifest = true;
+                    $foundInManifest = true;
                 }
 
 
@@ -53,30 +53,30 @@ if (!function_exists('asset_url')) {
          *    Enabling this without the rewrites will result in a 404 for any
          *    assets that use this helper.
          */
-        static $cache_ts = null;
+        static $cacheTs = null;
 
-        if (env('ASSET_CACHE_BUSTING') && is_null($cache_ts)) {
+        if (env('ASSET_CACHE_BUSTING') && is_null($cacheTs)) {
             // Default cache timestamp
-            $cache_ts = time();
+            $cacheTs = time();
 
             // Get timestamp from deploy file if it exists
-            $deploy_ts_file = base_path('.deployts');
-            if (file_exists($deploy_ts_file)) {
-                $cache_ts = trim(file_get_contents($deploy_ts_file));
+            $deployTsFile = base_path('.deployts');
+            if (file_exists($deployTsFile)) {
+                $cacheTs = trim(file_get_contents($deployTsFile));
             }
         }
 
         // Only append timestamp if asset wasn't found in a manifest (Elixir appends its own timestamp)
-        if (!$found_in_manifest && !empty($cache_ts)) {
-            $file_extension = pathinfo($path, PATHINFO_EXTENSION);
-            $path = preg_replace('/(' . preg_quote($file_extension) . ')$/', $cache_ts . '.$1', $path);
+        if (!$foundInManifest && !empty($cacheTs)) {
+            $fileExtension = pathinfo($path, PATHINFO_EXTENSION);
+            $path = preg_replace('/(' . preg_quote($fileExtension) . ')$/', $cacheTs . '.$1', $path);
         }
 
         /**
          * 3. CDN
          */
-        $cdn_domain = rtrim(env('ASSET_CDN_DOMAIN', '/'), '/');
+        $cdnDomain = rtrim(env('ASSET_CDN_DOMAIN', '/'), '/');
 
-        return $cdn_domain . '/' . ltrim($path, '/');
+        return $cdnDomain . '/' . ltrim($path, '/');
     }
 }
