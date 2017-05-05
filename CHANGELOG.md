@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.3.2] - 2017-05-05
+
+### Changed
+
+- `asset_url` helper to correctly check manifest an all versions of Laravel
+
 ## [1.3.0] - 2017-04-25
 
 ### Added
@@ -129,8 +135,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible).
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
-[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.3.0...HEAD
-[1.3.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.1...v1.3.0
+[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.3.2...HEAD
+[1.3.2]: https://github.com/tannerhodges/mode-front-end/compare/v1.3.0...v1.3.2
+[1.3.1]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.1...v1.3.2
 [1.2.1]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.3...v1.1.0
