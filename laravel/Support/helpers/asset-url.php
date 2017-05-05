@@ -41,8 +41,6 @@ if (!function_exists('asset_url')) {
                 if (stripos($path, rtrim($buildDirectory, '/') . '/') !== false) {
                     $foundInManifest = true;
                 }
-
-
             } catch (\InvalidArgumentException $e) {}
         }
 
