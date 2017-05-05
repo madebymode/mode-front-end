@@ -34,7 +34,15 @@ if (!function_exists('asset_url')) {
         if (file_exists(public_path($buildDirectory . '/rev-manifest.json'))) {
             try {
                 $path = elixir($src);
-                $found_in_manifest = true;
+
+                // Newer versions of Laravel look for an unversioned asset if it's not found in the manifest.
+                // Older versions would just throw the InvalidArgumentException. Here we're making sure the returned
+                // path is within the $buildDirectory directory before setting $found_in_manifest.
+                if (stripos($path, rtrim($buildDirectory, '/') . '/') !== false) {
+                    $found_in_manifest = true;
+                }
+
+
             } catch (\InvalidArgumentException $e) {}
         }
 
