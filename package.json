@@ -1,6 +1,6 @@
 {
   "name": "mode-front-end",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "MODE's front-end toolkit",
   "main": "gulpfile.js",
   "scripts": {
