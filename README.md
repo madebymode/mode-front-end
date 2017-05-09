@@ -181,7 +181,7 @@ Import `common.scss` into your app’s stylesheet:
 - `u-text-align($value, [$at-breakpoint])`
 - `u-text-overflow($value, [$at-breakpoint])`
 - `u-text-transform($value, [$at-breakpoint])`
-~~- `u-transform($value, [$at-breakpoint])`~~
+- ~~`u-transform($value, [$at-breakpoint])`~~
 - `u-vertical-align($value, [$at-breakpoint])`
 - `u-visually-hidden([$at-breakpoint])`
 - `u-white-space($value, [$at-breakpoint])`
