@@ -100,7 +100,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 
-- [Remove `o-grid__item` mixin](https://github.com/tannerhodges/mode-front-end/commit/702c80db3e691d78fcb72594c4d56ce9365381fe).
+- [Remove `o-grid__item` mixin](https://github.com/madebymode/mode-front-end/commit/702c80db3e691d78fcb72594c4d56ce9365381fe).
 - Remove extra dependencies (from package.json and README install notes)
 - Remove old `menuAim` comments
 
@@ -129,14 +129,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible).
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
 
-[Unreleased]: https://github.com/tannerhodges/mode-front-end/compare/v1.3.0...HEAD
-[1.3.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.1...v1.3.0
-[1.2.1]: https://github.com/tannerhodges/mode-front-end/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.3...v1.1.0
-[1.0.3]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/tannerhodges/mode-front-end/compare/v1.0.0...v1.0.2
-[1.0.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.41.0...v1.0.0
-[0.41.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.31.0...v0.41.0
-[0.31.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.27.0...v0.31.0
-[0.27.0]: https://github.com/tannerhodges/mode-front-end/compare/v0.0.1...v0.27.0
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/madebymode/mode-front-end/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/madebymode/mode-front-end/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/madebymode/mode-front-end/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/madebymode/mode-front-end/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/madebymode/mode-front-end/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/madebymode/mode-front-end/compare/v1.0.0...v1.0.2
+[1.0.0]: https://github.com/madebymode/mode-front-end/compare/v0.41.0...v1.0.0
+[0.41.0]: https://github.com/madebymode/mode-front-end/compare/v0.31.0...v0.41.0
+[0.31.0]: https://github.com/madebymode/mode-front-end/compare/v0.27.0...v0.31.0
+[0.27.0]: https://github.com/madebymode/mode-front-end/compare/v0.0.1...v0.27.0
