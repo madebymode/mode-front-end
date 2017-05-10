@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Autoprefixer Browserlist to defaults plus IE 10+ and iOS 8+
 
+### Removed
+
+- Removed [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) as its not needed for last 2 versions of modern browsers anymore.
+
 ## [1.3.3] - 2017-05-09
 
 ### Added

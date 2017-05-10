@@ -36,7 +36,6 @@ yarn add lazysizes
 yarn add object-fit-images
 yarn add picturefill
 yarn add svg4everybody
-yarn add viewport-units-buggyfill
 ```
 
 ## Sass
