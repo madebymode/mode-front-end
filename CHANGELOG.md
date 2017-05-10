@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Changed
+
+- Autoprefixer Browserlist to defaults plus IE 10+ and iOS 8+
+
 ## [1.3.3] - 2017-05-09
 
 ### Added
