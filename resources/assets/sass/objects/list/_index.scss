@@ -1,44 +1,56 @@
+/*doc
+---
+title: List
+name: list
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list();
+@include o-list__item();
+
+// Responsive
+@include o-list('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list@sm">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+*/
+
 /**
  * List object.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list();
- * @include o-list('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ul class="o-list"></ul>
- * ```
  */
 @mixin o-list($at-breakpoint: null) {
   @include breakpoints('o-list', $at-breakpoint) {
-    // ...
+    padding-left: 0;
   }
 }
 
 /**
  * List object item.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list__item();
- * @include o-list__item('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ul class="o-list">
- *   <li class="o-list__item"></li>
- * </ul>
- * ```
  */
 @mixin o-list__item($at-breakpoint: null) {
   @include breakpoints('o-list__item', $at-breakpoint) {
@@ -59,5 +71,5 @@
 @import 'inline';
 @import 'leading-zero';
 @import 'numbers';
-@import 'numbers-roman';
+@import 'roman';
 @import 'slashes';

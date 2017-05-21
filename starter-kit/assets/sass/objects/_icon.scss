@@ -1,7 +1,9 @@
 @include o-icon();
 
 // Sizes
+@include o-icon--size(14, 14);
 @include o-icon--size(70, 70);
+@include o-icon--size(120, 120);
 
 
 
@@ -10,7 +12,9 @@
 // ------------------------------
 
 // Max-width
-// @include o-icon--size(70, 70, 'lt-sm');
+@include o-icon--size(70, 70, 'lt-sm');
+@include o-icon--size(120, 120, 'lt-sm');
 
 // Min-width
-// @include o-icon--size(70, 70, 'sm');
+@include o-icon--size(70, 70, 'sm');
+@include o-icon--size(120, 120, 'sm');

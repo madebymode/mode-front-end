@@ -1,5 +1,38 @@
+/*doc
+---
+title: Border
+name: border
+category: Utilities
+---
+Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
+
+## Sass
+
+```scss
+// Basic
+@include u-border('top-gray-3', 1px solid $color-gray-3);
+
+// Responsive
+@include u-border('top-gray-3', 1px solid $color-gray-3, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-border-top-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-border-top-gray-3@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+```
+*/
+
 /**
- * Border utilities.
+ * Border utility.
  * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
@@ -7,7 +40,3 @@
 @mixin u-border($alias, $value, $at-breakpoint: null) {
   @include u-property-directional('border', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-border('top', '1px solid #ccc');

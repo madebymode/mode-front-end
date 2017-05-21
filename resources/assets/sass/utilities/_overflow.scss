@@ -1,14 +1,43 @@
+/*doc
+---
+title: Overflow
+name: overflow
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-overflow('hidden');
+
+// Responsive
+@include u-overflow('hidden', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-width-100  /  u-overflow-hidden">
+  <img src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-width-100  /  u-overflow-hidden@sm">
+  <img src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+</div>
+```
+*/
+
 /**
- * Overflow utilities.
+ * Overflow utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-overflow($value, $at-breakpoint: null) {
   @include u-property('overflow', $value, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-overflow('hidden');
-// @include u-overflow('scroll');
-// @include u-overflow('auto');

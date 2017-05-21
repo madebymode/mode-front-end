@@ -1,17 +1,40 @@
+/*doc
+---
+title: Min Height
+name: min-height
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-min-height('200', rem(200));
+
+// Responsive
+@include u-min-height('200', rem(200), 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-min-height-200" src="http://placehold.it/100/ff0000/ffffff?text=1" height="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-min-height-200@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" height="100" height="100" alt="Item 1">
+```
+*/
+
 /**
- * Min-height utilities
- * @param  {Number}  $size
+ * Min-height utility.
+ * @param  {String}  $alias
+ * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-min-height($size, $at-breakpoint: null) {
-  $class-name: 'u-min-height-#{$size}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    min-height: em($size);
-  }
+@mixin u-min-height($alias, $value, $at-breakpoint: null) {
+  @include u-property('min-height', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-min-height(350);
-// @include u-min-height(700);
-// @include u-min-height(700, 'sm');

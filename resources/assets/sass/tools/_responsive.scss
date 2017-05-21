@@ -1,4 +1,20 @@
 /**
+ * Add new breakpoint alias.
+ * @see http://oddbird.net/2013/10/19/map-merge
+ * @see https://github.com/sass/sass/issues/1511#issuecomment-61907897
+ *
+ * Example:
+ * `@include add-breakpoint('sidebar', 60em);`
+ *
+ * @param  {String}  $alias
+ * @param  {Number}  $value
+ * @return {Boolean}
+ */
+@mixin add-breakpoint($alias, $value) {
+  $breakpoints: map-merge($breakpoints, ($alias: $value)) !global;
+}
+
+/**
  * Generate media queries based on a map of `$breakpoints`. Defaults to
  * mobile- first, min-width queries. But you can use prefixes for other
  * queries. E.g. `lt-` makes `max-width` queries (and automatically removes
@@ -22,7 +38,6 @@
   // Check if $breakpoint-name starts with a prefix
   @each $x-prefix in $prefixes {
     @if not $prefix and str-index($breakpoint-name, $x-prefix) {
-      // @debug '#{$breakpoint-name} is using the #{$x-prefix} prefix';
       $prefix: $x-prefix;
     }
   }
@@ -30,7 +45,6 @@
   // Strip prefix from $breakpoint-name
   @if $prefix {
     $breakpoint-name: str-slice($breakpoint-name, str-length($prefix) + 1);
-    // @debug 'Found #{$prefix}, so $breakpoint-name is now #{$breakpoint-name}';
   }
 
   // Now make sure breakpoint exists
@@ -43,14 +57,12 @@
   // Default: mobile-first, min-width queries
   @if not $prefix {
 
-    @media (min-width: #{$breakpoint}) {
+    @media all and (min-width: #{$breakpoint}) {
       @content;
     }
 
   // Max-width queries start with the `lt-` prefix
   } @else if $prefix == 'lt-' {
-
-    // @debug 'Breakpoint is #{$breakpoint}';
 
     // Subtract 1px from $breakpoint so min/max queries don't overlap
     @if type-of($breakpoint) != 'number' {
@@ -63,7 +75,7 @@
       @error 'Breakpoints must be in em or px. "#{$breakpoint-name}" is currently #{$breakpoint}.'
     }
 
-    @media (max-width: #{$breakpoint}) {
+    @media all and (max-width: #{$breakpoint}) {
       @content;
     }
 
@@ -74,18 +86,21 @@
 
 /**
  * Mixin to generate breakpoint-specific classes.
- * @param  {Map}     $params
+ * @param  {String}  $alias
  * @param  {String}  $at-breakpoint
  */
-@mixin breakpoints($name, $at-breakpoint: null) {
+@mixin breakpoints($class-name, $at-breakpoint: null) {
   @if ($at-breakpoint) {
     @include mq($at-breakpoint) {
-      .#{$name}\@#{$at-breakpoint} {
+      $class-name: escape-selector($class-name);
+      $at-breakpoint: escape-selector($at-breakpoint);
+      .#{$class-name}\@#{$at-breakpoint} {
         @content;
       }
     }
   } @else {
-    .#{$name} {
+    $class-name: escape-selector($class-name);
+    .#{$class-name} {
       @content;
     }
   }

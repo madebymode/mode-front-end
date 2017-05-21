@@ -1,0 +1,16 @@
+@include u-pointer-events('none');
+@include u-pointer-events('auto');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-pointer-events('none', 'lt-sm');
+@include u-pointer-events('auto', 'lt-sm');
+
+// Min-width
+@include u-pointer-events('none', 'sm');
+@include u-pointer-events('auto', 'sm');

@@ -1,0 +1,249 @@
+/**
+ * Custom `select` element.
+ *
+ * Based on https://tympanus.net/Development/SelectInspiration/css/cs-select.css
+ *
+ * ## Sass
+ *
+ * ```scss
+ * @include c-select;
+ * ```
+ *
+ * ## JavaScript
+ *
+ * ```js
+ * const Select = require('mode-front-end/resources/assets/js/form/select');
+ * new Select(document.querySelectorAll('.c-select'));
+ * ```
+ *
+ * ## Markup
+ *
+ * ```html
+ * <select class="c-select" name="select" required>
+ *   <option value="" disabled selected>
+ *     Placeholder
+ *   </option>
+ *   <optgroup label="Option Group">
+ *     <option value="1">Option #1</option>
+ *     <option value="2">Option #2</option>
+ *     <option value="3">Option #3</option>
+ *   </optgroup>
+ * </select>
+ * ```
+ */
+@mixin c-select {
+  // $color-brown-2
+  // $color-brown-3
+  // $color-gold-2
+  // $color-gray-1
+  // $color-gray-2
+  // $color-gray-3
+  // $select-color-default
+
+  .c-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+    user-select: none;
+
+    &.is-open {
+      z-index: 100;
+    }
+
+    // For better accessibility
+    &:focus {
+      outline: none;
+    }
+
+    // Hide native select
+    select {
+      display: none;
+    }
+  }
+
+  .c-select__placeholder,
+  .c-select__item {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: em(34);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .c-select__placeholder {
+    display: flex;
+    align-items: center;
+    padding-right: em(35);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: em(12);
+      width: 13px;
+      height: 8px;
+      transform: translateY(-50%);
+      transition: transform 200ms ease;
+      background: svg('<path fill="none" stroke="#{$color-gold-2}" stroke-miterlimit="10" stroke-width="2" d="M.7.7l5.7 5.7L12.2.7" />', 12.9, 7.9) center / 13px 8px no-repeat;
+      content: '';
+      speak: none;
+    }
+  }
+
+  .c-select__options {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .c-select__list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .c-select__item {
+    padding: 1em;
+
+    // .has-focus & {
+    //   background-color: #ddd;
+    // }
+  }
+
+  // Optgroup and optgroup label
+  // .c-select__optgroup .c-select__list {
+  // }
+
+  .c-select__optgroup-label {
+    display: block;
+    padding: 1em;
+    cursor: default;
+  }
+
+  .c-select__optgroup .c-select__item {
+    padding-left: 2em;
+  }
+
+
+  // Open State
+  .is-open {
+    .c-select__placeholder::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .c-select__options {
+      visibility: visible;
+    }
+  }
+
+
+
+  // ------------------------------
+  // Default Theme
+  // ------------------------------
+
+  $select-color-default: $color-gray-2;
+
+  .c-select--input {
+    padding: 0;
+
+    // Custom Placeholder
+    &:not(.has-selected) .c-select__placeholder,
+    &.is-open .c-select__placeholder {
+      color: $color-gray-1;
+      font-style: italic;
+    }
+
+    // Option Groups
+    .c-select__optgroup-label {
+      color: $color-gray-1;
+      font-style: italic;
+    }
+
+    .c-select__item:hover,
+    .has-focus .c-select__item {
+      background: $color-brown-3;
+    }
+
+    // Open State
+    &.is-open {
+      .c-select__options {
+        transition: opacity 200ms;
+        background: $color-brown-2;
+        opacity: 1;
+      }
+    }
+
+    // HACK: Keep border visible when select is open
+    &.u-border-bottom--gold .c-select__options {
+      border-top: 1px solid $color-gold-2;
+    }
+  }
+}
+
+
+
+// ------------------------------
+// Box Theme
+// https://tympanus.net/Development/SelectInspiration/css/cs-skin-border.css
+// ------------------------------
+
+@mixin c-select--box {
+  .c-select--box {
+    .c-select__placeholder,
+    .c-select__item {
+      min-height: em(40);
+      padding: 0.5em 1em;
+    }
+
+    .c-select__placeholder {
+      transition: background 200ms,
+        border-color 200ms;
+      border: 1px solid currentColor;
+      color: $color-gold-2;
+    }
+
+    .c-select__placeholder {
+      padding-right: em(35);
+
+      &::after {
+        right: 1em;
+      }
+    }
+
+    .c-select__options {
+      transition: opacity 200ms, visibility 0s 200ms;
+      color: $color-gray-2;
+      opacity: 0;
+    }
+
+    .is-selected .c-select__item {
+      color: $color-gray-3;
+    }
+
+    .c-select__item:hover,
+    .has-focus .c-select__item {
+      background: $color-brown-3;
+    }
+
+    // Open State
+    &.is-open {
+      .c-select__placeholder {
+        color: $select-color-default;
+      }
+
+      .c-select__options {
+        transition: opacity 200ms;
+        background: $color-brown-2;
+        opacity: 1;
+      }
+    }
+  }
+}
+

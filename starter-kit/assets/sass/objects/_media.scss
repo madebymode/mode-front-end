@@ -1,0 +1,15 @@
+@include o-media();
+@include o-media__figure();
+@include o-media__body();
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include o-media('lt-sm');
+
+// Min-width
+@include o-media('sm');

@@ -1,22 +1,43 @@
+/*doc
+---
+title: Section
+name: section
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-section();
+
+// Responsive
+@include o-section('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<section class="o-section">
+  <h4>Lorem ipsum</h4>
+  <p>Dolor sit amet, consectetur adipisicing elit.</p>
+</section>
+```
+
+### Responsive
+
+```html_example
+<section class="o-section@sm">
+  <h4>Lorem ipsum</h4>
+  <p>Dolor sit amet, consectetur adipisicing elit.</p>
+</section>
+```
+*/
+
 /**
  * Section object.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-section();
- * @include o-section('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <section class="o-section">
- *   <h1>Section Heading</h1>
- *   <p>Section copy.</p>
- * </section>
- * ```
  */
 @mixin o-section($at-breakpoint: null) {
   @include breakpoints('o-section', $at-breakpoint) {

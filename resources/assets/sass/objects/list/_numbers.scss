@@ -1,28 +1,45 @@
+/*doc
+---
+title: List Numbers
+name: list-numbers
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--numbers();
+
+// Responsive
+@include o-list--numbers('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ol class="o-list  o-list--numbers">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+
+### Responsive
+
+```html_example
+<ol class="o-list  o-list--numbers@sm">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+*/
+
 /**
  * Numbered list.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list--numbers();
- * @include o-list--numbers('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ol class="o-list  o-list--numbers">
- *   <li class="o-list__item">
- *     <p class="o-list__counter">
- *       List Item Heading
- *     </p>
- *     <p class="o-list__content">
- *       List Item Content
- *     </p>
- *   </li>
- * </ol>
- * ```
  */
 @mixin o-list--numbers($at-breakpoint: null) {
   @include breakpoints('o-list--numbers', $at-breakpoint) {

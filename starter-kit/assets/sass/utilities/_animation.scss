@@ -1,0 +1,24 @@
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards) {
+  opacity: 1;
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards, 'lt-sm') {
+  opacity: 1;
+}
+
+// Min-width
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards, 'sm') {
+  opacity: 1;
+}

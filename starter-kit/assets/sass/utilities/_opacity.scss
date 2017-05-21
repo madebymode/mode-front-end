@@ -1,0 +1,17 @@
+@for $opacity from 10 through 100 {
+  @if ($opacity % 10 == 0) {
+    @include u-opacity($opacity, $opacity / 100);
+  }
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-opacity('60', 60 / 100, 'lt-sm');
+
+// Min-width
+@include u-opacity('60', 60 / 100, 'sm');

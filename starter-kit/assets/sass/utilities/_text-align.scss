@@ -1,4 +1,6 @@
 @include u-text-align('center');
+@include u-text-align('right');
+@include u-text-align('left');
 
 
 
@@ -8,6 +10,10 @@
 
 // Max-width
 @include u-text-align('center', 'lt-sm');
+@include u-text-align('right', 'lt-sm');
+@include u-text-align('left', 'lt-sm');
 
 // Min-width
 @include u-text-align('center', 'sm');
+@include u-text-align('right', 'sm');
+@include u-text-align('left', 'sm');

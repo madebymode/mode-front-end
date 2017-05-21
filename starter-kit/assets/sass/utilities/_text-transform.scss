@@ -1,0 +1,13 @@
+@include u-text-transform('uppercase');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-text-transform('uppercase', 'lt-sm');
+
+// Min-width
+@include u-text-transform('uppercase', 'sm');

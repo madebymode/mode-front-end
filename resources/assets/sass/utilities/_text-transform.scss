@@ -1,13 +1,39 @@
+/*doc
+---
+title: Text Transform
+name: text-transform
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-text-transform('uppercase');
+
+// Responsive
+@include u-text-transform('uppercase', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-text-transform-uppercase">Lorem ipsum dolor</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-text-transform-uppercase@sm">Lorem ipsum dolor</p>
+```
+*/
+
 /**
- * Text transform utilities
+ * Text-transform utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-text-transform($value, $at-breakpoint: null) {
   @include u-property('text-transform', $value, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-text-transform('uppercase');
-// @include u-text-transform('uppercase', 'sm');

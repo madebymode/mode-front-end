@@ -1,0 +1,13 @@
+@include u-background-position('top-right', top right);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-background-position('top-right', top right, 'lt-sm');
+
+// Min-width
+@include u-background-position('top-right', top right, 'sm');

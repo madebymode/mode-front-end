@@ -1,0 +1,47 @@
+/*doc
+---
+title: Flex Wrap
+name: flex-wrap
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-flex-wrap('wrap');
+
+// Responsive
+@include u-flex-wrap('wrap', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-display-flex  /  u-flex-wrap-wrap">
+  <img src="http://placehold.it/300x100/ff0000/ffffff?text=1" width="300" height="100" alt="Item 1">
+  <img src="http://placehold.it/300x100/00ff00/ffffff?text=2" width="300" height="100" alt="Item 2">
+  <img src="http://placehold.it/300x100/0000ff/ffffff?text=3" width="300" height="100" alt="Item 3">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-display-flex  /  u-flex-wrap-wrap@sm">
+  <img src="http://placehold.it/300x100/ff0000/ffffff?text=1" width="300" height="100" alt="Item 1">
+  <img src="http://placehold.it/300x100/00ff00/ffffff?text=2" width="300" height="100" alt="Item 2">
+  <img src="http://placehold.it/300x100/0000ff/ffffff?text=3" width="300" height="100" alt="Item 3">
+</div>
+```
+*/
+
+/**
+ * Flex-wrap utility.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-flex-wrap($value, $at-breakpoint: null) {
+  @include u-property('flex-wrap', $value, $value, $at-breakpoint);
+}

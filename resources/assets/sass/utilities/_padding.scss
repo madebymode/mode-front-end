@@ -1,5 +1,42 @@
+/*doc
+---
+title: Padding
+name: padding
+category: Utilities
+---
+Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
+
+## Sass
+
+```scss
+// Basic
+@include u-padding('horizontal-sm', $gutter-sm);
+
+// Responsive
+@include u-padding('horizontal-sm', $gutter-sm, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-padding-horizontal-sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-padding-horizontal-sm@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+```
+*/
+
 /**
- * Padding utilities
+ * Padding utility.
  * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
@@ -7,8 +44,3 @@
 @mixin u-padding($alias, $value, $at-breakpoint: null) {
   @include u-property-directional('padding', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// NOTE: Keep breakpoint modifiers below defaults so they always override them
-// @include u-padding('horizontal', $gutter);

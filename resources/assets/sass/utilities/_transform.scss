@@ -1,7 +1,40 @@
-// TODO: Generic position utility (similar to `u-property-directional`)
-.u-transform-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+/*doc
+---
+title: Transform
+name: transform
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-transform('rotate-90', rotate(90deg));
+
+// Responsive
+@include u-transform('rotate-90', rotate(90deg), 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-transform-rotate-90" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-transform-rotate-90@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+*/
+
+/**
+ * Transform utility.
+ * @param  {String}  $alias
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-transform($alias, $value, $at-breakpoint: null) {
+  @include u-property('transform', $alias, $value, $at-breakpoint);
 }

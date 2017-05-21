@@ -48,40 +48,48 @@ Import `common.scss` into your app’s stylesheet:
 @include css-reset;
 ```
 
-**Note**: This path assumes you’re stylesheet is in `resources/assets/sass/`.
+**Note**: This path assumes your stylesheet is in `resources/assets/sass/`.
 
-### Variables Needed
+### Required Variables
 
-- `$breakpoints`: Used by `mq` and `breakpoints` in `tools/_responsive.scss`.
-  Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980,
-  16), xl: em(1200, 16) )`.
-- `$font-size`: Used by `em` in `functions/_typography.scss`. Defaults to `16`.
-- `$fonts-path`: Used by `font-url` in `functions/_assets.scss`. Defaults to
-  `/font`.
-- `$images-path`: Used by `image-url` in `functions/_assets.scss`. Defaults to
-  `/img`.
+- `$breakpoints` : Used by `mq` and `breakpoints` in `tools/_responsive.scss`. Defaults to `(xs: em(320, 16), sm: em(480, 16), md: em(768, 16), lg: em(980, 16), xl: em(1200, 16))`.
+- `$font-size`   : Used by `em` in `functions/_typography.scss`. Defaults to `16`.
+- `$fonts-path`  : Used by `font-url` in `functions/_assets.scss`. Defaults to `/font`.
+- `$images-path` : Used by `image-url` in `functions/_assets.scss`. Defaults to `/img`.
 
 ### Functions
 
 - Assets
     - `font-url($path)`
     - `image-url($path)`
-- Math
-    - `strip-unit($value)`
+- Data URIs
+    - `svg($svg, $width, $height)`
+- ~~Math~~
 - Strings
-    - `explode($string, [$delimiter])`
-    - `str-replace($string, $search, [$replace])`
-- Fonts
-    - `em($pixels, [$context])`
-    - `rem($pixels)`
+    - `escape-selector($selector)`
+    - `explode($string, [$delimiter: ''])`
+    - `str-replace($string, $search, [$replace: ''])`
+    - `to-string($value)`
+- Typography
     - `tracking($tracking)`
+- Units
+    - `em($pixels, [$context: $font-size])`
+    - `rem($pixels)`
+    - `strip-unit($value)`
 
 ### Mixins
 
+#### Accessibility
+
+- `hover([$active-classes...])`
+- `invisible-until-active([$active-class: 'is-active'])`
+- `show-on-focus()`
+- `visually-hidden()`
+
 #### Base CSS
 
-- `css-normalize`
-- `css-reset`
+- `css-normalize()`
+- `css-reset()`
 
 #### Generators
 
@@ -90,106 +98,21 @@ Import `common.scss` into your app’s stylesheet:
 
 #### Helpers
 
-- `clearfix`
-- `font-smoothing([$is_bold])`
-- `hover([$active-classes...])`
-- `invisible-until-active`
-- `object-fit([$value])`
-- `placeholder`
-- `scroll-disabled`
-- `scroll`
-- `visually-hidden`
+- `clearfix()`
+- `font-smoothing([$is-bold: false])`
+- `placeholder()`
+- `scroll()`
+- `scroll-disabled()`
+
+#### Polyfills
+
+- `object-fit($value)`
 
 #### Responsive
 
+- `add-breakpoint($alias, $value)`
+- `breakpoints($class-name, [$at-breakpoint: null])`
 - `mq($breakpoint-name)`
-- `breakpoints($name, [$at-breakpoint])`
-
-#### Objects
-
-- `o-icon([$at-breakpoint])`
-- `o-icon--size($width, $height, [$at-breakpoint])`
-- `o-grid([$at-breakpoint])`
-  - `.o-grid`
-  - `.o-grid__item`
-- `o-grid--gutters($alias, $size, [$at-breakpoint])`
-- `o-list([$at-breakpoint])`
-  - `.o-list`
-  - `.o-list__item`
-  - `.o-list__counter`
-  - `.o-list__content`
-- `o-list--bullets([$at-breakpoint])`
-- `o-list--commas([$at-breakpoint])`
-- `o-list--disc([$at-breakpoint])`
-- `o-list--inline([$at-breakpoint])`
-- `o-list--leading([$at-breakpoint-zero])`
-- `o-list--numbers([$at-breakpoint-roman])`
-- `o-list--numbers([$at-breakpoint])`
-- `o-list--slashes([$at-breakpoint])`
-- `o-media([$at-breakpoint])`
-    - `.o-media`
-    - `.o-media__figure`
-    - `.o-media__body`
-- `o-section([$at-breakpoint])`
-
-#### Components
-
-- `c-browser-upgrade()`
-
-#### Utilities
-
-- `u-align-items($value, [$at-breakpoint])`
-- `u-align-self($value, [$at-breakpoint])`
-- `u-animation($alias, $value, [$at-breakpoint]) { @content; }`
-- `u-aspect-ratio($width, $height, [$at-breakpoint])`
-- `u-background-color($alias, $value, [$at-breakpoint])`
-- `u-background-position($alias, $value, [$at-breakpoint])`
-- `u-border($alias, $value, [$at-breakpoint])`
-- `u-box-shadow($alias, $value, [$at-breakpoint])`
-- `u-color($alias, $value, [$at-breakpoint])`
-- `u-content($alias, [$pseudo-element], [$at-breakpoint]) { @content; }`
-- `u-depth($z-index, [$at-breakpoint])`
-- `u-display($display, [$at-breakpoint])`
-- `u-flex-direction($value, [$at-breakpoint])`
-- `u-flex-wrap($value, [$at-breakpoint])`
-- `u-float($value, [$at-breakpoint])`
-- `u-font-size($alias, $value, [$at-breakpoint])`
-- `u-font-weight($alias, $value, [$at-breakpoint])`
-- `u-height($alias, $value, [$at-breakpoint])`
-- `u-hover($alias, [$active-class], [$at-breakpoint]) { @content; }`
-- `u-justify-content($value, [$at-breakpoint])`
-- `u-margin($alias, $size, [$at-breakpoint])`
-- `u-max-height($size, [$at-breakpoint])`
-- `u-max-width($size, [$at-breakpoint])`
-- `u-min-height($size, [$at-breakpoint])`
-- `u-min-width($size, [$at-breakpoint])`
-- ~~`u-object-fit($value)`~~
-- `u-opacity($value, [$at-breakpoint])`
-- `u-order($value, [$at-breakpoint])`
-- `u-overflow($value, [$at-breakpoint])`
-- `u-padding($alias, $value, [$at-breakpoint])`
-- `u-pointer-events($value, [$at-breakpoint])`
-- `u-position($size, $out-of, [$at-breakpoint])`
-- `u-position($size, $out-of, [$at-breakpoint])`
-- `u-small-caps()`
-- `u-small-caps([$active-class])`
-- `u-small-caps--active([$active-class])`
-- `u-small-caps--inactive`
-- `u-small-caps--reset([$active-class])`
-- `u-small-caps__symbol([$active-class])`
-- `u-text-align($value, [$at-breakpoint])`
-- `u-text-overflow($value, [$at-breakpoint])`
-- `u-text-transform($value, [$at-breakpoint])`
-- ~~`u-transform($value, [$at-breakpoint])`~~
-- `u-vertical-align($value, [$at-breakpoint])`
-- `u-visually-hidden([$at-breakpoint])`
-- `u-white-space($value, [$at-breakpoint])`
-- `u-width($size, $out-of, [$at-breakpoint])`
-
-### Classes
-
-- `.u-object-fit-cover`
-- `.u-transform-center`
 
 ## JavaScript
 
@@ -306,10 +229,9 @@ In your `composer.json`, update the `autoload` key to include the following `fil
 
 ## TODO
 
-- [ ] Document each mixin with examples
-- [ ] Add markup partials (e.g., ZorroSVG)
+- [ ] Document Sass core `@function`s and `@mixin`s
 - [ ] Switch from [scss-lint](https://github.com/brigade/scss-lint) to either [sass-lint](https://github.com/sasstools/sass-lint) or [stylelint](https://stylelint.io/).
-- [ ] Decide on standard style guide library (Hologram, Pattern Lab, etc.)
+- [ ] Replace LiveReload with BrowserSync
 - [ ] Add JavaScript tests
 - [ ] Move resources to root directory (avoid really long paths in includes)
 - [ ] Drop Elixir as a dependency (use generic, reusable gulp tasks instead)

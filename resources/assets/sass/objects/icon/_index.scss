@@ -1,3 +1,49 @@
+/*doc
+---
+title: Icon
+name: icon
+category: Objects
+---
+<span class="todo">IMPORTANT:</span> When preparing SVGs:
+
+1. Remove every `fill` and `stroke` attribute that should inherit its color from CSS.
+2. Set `fill="none"` or `stroke="none"` anywhere a color should _not_ be applied.
+
+## Sass
+
+```scss
+// Basic
+@include o-icon();
+@include o-icon--size(70, 70);
+
+// Responsive
+@include o-icon('sm');
+@include o-icon--size(120, 120, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<i class="o-icon  o-icon--mode-logo  o-icon--70x70">
+  <svg>
+    <use xlink:href="/img/svg/sprites/global.svg#mode-logo"></use>
+  </svg>
+</i>
+```
+
+### Responsive
+
+```html_example
+<i class="o-icon  o-icon--mode-logo  o-icon--70x70  o-icon--120x120@sm">
+  <svg>
+    <use xlink:href="/img/svg/sprites/global.svg#mode-logo"></use>
+  </svg>
+</i>
+```
+*/
+
 /**
  * Icon object.
  * @param  {String}  $at-breakpoint
@@ -6,16 +52,10 @@
   @include breakpoints('o-icon', $at-breakpoint) {
     display: inline-block;
     max-width: 100%;
+    max-height: 100%;
     background-position: center;
     background-size: contain;
 
-    /**
-     * IMPORTANT:
-     * 1. Remove `fill` and `stroke` attributes from your SVGs that can be
-     *    applied with CSS.
-     * 2. Set `fill="none"` and `stroke="none"` in your SVGs to avoid unwanted
-     *    fills and strokes being applied to your icons.
-     */
     svg {
       display: block;
       width: 100%;
@@ -26,12 +66,6 @@
     }
   }
 }
-
-// Examples:
-// @include o-icon();
-// @include o-icon('sm');
-
-
 
 /**
  * Icon size helper.
@@ -46,8 +80,3 @@
     height: $height * 1px;
   }
 }
-
-// Examples:
-// @include o-icon--size(10, 10);
-// @include o-icon--size(400, 300);
-// @include o-icon--size(400, 300, 'sm');

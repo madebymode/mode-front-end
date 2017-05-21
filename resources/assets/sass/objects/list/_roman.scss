@@ -1,0 +1,55 @@
+/*doc
+---
+title: List Roman
+name: list-roman
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--roman();
+
+// Responsive
+@include o-list--roman('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ol class="o-list  o-list--roman">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+
+### Responsive
+
+```html_example
+<ol class="o-list  o-list--roman@sm">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+*/
+
+/**
+ * Numbered list with Roman numerals.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-list--roman($at-breakpoint: null) {
+  @include breakpoints('o-list--roman', $at-breakpoint) {
+    > .o-list__item {
+      counter-increment: list-roman;
+
+      &::before {
+        display: inline-block;
+        content: counter(list-roman, lower-roman) '. ';
+      }
+    }
+  }
+}

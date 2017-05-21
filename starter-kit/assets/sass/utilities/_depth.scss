@@ -1,0 +1,19 @@
+@for $i from 1 through 10 {
+  @include u-depth($i);
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@for $i from 1 through 10 {
+  @include u-depth($i, 'lt-sm');
+}
+
+// Min-width
+@for $i from 1 through 10 {
+  @include u-depth($i, 'sm');
+}

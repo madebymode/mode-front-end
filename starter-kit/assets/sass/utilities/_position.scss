@@ -1,0 +1,49 @@
+// Default
+@include u-position('relative', relative);
+@include u-position('absolute', absolute);
+
+// Directions
+@include u-position('center', absolute) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@include u-position('cover', absolute) {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@include u-position('top-right', absolute) {
+  top: 0;
+  right: 0;
+}
+
+// Percentage
+@include u-position('1/2', absolute) {
+  left: percentage(1 / 2);
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-position('relative', relative, 'lt-sm');
+@include u-position('absolute', absolute, 'lt-sm');
+@include u-position('center', absolute, 'lt-sm') {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Min-width
+@include u-position('relative', relative, 'sm');
+@include u-position('absolute', absolute, 'sm');
+@include u-position('center', absolute, 'sm') {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

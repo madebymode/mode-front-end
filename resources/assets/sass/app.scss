@@ -1,1 +1,305 @@
+// ------------------------------
+// Starter Kit Part 1
+// ------------------------------
+
+// MODE Front-End
 @import 'common';
+
+// Settings
+@import '../../../starter-kit/assets/sass/settings/breakpoints';
+@import '../../../starter-kit/assets/sass/settings/colors';
+@import '../../../starter-kit/assets/sass/settings/gutters';
+@import '../../../starter-kit/assets/sass/settings/typography';
+
+// Generic
+@include css-normalize;
+@include css-reset;
+@import '../../../starter-kit/assets/sass/generic/reset';
+
+// Objects
+@import '../../../starter-kit/assets/sass/objects/grid';
+@import '../../../starter-kit/assets/sass/objects/icon';
+@import '../../../starter-kit/assets/sass/objects/list';
+@import '../../../starter-kit/assets/sass/objects/media';
+@import '../../../starter-kit/assets/sass/objects/section';
+@import '../../../starter-kit/assets/sass/objects/table';
+@import '../../../starter-kit/assets/sass/objects/video';
+
+// Components
+@import '../../../starter-kit/assets/sass/components/browser-upgrade';
+
+
+
+// ------------------------------
+// Style Guide
+// ------------------------------
+
+html {
+  @include font-smoothing(true);
+  line-height: 1.5;
+}
+
+body {
+  padding-bottom: 4rem;
+}
+
+// Fonts
+p,
+ol,
+ul {
+  font-family: serif;
+}
+// p.styleguide,
+// ol.styleguide,
+// ul.styleguide {
+//   font-family: serif;
+// }
+
+// Vertical Rhythm
+// https://github.com/inuitcss/inuitcss/blob/04abcb2cb1285a3223b23f3ef28790222e9ef906/generic/_generic.shared.scss
+address,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+table,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+main h1:first-child {
+  margin-top: 3rem;
+}
+
+// Dividers
+hr {
+  margin: 4rem auto;
+}
+h1.styleguide:not(:first-child) {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid;
+}
+
+// Lists
+ol.styleguide,
+ul.styleguide {
+  padding-left: 2rem;
+}
+ol.styleguide {
+  list-style: decimal;
+}
+ul.styleguide {
+  list-style: disc;
+}
+
+// Links / Buttons
+a,
+button {
+  transition: opacity 100ms ease-in-out;
+
+  @include hover('is-active') {
+    opacity: 0.8;
+  }
+}
+
+// Code Examples
+code {
+  display: inline-block;
+  max-width: calc(100% - 1em);
+  padding: 0 0.25rem;
+  background: $color-gray-4;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+}
+
+// .codeExample
+//   .exampleOutput
+//   .codeBlock
+//     .highlight
+.codeBlock + h1,
+.codeBlock + h2 {
+  margin-top: 2rem;
+}
+.codeExample + h3 {
+  margin-top: 2rem;
+}
+.codeBlock {
+  background: $color-gray-4;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+.exampleOutput + .codeBlock {
+  margin-top: 1rem;
+}
+.highlight {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+// HACK: Remove margin from `.o-section` example to avoid cluttering with extra classes
+.codeExample h4 {
+  margin-bottom: 0;
+}
+
+// Todos
+.todo {
+  font-weight: bold;
+  color: $color-red-1;
+}
+
+
+
+// ------------------------------
+// Style Guide Layout
+// ------------------------------
+
+$container-width : 640;
+$sidebar-width   : 192;
+
+@include add-breakpoint('sidebar', em($container-width, 16) + (2 * em($sidebar-width, 16)));
+
+@include o-list--inline('lt-sidebar');
+
+// Layout
+// .c-layout {
+// }
+
+// Wrapper
+.c-layout__wrapper {
+  max-width: rem($container-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter-xs;
+  padding-left: $gutter-xs;
+  overflow: hidden;
+
+  @include mq('sm') {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+  }
+}
+
+// Sidebar
+.c-layout__sticky-sidebar {
+  display: block;
+  position: sticky;
+  top: 0;
+  margin: 0 $gutter-xs;
+
+  @include mq('lt-sidebar') {
+    @include scroll;
+    padding: 1rem;
+    background: $color-gray-4;
+    z-index: 1; // Keep above `.highlight` on iOS
+  }
+
+  // TODO: Make `btwn` alias for mq
+  @media all and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'sidebar') - 0.0625em) {
+    .c-layout__sticky-sidebar {
+      margin: 0 $gutter-sm;
+    }
+  }
+}
+
+@include mq('sidebar') {
+  .c-layout__wrapper {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+  }
+  .c-layout__sticky-sidebar {
+    top: 0;
+    left: calc(50vw + 20rem); // 1/2 page width + 1/2 wrapper width
+    width: rem($sidebar-width);
+    height: 0;
+    margin: 0 auto;
+    transform: translateY(3rem);
+  }
+}
+
+.c-sticky-sidebar__nav {
+  margin-bottom: 0;
+  list-style: none;
+
+  @include mq('lt-sidebar') {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  @include mq('sidebar') {
+    @include scroll;
+    position: relative;
+    max-height: calc(100vh - 8rem);
+    padding: 1rem;
+    background: $color-gray-4;
+  }
+}
+
+// Utilities
+@include u-margin('right-xs', $gutter-xs, 'lt-sidebar');
+
+// TODO: Make scroll utilities (like `object-fit`)
+.u-scroll {
+  @include scroll;
+}
+.u-scroll-disabled {
+  @include scroll-disabled;
+}
+
+
+
+// ------------------------------
+// Starter Kit Part 2
+// ------------------------------
+
+// Utilities
+@import '../../../starter-kit/assets/sass/utilities/align-items';
+@import '../../../starter-kit/assets/sass/utilities/align-self';
+@import '../../../starter-kit/assets/sass/utilities/animation';
+@import '../../../starter-kit/assets/sass/utilities/aspect-ratio';
+@import '../../../starter-kit/assets/sass/utilities/background-color';
+@import '../../../starter-kit/assets/sass/utilities/background-position';
+@import '../../../starter-kit/assets/sass/utilities/border';
+@import '../../../starter-kit/assets/sass/utilities/box-shadow';
+@import '../../../starter-kit/assets/sass/utilities/color';
+@import '../../../starter-kit/assets/sass/utilities/content';
+@import '../../../starter-kit/assets/sass/utilities/depth';
+@import '../../../starter-kit/assets/sass/utilities/display';
+@import '../../../starter-kit/assets/sass/utilities/flex';
+@import '../../../starter-kit/assets/sass/utilities/flex-direction';
+@import '../../../starter-kit/assets/sass/utilities/flex-wrap';
+@import '../../../starter-kit/assets/sass/utilities/float';
+@import '../../../starter-kit/assets/sass/utilities/font-family';
+@import '../../../starter-kit/assets/sass/utilities/font-size';
+@import '../../../starter-kit/assets/sass/utilities/font-style';
+@import '../../../starter-kit/assets/sass/utilities/font-weight';
+@import '../../../starter-kit/assets/sass/utilities/height';
+@import '../../../starter-kit/assets/sass/utilities/hover';
+@import '../../../starter-kit/assets/sass/utilities/justify-content';
+@import '../../../starter-kit/assets/sass/utilities/margin';
+@import '../../../starter-kit/assets/sass/utilities/max-height';
+@import '../../../starter-kit/assets/sass/utilities/max-width';
+@import '../../../starter-kit/assets/sass/utilities/min-height';
+@import '../../../starter-kit/assets/sass/utilities/min-width';
+@import '../../../starter-kit/assets/sass/utilities/object-fit';
+@import '../../../starter-kit/assets/sass/utilities/opacity';
+@import '../../../starter-kit/assets/sass/utilities/order';
+@import '../../../starter-kit/assets/sass/utilities/overflow';
+@import '../../../starter-kit/assets/sass/utilities/padding';
+@import '../../../starter-kit/assets/sass/utilities/pointer-events';
+@import '../../../starter-kit/assets/sass/utilities/position';
+@import '../../../starter-kit/assets/sass/utilities/text-align';
+@import '../../../starter-kit/assets/sass/utilities/text-overflow';
+@import '../../../starter-kit/assets/sass/utilities/text-transform';
+@import '../../../starter-kit/assets/sass/utilities/transform';
+@import '../../../starter-kit/assets/sass/utilities/user-select';
+@import '../../../starter-kit/assets/sass/utilities/vertical-align';
+@import '../../../starter-kit/assets/sass/utilities/white-space';
+@import '../../../starter-kit/assets/sass/utilities/width';
+
+// Print
+@import '../../../starter-kit/assets/sass/generic/print';

@@ -1,28 +1,48 @@
+/*doc
+---
+title: List Borders
+name: list-borders
+category: Objects
+---
+<span class="todo">TODO:</span> Allow directional gutters (e.g., `all`, `horizontal`, or `vertical`).
+
+## Sass
+
+```scss
+// Basic
+@include o-list--borders('', 1px solid $color-gray-3);
+
+// Responsive
+@include o-list--borders('', 1px solid $color-gray-3, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list  o-list--borders">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list  o-list--borders@sm">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+*/
+
 /**
  * Block list separated by borders.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list--borders('', '1px solid #000');
- * @include o-list--borders('', '1px solid #000', 'sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ul class="o-list  o-list--borders">
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- * </ul>
- * ```
  */
-// TODO: Allow directional aliases (like margin and padding utilities)
 @mixin o-list--borders($alias, $value, $at-breakpoint: null) {
   $class-name: 'o-list--borders';
 

@@ -1,0 +1,13 @@
+@include u-flex-direction('row-reverse');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-flex-direction('row-reverse', 'lt-sm');
+
+// Min-width
+@include u-flex-direction('row-reverse', 'sm');

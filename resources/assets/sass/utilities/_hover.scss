@@ -1,7 +1,39 @@
-// TODO: This is experimental. Try out in a project and circle back around on
-// implementation (e.g., whether we need additional params for default
-// properties like `transition`, and whether `$active-class` should be
-// a map, `$active-classes`).
+/*doc
+---
+title: Hover
+name: hover
+category: Utilities
+---
+<span class="todo">TODO:</span> How can we include default properties like `transition`?
+
+## Sass
+
+```scss
+// Basic
+@include u-hover('dim', 'is-active') {
+  opacity: 0.6;
+}
+
+// Responsive
+@include u-hover('dim', 'is-active', 'sm') {
+  opacity: 0.6;
+}
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-hover-dim" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-hover-dim@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+*/
 
 // .u-hover-opacity {
 //   transition: opacity 200ms ease;
@@ -12,22 +44,24 @@
 // }
 
 /**
- * Hover utilities.
+ * Hover utility.
  * @param  {String}  $alias
- * @param  {String}  $active-class
+ * @param  {Map}     $active-class
  * @param  {String}  $at-breakpoint
  */
-@mixin u-hover($alias, $active-class: '', $at-breakpoint: null) {
+@mixin u-hover($alias, $active-classes, $at-breakpoint: null) {
   $class-name: 'u-hover-#{$alias}';
+
+  // Cast $active-classes as a list
+  @if $active-classes && type-of($active-classes) != 'list' {
+    $active-classes: ($active-classes);
+  }
+
   @include breakpoints($class-name, $at-breakpoint) {
-    @include hover($active-class) {
+    // Use `...` to pass list as individual arguments
+    // https://github.com/sass/sass/issues/1849#issuecomment-144904646
+    @include hover($active-classes...) {
       @content;
     }
   }
 }
-
-// Examples:
-
-// @include u-hover('opacity', 'is-active') {
-//   opacity: 0.6;
-// }

@@ -1,4 +1,32 @@
 /**
+ * Casting any value to a string.
+ * @see http://hugogiraudel.com/2014/01/27/casting-types-in-sass/
+ * @param  {mixed}   $value
+ * @return {String}
+ */
+@function to-string($value) {
+  @return inspect($value);
+}
+
+/**
+ * Replace `$search` with `$replace` in `$string`.
+ * @see https://github.com/HugoGiraudel/SassyStrings/blob/5c85bcae6ab51ef3996719ec31cce7aafd1a9fad/stylesheets/private/_str-replace.scss
+ * @param  {String}  $string       - Initial string
+ * @param  {String}  $search       - Substring to replace
+ * @param  {String}  $replace ('') - New value
+ * @return {String} - Updated string
+ */
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+/**
  * Split `$string` into several parts using `$delimiter`.
  * @see https://github.com/HugoGiraudel/SassyStrings/blob/c587b74ad96532eb47ec8509deb8c212ba75478c/stylesheets/private/_str-explode.scss
  * @param  {String}  $string         - String to split
@@ -33,22 +61,4 @@
   }
 
   @return append($result, $remaining);
-}
-
-/**
- * Replace `$search` with `$replace` in `$string`.
- * @see https://github.com/HugoGiraudel/SassyStrings/blob/5c85bcae6ab51ef3996719ec31cce7aafd1a9fad/stylesheets/private/_str-replace.scss
- * @param  {String}  $string       - Initial string
- * @param  {String}  $search       - Substring to replace
- * @param  {String}  $replace ('') - New value
- * @return {String} - Updated string
- */
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
-
-  @return $string;
 }

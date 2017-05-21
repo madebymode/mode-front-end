@@ -1,13 +1,5 @@
-.u-flex-0 {
-  flex: 0;
-}
-.u-flex-1 {
-  flex: 1;
-}
-
-@include u-flex-wrap('nowrap');
-@include u-align-items('center');
-@include u-justify-content('center');
+@include u-flex('0', 0);
+@include u-flex('1', 1);
 
 
 
@@ -16,11 +8,9 @@
 // ------------------------------
 
 // Max-width
-@include u-flex-wrap('nowrap', 'lt-sm');
-@include u-align-items('center', 'lt-sm');
-@include u-justify-content('center', 'lt-sm');
+@include u-flex('0', 0, 'lt-sm');
+@include u-flex('1', 1, 'lt-sm');
 
 // Min-width
-@include u-flex-wrap('nowrap', 'sm');
-@include u-align-items('center', 'sm');
-@include u-justify-content('center', 'sm');
+@include u-flex('0', 0, 'sm');
+@include u-flex('1', 1, 'sm');

@@ -1,7 +1,5 @@
-var map = require('./array/map');
+// TODO: Use starter kit JS to avoid dupe code
+// require('../../../starter-kit/assets/js/app');
 
-map(document.querySelectorAll('a'), function(el) {
-  el.addEventListener('click', function(e) {
-    console.log('Clicked anchor: ', this);
-  });
-});
+const video = require('./video');
+video.player.init();

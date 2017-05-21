@@ -1,12 +1,43 @@
+/*doc
+---
+title: White Space
+name: white-space
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-white-space('nowrap');
+
+// Responsive
+@include u-white-space('nowrap', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-white-space-nowrap">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-white-space-nowrap@sm">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+</p>
+```
+*/
+
 /**
- * White space utilities.
+ * White-space utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-white-space($value, $at-breakpoint: null) {
   @include u-property('white-space', $value, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-white-space('nowrap', 'sm');

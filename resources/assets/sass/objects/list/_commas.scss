@@ -1,26 +1,45 @@
+/*doc
+---
+title: List Commas
+name: list-commas
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--commas();
+
+// Responsive
+@include o-list--commas('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list  o-list--commas">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list  o-list--commas@sm">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+*/
+
 /**
  * Inline list separated by commas.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list--commas();
- * @include o-list--commas('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ul class="o-list  o-list--commas">
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- * </ul>
- * ```
  */
 @mixin o-list--commas($at-breakpoint: null) {
   @include breakpoints('o-list--commas', $at-breakpoint) {
@@ -28,8 +47,7 @@
       display: inline-block;
     }
     > .o-list__item:not(:last-child)::after {
-      margin-left: -2px;
-      content: ', ';
+      content: ',';
     }
   }
 }

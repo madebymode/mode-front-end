@@ -1,0 +1,40 @@
+/*doc
+---
+title: Font Family
+name: font-family
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-font-family('display', $font-family--display);
+
+// Responsive
+@include u-font-family('display', $font-family--display, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-font-family-display">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-font-family-display@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+*/
+
+/**
+ * Font-family utility.
+ * @param  {String}  $alias
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-font-family($alias, $value, $at-breakpoint: null) {
+  @include u-property('font-family', $alias, $value, $at-breakpoint);
+}

@@ -1,4 +1,6 @@
+@include u-color('white-1', $color-white-1);
 @include u-color('gray-1', $color-gray-1);
+@include u-color('gray-3', $color-gray-3);
 @include u-color('red-1', $color-red-1);
 
 
@@ -8,9 +10,13 @@
 // ------------------------------
 
 // Max-width
+@include u-color('white-1', $color-white-1, 'lt-sm');
 @include u-color('gray-1', $color-gray-1, 'lt-sm');
+@include u-color('gray-3', $color-gray-3, 'lt-sm');
 @include u-color('red-1', $color-red-1, 'lt-sm');
 
 // Min-width
+@include u-color('white-1', $color-white-1, 'sm');
 @include u-color('gray-1', $color-gray-1, 'sm');
+@include u-color('gray-3', $color-gray-3, 'sm');
 @include u-color('red-1', $color-red-1, 'sm');

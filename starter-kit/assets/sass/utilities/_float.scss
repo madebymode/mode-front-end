@@ -1,0 +1,18 @@
+@include u-float('right');
+@include u-float('left');
+@include u-clearfix();
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-float('right', 'lt-sm');
+@include u-float('left', 'lt-sm');
+@include u-clearfix('lt-sm');
+
+// Min-width
+@include u-float('right', 'sm');
+@include u-float('left', 'sm');
+@include u-clearfix('sm');

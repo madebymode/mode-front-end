@@ -1,10 +1,44 @@
-// TODO: Allow directional gutters (e.g., all, horizontal, or vertical)
+/*doc
+---
+title: Grid Gutters
+name: grid-gutters
+category: Objects
+---
+<span class="todo">TODO:</span> Allow directional gutters (e.g., `all`, `horizontal`, or `vertical`).
+
+## Sass
+
+```scss
+// Basic
+@include o-grid--gutters('sm', $gutter-sm);
+
+// Responsive
+@include o-grid--gutters('sm', $gutter-sm, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="o-grid  o-grid--gutters-sm">
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="o-grid  o-grid--gutters-sm@sm">
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+*/
 
 /**
- * Grid with horizontal gutters.
- *
- * TODO: Add vertical option. Maybe direction aliases like padding and margin?
- *
+ * Grid with gutters.
  * @param  {String}  $alias
  * @param  {Number}  $size
  * @param  {String}  $at-breakpoint
@@ -26,7 +60,3 @@
     }
   }
 }
-
-// Examples:
-// @include o-grid--gutters('sm', $gutter-sm);
-// @include o-grid--gutters('sm', $gutter-sm, 'sm');

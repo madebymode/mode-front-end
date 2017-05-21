@@ -1,0 +1,2150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilities | MODE Front-End</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script async src="/js/app.js"></script>
+</head>
+<body class="c-layout">
+  <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  <header class="c-layout__wrapper" role="banner">
+    <h1 class="u-text-align-center">
+      <!-- <a href="/" style="color: inherit; text-decoration: none;">MODE Front‑End</a> -->
+      MODE Front‑End
+    </h1>
+    <nav class="u-text-align-center" role="navigation">
+      <ul class="o-list  o-list--inline">
+        <li class="o-list__item  /  u-margin-right-xs"><a href="index.html">Getting Started</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="objects.html">Objects</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="components.html">Components</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="utilities.html">Utilities</a></li>
+        <li class="o-list__item"><a href="style_guide.html">Style Guide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  
+  <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar">
+    <ul class="o-list  o-list--inline@lt-sidebar  /  c-sticky-sidebar__nav">
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#align-items">Align Items</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#align-self">Align Self</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#animation">Animation</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#aspect-ratio">Aspect Ratio</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#background-color">Background Color</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#background-position">Background Position</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#border">Border</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#box-shadow">Box Shadow</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#color">Color</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#content">Content</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#depth">Depth (z-index)</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#display">Display</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex">Flex</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex-direction">Flex Direction</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex-wrap">Flex Wrap</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#float">Float</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-family">Font Family</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-size">Font Size</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-style">Font Style</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-weight">Font Weight</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#height">Height</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#hover">Hover</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#justify-content">Justify Content</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#margin">Margin</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#max-height">Max Height</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#max-width">Max Width</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#min-height">Min Height</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#min-width">Min Width</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#object-fit">Object Fit</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#opacity">Opacity</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#order">Order</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#overflow">Overflow</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#padding">Padding</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#pointer-events">Pointer Events</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#position">Position</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-align">Text Align</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-overflow">Text Overflow</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-transform">Text Transform</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#transform">Transform</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#user-select">User Select</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#vertical-align">Vertical Align</a></li>
+      
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#white-space">White Space</a></li>
+      
+      <li class="o-list__item  /  "><a href="#width">Width</a></li>
+      
+    </ul>
+  </nav>
+
+  
+
+  <main class="c-layout__wrapper" role="main">
+<h1>Utilities</h1>
+<ul class="styleguide"><li><code class="styleguide">u-</code>   Utility    : “A very specific role [that is] not tied to any specific piece of UI.”</li>
+</ul>
+<h1 id="align-items" class="styleguide">Align Items</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-align-items('center');
+
+// Responsive
+@include u-align-items('center', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-align-items-center">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-align-items-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-align-items-center@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-align-items-center@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="align-self" class="styleguide">Align Self</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-align-self('flex-start');
+@include u-align-self('flex-end');
+
+// Responsive
+@include u-align-self('flex-start', 'sm');
+@include u-align-self('flex-end', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-align-items-center">
+  <img class="u-align-self-flex-start" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+  <img class="u-align-self-flex-end" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-align-items-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-align-self-flex-start"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-align-self-flex-end"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-align-items-center">
+  <img class="u-align-self-flex-start@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+  <img class="u-align-self-flex-end@sm" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-align-items-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-align-self-flex-start@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-align-self-flex-end@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="animation" class="styleguide">Animation</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// Basic
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards) {
+  opacity: 1;
+}
+
+// Responsive
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards, 'sm') {
+  opacity: 1;
+}</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-animation-fade-in-400ms" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-animation-fade-in-400ms"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-animation-fade-in-400ms@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-animation-fade-in-400ms@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="aspect-ratio" class="styleguide">Aspect Ratio</h1>
+<p class="styleguide"><span class="todo">TODO:</span> Make <code class="styleguide">btwn</code> alias for mq (e.g., <code class="styleguide">u-aspect-ratio--3x2@btwn-sm-and-md</code>).</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-aspect-ratio(3, 1);
+@include u-aspect-ratio(16, 9);
+
+// Responsive
+@include u-aspect-ratio(3, 1, 'sm');
+@include u-aspect-ratio(16, 9, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-background-color-gray-1">
+  <div class="u-aspect-ratio-16x9"></div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-background-color-gray-1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-16x9"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-background-color-gray-1">
+  <div class="u-aspect-ratio-3x1  u-aspect-ratio-16x9@sm"></div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-background-color-gray-1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-3x1  u-aspect-ratio-16x9@sm"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="background-color" class="styleguide">Background Color</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-background-color('gray-1', $color-gray-1);
+
+// Responsive
+@include u-background-color('gray-1', $color-gray-1, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-background-color-gray-3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-background-color-gray-3"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-background-color-gray-3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-background-color-gray-3"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="background-position" class="styleguide">Background Position</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-background-position('top-right', top right);
+
+// Responsive
+@include u-background-position('top-right', top right, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-background-position-top-right" style="background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;">
+  <div class="u-aspect-ratio-3x1"></div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-background-position-top-right"</span> <span class="na">style=</span><span class="s">"background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-3x1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-background-position-top-right@sm" style="background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;">
+  <div class="u-aspect-ratio-3x1"></div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-background-position-top-right@sm"</span> <span class="na">style=</span><span class="s">"background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-3x1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="border" class="styleguide">Border</h1>
+<p class="styleguide">Directions: null, <code class="styleguide">vertical</code>, <code class="styleguide">horizontal</code>, <code class="styleguide">top</code>, <code class="styleguide">right</code>, <code class="styleguide">bottom</code>, <code class="styleguide">left</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-border('top-gray-3', 1px solid $color-gray-3);
+
+// Responsive
+@include u-border('top-gray-3', 1px solid $color-gray-3, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-border-top-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-border-top-gray-3"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-border-top-gray-3@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-border-top-gray-3@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="box-shadow" class="styleguide">Box Shadow</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1));
+
+// Responsive
+@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-box-shadow-down-black-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-box-shadow-down-black-1"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-box-shadow-down-black-1@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-box-shadow-down-black-1@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="color" class="styleguide">Color</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-color('red-1', $color-red-1);
+
+// Responsive
+@include u-color('red-1', $color-red-1, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-color-red-1">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-color-red-1"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-color-red-1">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-color-red-1"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="content" class="styleguide">Content</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-content-before('arrow-left', '« ');
+@include u-content-after('arrow-right', ' »');
+
+// Responsive
+@include u-content-before('arrow-left', '« ', 'sm');
+@include u-content-after('arrow-right', ' »', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-content-before-arrow-left  u-content-after-arrow-right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-content-before-arrow-left  u-content-after-arrow-right"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-content-before-arrow-left@sm  u-content-after-arrow-right@sm">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-content-before-arrow-left@sm  u-content-after-arrow-right@sm"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="depth" class="styleguide">Depth (z-index)</h1>
+<p class="styleguide"><span class="todo">TODO:</span> How should we handle negative values? For example, should we use parens: <code class="styleguide">.u-depth\(-1\) { z-index: -1; }</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-depth(1);
+@include u-depth(2);
+@include u-depth(3);
+
+// Responsive
+@include u-depth(1, 'sm');
+@include u-depth(2, 'sm');
+@include u-depth(3, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-position-relative">
+  <div class="u-aspect-ratio-3x1"></div>
+  <img class="u-depth-2" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1" style="position: absolute; top: 20px; left: 20px;">
+  <img class="u-depth-3" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2" style="position: absolute; top: 40px; left: 40px;">
+  <img class="u-depth-1" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3" style="position: absolute; top: 60px; left: 60px;">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-position-relative"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-3x1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-2"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 20px; left: 20px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-3"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 40px; left: 40px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-1"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 60px; left: 60px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-position-relative">
+  <div class="u-aspect-ratio-3x1"></div>
+  <img class="u-depth-2@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1" style="position: absolute; top: 20px; left: 20px;">
+  <img class="u-depth-3@sm" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2" style="position: absolute; top: 40px; left: 40px;">
+  <img class="u-depth-1@sm" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3" style="position: absolute; top: 60px; left: 60px;">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-position-relative"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-aspect-ratio-3x1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-2@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 20px; left: 20px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-3@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 40px; left: 40px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-depth-1@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span> <span class="na">style=</span><span class="s">"position: absolute; top: 60px; left: 60px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="display" class="styleguide">Display</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-display('block');
+@include u-visually-hidden();
+
+// Responsive
+@include u-display('block', 'sm');
+@include u-visually-hidden('sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <span class="u-display-block  /  u-background-color-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-display-block  /  u-background-color-gray-3"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/span&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <span class="u-display-block@sm  /  u-background-color-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-display-block@sm  /  u-background-color-gray-3"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/span&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="flex" class="styleguide">Flex</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-flex('0', 0);
+@include u-flex('1', 1);
+
+// Responsive
+@include u-flex('0', 0, 'sm');
+@include u-flex('1', 1, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex">
+  <img class="u-flex-0" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-flex-1" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-flex-0"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-flex-1"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex">
+  <img class="u-flex-0@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-flex-1@sm" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-flex-0@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-flex-1@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="flex-direction" class="styleguide">Flex Direction</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-flex-direction('row-reverse');
+
+// Responsive
+@include u-flex-direction('row-reverse', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-direction-row-reverse">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-direction-row-reverse"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-direction-row-reverse@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-direction-row-reverse@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="flex-wrap" class="styleguide">Flex Wrap</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-flex-wrap('wrap');
+
+// Responsive
+@include u-flex-wrap('wrap', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-wrap-wrap">
+  <img src="http://placehold.it/300x100/ff0000/ffffff?text=1" width="300" height="100" alt="Item 1">
+  <img src="http://placehold.it/300x100/00ff00/ffffff?text=2" width="300" height="100" alt="Item 2">
+  <img src="http://placehold.it/300x100/0000ff/ffffff?text=3" width="300" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-wrap-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-wrap-wrap@sm">
+  <img src="http://placehold.it/300x100/ff0000/ffffff?text=1" width="300" height="100" alt="Item 1">
+  <img src="http://placehold.it/300x100/00ff00/ffffff?text=2" width="300" height="100" alt="Item 2">
+  <img src="http://placehold.it/300x100/0000ff/ffffff?text=3" width="300" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-wrap-wrap@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/300x100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="float" class="styleguide">Float</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-float('right');
+@include u-float('left');
+@include u-clearfix('right');
+
+// Responsive
+@include u-float('right', 'sm');
+@include u-float('left', 'sm');
+@include u-clearfix('sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-clearfix">
+  <img class="u-float-right" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-clearfix"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-float-right"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-clearfix">
+  <img class="u-float-right@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-clearfix"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-float-right@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="font-family" class="styleguide">Font Family</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-font-family('display', $font-family--display);
+
+// Responsive
+@include u-font-family('display', $font-family--display, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-font-family-display">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-family-display"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-font-family-display@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-family-display@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="font-size" class="styleguide">Font Size</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-font-size('100%', 100%);
+@include u-font-size('heading', 1.5rem);
+
+// Responsive
+@include u-font-size('100%', 100%, 'sm');
+@include u-font-size('heading', 1.5rem, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <h4 class="u-font-size-100%">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-size-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"u-font-size-100%"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-size-heading"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <h4 class="u-font-size-100%@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-size-heading@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"u-font-size-100%@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-size-heading@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="font-style" class="styleguide">Font Style</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-font-style('italic');
+
+// Responsive
+@include u-font-style('italic', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-font-style-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-style-italic"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-font-style-italic@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-style-italic@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="font-weight" class="styleguide">Font Weight</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-font-weight('400', 400);
+@include u-font-weight('bold', bold);
+
+// Responsive
+@include u-font-weight('400', 400, 'sm');
+@include u-font-weight('bold', bold, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <h4 class="u-font-weight-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-weight-bold@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"u-font-weight-400"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-weight-bold@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <h4 class="u-font-weight-400@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-weight-bold@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"u-font-weight-400@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-font-weight-bold@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="height" class="styleguide">Height</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-height('50vh', 50vh);
+
+// Responsive
+@include u-height('50vh', 50vh, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-height-50vh" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-height-50vh"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-height-50vh@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-height-50vh@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="hover" class="styleguide">Hover</h1>
+<p class="styleguide"><span class="todo">TODO:</span> How can we include default properties like <code class="styleguide">transition</code>?</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-hover('dim', 'is-active') {
+  opacity: 0.6;
+}
+
+// Responsive
+@include u-hover('dim', 'is-active', 'sm') {
+  opacity: 0.6;
+}</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-hover-dim" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-hover-dim"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-hover-dim@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-hover-dim@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="justify-content" class="styleguide">Justify Content</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-justify-content('center');
+
+// Responsive
+@include u-justify-content('center', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-justify-content-center">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-justify-content-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-justify-content-center@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-justify-content-center@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="margin" class="styleguide">Margin</h1>
+<p class="styleguide">Directions: null, <code class="styleguide">vertical</code>, <code class="styleguide">horizontal</code>, <code class="styleguide">top</code>, <code class="styleguide">right</code>, <code class="styleguide">bottom</code>, <code class="styleguide">left</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-margin('horizontal-auto', auto);
+
+// Responsive
+@include u-margin('horizontal-auto', auto, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-margin-horizontal-auto" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-margin-horizontal-auto"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-margin-horizontal-auto@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-margin-horizontal-auto@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="max-height" class="styleguide">Max Height</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-max-height('100', rem(100));
+
+// Responsive
+@include u-max-height('100', rem(100), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-max-height-100" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-max-height-100"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-max-height-100@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-max-height-100@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="max-width" class="styleguide">Max Width</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-max-width('100', rem(100));
+
+// Responsive
+@include u-max-width('100', rem(100), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-max-width-100" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-max-width-100"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-max-width-100@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-max-width-100@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="min-height" class="styleguide">Min Height</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-min-height('200', rem(200));
+
+// Responsive
+@include u-min-height('200', rem(200), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-min-height-200" src="http://placehold.it/100/ff0000/ffffff?text=1" height="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-min-height-200"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-min-height-200@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" height="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-min-height-200@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="min-width" class="styleguide">Min Width</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-min-width('200', rem(200));
+
+// Responsive
+@include u-min-width('200', rem(200), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-min-width-200" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-min-width-200"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-min-width-200@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-min-width-200@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="object-fit" class="styleguide">Object Fit</h1>
+<p class="styleguide"><span class="todo">Important:</span> Requires polyfill for IE and Edge: <a class="styleguide" href="http://caniuse.com/#feat=object-fit" title="http://caniuse.com/#feat=object-fit">Can I use…</a> Use either <a class="styleguide" href="https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/object-fit" title="https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/object-fit">lazySizes object fit extension</a> or <a class="styleguide" href="https://github.com/bfred-it/object-fit-images" title="https://github.com/bfred-it/object-fit-images">object-fit-images</a></p><p class="styleguide">Values: <code class="styleguide">fill</code>, <code class="styleguide">contain</code>, <code class="styleguide">cover</code>, <code class="styleguide">none</code>, <code class="styleguide">scale-down</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-object-fit('cover');
+
+// Responsive
+@include u-object-fit('cover', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="opacity" class="styleguide">Opacity</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-opacity('60', 0.6);
+
+// Responsive
+@include u-opacity('60', 0.6, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-opacity-60" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-opacity-60"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-opacity-60@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-opacity-60@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="order" class="styleguide">Order</h1>
+<p class="styleguide"><span class="todo">TODO:</span> How should we handle negative values? For example, should we use parens: <code class="styleguide">.u-order\(-1\) { z-index: -1; }</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-order(1);
+@include u-order(2);
+@include u-order(3);
+
+// Responsive
+@include u-order(1, 'sm');
+@include u-order(2, 'sm');
+@include u-order(3, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex">
+  <img class="u-order-2" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-order-3" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img class="u-order-1" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-2"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-3"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-1"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex">
+  <img class="u-order-2@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-order-3@sm" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img class="u-order-1@sm" src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-2@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-3@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-order-1@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="overflow" class="styleguide">Overflow</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-overflow('hidden');
+
+// Responsive
+@include u-overflow('hidden', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-width-100  /  u-overflow-hidden">
+  <img src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-width-100  /  u-overflow-hidden"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-width-100  /  u-overflow-hidden@sm">
+  <img src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-width-100  /  u-overflow-hidden@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="padding" class="styleguide">Padding</h1>
+<p class="styleguide">Directions: null, <code class="styleguide">vertical</code>, <code class="styleguide">horizontal</code>, <code class="styleguide">top</code>, <code class="styleguide">right</code>, <code class="styleguide">bottom</code>, <code class="styleguide">left</code>.</p>
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-padding('horizontal-sm', $gutter-sm);
+
+// Responsive
+@include u-padding('horizontal-sm', $gutter-sm, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-padding-horizontal-sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-padding-horizontal-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-padding-horizontal-sm@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-padding-horizontal-sm@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="pointer-events" class="styleguide">Pointer Events</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-pointer-events('none');
+
+// Responsive
+@include u-pointer-events('none', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-pointer-events-none">
+  <a href="javascript:alert('Hello!');">Click me</a>
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-pointer-events-none"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:alert('Hello!');"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-pointer-events-none@sm">
+  <a href="javascript:alert('Hello!');">Click me</a>
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-pointer-events-none@sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:alert('Hello!');"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="position" class="styleguide">Position</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-position('relative', relative);
+@include u-position('center', absolute) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Responsive
+@include u-position('relative', relative, 'sm');
+@include u-position('center', absolute) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-position-relative  /  u-height-200">
+  <img class="u-position-center" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-position-relative  /  u-height-200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-position-center"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-position-relative  /  u-height-200">
+  <img class="u-position-center@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-position-relative  /  u-height-200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-position-center@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="text-align" class="styleguide">Text Align</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-text-align('center');
+
+// Responsive
+@include u-text-align('center', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-text-align-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-text-align-center"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-text-align-center@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-text-align-center@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="text-overflow" class="styleguide">Text Overflow</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-text-overflow('ellipsis');
+
+// Responsive
+@include u-text-overflow('ellipsis', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-width-100  /  u-overflow-hidden  /  u-white-space-nowrap  /  u-text-overflow-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-width-100  /  u-overflow-hidden  /  u-white-space-nowrap  /  u-text-overflow-ellipsis"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-width-100  /  u-overflow-hidden  /  u-white-space-nowrap  /  u-text-overflow-ellipsis@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-width-100  /  u-overflow-hidden  /  u-white-space-nowrap  /  u-text-overflow-ellipsis@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="text-transform" class="styleguide">Text Transform</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-text-transform('uppercase');
+
+// Responsive
+@include u-text-transform('uppercase', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-text-transform-uppercase">Lorem ipsum dolor</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-text-transform-uppercase"</span><span class="nt">&gt;</span>Lorem ipsum dolor<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-text-transform-uppercase@sm">Lorem ipsum dolor</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-text-transform-uppercase@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="transform" class="styleguide">Transform</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-transform('rotate-90', rotate(90deg));
+
+// Responsive
+@include u-transform('rotate-90', rotate(90deg), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-transform-rotate-90" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-transform-rotate-90"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img class="u-transform-rotate-90@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-transform-rotate-90@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="user-select" class="styleguide">User Select</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-user-select('none');
+
+// Responsive
+@include u-user-select('none', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-user-select-none">Select me</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-user-select-none"</span><span class="nt">&gt;</span>Select me<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-user-select-none@sm">Select me</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-user-select-none@sm"</span><span class="nt">&gt;</span>Select me<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="vertical-align" class="styleguide">Vertical Align</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-vertical-align('middle');
+
+// Responsive
+@include u-vertical-align('middle', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p>
+  Lorem ipsum dolor sit amet <img class="u-display-inline-block  /  u-vertical-align-middle" src="http://placehold.it/100/ff0000/ffffff?text=1" width="50" height="50" alt="Item 1"> consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p&gt;</span>
+  Lorem ipsum dolor sit amet <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-display-inline-block  /  u-vertical-align-middle"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"50"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span> consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p>
+  Lorem ipsum dolor sit amet <img class="u-display-inline-block  /  u-vertical-align-middle@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="50" height="50" alt="Item 1"> consectetur adipisicing elit.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p&gt;</span>
+  Lorem ipsum dolor sit amet <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-display-inline-block  /  u-vertical-align-middle@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"50"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span> consectetur adipisicing elit.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="white-space" class="styleguide">White Space</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-white-space('nowrap');
+
+// Responsive
+@include u-white-space('nowrap', 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-white-space-nowrap">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-white-space-nowrap"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-white-space-nowrap@sm">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-white-space-nowrap@sm"</span><span class="nt">&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit, molestias hic. Numquam rerum eum, quae! Quod voluptate tempore aut, molestias! Aut atque, quis animi ab fugiat. Eveniet, nam ducimus.
+<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="width" class="styleguide">Width</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-width('1/1', percentage(1 / 1));
+@include u-width('1/2', percentage(1 / 2));
+
+// Responsive
+@include u-width('1/1', percentage(1 / 1), 'sm');
+@include u-width('1/2', percentage(1 / 2), 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-wrap-wrap">
+  <img class="u-width-1/2" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+  <img class="u-width-1/2" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-wrap-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/2"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/2"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="u-display-flex  /  u-flex-wrap-wrap">
+  <img class="u-width-1/1  u-width-1/2@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+  <img class="u-width-1/1  u-width-1/2@sm" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u-display-flex  /  u-flex-wrap-wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  u-width-1/2@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  u-width-1/2@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+    <footer class="u-margin-top-xl">
+      <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+    </footer>
+  </main>
+</body>
+</html>

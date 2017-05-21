@@ -1,16 +1,40 @@
+/*doc
+---
+title: Opacity
+name: opacity
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-opacity('60', 0.6);
+
+// Responsive
+@include u-opacity('60', 0.6, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-opacity-60" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-opacity-60@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+*/
+
 /**
- * Opacity utilities
- * @param  {Number}  $value
+ * Opacity utility.
+ * @param  {String}  $alias
+ * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-opacity($value, $at-breakpoint: null) {
-  @include u-property('opacity', $value, ($value / 100), $at-breakpoint);
+@mixin u-opacity($alias, $value, $at-breakpoint: null) {
+  @include u-property('opacity', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @for $opacity from 10 through 100 {
-//   @if ($opacity % 10 == 0) {
-//     @include u-opacity($opacity);
-//   }
-// }

@@ -1,0 +1,39 @@
+/*doc
+---
+title: Browser Upgrade
+name: browser-upgrade
+category: Components
+---
+## Sass
+
+```scss
+@include c-browser-upgrade;
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+```
+
+### Internet Explorer 9 and below
+
+```html_example
+<!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+```
+*/
+
+/**
+ * Browser upgrade prompt for old Internet Explorer.
+ */
+@mixin c-browser-upgrade {
+  .c-browser-upgrade {
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    text-align: center;
+  }
+}

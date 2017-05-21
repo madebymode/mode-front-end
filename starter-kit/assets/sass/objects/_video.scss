@@ -1,0 +1,20 @@
+@include o-video();
+@include o-video__wrapper();
+@include o-video__element();
+@include o-video__play();
+@include o-video__close();
+
+// Overlay
+@include o-video--overlay();
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include o-video('lt-sm');
+
+// Min-width
+@include o-video('sm');

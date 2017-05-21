@@ -1,0 +1,13 @@
+@include u-text-overflow('ellipsis');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-text-overflow('ellipsis', 'lt-sm');
+
+// Min-width
+@include u-text-overflow('ellipsis', 'sm');

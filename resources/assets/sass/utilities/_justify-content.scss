@@ -1,0 +1,47 @@
+/*doc
+---
+title: Justify Content
+name: justify-content
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-justify-content('center');
+
+// Responsive
+@include u-justify-content('center', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-display-flex  /  u-justify-content-center">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-display-flex  /  u-justify-content-center@sm">
+  <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+  <img src="http://placehold.it/100/0000ff/ffffff?text=3" width="100" height="100" alt="Item 3">
+</div>
+```
+*/
+
+/**
+ * Justify-content utility.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-justify-content($value, $at-breakpoint: null) {
+  @include u-property('justify-content', $value, $value, $at-breakpoint);
+}

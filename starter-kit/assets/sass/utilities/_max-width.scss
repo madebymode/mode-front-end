@@ -1,4 +1,5 @@
-@include u-max-width(640);
+@include u-max-width('100', rem(100));
+@include u-max-width('640', rem(640));
 
 
 
@@ -7,7 +8,9 @@
 // ------------------------------
 
 // Max-width
-@include u-max-width(640, 'lt-sm');
+@include u-max-width('100', rem(100), 'lt-sm');
+@include u-max-width('640', rem(640), 'lt-sm');
 
 // Min-width
-@include u-max-width(640, 'sm');
+@include u-max-width('100', rem(100), 'sm');
+@include u-max-width('640', rem(640), 'sm');

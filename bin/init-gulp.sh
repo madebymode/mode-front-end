@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# @see [Install Notes](https://github.com/tannerhodges/mode-front-end#install)
+# @see [Install Notes](https://github.com/madebymode/mode-front-end#install)
 #
 # *NOTE*: This script assumes that you’re running it from your project root
-# and that MODE Front-end is installed at `./node_modules/mode-front-end`.
+# and that MODE Front-End is installed at `./node_modules/mode-front-end`.
 
-echo "Installing MODE Front-end’s gulp build...";
+echo "Installing MODE Front-End’s gulp build...";
 echo "";
 
 PATH_TO_FILES='.';

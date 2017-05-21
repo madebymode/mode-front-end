@@ -1,0 +1,16 @@
+@include u-align-self('flex-start');
+@include u-align-self('flex-end');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-align-self('flex-start', 'lt-sm');
+@include u-align-self('flex-end', 'lt-sm');
+
+// Min-width
+@include u-align-self('flex-start', 'sm');
+@include u-align-self('flex-end', 'sm');

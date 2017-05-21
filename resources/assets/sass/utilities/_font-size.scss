@@ -1,10 +1,40 @@
-// TODO: Escape percent signs so we can use percentage values in aliases
-// .u-font-size-100\% {
-//   font-size: 100%;
-// }
+/*doc
+---
+title: Font Size
+name: font-size
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-font-size('100%', 100%);
+@include u-font-size('heading', 1.5rem);
+
+// Responsive
+@include u-font-size('100%', 100%, 'sm');
+@include u-font-size('heading', 1.5rem, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<h4 class="u-font-size-100%">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-size-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+
+### Responsive
+
+```html_example
+<h4 class="u-font-size-100%@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<p class="u-font-size-heading@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+*/
 
 /**
- * Font size utilities.
+ * Font-size utility.
  * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
@@ -12,8 +42,3 @@
 @mixin u-font-size($alias, $value, $at-breakpoint: null) {
   @include u-property('font-size', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-font-size('100%', 100%);
-// @include u-font-size('lg', 3em);

@@ -1,5 +1,38 @@
+/*doc
+---
+title: Margin
+name: margin
+category: Utilities
+---
+Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
+
+## Sass
+
+```scss
+// Basic
+@include u-margin('horizontal-auto', auto);
+
+// Responsive
+@include u-margin('horizontal-auto', auto, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-margin-horizontal-auto" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-margin-horizontal-auto@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+*/
+
 /**
- * Margin utilities
+ * Margin utility.
  * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
@@ -7,8 +40,3 @@
 @mixin u-margin($alias, $value, $at-breakpoint: null) {
   @include u-property-directional('margin', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// NOTE: Keep breakpoint modifiers below defaults so they always override them
-// @include u-margin('horizontal', $gutter);

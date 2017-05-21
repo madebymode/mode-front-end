@@ -1,0 +1,16 @@
+@include u-aspect-ratio(3, 1);
+@include u-aspect-ratio(16, 9);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-aspect-ratio(3, 1, 'lt-sm');
+@include u-aspect-ratio(16, 9, 'lt-sm');
+
+// Min-width
+@include u-aspect-ratio(3, 1, 'sm');
+@include u-aspect-ratio(16, 9, 'sm');

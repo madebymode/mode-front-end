@@ -6,13 +6,66 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-### Changed
+### Added
 
-- Autoprefixer Browserlist to defaults plus IE 10+ and iOS 8+
+- Add [Hologram](https://github.com/trulia/hologram) for generating docs
+- Docs for CSS objects, components, and utilities
+- `devDependencies` in package.json
+- Add `escape-selector()` function
+- Add `to-string()` function
+- Add `add-breakpoint()` mixin
+- Add `o-table()` object
+- Add `o-video()` object + video player script
+- Add utilities: `u-flex()`, `u-clearfix()`, `u-object-fit()`, `u-font-family()`, `u-font-style()`, `u-transform()`, `u-user-select()`
+- caniuse.com link for `requestAnimationFrame` polyfill
+- Starter kit objects and utilities
+- Starter kit app.js
+- webpack.config.js
 
 ### Removed
 
-- Removed [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) as its not needed for last 2 versions of modern browsers anymore.
+- Remove [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) as its not needed for last 2 versions of modern browsers anymore.
+- Temporarily remove `u-small-caps()` mixins (plan to repurpose as an object)
+- Remove `.u-object-fit-cover` and `.u-transform-center` classes (moved to mixins)
+- Remove `public/index.php` (replaced with Hologram docs)
+- Remove old sub/sup reset CSS
+- Remove old img-transparent folder
+
+### Changed
+
+- Autoprefixer Browserlist to defaults plus IE 10+ and iOS 8+
+- Reorganize Sass functions (e.g., move `strip-unit()` to Units)
+- Reorganize Sass mixins (e.g., Accessibility)
+- Set all variables in settings as `!default`
+- Set all `$gutter` values to `rem` units
+- Simplify `clearfix()` mixin
+- Make `object-fit()` arguments required
+- Set `overflow: scroll;` so `scroll()` mixin allows horizontal scrolling
+- Use separate mixins for all object elements by default (modifiers can override elements, though)
+- Set `max-height: 100%;` for `o-icon()`
+- Set `padding-left: 0;` for `o-list()`
+- Simplify and add configurable params for `o-list()` modifiers (e.g., `o-list--disc()`)
+- Rename `o-list--numbers-roman()` to `o-list--roman()`
+- Add space before slash in `.o-list--slashes` content
+- Move `c-browser-upgrade()` to index partial
+- Move flex utilities to separate partials (e.g., `align-items` and `align-self`)
+- Break up `u-content()` mixin into two: `u-content-before()` and `u-content-after()`
+- Refactor utilities so they allow flexible alias/value combinations: `u-max-height()`, `u-max-width()`, `u-min-height()`, `u-min-width()`, `u-opacity()`, `u-position()`, `u-width()`
+- Make starter kit PHP 2 spaces
+- Capitalize "MODE Front-End"
+- Update Required Variables in README
+- Move Utilities notes from README to Hologram docs
+- Update TODOs in README
+
+### Fixed
+
+- Fix `hover()` mixin incorrectly generating selectors for multiple active classes
+- Update `u-hover()` mixin so it allows multiple active classes as a map value
+- Fix `u-property-directional()` incorrectly handling aliases with dashes (e.g., `top-gray-3`)
+- Fix `u-property` generators so they allow classes with special characters (use `escape-characters()` in `breakpoints()`)
+- Add required media type so `mq()` generates valid CSS media queries
+- Fix GitHub URL (madebymode instead of tannerhodges)
+- Fix "you’re" typo in README
 
 ## [1.3.3] - 2017-05-09
 

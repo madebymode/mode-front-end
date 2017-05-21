@@ -5,13 +5,42 @@ name: media
 category: Objects
 ---
 
+## Sass
+
+```scss
+// Basic
+@include o-media();
+@include o-media__figure();
+@include o-media__body();
+
+// Responsive
+@include o-media('sm');
+```
+
+## Markup
+
+### Basic
+
 ```html_example
-<div class="o-media  o-media--center">
-  <figure class="o-media__figure">
-    <img src="http://placehold.it/200" alt="">
+<div class="o-media  /  u-align-items-center">
+  <figure class="o-media__figure  /  u-padding-right-sm">
+    <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
   </figure>
   <p class="o-media__body">
-    Lorem ipsum Do voluptate deserunt dolor sunt nostrud magna sunt Excepteur ut eiusmod amet adipisicing.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </p>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="o-media@sm  /  u-align-items-center">
+  <figure class="o-media__figure  /  u-padding-right-sm@sm">
+    <img src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  </figure>
+  <p class="o-media__body">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   </p>
 </div>
 ```
@@ -23,23 +52,28 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-media($at-breakpoint: null) {
-  $class-name: 'o-media';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include breakpoints('o-media', $at-breakpoint) {
     display: flex;
     align-items: flex-start;
-
-    > .o-media__figure {
-      flex: 0 1 auto;
-    }
-
-    > .o-media__body {
-      flex: 1 1 auto;
-    }
   }
 }
 
-// Examples:
+/**
+ * Media object figure.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-media__figure($at-breakpoint: null) {
+  @include breakpoints('o-media__figure', $at-breakpoint) {
+    flex: 0 1 auto;
+  }
+}
 
-// @include o-media();
-// @include o-media('sm');
-// @include o-media('lt-sm');
+/**
+ * Media object body.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-media__body($at-breakpoint: null) {
+  @include breakpoints('o-media__body', $at-breakpoint) {
+    flex: 1 1 auto;
+  }
+}
