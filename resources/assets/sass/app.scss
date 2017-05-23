@@ -237,6 +237,7 @@ $sidebar-width   : 192;
 
 // Utilities
 @include u-margin('right-xs', $gutter-xs, 'lt-sidebar');
+@include u-text-align('center', 'lt-sidebar');
 
 // TODO: Make scroll utilities (like `object-fit`)
 .u-scroll {

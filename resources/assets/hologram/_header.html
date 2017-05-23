@@ -31,7 +31,7 @@
 
   <% if @blocks.size > 1 %>
   <% @blocks.sort! { |a, b| a[:title] <=> b[:title] } %>
-  <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar">
+  <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar  /  u-text-align-center@lt-sidebar">
     <ul class="o-list  o-list--inline@lt-sidebar  /  c-sticky-sidebar__nav">
       <% @blocks.each do |b| %>
       <li class="o-list__item  /  <% unless b.equal?(@blocks.last) %>u-margin-right-xs@lt-sidebar<% end %>"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
