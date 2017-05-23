@@ -9,8 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 - Add [Hologram](https://github.com/trulia/hologram) for generating docs
-- Docs for CSS objects, components, and utilities
-- `devDependencies` in package.json
+- [Docs for CSS objects, components, and utilities](https://madebymode.github.io/mode-front-end)
+- [Upgrade Guide](http://mode-front-end.app/index.html#upgrade_guide)
+- Add `devDependencies` in `package.json`
 - Add `escape-selector()` function
 - Add `to-string()` function
 - Add `add-breakpoint()` mixin
@@ -19,8 +20,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Add utilities: `u-flex()`, `u-clearfix()`, `u-object-fit()`, `u-font-family()`, `u-font-style()`, `u-transform()`, `u-user-select()`
 - caniuse.com link for `requestAnimationFrame` polyfill
 - Starter kit objects and utilities
-- Starter kit app.js
-- webpack.config.js
+- Starter kit `app.js`
+- Add `webpack.config.js`
 
 ### Removed
 
