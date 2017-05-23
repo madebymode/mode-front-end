@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 
-- Remove [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) as its not needed for last 2 versions of modern browsers anymore.
+- Remove [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) as its not needed for last 2 versions of modern browsers anymore
 - Temporarily remove `u-small-caps()` mixins (plan to repurpose as an object)
 - Remove `.u-object-fit-cover` and `.u-transform-center` classes (moved to mixins)
 - Remove `public/index.php` (replaced with Hologram docs)
@@ -181,25 +181,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 - Renamed `all.js` files to `index.js` for simpler namespaces:
-  - For example, `var dom = require('mode-front-end/resources/assets/js/dom/all');` becomes `var dom = require('mode-front-end/resources/assets/js/dom');`.
+  - For example, `const dom = require('mode-front-end/resources/assets/js/dom/all');` becomes `const dom = require('mode-front-end/resources/assets/js/dom');`
 
 ## [0.31.0] - 2016-09-16
 
 ### Changed
 
 - Converted `.o-grid` styles to mixins:
-  - `@include o-grid;`
-  - `@include o-grid__item;`
+  - `@include o-grid();`
+  - `@include o-grid__item();`
 
 ## [0.27.0] - 2016-08-25
 
 ### Changed
 
 - Converted `normalize` and `reset` to mixins:
-  - `@include css-normalize;`
-  - `@include css-reset;`
-- Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible).
-  - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`.
+  - `@include css-normalize();`
+  - `@include css-reset();`
+- Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
+  - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
 [Unreleased]: https://github.com/madebymode/mode-front-end/compare/v1.3.3...HEAD
 [1.3.3]: https://github.com/madebymode/mode-front-end/compare/v1.3.0...v1.3.3
