@@ -1,0 +1,16 @@
+@include u-vertical-align('middle');
+@include u-vertical-align('baseline');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-vertical-align('middle', 'lt-sm');
+@include u-vertical-align('baseline', 'lt-sm');
+
+// Min-width
+@include u-vertical-align('middle', 'sm');
+@include u-vertical-align('baseline', 'sm');

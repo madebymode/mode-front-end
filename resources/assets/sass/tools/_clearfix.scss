@@ -1,13 +1,14 @@
 /**
  * Clear floated elements.
+ * @see https://css-tricks.com/snippets/css/clear-fix/
  */
 @mixin clearfix {
-  &::before,
   &::after {
     display: table;
-    content: '';
-  }
-  &::after {
     clear: both;
+    content: '';
+    // Someday… 🙏
+    // @see http://caniuse.com/#feat=flow-root
+    // display: flow-root;
   }
 }

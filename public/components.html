@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components | MODE Front-End</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script async src="/js/app.js"></script>
+</head>
+<body class="c-layout">
+  <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  <header class="c-layout__wrapper" role="banner">
+    <h1 class="u-text-align-center">
+      <!-- <a href="/" style="color: inherit; text-decoration: none;">MODE Front‑End</a> -->
+      MODE Front‑End
+    </h1>
+    <nav class="u-text-align-center" role="navigation">
+      <ul class="o-list  o-list--inline">
+        <li class="o-list__item  /  u-margin-right-xs"><a href="index.html">Getting Started</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="sass.html">Sass</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="objects.html">Objects</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="components.html">Components</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="utilities.html">Utilities</a></li>
+        <li class="o-list__item  /  u-margin-right-xs"><a href="javascript.html">JavaScript</a></li>
+        <li class="o-list__item"><a href="php.html">PHP</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main class="c-layout__wrapper" role="main">
+<h1>Components</h1>
+<p class="styleguide"><code class="styleguide">c-</code>   Component  : “A concrete, implementation-specific piece of UI.”</p>
+<h1 id="browser-upgrade" class="styleguide">Browser Upgrade</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@include c-browser-upgrade();</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"c-browser-upgrade"</span><span class="nt">&gt;</span>You are using an <span class="nt">&lt;strong&gt;</span>outdated<span class="nt">&lt;/strong&gt;</span> browser. Please <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://browsehappy.com/"</span><span class="nt">&gt;</span>upgrade your browser<span class="nt">&lt;/a&gt;</span> to improve your experience.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Internet Explorer 9 and below</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="c">&lt;!--[if IE]&gt;&lt;p class="c-browser-upgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;&lt;![endif]--&gt;</span></pre>
+    </div>
+  </div>
+</div>
+    <footer class="u-margin-top-xl">
+      <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+    </footer>
+  </main>
+</body>
+</html>

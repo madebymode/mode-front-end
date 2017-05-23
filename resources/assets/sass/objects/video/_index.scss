@@ -1,0 +1,169 @@
+/*doc
+---
+title: Video
+name: video
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-video();
+@include o-video__close();
+@include o-video__element();
+@include o-video--overlay();
+
+// Responsive
+@include o-video('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<figure class="o-video  /  js-video-wrapper">
+  <div class="u-aspect-ratio-16x9"></div>
+  <div id="video" class="o-video__element  /  js-video" data-video='{
+    "url": "https://www.youtube.com/watch?v=0qo78R_yYFA"
+  }'></div>
+</figure>
+```
+
+### Overlay
+
+```html_example
+<div class="o-video  o-video--overlay  /  js-video-wrapper">
+  <img src="/img/spacex-interplanetary-transport-system.jpg" width="1920" height="1080" alt="SpaceX Interplanetary Transport System">
+  <button class="o-video__play  /  u-position-center  /  js-video-open" type="button" data-video="#video-overlay">Play Video</button>
+  <figure class="o-video__wrapper">
+    <button class="o-video__close  /  js-video-close" type="button">Close</button>
+    <div id="video-overlay" class="o-video__element  /  js-video" data-video='{
+      "url": "https://www.youtube.com/watch?v=0qo78R_yYFA"
+    }'></div>
+  </figure>
+</div>
+```
+*/
+
+/**
+ * Video object.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video($at-breakpoint: null) {
+  @include breakpoints('o-video', $at-breakpoint) {
+    position: relative;
+  }
+}
+
+/**
+ * Video object wrapper.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video__wrapper($at-breakpoint: null) {
+  @include breakpoints('o-video__wrapper', $at-breakpoint) {
+    position: relative;
+    background: $color-black-1;
+  }
+}
+
+/**
+ * Video object element.
+ * @see http://embedresponsively.com/
+ * @note Since YouTube automatically letterboxes videos, we don't have to worry about aspect ratio or centering
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video__element($at-breakpoint: null) {
+  @include breakpoints('o-video__element', $at-breakpoint) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/**
+ * Video object play button.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video__play($at-breakpoint: null) {
+  @include breakpoints('o-video__play', $at-breakpoint) {
+    // Empty default
+  }
+}
+
+/**
+ * Video object close button.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video__close($at-breakpoint: null) {
+  @include breakpoints('o-video__close', $at-breakpoint) {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
+}
+
+
+
+// ------------------------------
+// Modifiers
+// ------------------------------
+
+/**
+ * Video overlay.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-video--overlay($at-breakpoint: null) {
+  @include breakpoints('o-video--overlay', $at-breakpoint) {
+    .o-video__wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+
+    .o-video__element {
+      transition: opacity 300ms ease;
+      opacity: 0;
+    }
+    &.is-active .o-video__element {
+      opacity: 1;
+    }
+
+    .o-video__play {
+      transition: opacity 300ms ease;
+    }
+    .o-video__play:not(.is-ready) {
+      opacity: 0;
+    }
+
+    .o-video__close {
+      transition: opacity 100ms ease;
+      opacity: 0;
+    }
+    &.is-active .o-video__close {
+      opacity: 1;
+    }
+    &.is-active .o-video__close:focus,
+    &.is-active .o-video__close:hover {
+      opacity: 0.8;
+    }
+  }
+}

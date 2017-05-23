@@ -1,0 +1,39 @@
+/*doc
+---
+title: Font Style
+name: font-style
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-font-style('italic');
+
+// Responsive
+@include u-font-style('italic', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-font-style-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-font-style-italic@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+```
+*/
+
+/**
+ * Font-style utility.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-font-style($value, $at-breakpoint: null) {
+  @include u-property('font-style', $value, $value, $at-breakpoint);
+}

@@ -1,0 +1,15 @@
+// Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`
+
+@include u-border('top-gray-3', 1px solid $color-gray-3);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-border('top-gray-3', 1px solid $color-gray-3, 'lt-sm');
+
+// Min-width
+@include u-border('top-gray-3', 1px solid $color-gray-3, 'sm');

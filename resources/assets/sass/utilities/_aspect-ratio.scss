@@ -1,5 +1,44 @@
+/*doc
+---
+title: Aspect Ratio
+name: aspect-ratio
+category: Utilities
+---
+<span class="todo">TODO:</span> Make `btwn` alias for mq (e.g., `u-aspect-ratio--3x2@btwn-sm-and-md`).
+
+## Sass
+
+```scss
+// Basic
+@include u-aspect-ratio(3, 1);
+@include u-aspect-ratio(16, 9);
+
+// Responsive
+@include u-aspect-ratio(3, 1, 'sm');
+@include u-aspect-ratio(16, 9, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-background-color-gray-1">
+  <div class="u-aspect-ratio-16x9"></div>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-background-color-gray-1">
+  <div class="u-aspect-ratio-3x1  u-aspect-ratio-16x9@sm"></div>
+</div>
+```
+*/
+
 /**
- * Preserve aspect ratio of an element.
+ * Aspect ratio utility.
  * @param  {Number}  $width
  * @param  {Number}  $height
  * @param  {String}  $at-breakpoint
@@ -12,16 +51,3 @@
     padding: 0 0 percentage($height / $width);
   }
 }
-
-// Examples:
-
-// @include u-aspect-ratio(2, 1);
-// @include u-aspect-ratio(16, 9);
-// @include u-aspect-ratio(16, 9, 'sm');
-
-// TODO: Make `btwn` alias for mq
-// .u-aspect-ratio--3x2\@btwn-sm-and-md {
-//   @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md') - 0.0625em) {
-//     padding: 0 0 percentage(2 / 3);
-//   }
-// }

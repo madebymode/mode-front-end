@@ -1,0 +1,13 @@
+@include u-object-fit('cover');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-object-fit('cover', 'lt-sm');
+
+// Min-width
+@include u-object-fit('cover', 'sm');

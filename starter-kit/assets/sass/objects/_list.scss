@@ -1,0 +1,40 @@
+@include o-list();
+@include o-list--border('', 1px solid $color-gray-3);
+@include o-list--bullet('', 1rem);
+@include o-list--comma();
+@include o-list--disc('', 1.125em);
+@include o-list--inline();
+@include o-list--leading-zero();
+@include o-list--number();
+@include o-list--roman();
+@include o-list--slash();
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include o-list('lt-sm');
+@include o-list--border('', 1px solid $color-gray-3, 'lt-sm');
+@include o-list--bullet('', 1rem, 'lt-sm');
+@include o-list--comma();
+@include o-list--disc('', 1.125em, 'lt-sm');
+@include o-list--inline('lt-sm');
+@include o-list--leading-zero('lt-sm');
+@include o-list--number('lt-sm');
+@include o-list--roman('lt-sm');
+@include o-list--slash('lt-sm');
+
+// Min-width
+@include o-list('sm');
+@include o-list--border('', 1px solid $color-gray-3, 'sm');
+@include o-list--bullet('', 1rem, 'sm');
+@include o-list--comma();
+@include o-list--disc('', 1.125em, 'sm');
+@include o-list--inline('sm');
+@include o-list--leading-zero('sm');
+@include o-list--number('sm');
+@include o-list--roman('sm');
+@include o-list--slash('sm');

@@ -1,0 +1,13 @@
+@include u-align-items('center');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-align-items('center', 'lt-sm');
+
+// Min-width
+@include u-align-items('center', 'sm');

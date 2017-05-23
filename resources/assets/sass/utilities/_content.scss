@@ -1,23 +1,59 @@
-// TODO: This is experimental. Try out in a project and circle back around on
-// naming and implementation (e.g., `u-pseudo` may be a better name).
+/*doc
+---
+title: Content
+name: content
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-content-before('arrow-left', '« ');
+@include u-content-after('arrow-right', ' »');
+
+// Responsive
+@include u-content-before('arrow-left', '« ', 'sm');
+@include u-content-after('arrow-right', ' »', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-content-before-arrow-left  u-content-after-arrow-right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-content-before-arrow-left@sm  u-content-after-arrow-right@sm">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</div>
+```
+*/
 
 /**
- * Content utilities.
+ * Content utility.
  * @param  {String}  $alias
- * @param  {String}  $pseudo-element
+ * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-content($alias, $pseudo-element: 'before', $at-breakpoint: null) {
-  $class-name: 'u-content-#{$alias}';
+@mixin u-content-before($alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-content-before-#{$alias}';
   @include breakpoints($class-name, $at-breakpoint) {
-    &::#{$pseudo-element} {
-      @content;
+    &::before {
+      content: '#{$value}';
     }
   }
 }
-
-// Examples:
-
-// @include u-content('arrow', 'after') {
-//   content: '\00a0»';
-// }
+@mixin u-content-after($alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-content-after-#{$alias}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    &::after {
+      content: '#{$value}';
+    }
+  }
+}

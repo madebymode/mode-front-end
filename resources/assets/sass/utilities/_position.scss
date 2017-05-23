@@ -1,64 +1,58 @@
-// TODO: Make `u-position` an overloaded method, else make multiple position classes.
-/**
- * Assign common position values.
- * @param  {String}  $alias
- */
-// @mixin u-position($alias: 'cover') {
-//   @if ($alias == 'cover') {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//   }
-// }
+/*doc
+---
+title: Position
+name: position
+category: Utilities
+---
+## Sass
 
-/**
- * Fluid position utilities
- *
- * TODOs:
- * - Position aliases (e.g., center; see below)
- * - Absolute positions (maybe?)
- *
- * @param  {Number}  $size
- * @param  {Number}  $out-of
- * @param  {String}  $at-breakpoint
- */
-@mixin u-position($size, $out-of, $at-breakpoint: null) {
-  $class-name: 'u-position-#{$size}#{\/}#{$out-of}';
-  @include breakpoints($class-name, $at-breakpoint) {
-    left: percentage($size / $out-of);
-  }
+```scss
+// Basic
+@include u-position('relative', relative);
+@include u-position('center', absolute) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-// Examples:
-
-// @include u-position(1, 2);
-// @include u-position(7, 30); // 280, 1200
-// @include u-position(5, 12); // 500, 1200
-
-
-
-/*
-Potential position aliases:
-
-- .u-position-center
-- .u-position-top-center
-- .u-position-center-right
-- .u-position-center-left
-- .u-position-top-left
-- .u-position-top-right
-- .u-position-bottom-right
-- .u-position-bottom-left
-
-For example:
-
-```
-@mixin u-position-center() {
-  position: absolute;
+// Responsive
+@include u-position('relative', relative, 'sm');
+@include u-position('center', absolute) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 ```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-position-relative  /  u-height-200">
+  <img class="u-position-center" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-position-relative  /  u-height-200">
+  <img class="u-position-center@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</div>
+```
+*/
+
+/**
+ * Position utility.
+ * @param  {String}  $alias
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
  */
+@mixin u-position($alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-position-#{$alias}';
+  @include breakpoints($class-name, $at-breakpoint) {
+    @content;
+    position: #{$value};
+  }
+}

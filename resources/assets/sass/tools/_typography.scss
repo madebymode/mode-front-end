@@ -4,8 +4,8 @@
  * @param  {Boolean}  $value
  * @return {[type]}
  */
-@mixin font-smoothing($is_bold: false) {
-  @if $is_bold {
+@mixin font-smoothing($is-bold: false) {
+  @if $is-bold {
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: subpixel-antialiased;
   } @else {

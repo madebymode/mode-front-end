@@ -1,12 +1,42 @@
+/*doc
+---
+title: Display
+name: display
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-display('block');
+@include u-visually-hidden();
+
+// Responsive
+@include u-display('block', 'sm');
+@include u-visually-hidden('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<span class="u-display-block  /  u-background-color-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+```
+
+### Responsive
+
+```html_example
+<span class="u-display-block@sm  /  u-background-color-gray-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+```
+*/
+
 /**
- * Display utilities.
+ * Display utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-display($value, $at-breakpoint: null) {
-  // TODO: Should we drop the `!important` flag?
-  // @include u-property('display', $alias, $value, $at-breakpoint);
-
   $class-name: 'u-display-#{$value}';
   @include breakpoints($class-name, $at-breakpoint) {
     // scss-lint:disable ImportantRule
@@ -15,19 +45,11 @@
   }
 }
 
-// Examples:
-
-// @include u-display('inline-block');
-// @include u-display('block');
-// @include u-display('inline-flex');
-// @include u-display('flex');
-// @include u-display('visually-hidden'); <-- Should this be a `display` value or separate?
-// @include u-display('none');
-
-
+// TODO: Should `visually-hidden` be an optional `display` value or stay separate?
+// @include u-display('visually-hidden');
 
 /**
- * Visually hidden utilities.
+ * Visually hidden utility.
  * @param  {String}  $at-breakpoint
  */
 @mixin u-visually-hidden($at-breakpoint: null) {
@@ -36,8 +58,3 @@
     @include visually-hidden();
   }
 }
-
-// Examples:
-
-// @include u-visually-hidden();
-// @include u-visually-hidden('sm');

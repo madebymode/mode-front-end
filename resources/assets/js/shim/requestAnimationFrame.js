@@ -1,5 +1,6 @@
 /**
  * requestAnimationFrame polyfill by Erik Möller. Fixes from Paul Irish and Tino Zijdel. MIT license.
+ * @see http://caniuse.com/#search=requestanimationframe
  * @see https://gist.github.com/paulirish/1579671
  * @see http://paulirish.com/2011/requestanimationframe-for-smart-animating/
  * @see http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating

@@ -1,11 +1,47 @@
-// TODO: This is experimental. Try out in a project and circle back around on
-// implementation (e.g., should `animation` be set by `$value` or should we
-// assume it will be part of `@content`?).
+/*doc
+---
+title: Animation
+name: animation
+category: Utilities
+---
+## Sass
+
+```scss
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// Basic
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards) {
+  opacity: 1;
+}
+
+// Responsive
+@include u-animation('fade-in-400ms', 400ms fade-in linear forwards, 'sm') {
+  opacity: 1;
+}
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-animation-fade-in-400ms" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-animation-fade-in-400ms@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+```
+*/
 
 /**
- * Animation utilities.
+ * Animation utility.
  * @param  {String}  $alias
- * @param  {String}  $class
+ * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-animation($alias, $value, $at-breakpoint: null) {
@@ -15,18 +51,3 @@
     animation: #{$value};
   }
 }
-
-// Examples:
-
-// @include u-animation('fade-in', '200ms fade-in linear forwards') {
-//   opacity: 1;
-// }
-//
-// @keyframes fade-in {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }

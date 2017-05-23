@@ -1,5 +1,44 @@
+/*doc
+---
+title: Float
+name: float
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-float('right');
+@include u-float('left');
+@include u-clearfix('right');
+
+// Responsive
+@include u-float('right', 'sm');
+@include u-float('left', 'sm');
+@include u-clearfix('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-clearfix">
+  <img class="u-float-right" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-clearfix">
+  <img class="u-float-right@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+</p>
+```
+*/
+
 /**
- * Float utilities.
+ * Float utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
@@ -7,7 +46,12 @@
   @include u-property('float', $value, $value, $at-breakpoint);
 }
 
-// Examples:
-
-// @include u-float('right');
-// @include u-float('right', 'sm');
+/**
+ * Clearfix utility.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-clearfix($at-breakpoint: null) {
+  @include breakpoints('u-clearfix', $at-breakpoint) {
+    @include clearfix;
+  }
+}

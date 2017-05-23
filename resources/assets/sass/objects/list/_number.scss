@@ -1,0 +1,55 @@
+/*doc
+---
+title: List Number
+name: list-number
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--number();
+
+// Responsive
+@include o-list--number('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ol class="o-list  o-list--number">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+
+### Responsive
+
+```html_example
+<ol class="o-list  o-list--number@sm">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+*/
+
+/**
+ * Numbered list.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-list--number($at-breakpoint: null) {
+  @include breakpoints('o-list--number', $at-breakpoint) {
+    > .o-list__item {
+      counter-increment: list-numbers;
+    }
+
+    .o-list__counter::before {
+      display: inline-block;
+      content: counter(list-numbers) '. ';
+    }
+  }
+}

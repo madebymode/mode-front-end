@@ -1,5 +1,36 @@
+/*doc
+---
+title: Height
+name: height
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-height('50vh', 50vh);
+
+// Responsive
+@include u-height('50vh', 50vh, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-height-50vh" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+```
+
+### Responsive
+
+```html_example
+<img class="u-height-50vh@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+```
+*/
+
 /**
- * Height utilities.
+ * Height utility.
  * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
@@ -7,8 +38,3 @@
 @mixin u-height($alias, $value, $at-breakpoint: null) {
   @include u-property('height', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-height('100vh');
-// @include u-height('100vh', 'sm');

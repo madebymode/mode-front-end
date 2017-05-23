@@ -1,0 +1,16 @@
+@include u-content-before('arrow-left', '« ');
+@include u-content-after('arrow-right', ' »');
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-content-before('arrow-left', '« ', 'lt-sm');
+@include u-content-after('arrow-right', ' »', 'lt-sm');
+
+// Min-width
+@include u-content-before('arrow-left', '« ', 'sm');
+@include u-content-after('arrow-right', ' »', 'sm');

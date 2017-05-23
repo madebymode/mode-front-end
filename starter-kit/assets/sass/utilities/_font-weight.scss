@@ -1,0 +1,16 @@
+@include u-font-weight('400', 400);
+@include u-font-weight('bold', bold);
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-font-weight('400', 400, 'lt-sm');
+@include u-font-weight('bold', bold, 'lt-sm');
+
+// Min-width
+@include u-font-weight('400', 400, 'sm');
+@include u-font-weight('bold', bold, 'sm');

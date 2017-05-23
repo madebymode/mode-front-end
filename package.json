@@ -19,5 +19,15 @@
     "url": "https://github.com/madebymode/mode-front-end/issues"
   },
   "homepage": "https://github.com/madebymode/mode-front-end#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-responsive": "^2.7.0",
+    "laravel-elixir": "^6.0.0-15",
+    "laravel-elixir-imagemin": "^0.2.3",
+    "laravel-elixir-livereload": "^1.1.6",
+    "laravel-elixir-svgstore": "^1.0.3",
+    "laravel-elixir-webpack-official": "^1.0.10"
+  }
 }

@@ -1,1 +1,12 @@
+// 💡 Use regex to find stray colors in the project's Sass:
+// #[a-zA-Z0-9]{3,6}
+
+$color-black-1: #000;
+$color-white-1: #fff;
+
+$color-gray-1: #323031;
+$color-gray-2: #5b595a;
+$color-gray-3: #ccc;
+$color-gray-4: #eee;
+
 $color-red-1: #e5413b;

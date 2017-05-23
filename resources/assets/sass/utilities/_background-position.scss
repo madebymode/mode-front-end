@@ -1,5 +1,40 @@
+/*doc
+---
+title: Background Position
+name: background-position
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-background-position('top-right', top right);
+
+// Responsive
+@include u-background-position('top-right', top right, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-background-position-top-right" style="background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;">
+  <div class="u-aspect-ratio-3x1"></div>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-background-position-top-right@sm" style="background-image: url('http://placehold.it/100/ff0000/ffffff?text=1'); background-size: 100px; background-repeat: no-repeat;">
+  <div class="u-aspect-ratio-3x1"></div>
+</div>
+```
+*/
+
 /**
- * Background position utilities.
+ * Background-position utility.
  * @param  {String} $alias
  * @param  {String} $value
  * @param  {String} $at-breakpoint
@@ -7,8 +42,3 @@
 @mixin u-background-position($alias, $value, $at-breakpoint: null) {
   @include u-property('background-position', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-background-position('bottom-left', 'bottom left');
-// @include u-background-position('bottom-left', 'bottom left', 'sm');

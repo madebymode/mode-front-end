@@ -1,5 +1,40 @@
+/*doc
+---
+title: Background Color
+name: background-color
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-background-color('gray-1', $color-gray-1);
+
+// Responsive
+@include u-background-color('gray-1', $color-gray-1, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-background-color-gray-3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-background-color-gray-3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+```
+*/
+
 /**
- * Background color utilities.
+ * Background-color utility.
  * @param  {String} $alias
  * @param  {String} $value
  * @param  {String} $at-breakpoint
@@ -7,8 +42,3 @@
 @mixin u-background-color($alias, $value, $at-breakpoint: null) {
   @include u-property('background-color', $alias, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-background-color('white-1', $color-white-1);
-// @include u-background-color('white-1', $color-white-1, 'sm');

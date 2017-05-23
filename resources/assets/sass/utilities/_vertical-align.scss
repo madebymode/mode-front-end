@@ -1,13 +1,43 @@
+/*doc
+---
+title: Vertical Align
+name: vertical-align
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-vertical-align('middle');
+
+// Responsive
+@include u-vertical-align('middle', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p>
+  Lorem ipsum dolor sit amet <img class="u-display-inline-block  /  u-vertical-align-middle" src="http://placehold.it/100/ff0000/ffffff?text=1" width="50" height="50" alt="Item 1"> consectetur adipisicing elit.
+</p>
+```
+
+### Responsive
+
+```html_example
+<p>
+  Lorem ipsum dolor sit amet <img class="u-display-inline-block  /  u-vertical-align-middle@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="50" height="50" alt="Item 1"> consectetur adipisicing elit.
+</p>
+```
+*/
+
 /**
- * Vertical align utilities.
+ * Vertical-align utility.
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
 @mixin u-vertical-align($value, $at-breakpoint: null) {
   @include u-property('vertical-align', $value, $value, $at-breakpoint);
 }
-
-// Examples:
-
-// @include u-vertical-align('middle');
-// @include u-vertical-align('middle', 'sm');

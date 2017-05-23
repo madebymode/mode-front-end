@@ -1,0 +1,13 @@
+@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1));
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1), 'lt-sm');
+
+// Min-width
+@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1), 'sm');

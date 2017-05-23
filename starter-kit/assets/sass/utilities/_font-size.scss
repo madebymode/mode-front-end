@@ -1,7 +1,5 @@
-// Reset font size (useful for headings)
-.u-font-size-100\% {
-  font-size: 100%;
-}
+@include u-font-size('100%', 100%);
+@include u-font-size('heading', 1.5rem);
 
 
 
@@ -10,15 +8,9 @@
 // ------------------------------
 
 // Max-width
-.u-font-size-100\%\@lt-sm {
-  @include mq('lt-sm') {
-    font-size: 100%;
-  }
-}
+@include u-font-size('100%', 100%, 'lt-sm');
+@include u-font-size('heading', 1.5rem, 'lt-sm');
 
 // Min-width
-.u-font-size-100\%\@sm {
-  @include mq('sm') {
-    font-size: 100%;
-  }
-}
+@include u-font-size('100%', 100%, 'sm');
+@include u-font-size('heading', 1.5rem, 'sm');

@@ -1,6 +1,46 @@
-// TODO: Generic size utility (similar to `u-property-directional`)
-.u-object-fit-cover {
-  @include object-fit('cover');
-  width: 100%;
-  height: 100%;
+/*doc
+---
+title: Object Fit
+name: object-fit
+category: Utilities
+---
+<span class="todo">Important:</span> Requires polyfill for IE and Edge: [Can I use…](http://caniuse.com/#feat=object-fit) Use either [lazySizes object fit extension](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/object-fit) or [object-fit-images](https://github.com/bfred-it/object-fit-images)
+
+Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
+
+## Sass
+
+```scss
+// Basic
+@include u-object-fit('cover');
+
+// Responsive
+@include u-object-fit('cover', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+```
+
+### Responsive
+
+```html_example
+<img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+```
+*/
+
+/**
+ * Object-fit utility.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-object-fit($value, $at-breakpoint: null) {
+  @include breakpoints('u-object-fit-cover', $at-breakpoint) {
+    @include object-fit($value);
+  }
 }

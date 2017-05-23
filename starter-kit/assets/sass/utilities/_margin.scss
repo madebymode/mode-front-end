@@ -1,7 +1,15 @@
-@include u-margin('horizontal-auto', 'auto');
+// Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`
 
+@include u-margin('horizontal-auto', auto);
+
+@include u-margin('top-xl', $gutter-xl);
+
+@include u-margin('right-xxs', $gutter-xxs);
+@include u-margin('right-xs', $gutter-xs);
+
+@include u-margin('bottom-0', 0);
 @include u-margin('bottom-xs', $gutter-xs);
-@include u-margin('bottom', $gutter);
+@include u-margin('bottom-sm', $gutter-sm);
 
 
 
@@ -10,7 +18,7 @@
 // ------------------------------
 
 // Max-width
-@include u-margin('horizontal-auto', 'auto', 'lt-sm');
+@include u-margin('horizontal-auto', auto, 'lt-sm');
 
 // Min-width
-@include u-margin('horizontal-auto', 'auto', 'sm');
+@include u-margin('horizontal-auto', auto, 'sm');

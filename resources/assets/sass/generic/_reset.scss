@@ -18,7 +18,7 @@
   }
 
   html {
-    @include font-smoothing;
+    @include font-smoothing();
     min-height: 100%;
     // scss-lint:disable VendorPrefix
     -webkit-text-size-adjust: 100%;                // Prevent mobile browsers from automatically zooming fonts.
@@ -86,24 +86,6 @@
   // ------------------------------
   // Miscellaneous
   // ------------------------------
-
-  // // TODO: Move this to a utilities or helpers partial
-  // // https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
-  // // Originally based on https://gist.github.com/unruthless/413930
-  // sup,
-  // sub,
-  // .sup,
-  // .sub {
-  //   font-size: 50%;
-  // }
-  // sup,
-  // .sup {
-  //   vertical-align: super;
-  // }
-  // sub,
-  // .sub {
-  //   vertical-align: sub;
-  // }
 
   // // Remove text-shadow in selection highlight:
   // // https://twitter.com/miketaylr/status/12228805301

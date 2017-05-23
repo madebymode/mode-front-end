@@ -1,0 +1,65 @@
+/*doc
+---
+title: List Bullet
+name: list-bullet
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--bullet('', 1rem);
+
+// Responsive
+@include o-list--bullet('', 1rem, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list  o-list--bullet">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list  o-list--bullet@sm">
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+```
+*/
+
+/**
+ * Bulleted list.
+ * @param  {String}  $alias
+ * @param  {Number}  $margin
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-list--bullet($alias, $margin: 1rem, $at-breakpoint: null) {
+  $class-name: 'o-list--bullet';
+
+  @if ($alias and str-length($alias) > 0) {
+    $class-name: '#{$class-name}-#{$alias}';
+  }
+
+  @include breakpoints($class-name, $at-breakpoint) {
+    > .o-list__item {
+      position: relative;
+      margin-left: $margin;
+
+      &::before {
+        position: absolute;
+        left: -$margin;
+        content: '• ';
+      }
+    }
+  }
+}

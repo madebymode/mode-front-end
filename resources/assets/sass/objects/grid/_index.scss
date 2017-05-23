@@ -1,21 +1,44 @@
+/*doc
+---
+title: Grid
+name: grid
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-grid();
+@include o-grid__item();
+
+// Responsive
+@include o-grid('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="o-grid">
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-grid__item  /  u-width-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="o-grid@sm">
+  <p class="o-grid__item  /  u-width-1/1  u-width-1/2@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-grid__item  /  u-width-1/1  u-width-1/2@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+*/
+
 /**
  * Grid object.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-grid();
- * @include o-grid('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <div class="o-grid">
- *   <div class="o-grid__item"></div>
- * </div>
- * ```
  */
 @mixin o-grid($at-breakpoint: null) {
   @include breakpoints('o-grid', $at-breakpoint) {
@@ -23,9 +46,16 @@
     flex-direction: horizontal;
     flex-wrap: wrap;
     align-items: stretch;
+  }
+}
 
-    // > .o-grid__item {
-    // }
+/**
+ * Grid object item.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-grid__item($at-breakpoint: null) {
+  @include breakpoints('o-grid__item', $at-breakpoint) {
+    // Empty default
   }
 }
 

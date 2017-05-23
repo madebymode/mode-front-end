@@ -1,0 +1,39 @@
+/*doc
+---
+title: User Select
+name: user-select
+category: Utilities
+---
+## Sass
+
+```scss
+// Basic
+@include u-user-select('none');
+
+// Responsive
+@include u-user-select('none', 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<p class="u-user-select-none">Select me</p>
+```
+
+### Responsive
+
+```html_example
+<p class="u-user-select-none@sm">Select me</p>
+```
+*/
+
+/**
+ * User-select utility.
+ * @param  {String}  $value
+ * @param  {String}  $at-breakpoint
+ */
+@mixin u-user-select($value, $at-breakpoint: null) {
+  @include u-property('user-select', $value, $value, $at-breakpoint);
+}

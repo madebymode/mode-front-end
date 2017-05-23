@@ -1,56 +1,48 @@
-// TODO: `flex` mixins
-// .u-flex-1 {
-//   flex: 1;
-// }
-// .u-flex-1-1-auto {
-//   flex: 1 1 auto;
-// }
-// .u-flex-1-1-1\/3 {
-//   flex: 1 1 percentage(1 / 3);
-// }
-// .u-flex-1-1-1\/3\@sidebar {
-//   @include mq('sidebar') {
-//     flex: 1 1 percentage(1 / 3);
-//   }
-// }
+/*doc
+---
+title: Flex
+name: flex
+category: Utilities
+---
+## Sass
 
-// TODO: Should we rename the `flex-wrap` utility so the classes are
-// easier to type out, or should we keep conventions
-// consistent (i.e., `property-value`)?
+```scss
+// Basic
+@include u-flex('0', 0);
+@include u-flex('1', 1);
 
-// .u-flex-wrap {
-//   flex-wrap: wrap;
-// }
-// .u-flex-nowrap {
-//   flex-wrap: nowrap;
-// }
+// Responsive
+@include u-flex('0', 0, 'sm');
+@include u-flex('1', 1, 'sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="u-display-flex">
+  <img class="u-flex-0" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-flex-1" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="u-display-flex">
+  <img class="u-flex-0@sm" src="http://placehold.it/100/ff0000/ffffff?text=1" width="100" height="100" alt="Item 1">
+  <img class="u-flex-1@sm" src="http://placehold.it/100/00ff00/ffffff?text=2" width="100" height="100" alt="Item 2">
+</div>
+```
+*/
 
 /**
- * Flexbox utilities.
+ * Flex utility.
+ * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-flex-direction($value, $at-breakpoint: null) {
-  @include u-property('flex-direction', $value, $value, $at-breakpoint);
+@mixin u-flex($alias, $value, $at-breakpoint: null) {
+  @include u-property('flex', $alias, $value, $at-breakpoint);
 }
-@mixin u-flex-wrap($value, $at-breakpoint: null) {
-  @include u-property('flex-wrap', $value, $value, $at-breakpoint);
-}
-@mixin u-align-self($value, $at-breakpoint: null) {
-  @include u-property('align-self', $value, $value, $at-breakpoint);
-}
-@mixin u-align-items($value, $at-breakpoint: null) {
-  @include u-property('align-items', $value, $value, $at-breakpoint);
-}
-@mixin u-justify-content($value, $at-breakpoint: null) {
-  @include u-property('justify-content', $value, $value, $at-breakpoint);
-}
-
-// Examples:
-// @include u-align-self('flex-end');
-// @include u-align-items('center');
-// @include u-justify-content('center');
-// @include u-justify-content('space-between');
-// @include u-flex-direction('column');
-// @include u-flex-wrap('wrap');
-// @include u-flex-wrap('nowrap');

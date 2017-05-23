@@ -1,0 +1,54 @@
+/*doc
+---
+title: List Slash
+name: list-slash
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--slash();
+
+// Responsive
+@include o-list--slash('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list  o-list--slash">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list  o-list--slash@sm">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+*/
+
+/**
+ * Inline list separated by slashes.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-list--slash($at-breakpoint: null) {
+  @include breakpoints('o-list--slash', $at-breakpoint) {
+    > .o-list__item {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    > .o-list__item:not(:last-child)::after {
+      content: '\00a0/';
+    }
+  }
+}

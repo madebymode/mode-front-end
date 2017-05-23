@@ -1,0 +1,19 @@
+@for $i from 1 through 10 {
+  @include u-order($i);
+}
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@for $i from 1 through 10 {
+  @include u-order($i, 'lt-sm');
+}
+
+// Min-width
+@for $i from 1 through 10 {
+  @include u-order($i, 'sm');
+}

@@ -1,26 +1,45 @@
+/*doc
+---
+title: List Inline
+name: list-inline
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--inline();
+
+// Responsive
+@include o-list--inline('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ul class="o-list  o-list--inline">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+
+### Responsive
+
+```html_example
+<ul class="o-list  o-list--inline@sm">
+  <li class="o-list__item">Lorem</li>
+  <li class="o-list__item">Ipsum</li>
+  <li class="o-list__item">Dolor</li>
+</ul>
+```
+*/
+
 /**
  * Inline list.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list--inline();
- * @include o-list--inline('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ul class="o-list  o-list--inline">
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- *   <li class="o-list__item">
- *     List Item Content
- *   </li>
- * </ul>
- * ```
  */
 @mixin o-list--inline($at-breakpoint: null) {
   @include breakpoints('o-list--inline', $at-breakpoint) {

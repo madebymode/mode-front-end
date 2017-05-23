@@ -23,10 +23,8 @@ elixir.config.css.autoprefix.options.browsers = [
   '> 1%',
   'last 2 versions',
   'Firefox ESR',
-  'Opera 12.1',
-  'ie 8',
-  'ie 9',
-  'iOS >= 7'
+  'ie >= 10',
+  'iOS >= 8'
 ];
 
 // JS

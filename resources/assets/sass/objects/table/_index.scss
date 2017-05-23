@@ -1,9 +1,63 @@
-// .o-table {
-//   display: table;
-//   width: 100%;
-//   table-layout: fixed;
-//
-//   > .o-table__item {
-//     display: table-cell;
-//   }
-// }
+/*doc
+---
+title: Table
+name: table
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-table();
+@include o-table__item();
+
+// Responsive
+@include o-table('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<div class="o-table">
+  <p class="o-table__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-table__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+
+### Responsive
+
+```html_example
+<div class="o-table@sm">
+  <p class="o-table__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p class="o-table__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+*/
+
+/**
+ * Table object.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-table($at-breakpoint: null) {
+  @include breakpoints('o-table', $at-breakpoint) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    > .o-table__item {
+      display: table-cell;
+    }
+  }
+}
+
+/**
+ * Table object item.
+ * @param  {String}  $at-breakpoint
+ */
+@mixin o-table__item($at-breakpoint: null) {
+  @include breakpoints('o-table__item', $at-breakpoint) {
+    // Empty default
+  }
+}

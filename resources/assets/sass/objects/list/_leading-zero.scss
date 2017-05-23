@@ -1,38 +1,55 @@
+/*doc
+---
+title: List Leading Zero
+name: list-leading-zero
+category: Objects
+---
+## Sass
+
+```scss
+// Basic
+@include o-list--leading-zero();
+
+// Responsive
+@include o-list--leading-zero('sm');
+```
+
+## Markup
+
+### Basic
+
+```html_example
+<ol class="o-list  o-list--leading-zero">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+
+### Responsive
+
+```html_example
+<ol class="o-list  o-list--leading-zero@sm">
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+  <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ol>
+```
+*/
+
 /**
  * Numbered list with leading zeroes.
  * @param  {String}  $at-breakpoint
- *
- * ## Sass
- *
- * ```scss
- * @include o-list--leading-zero();
- * @include o-list--leading-zero('sm');
- * ```
- *
- * ## Markup
- *
- * ```html
- * <ol class="o-list  o-list--leading-zero">
- *   <li class="o-list__item">
- *     <p class="o-list__counter">
- *       List Item Heading
- *     </p>
- *     <p class="o-list__content">
- *       List Item Content
- *     </p>
- *   </li>
- * </ol>
- * ```
  */
 @mixin o-list--leading-zero($at-breakpoint: null) {
   @include breakpoints('o-list--leading-zero', $at-breakpoint) {
     > .o-list__item {
-      counter-increment: list-numbers-leading-zero;
+      counter-increment: list-leading-zero;
     }
 
     .o-list__counter::before {
       display: inline-block;
-      content: counter(list-numbers-leading-zero, decimal-leading-zero);
+      content: counter(list-leading-zero, decimal-leading-zero);
     }
   }
 }

@@ -1,0 +1,14 @@
+@include o-table();
+@include o-table__item();
+
+
+
+// ------------------------------
+// Responsive
+// ------------------------------
+
+// Max-width
+@include o-table('lt-sm');
+
+// Min-width
+@include o-table('sm');
