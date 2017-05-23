@@ -57,7 +57,7 @@
 
     <section class="o-grid  o-grid--gutters">
       <h3 class="o-grid__item  /  u-width-1/1  /  u-margin-bottom-xs  /  u-color-gray-1  /  u-font-size-100%">
-        Grids
+        Grid
       </h3>
       <p class="o-grid__item  u-width-1/1  u-width-1/2@md  /  u-margin-bottom-sm">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sapiente deleniti, pariatur dolorem harum incidunt quo esse animi excepturi tempore exercitationem alias aliquid delectus ab velit! In officia amet quisquam.

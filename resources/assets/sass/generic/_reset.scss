@@ -18,7 +18,7 @@
   }
 
   html {
-    @include font-smoothing;
+    @include font-smoothing();
     min-height: 100%;
     // scss-lint:disable VendorPrefix
     -webkit-text-size-adjust: 100%;                // Prevent mobile browsers from automatically zooming fonts.

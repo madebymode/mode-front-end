@@ -8,8 +8,8 @@
 @import 'settings/typography';
 
 // Generic
-@include css-normalize;
-@include css-reset;
+@include css-normalize();
+@include css-reset();
 @import 'generic/reset';
 
 // Objects

@@ -2,7 +2,10 @@
 # All paths should be relative to there
 
 # The directory containing the source files to parse recursively
-source: ./resources/assets/sass
+source:
+  - ./resources/assets/sass
+  - ./resources/assets/js
+  - ./resources/assets/php
 
 # The directory that hologram will build to
 destination: ./public
@@ -34,10 +37,23 @@ dependencies:
 # folder instead of specifying this config.
 index: getting_started
 
+# A list of paths to ignore. This can be a file name or a glob. Be sure to
+# wrap globs in double quotes to keep yaml from getting too upset (ie
+# good:".erb" vs bad:.erb).
+ignore_paths:
+# - 'node_modules/*'
+
 # To additionally output navigation for top level sections, set the value to
 # 'section'. To output navigation for sub-sections,
 # set the value to `all`
 nav_level: all
+
+# Additional file extensions that will be included in the parse. Accepts both
+# a single value and an array. The current supported file extensions are .css,
+# .scss, .less, .sass, .styl, .js, .md, .markdown and .erb.
+custom_extensions:
+  - '.js'
+  - '.md'
 
 # Hologram displays warnings when there are issues with your docs
 # (e.g. if a component's parent is not found, if the _header.html and/or

@@ -1,8 +1,8 @@
-/*doc
 ---
 title: Style Guide
 name: style_guide
-category: Style Guide
+category: Getting Started
+hologram: true
 ---
 ## Naming Conventions
 
@@ -21,4 +21,3 @@ category: Style Guide
 -  `_`   Hack       : The worst (hopefully temporary) styles.
 - `js-`  JavaScript : Use to bind behaviors to the DOM. (This makes for more flexible styling.)
 - `qa-`  QA         : Use to bind automated UI tests to the DOM. "Basically just reserves hooks in the DOM for non-CSS purposes."
-*/

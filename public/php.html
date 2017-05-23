@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %> | MODE Front-End</title>
+  <title>PHP | MODE Front-End</title>
   <link rel="stylesheet" href="/css/app.css">
   <script async src="/js/app.js"></script>
 </head>
@@ -29,16 +29,30 @@
     </nav>
   </header>
 
-  <% if @blocks.size > 1 %>
-  <% @blocks.sort! { |a, b| a[:title] <=> b[:title] } %>
-  <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar">
-    <ul class="o-list  o-list--inline@lt-sidebar  /  c-sticky-sidebar__nav">
-      <% @blocks.each do |b| %>
-      <li class="o-list__item  /  <% unless b.equal?(@blocks.last) %>u-margin-right-xs@lt-sidebar<% end %>"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-      <% end %>
-    </ul>
-  </nav>
-
-  <% end %>
+  
 
   <main class="c-layout__wrapper" role="main">
+<h1 id="php" class="styleguide">PHP</h1>
+<p class="styleguide">In your <code class="styleguide">composer.json</code>, update the <code class="styleguide">autoload</code> key to include the following <code class="styleguide">files</code> block:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>"files": [
+    "./node_modules/mode-front-end/laravel/Support/helpers.php"
+]</pre>
+  </div>
+</div>
+<h2>General</h2>
+<ul class="styleguide"><li><code class="styleguide">fix_widows($text, [$minWords])</code></li>
+<li><code class="styleguide">render_attributes($attrs, [$prefix])</code></li>
+</ul>
+<h2>Laravel</h2>
+<ul class="styleguide"><li><code class="styleguide">asset_url($src, [$buildDirectory])</code></li>
+<li><code class="styleguide">icon($name, [$data])</code></li>
+</ul>
+<h2>Laravel Blade</h2>
+<ul class="styleguide"><li><code class="styleguide">@icon</code> (see install notes in <code class="styleguide">resources/views/elements/icon.blade.php</code>)</li>
+</ul>    <footer class="u-margin-top-xl">
+      <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+    </footer>
+  </main>
+</body>
+</html>

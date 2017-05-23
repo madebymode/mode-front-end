@@ -12,8 +12,8 @@
 @import '../../../starter-kit/assets/sass/settings/typography';
 
 // Generic
-@include css-normalize;
-@include css-reset;
+@include css-normalize();
+@include css-reset();
 @import '../../../starter-kit/assets/sass/generic/reset';
 
 // Objects
@@ -49,11 +49,6 @@ ol,
 ul {
   font-family: serif;
 }
-// p.styleguide,
-// ol.styleguide,
-// ul.styleguide {
-//   font-family: serif;
-// }
 
 // Vertical Rhythm
 // https://github.com/inuitcss/inuitcss/blob/04abcb2cb1285a3223b23f3ef28790222e9ef906/generic/_generic.shared.scss
@@ -69,6 +64,11 @@ fieldset {
 
 main h1:first-child {
   margin-top: 3rem;
+}
+
+h2,
+h3 {
+  margin-top: 2rem;
 }
 
 // Dividers
@@ -118,11 +118,7 @@ code {
 //   .exampleOutput
 //   .codeBlock
 //     .highlight
-.codeBlock + h1,
-.codeBlock + h2 {
-  margin-top: 2rem;
-}
-.codeExample + h3 {
+.codeBlock + h1 {
   margin-top: 2rem;
 }
 .codeBlock {
@@ -192,7 +188,7 @@ $sidebar-width   : 192;
   margin: 0 $gutter-xs;
 
   @include mq('lt-sidebar') {
-    @include scroll;
+    @include scroll();
     padding: 1rem;
     background: $color-gray-4;
     z-index: 1; // Keep above `.highlight` on iOS
@@ -231,7 +227,7 @@ $sidebar-width   : 192;
   }
 
   @include mq('sidebar') {
-    @include scroll;
+    @include scroll();
     position: relative;
     max-height: calc(100vh - 8rem);
     padding: 1rem;
@@ -244,10 +240,10 @@ $sidebar-width   : 192;
 
 // TODO: Make scroll utilities (like `object-fit`)
 .u-scroll {
-  @include scroll;
+  @include scroll();
 }
 .u-scroll-disabled {
-  @include scroll-disabled;
+  @include scroll-disabled();
 }
 
 
