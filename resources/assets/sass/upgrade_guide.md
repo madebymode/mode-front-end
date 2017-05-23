@@ -7,7 +7,7 @@ hologram: true
 
 ## Upgrading to 2.0.0 from 1.3.x
 
-Estimated upgrade time: …
+Estimated upgrade time: 4–6 hours
 
 ### New Browser Support
 
