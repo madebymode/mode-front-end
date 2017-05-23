@@ -13,7 +13,7 @@
 
   <main class="o-section  /  u-max-width-640  /  u-margin-horizontal-auto  /  u-padding-horizontal-xs  u-padding-horizontal-sm@sm" role="main">
     <h1 class="u-text-align-center">
-      MODE Front‑end
+      MODE Front‑End
     </h1>
 
     <h2 class="u-margin-bottom-xs">
