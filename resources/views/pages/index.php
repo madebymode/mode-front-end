@@ -25,7 +25,7 @@
         Color and White-Space
       </h3>
       <p class="u-margin-bottom-sm">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde <span class="u-color-red-1  /  u-white-space-nowrap">rerum alias</span> veritatis ducimus? Placeat nesciunt commodi quaerat, nobis <span class="u-color-red-1  /  u-white-space-nowrap">doloremque vero</span> temporibus eius explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde rerum <span class="u-color-red-1  /  u-white-space-nowrap">alias veritatis</span> ducimus? Placeat nesciunt commodi quaerat, nobis doloremque vero <span class="u-color-red-1  /  u-white-space-nowrap">temporibus eius</span> explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span>
       </p>
     </section>
 
