@@ -1,7 +1,7 @@
 /*doc
 ---
-title: List Borders
-name: list-borders
+title: List Border
+name: list-border
 category: Objects
 ---
 <span class="todo">TODO:</span> Allow directional gutters (e.g., `all`, `horizontal`, or `vertical`).
@@ -10,10 +10,10 @@ category: Objects
 
 ```scss
 // Basic
-@include o-list--borders('', 1px solid $color-gray-3);
+@include o-list--border('', 1px solid $color-gray-3);
 
 // Responsive
-@include o-list--borders('', 1px solid $color-gray-3, 'sm');
+@include o-list--border('', 1px solid $color-gray-3, 'sm');
 ```
 
 ## Markup
@@ -21,7 +21,7 @@ category: Objects
 ### Basic
 
 ```html_example
-<ul class="o-list  o-list--borders">
+<ul class="o-list  o-list--border">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -31,7 +31,7 @@ category: Objects
 ### Responsive
 
 ```html_example
-<ul class="o-list  o-list--borders@sm">
+<ul class="o-list  o-list--border@sm">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -43,8 +43,8 @@ category: Objects
  * Block list separated by borders.
  * @param  {String}  $at-breakpoint
  */
-@mixin o-list--borders($alias, $value, $at-breakpoint: null) {
-  $class-name: 'o-list--borders';
+@mixin o-list--border($alias, $value, $at-breakpoint: null) {
+  $class-name: 'o-list--border';
 
   @if ($alias and str-length($alias) > 0) {
     $class-name: '#{$class-name}-#{$alias}';

@@ -1,17 +1,17 @@
 /*doc
 ---
-title: List Slashes
-name: list-slashes
+title: List Slash
+name: list-slash
 category: Objects
 ---
 ## Sass
 
 ```scss
 // Basic
-@include o-list--slashes();
+@include o-list--slash();
 
 // Responsive
-@include o-list--slashes('sm');
+@include o-list--slash('sm');
 ```
 
 ## Markup
@@ -19,7 +19,7 @@ category: Objects
 ### Basic
 
 ```html_example
-<ul class="o-list  o-list--slashes">
+<ul class="o-list  o-list--slash">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -29,7 +29,7 @@ category: Objects
 ### Responsive
 
 ```html_example
-<ul class="o-list  o-list--slashes@sm">
+<ul class="o-list  o-list--slash@sm">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -41,8 +41,8 @@ category: Objects
  * Inline list separated by slashes.
  * @param  {String}  $at-breakpoint
  */
-@mixin o-list--slashes($at-breakpoint: null) {
-  @include breakpoints('o-list--slashes', $at-breakpoint) {
+@mixin o-list--slash($at-breakpoint: null) {
+  @include breakpoints('o-list--slash', $at-breakpoint) {
     > .o-list__item {
       display: inline-block;
       vertical-align: middle;

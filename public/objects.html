@@ -42,11 +42,11 @@
       
       <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list">List</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-borders">List Borders</a></li>
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-border">List Border</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-bullets">List Bullets</a></li>
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-bullet">List Bullet</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-commas">List Commas</a></li>
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-comma">List Comma</a></li>
       
       <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-disc">List Disc</a></li>
       
@@ -54,11 +54,11 @@
       
       <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-leading-zero">List Leading Zero</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-numbers">List Numbers</a></li>
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-number">List Number</a></li>
       
       <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-roman">List Roman</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-slashes">List Slashes</a></li>
+      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#list-slash">List Slash</a></li>
       
       <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#media">Media</a></li>
       
@@ -298,16 +298,16 @@
   </div>
 </div>
 
-<h1 id="list-borders" class="styleguide">List Borders</h1>
+<h1 id="list-border" class="styleguide">List Border</h1>
 <p class="styleguide"><span class="todo">TODO:</span> Allow directional gutters (e.g., <code class="styleguide">all</code>, <code class="styleguide">horizontal</code>, or <code class="styleguide">vertical</code>).</p>
 <h2>Sass</h2>
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include o-list--borders('', 1px solid $color-gray-3);
+@include o-list--border('', 1px solid $color-gray-3);
 
 // Responsive
-@include o-list--borders('', 1px solid $color-gray-3, 'sm');</pre>
+@include o-list--border('', 1px solid $color-gray-3, 'sm');</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -315,7 +315,7 @@
 <h3>Basic</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--borders">
+    <ul class="o-list  o-list--border">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -324,7 +324,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--borders"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--border"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -336,7 +336,7 @@
 <h3>Responsive</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--borders@sm">
+    <ul class="o-list  o-list--border@sm">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -345,7 +345,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--borders@sm"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--border@sm"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -354,16 +354,16 @@
   </div>
 </div>
 
-<h1 id="list-bullets" class="styleguide">List Bullets</h1>
+<h1 id="list-bullet" class="styleguide">List Bullet</h1>
 
 <h2>Sass</h2>
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include o-list--bullets('', 1rem);
+@include o-list--bullet('', 1rem);
 
 // Responsive
-@include o-list--bullets('', 1rem, 'sm');</pre>
+@include o-list--bullet('', 1rem, 'sm');</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -371,7 +371,7 @@
 <h3>Basic</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--bullets">
+    <ul class="o-list  o-list--bullet">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -380,7 +380,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--bullets"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--bullet"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -392,7 +392,7 @@
 <h3>Responsive</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--bullets@sm">
+    <ul class="o-list  o-list--bullet@sm">
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -401,7 +401,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--bullets@sm"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--bullet@sm"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -410,16 +410,16 @@
   </div>
 </div>
 
-<h1 id="list-commas" class="styleguide">List Commas</h1>
+<h1 id="list-comma" class="styleguide">List Comma</h1>
 
 <h2>Sass</h2>
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include o-list--commas();
+@include o-list--comma();
 
 // Responsive
-@include o-list--commas('sm');</pre>
+@include o-list--comma('sm');</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -427,7 +427,7 @@
 <h3>Basic</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--commas">
+    <ul class="o-list  o-list--comma">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -436,7 +436,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--commas"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--comma"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Ipsum<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Dolor<span class="nt">&lt;/li&gt;</span>
@@ -448,7 +448,7 @@
 <h3>Responsive</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--commas@sm">
+    <ul class="o-list  o-list--comma@sm">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -457,7 +457,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--commas@sm"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--comma@sm"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Ipsum<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Dolor<span class="nt">&lt;/li&gt;</span>
@@ -634,16 +634,16 @@
   </div>
 </div>
 
-<h1 id="list-numbers" class="styleguide">List Numbers</h1>
+<h1 id="list-number" class="styleguide">List Number</h1>
 
 <h2>Sass</h2>
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include o-list--numbers();
+@include o-list--number();
 
 // Responsive
-@include o-list--numbers('sm');</pre>
+@include o-list--number('sm');</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -651,7 +651,7 @@
 <h3>Basic</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ol class="o-list  o-list--numbers">
+    <ol class="o-list  o-list--number">
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -660,7 +660,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"o-list  o-list--numbers"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"o-list  o-list--number"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -672,7 +672,7 @@
 <h3>Responsive</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ol class="o-list  o-list--numbers@sm">
+    <ol class="o-list  o-list--number@sm">
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -681,7 +681,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"o-list  o-list--numbers@sm"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"o-list  o-list--number@sm"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"o-list__counter"</span><span class="nt">&gt;&lt;/span&gt;</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="nt">&lt;/li&gt;</span>
@@ -746,16 +746,16 @@
   </div>
 </div>
 
-<h1 id="list-slashes" class="styleguide">List Slashes</h1>
+<h1 id="list-slash" class="styleguide">List Slash</h1>
 
 <h2>Sass</h2>
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include o-list--slashes();
+@include o-list--slash();
 
 // Responsive
-@include o-list--slashes('sm');</pre>
+@include o-list--slash('sm');</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -763,7 +763,7 @@
 <h3>Basic</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--slashes">
+    <ul class="o-list  o-list--slash">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -772,7 +772,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--slashes"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--slash"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Ipsum<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Dolor<span class="nt">&lt;/li&gt;</span>
@@ -784,7 +784,7 @@
 <h3>Responsive</h3>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul class="o-list  o-list--slashes@sm">
+    <ul class="o-list  o-list--slash@sm">
   <li class="o-list__item">Lorem</li>
   <li class="o-list__item">Ipsum</li>
   <li class="o-list__item">Dolor</li>
@@ -793,7 +793,7 @@
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--slashes@sm"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"o-list  o-list--slash@sm"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Lorem<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Ipsum<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"o-list__item"</span><span class="nt">&gt;</span>Dolor<span class="nt">&lt;/li&gt;</span>

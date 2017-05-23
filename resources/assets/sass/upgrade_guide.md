@@ -81,16 +81,21 @@ If this causes issues, you can override the change with a padding utility. For e
 
 Several changes have been made to the `o-list()` modifiers:
 
+- Rename all plural modifiers to be singular:
+  - `o-list--borders()` → `o-list--border()`
+  - `o-list--bullets()` → `o-list--bullet()`
+  - `o-list--commas()` → `o-list--comma()`
+  - `o-list--numbers()` → `o-list--number()`
+  - `o-list--slashes()` → `o-list--slash()`
 - Rename `o-list--numbers-roman()` to `o-list--roman()`
-- Add [`$alias` and `$margin` arguments](https://github.com/madebymode/mode-front-end/pull/9/files#diff-4734d36ce3ff8c2ce853bc92f126617fL25) to `o-list--bullets()`:
-  - For example, `@include o-list--bullets();` becomes `@include o-list--bullets('', 1rem);`
-- If needed, manually add the [`top: -2px;`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-4734d36ce3ff8c2ce853bc92f126617fL35) removed from `.o-list--bullets > .o-list__item::before`
-- If needed, manually add the [`margin-left: -2px;` and the extra space in `content`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-3c374b25d11b32dfd260f25e778fc2d9L31) removed from `.o-list--commas > .o-list__item:not(:last-child)::after`
+- Add [`$alias` and `$margin` arguments](https://github.com/madebymode/mode-front-end/pull/9/files#diff-4734d36ce3ff8c2ce853bc92f126617fL25) to `o-list--bullet()`:
+  - For example, `@include o-list--bullet();` becomes `@include o-list--bullet('', 1rem);`
+- If needed, manually add the [`top: -2px;`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-4734d36ce3ff8c2ce853bc92f126617fL35) removed from `.o-list--bullet > .o-list__item::before`
+- If needed, manually add the [`margin-left: -2px;` and the extra space in `content`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-3c374b25d11b32dfd260f25e778fc2d9L31) removed from `.o-list--comma > .o-list__item:not(:last-child)::after`
 - Add [`$alias` and `$padding` arguments](https://github.com/madebymode/mode-front-end/pull/9/files#diff-10d94f277aae9faa6caaa1eaad80c702L25) to `o-list--disc()`:
   - For example, `@include o-list--disc();` becomes `@include o-list--disc('', 1rem);`
 - If needed, manually add the [`padding-bottom: em(6);`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-10d94f277aae9faa6caaa1eaad80c702L30) removed from `.o-list--disc > .o-list__item`
-- If needed, manually remove the [extra space in `content`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-1bd24679b77ee26a111ecbd8582dfbe1L35) removed from `.o-list--slashes > .o-list__item`
-
+- If needed, manually remove the [extra space in `content`](https://github.com/madebymode/mode-front-end/pull/9/files#diff-1bd24679b77ee26a111ecbd8582dfbe1L35) removed from `.o-list--slash > .o-list__item`
 
 ### `object-fit()` Mixin
 

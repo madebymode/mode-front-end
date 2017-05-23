@@ -44,9 +44,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Use separate mixins for all object elements by default (modifiers can override elements, though)
 - Set `max-height: 100%;` for `o-icon()`
 - Set `padding-left: 0;` for `o-list()`
-- Simplify and add configurable params for `o-list()` modifiers (e.g., `o-list--disc()`)
+- Rename `o-list--*` modifiers to be singular:
+  - `o-list--borders()` → `o-list--border()`
+  - `o-list--bullets()` → `o-list--bullet()`
+  - `o-list--commas()` → `o-list--comma()`
+  - `o-list--numbers()` → `o-list--number()`
+  - `o-list--slashes()` → `o-list--slash()`
 - Rename `o-list--numbers-roman()` to `o-list--roman()`
-- Add space before slash in `.o-list--slashes` content
+- Simplify and add configurable params for `o-list--bullet()` and `o-list--disc()`
+- Add space before slash in `o-list--slash()` content
 - Move `c-browser-upgrade()` to index partial
 - Move flex utilities to separate partials (e.g., `align-items` and `align-self`)
 - Break up `u-content()` mixin into two: `u-content-before()` and `u-content-after()`

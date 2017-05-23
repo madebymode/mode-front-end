@@ -1,17 +1,17 @@
 /*doc
 ---
-title: List Numbers
-name: list-numbers
+title: List Number
+name: list-number
 category: Objects
 ---
 ## Sass
 
 ```scss
 // Basic
-@include o-list--numbers();
+@include o-list--number();
 
 // Responsive
-@include o-list--numbers('sm');
+@include o-list--number('sm');
 ```
 
 ## Markup
@@ -19,7 +19,7 @@ category: Objects
 ### Basic
 
 ```html_example
-<ol class="o-list  o-list--numbers">
+<ol class="o-list  o-list--number">
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -29,7 +29,7 @@ category: Objects
 ### Responsive
 
 ```html_example
-<ol class="o-list  o-list--numbers@sm">
+<ol class="o-list  o-list--number@sm">
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
   <li class="o-list__item"><span class="o-list__counter"></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -41,8 +41,8 @@ category: Objects
  * Numbered list.
  * @param  {String}  $at-breakpoint
  */
-@mixin o-list--numbers($at-breakpoint: null) {
-  @include breakpoints('o-list--numbers', $at-breakpoint) {
+@mixin o-list--number($at-breakpoint: null) {
+  @include breakpoints('o-list--number', $at-breakpoint) {
     > .o-list__item {
       counter-increment: list-numbers;
     }
