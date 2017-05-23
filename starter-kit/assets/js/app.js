@@ -13,9 +13,9 @@ require('lazysizes/plugins/respimg/ls.respimg');
 require('lazysizes');
 
 // Browser Detects
-require('mode-front-end/resources/assets/js/browser-detect/internet-explorer');
-require('mode-front-end/resources/assets/js/browser-detect/ios');
-require('mode-front-end/resources/assets/js/browser-detect/font-features');
+require('mode-front-end/resources/assets/js/browserDetect/internetExplorer');
+require('mode-front-end/resources/assets/js/browserDetect/ios');
+require('mode-front-end/resources/assets/js/browserDetect/fontFeatures');
 
 // Video
 const video = require('mode-front-end/resources/assets/js/video');
