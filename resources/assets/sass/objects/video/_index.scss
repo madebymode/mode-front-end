@@ -34,7 +34,7 @@ category: Objects
 
 ```html_example
 <div class="o-video  o-video--overlay  /  js-video-wrapper">
-  <img src="/img/spacex-interplanetary-transport-system.jpg" width="1920" height="1080" alt="SpaceX Interplanetary Transport System">
+  <img src="./img/spacex-interplanetary-transport-system.jpg" width="1920" height="1080" alt="SpaceX Interplanetary Transport System">
   <button class="o-video__play  /  u-position-center  /  js-video-open" type="button" data-video="#video-overlay">Play Video</button>
   <figure class="o-video__wrapper">
     <button class="o-video__close  /  js-video-close" type="button">Close</button>
