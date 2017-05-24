@@ -60,6 +60,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Move flex utilities to separate partials (e.g., `align-items` and `align-self`)
 - Break up `u-content()` mixin into two: `u-content-before()` and `u-content-after()`
 - Refactor utilities so they allow flexible alias/value combinations: `u-max-height()`, `u-max-width()`, `u-min-height()`, `u-min-width()`, `u-opacity()`, `u-position()`, `u-width()`
+- Rename JS `browser-detect` to camelCase: `browserDetect`
 - Make starter kit PHP 2 spaces
 - Capitalize "MODE Front-End"
 - Update Required Variables in README

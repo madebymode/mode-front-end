@@ -161,6 +161,12 @@ For example, `.u-position-center { … }` becomes:
 
 Ideally, you should also update any `em` values to `rem`.
 
+### Rename `browser-detect` to `browserDetect`
+
+Update all JS `browser-detect` references to `browserDetect`:
+
+For example, `require('mode-front-end/resources/assets/js/browser-detect/internetExplorer');` becomes `require('mode-front-end/resources/assets/js/browserDetect/internetExplorer');`
+
 ## Upgrading to 1.3.0 from 1.2.x
 
 Estimated upgrade time: 0.5 hour
