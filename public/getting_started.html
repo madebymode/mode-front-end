@@ -315,7 +315,7 @@ npm run init-gulp --prefix ./node_modules/mode-front-end</pre>
 </div><p class="styleguide">Then use <code class="styleguide">git add -p</code> to pick which changes you want to commit.</p>
 <h3><code class="styleguide">.o-section</code> and <code class="styleguide">.o-grid</code> Styles</h3>
 <ul class="styleguide"><li>Replace any <code class="styleguide">.o-section { … }</code> styles with the mixin <code class="styleguide">@include o-section();</code></li>
-<li>Remove all <code class="styleguide">@include o-grid__item();</code> mixins (<code class="styleguide">.o-grid__item</code> styles are included in <code class="styleguide">@include o-grid__item();</code> now)</li>
+<li>Remove all <code class="styleguide">@include o-grid__item();</code> mixins (<code class="styleguide">.o-grid__item</code> styles are included in <code class="styleguide">@include o-grid();</code> now)</li>
 </ul>
 <h3><code class="styleguide">.o-grid__item</code> Styles</h3>
 <p class="styleguide">If your styles depend on <code class="styleguide">.o-grid__item</code> having a default <code class="styleguide">display</code> and <code class="styleguide">position</code>, you’ll need to add those styles back:</p><div class="codeBlock">

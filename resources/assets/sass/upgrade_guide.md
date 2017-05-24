@@ -205,7 +205,7 @@ Then use `git add -p` to pick which changes you want to commit.
 ### `.o-section` and `.o-grid` Styles
 
 - Replace any `.o-section { … }` styles with the mixin `@include o-section();`
-- Remove all `@include o-grid__item();` mixins (`.o-grid__item` styles are included in `@include o-grid__item();` now)
+- Remove all `@include o-grid__item();` mixins (`.o-grid__item` styles are included in `@include o-grid();` now)
 
 ### `.o-grid__item` Styles
 
