@@ -194,8 +194,7 @@ $sidebar-width   : 192;
     z-index: 1; // Keep above `.highlight` on iOS
   }
 
-  // TODO: Make `btwn` alias for mq
-  @media all and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'sidebar') - 0.0625em) {
+  @include mq('btwn-sm-and-sidebar') {
     .c-layout__sticky-sidebar {
       margin: 0 $gutter-sm;
     }
