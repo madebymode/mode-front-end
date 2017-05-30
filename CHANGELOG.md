@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+
+- Add `get-max-width-breakpoint()` function
+
+### Changed
+
+- Add `btwn-*-and-*` alias for `mq()`
+
 ## [2.0.0] - 2017-05-23
 
 ### Added

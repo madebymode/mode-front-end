@@ -73,13 +73,39 @@ $font-size: 16 !default; // Define in `settings/typography`
 
 
 // ------------------------------
+// Responsive
+// ------------------------------
+
+/**
+ * Subtract 1px from breakpoint so min/max queries don't overlap.
+ * @todo Use 0.01em instead of 1px to avoid media query "void" when text zoom is on.
+ * @see https://github.com/sass-mq/sass-mq/issues/6
+ * @param  {Number}  $breakpoint
+ * @return {Number}
+ */
+@function get-max-width-breakpoint($breakpoint) {
+  @if type-of($breakpoint) != 'number' {
+    @error '"#{$breakpoint}" should be a number value.';
+  } @else if unit($breakpoint) == 'em' {
+    $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
+  } @else if unit($breakpoint) == 'px' {
+    $breakpoint: $breakpoint - 1px;
+  } @else {
+    @error '#{$breakpoint} should be either em or px.';
+  }
+
+  @return $breakpoint;
+}
+
+
+// ------------------------------
 // Typography
 // ------------------------------
 
 /**
  * Convert tracking (e.g. from a PSD) to ems for letter-spacing.
- * @param  {Number} $tracking
- * @return {Number}            em value
+ * @param  {Number}  $tracking
+ * @return {Number}             em value
  */
 @function tracking($tracking) {
   @return ($tracking / 1000) * 1em;
