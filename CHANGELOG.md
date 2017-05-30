@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix "EditorConfig" typo in README
+
 ## [2.0.0] - 2017-05-23
 
 ### Added
