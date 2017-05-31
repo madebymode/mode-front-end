@@ -11,7 +11,7 @@ npm run init-config --prefix ./node_modules/mode-front-end
 
 The `init-config` script will install the following in your project root:
 
-- [EditorCongif](http://editorconfig.org/)
+- [EditorConfig](http://editorconfig.org)
 - [JSHint config](https://github.com/jshint/jshint)
 - [scss-lint config](https://github.com/brigade/scss-lint)
 
