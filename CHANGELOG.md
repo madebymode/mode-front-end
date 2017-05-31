@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+
+- Add `get-max-width-breakpoint()` function
+
+### Changed
+
+- Add `btwn-*-and-*` alias for `mq()`
+
 ### Fixed
 
 - Fix "EditorConfig" typo in README
