@@ -5,7 +5,7 @@ category: Getting Started
 hologram: true
 ---
 ```bash
-yarn add mode-front-end
+yarn add mode-front-end stylelint-config-property-sort-order-smacss
 npm run init-config --prefix ./node_modules/mode-front-end
 ```
 
@@ -13,7 +13,7 @@ The `init-config` script will install the following in your project root:
 
 - [EditorConfig](http://editorconfig.org)
 - [JSHint config](https://github.com/jshint/jshint)
-- [scss-lint config](https://github.com/brigade/scss-lint)
+- [stylelint config](https://stylelint.io)
 
 ## Starter Kit
 

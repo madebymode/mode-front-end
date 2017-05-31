@@ -19,7 +19,7 @@ copy_file_to_root() {
 # Config files
 copy_file_to_root .editorconfig
 copy_file_to_root .jshintrc
-copy_file_to_root .scss-lint.yml
+copy_file_to_root .stylelintrc
 
 # TODO: Inline updates for .gitignore
 # copy_file_to_root .gitignore
