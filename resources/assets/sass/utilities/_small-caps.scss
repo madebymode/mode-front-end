@@ -1,14 +1,13 @@
 // OpenType Features: Small Caps (sets default active class to Typekit)
-// scss-lint:disable PropertySpelling
 @mixin u-small-caps($active-class: 'wf-active') {
   font-variant: small-caps;
   text-transform: lowercase;
 
   // Use CSS.supports API to check for font-feature-settings
   .supports-font-features.#{$active-class} & {
+    font-feature-settings: 'smcp'; // Safari 9.1+; Everything else
     font-variant: normal;
     font-variant-caps: small-caps; // Firefox 34+
-    font-feature-settings: 'smcp'; // Safari 9.1+; Everything else
   }
 }
 
@@ -40,8 +39,8 @@
   text-transform: none;
 
   .supports-font-features.#{$active-class} & {
-    font-variant-caps: initial;
     font-feature-settings: initial;
+    font-variant-caps: initial;
   }
 }
 
