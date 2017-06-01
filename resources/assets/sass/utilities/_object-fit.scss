@@ -12,10 +12,18 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
 
 ```scss
 // Basic
-@include u-object-fit('cover');
+@include u-object-fit('cover', cover);
+@include u-object-fit('cover-100%', cover) {
+  width: 100%;
+  height: 100%;
+}
 
 // Responsive
-@include u-object-fit('cover', 'sm');
+@include u-object-fit('cover', cover, 'sm');
+@include u-object-fit('cover-100%', cover, 'sm') {
+  width: 100%;
+  height: 100%;
+}
 ```
 
 ## Markup
@@ -25,23 +33,32 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
 ```html_example
 <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
 
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
 ```
 
 ### Responsive
 
 ```html_example
 <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%@sm" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
 ```
 */
 
 /**
  * Object-fit utility.
+ * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
-@mixin u-object-fit($value, $at-breakpoint: null) {
-  $class-name: 'u-object-fit-#{$value}';
+@mixin u-object-fit($alias, $value, $at-breakpoint: null) {
+  $class-name: 'u-object-fit-#{$alias}';
   @include breakpoints($class-name, $at-breakpoint) {
+    @content;
     @include object-fit($value);
   }
 }

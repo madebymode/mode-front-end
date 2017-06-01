@@ -167,6 +167,17 @@ yarn add svg4everybody</pre>
 </ul>
 <h1 id="upgrade_guide" class="styleguide">Upgrade Guide</h1>
 
+<h2>Upgrading to 2.2.0 from 2.1.x</h2>
+
+<h3><code class="styleguide">u-object-fit()</code> Mixin</h3>
+<p class="styleguide">Update all <code class="styleguide">u-object-fit()</code> references so they include an alias:</p><p class="styleguide">For example, <code class="styleguide">@include u-object-fit(&#39;cover&#39;);</code> becomes <code class="styleguide">@include u-object-fit(&#39;cover&#39;, cover);</code>.</p><p class="styleguide">If you have any custom <code class="styleguide">.u-object-fit-*</code> classes, do the same.</p><p class="styleguide">For example, if your <code class="styleguide">.u-object-fit-cover { … }</code> class depends on extra <code class="styleguide">width</code> and <code class="styleguide">height</code> styles you can use:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include u-object-fit('cover-100%', cover) {
+  width: 100%;
+  height: 100%;
+}</pre>
+  </div>
+</div>
 <h2>Upgrading to 2.0.0 from 1.3.x</h2>
 <p class="styleguide">Estimated upgrade time: 4–6 hours</p>
 <h3>New Browser Support</h3>
