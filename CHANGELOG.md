@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [2.2.0] - 2017-06-01
+
+### Changed
+
+- Refactor `u-object-fit()` so it allows flexible alias/value combinations (like `u-position()`)
+
 ## [2.1.0] - 2017-05-31
 
 ### Added
