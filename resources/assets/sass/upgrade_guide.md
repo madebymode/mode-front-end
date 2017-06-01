@@ -151,7 +151,13 @@ For example, `@include u-opacity(50);` becomes `@include u-opacity('50', 0.5);`.
 
 Update all `u-position()` references so they include an alias:
 
-For example, `@include u-position(1, 2);` becomes `@include u-position('1/2', percentage(1 / 2));`.
+For example, `@include u-position(1, 2);` becomes:
+
+```scss
+@include u-position('1/2', absolute, {
+  left: percentage(1 / 2));
+}
+```
 
 If you have any custom `.u-position-*` classes, do the same.
 
