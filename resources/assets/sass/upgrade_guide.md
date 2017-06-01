@@ -7,6 +7,8 @@ hologram: true
 
 ## Upgrading to 2.2.0 from 2.1.x
 
+Estimated upgrade time: 0.5 hour
+
 ### `u-object-fit()` Mixin
 
 Update all `u-object-fit()` references so they include an alias:
