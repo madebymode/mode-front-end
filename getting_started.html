@@ -266,7 +266,13 @@ yarn add svg4everybody</pre>
 <h3><code class="styleguide">u-opacity()</code> Mixin</h3>
 <p class="styleguide">Update all <code class="styleguide">u-opacity()</code> references so they include an alias:</p><p class="styleguide">For example, <code class="styleguide">@include u-opacity(50);</code> becomes <code class="styleguide">@include u-opacity(&#39;50&#39;, 0.5);</code>.</p>
 <h3><code class="styleguide">u-position()</code> Mixin</h3>
-<p class="styleguide">Update all <code class="styleguide">u-position()</code> references so they include an alias:</p><p class="styleguide">For example, <code class="styleguide">@include u-position(1, 2);</code> becomes <code class="styleguide">@include u-position(&#39;1/2&#39;, percentage(1 / 2));</code>.</p><p class="styleguide">If you have any custom <code class="styleguide">.u-position-*</code> classes, do the same.</p><p class="styleguide">For example, <code class="styleguide">.u-position-center { … }</code> becomes:</p><div class="codeBlock">
+<p class="styleguide">Update all <code class="styleguide">u-position()</code> references so they include an alias:</p><p class="styleguide">For example, <code class="styleguide">@include u-position(1, 2);</code> becomes:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include u-position('1/2', absolute, {
+  left: percentage(1 / 2));
+}</pre>
+  </div>
+</div><p class="styleguide">If you have any custom <code class="styleguide">.u-position-*</code> classes, do the same.</p><p class="styleguide">For example, <code class="styleguide">.u-position-center { … }</code> becomes:</p><div class="codeBlock">
   <div class="highlight">
     <pre>@include u-position('center', absolute) {
   top: 50%;
