@@ -40,7 +40,8 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
  * @param  {String}  $at-breakpoint
  */
 @mixin u-object-fit($value, $at-breakpoint: null) {
-  @include breakpoints('u-object-fit-cover', $at-breakpoint) {
+  $class-name: 'u-object-fit-#{$value}';
+  @include breakpoints($class-name, $at-breakpoint) {
     @include object-fit($value);
   }
 }
