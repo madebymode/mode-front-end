@@ -3,7 +3,6 @@
  * @see https://github.com/twbs/bootstrap/blob/c04aa41ee2744b769be38526bbdef11e5be9421b/less/mixins/vendor-prefixes.less#L100-L109
  */
 @mixin placeholder {
-  // scss-lint:disable VendorPrefix
   // Firefox
   &::-moz-placeholder {
     @content;
@@ -18,5 +17,4 @@
   &::-webkit-input-placeholder {
     @content;
   }
-  // scss-lint:enable VendorPrefix
 }

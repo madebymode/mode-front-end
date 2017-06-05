@@ -20,13 +20,11 @@
   html {
     @include font-smoothing();
     min-height: 100%;
-    // scss-lint:disable VendorPrefix
     -webkit-text-size-adjust: 100%;                // Prevent mobile browsers from automatically zooming fonts.
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: -ms-autohiding-scrollbar;  // Autohide scrollbar in Internet Explorer
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Reset iOS highlight color
     -webkit-backface-visibility: hidden;
-    // scss-lint:enable VendorPrefix
   }
 
 

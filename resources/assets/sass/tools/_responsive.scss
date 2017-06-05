@@ -60,11 +60,14 @@
 
   // Default: Mobile-first, min-width queries
   $media-query: '(min-width: #{$breakpoint})';
+
   // `lt-`: Desktop-first, max-width queries
   @if $prefix == 'lt-' {
     $media-query: '(max-width: #{get-max-width-breakpoint($breakpoint)})';
+  }
+
   // `btwn-`: Between min- and max-width queries
-  } @else if $prefix == 'btwn-' {
+  @else if $prefix == 'btwn-' {
     $alias-parts: explode($alias, '-and-');
     $min-breakpoint: map-get($breakpoints, nth($alias-parts, 1));
     $max-breakpoint: map-get($breakpoints, nth($alias-parts, 2));
