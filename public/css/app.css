@@ -24,9 +24,16 @@
  * @return {Number}           rem value
  */
 /**
+ * Subtract 1px from breakpoint so min/max queries don't overlap.
+ * @todo Use 0.01em instead of 1px to avoid media query "void" when text zoom is on.
+ * @see https://github.com/sass-mq/sass-mq/issues/6
+ * @param  {Number}  $breakpoint
+ * @return {Number}
+ */
+/**
  * Convert tracking (e.g. from a PSD) to ems for letter-spacing.
- * @param  {Number} $tracking
- * @return {Number}            em value
+ * @param  {Number}  $tracking
+ * @return {Number}             em value
  */
 /**
  * Casting any value to a string.
@@ -130,17 +137,22 @@
  */
 /**
  * Generate media queries based on a map of `$breakpoints`. Defaults to
- * mobile- first, min-width queries. But you can use prefixes for other
- * queries. E.g. `lt-` makes `max-width` queries (and automatically removes
- * 1px to avoid query overlap). Based on Inuit's responsive tools.
+ * mobile-first, min-width queries.
+ *
+ * Allows quick prefixes to modify breakpoints:
+ * - `lt-`: Desktop-first, max-width queries (automatically removes 1px to avoid query overlap)
+ * - `btwn-`: Between min- and max-width queries
+ *
+ * Based on Inuit's responsive tools:
  * @see https://github.com/inuitcss/settings.responsive/blob/master/_settings.responsive.scss
  * @see https://github.com/inuitcss/tools.responsive/blob/master/_tools.responsive.scss
+ *
+ * And Sass MQ:
+ * @see https://github.com/sass-mq/sass-mq
+ *
+ * @note `$breakpoints` is defined in `resources/assets/sass/settings/_breakpoints.scss`
+ *
  * @param  {String}  $breakpoint-name
- *
- * NOTE: `$breakpoints` is defined in `resources/assets/sass/settings/_breakpoints.scss`
- *
- * TODO: How to handle query ranges? E.g., `btwn-*-and-*` prefix for min+max queries.
- * TODO: Consider switching to https://github.com/sass-mq/sass-mq
  */
 /**
  * Mixin to generate breakpoint-specific classes.
@@ -2149,10 +2161,18 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
 
 ```scss
 // Basic
-@include u-object-fit('cover');
+@include u-object-fit('cover', cover);
+@include u-object-fit('cover-100%', cover) {
+  width: 100%;
+  height: 100%;
+}
 
 // Responsive
-@include u-object-fit('cover', 'sm');
+@include u-object-fit('cover', cover, 'sm');
+@include u-object-fit('cover-100%', cover, 'sm') {
+  width: 100%;
+  height: 100%;
+}
 ```
 
 ## Markup
@@ -2162,16 +2182,24 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
 ```html_example
 <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
 
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
 ```
 
 ### Responsive
 
 ```html_example
 <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
+
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%@sm" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
 ```
 */
 /**
  * Object-fit utility.
+ * @param  {String}  $alias
  * @param  {String}  $value
  * @param  {String}  $at-breakpoint
  */
@@ -2399,7 +2427,7 @@ category: Utilities
 
 // Responsive
 @include u-position('relative', relative, 'sm');
-@include u-position('center', absolute) {
+@include u-position('center', absolute, 'sm') {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -3799,9 +3827,18 @@ ul {
 }
 
 address,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, ol, ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+ol,
+ul,
 figure,
 table,
 fieldset {
@@ -3862,9 +3899,9 @@ code {
   max-width: calc(100% - 1em);
   padding: 0 0.25rem;
   background: #eee;
+  text-overflow: ellipsis;
   overflow: hidden;
   vertical-align: bottom;
-  text-overflow: ellipsis;
 }
 
 .codeBlock + h1 {
@@ -3872,9 +3909,9 @@ code {
 }
 
 .codeBlock {
-  background: #323031;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 0.9375rem 1.25rem;
+  background: #323031;
 }
 
 .codeBlock :last-child {
@@ -3895,8 +3932,8 @@ code {
 }
 
 .todo {
-  font-weight: bold;
   color: #e5413b;
+  font-weight: bold;
 }
 
 @media all and (max-width: 63.9375em) {
@@ -4025,37 +4062,37 @@ code {
 }
 
 .c-heading--lg {
-  font-weight: 400;
-  font-size: 2rem;
   color: #323031;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .c-heading--md {
-  font-weight: 400;
-  font-size: 1.25rem;
   color: #323031;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .c-heading--sm {
+  color: #323031;
   font-family: "quatro", serif;
-  text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 2px;
-  color: #323031;
+  text-transform: uppercase;
 }
 
 .c-copy {
+  color: #323031;
   font-family: "proxima-soft", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  color: #323031;
 }
 
 .c-link {
-  font-family: "proxima-soft", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
   color: #323031;
+  font-family: "proxima-soft", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   text-decoration: underline;
 }
 
@@ -4063,11 +4100,15 @@ code {
   color: currentColor;
 }
 
-.codeBlock {
+.codeBlock,
+code {
   font-family: "source-code-pro", sans-serif;
   font-weight: 500;
-  font-size: 0.875rem;
+}
+
+.codeBlock {
   color: #e6e4e5;
+  font-size: 0.875rem;
 }
 
 .c-navigation a {
@@ -4082,30 +4123,54 @@ code {
 
 .c-layout__wrapper h1 {
   font-family: "quatro-slab", serif;
-  font-weight: 400;
-  font-size: 2rem;
   color: #323031;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .c-layout__wrapper h2 {
   font-family: "quatro-slab", serif;
-  font-weight: 400;
-  font-size: 1.25rem;
   color: #323031;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
-.c-layout__wrapper p {
+.c-layout__wrapper h3 {
+  font-family: "quatro-slab", serif;
+  color: #323031;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.c-layout__wrapper h4 {
+  font-family: "quatro-slab", serif;
+  color: #323031;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.c-layout__wrapper p,
+.c-layout__wrapper li {
+  color: #323031;
   font-family: "proxima-soft", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  color: #323031;
+}
+
+.c-layout__wrapper p code,
+.c-layout__wrapper li code {
+  font-size: 1rem;
 }
 
 .c-layout__wrapper a.styleguide {
-  font-family: "proxima-soft", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
   color: #323031;
+  font-family: "proxima-soft", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   text-decoration: underline;
 }
 
@@ -5390,6 +5455,14 @@ code {
   font-family: "object-fit: cover;";
 }
 
+.u-object-fit-cover-100\% {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+}
+
 @media all and (max-width: 29.9375em) {
   .u-object-fit-cover\@lt-sm {
     -o-object-fit: cover;
@@ -5398,8 +5471,28 @@ code {
   }
 }
 
+@media all and (max-width: 29.9375em) {
+  .u-object-fit-cover-100\%\@lt-sm {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+}
+
 @media all and (min-width: 30em) {
   .u-object-fit-cover\@sm {
+    -o-object-fit: cover;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+}
+
+@media all and (min-width: 30em) {
+  .u-object-fit-cover-100\%\@sm {
+    width: 100%;
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     font-family: "object-fit: cover;";

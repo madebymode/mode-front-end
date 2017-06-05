@@ -53,9 +53,18 @@ ul {
 // Vertical Rhythm
 // https://github.com/inuitcss/inuitcss/blob/04abcb2cb1285a3223b23f3ef28790222e9ef906/generic/_generic.shared.scss
 address,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, ol, ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+ol,
+ul,
 figure,
 table,
 fieldset {
@@ -109,18 +118,18 @@ code {
   max-width: calc(100% - 1em);
   padding: 0 0.25rem;
   background: $color-gray-4;
+  text-overflow: ellipsis;
   overflow: hidden;
   vertical-align: bottom;
-  text-overflow: ellipsis;
 }
 
 .codeBlock + h1 {
   margin-top: 2rem;
 }
 .codeBlock {
-  background: $color-gray-5;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: rem(15) rem(20);
+  background: $color-gray-5;
 
   :last-child {
     margin-bottom: 0;
@@ -140,8 +149,8 @@ code {
 
 // Todos
 .todo {
-  font-weight: bold;
   color: $color-red-1;
+  font-weight: bold;
 }
 
 
@@ -280,29 +289,29 @@ $font-family--code: 'source-code-pro', sans-serif;
 }
 
 @mixin c-heading--lg() {
-  font-weight: 400;
-  font-size: rem(32);
   color: #323031;
+  font-size: rem(32);
+  font-weight: 400;
 }
 .c-heading--lg {
   @include c-heading--lg();
 }
 
 @mixin c-heading--md() {
-  font-weight: 400;
-  font-size: rem(20);
   color: #323031;
+  font-size: rem(20);
+  font-weight: 400;
 }
 .c-heading--md {
   @include c-heading--md();
 }
 
 @mixin c-heading--sm() {
+  color: #323031;
   font-family: $font-family--quatro;
-  text-transform: uppercase;
   font-size: rem(14);
   letter-spacing: 2px;
-  color: #323031;
+  text-transform: uppercase;
 }
 .c-heading--sm {
   @include c-heading--sm();
@@ -310,10 +319,10 @@ $font-family--code: 'source-code-pro', sans-serif;
 
 // Copy
 @mixin c-copy() {
+  color: #323031;
   font-family: $font-family--proxima-soft;
   font-size: rem(16);
   font-weight: 400;
-  color: #323031;
 }
 .c-copy {
   @include c-copy();
@@ -321,10 +330,10 @@ $font-family--code: 'source-code-pro', sans-serif;
 
 // Links
 @mixin c-link() {
-  font-family: $font-family--proxima-soft;
-  font-weight: 400;
-  font-size: rem(16);
   color: $color-gray-5;
+  font-family: $font-family--proxima-soft;
+  font-size: rem(16);
+  font-weight: 400;
   text-decoration: underline;
 
   &:active,
@@ -337,11 +346,15 @@ $font-family--code: 'source-code-pro', sans-serif;
 }
 
 // Code
-.codeBlock {
+.codeBlock,
+code {
   font-family: $font-family--code;
   font-weight: 500;
-  font-size: rem(14);
+}
+
+.codeBlock {
   color: #e6e4e5;
+  font-size: rem(14);
 }
 
 
@@ -372,8 +385,27 @@ $font-family--code: 'source-code-pro', sans-serif;
     @include c-heading--md();
   }
 
-  p {
+  h3 {
+    @include c-heading();
+    @include c-heading--md();
+    font-size: rem(16);
+    font-weight: 500;
+  }
+
+  h4 {
+    @include c-heading();
+    @include c-heading--md();
+    font-size: rem(14);
+    font-weight: 500;
+  }
+
+  p,
+  li {
     @include c-copy();
+
+    code {
+      font-size: rem(16);
+    }
   }
 
   a.styleguide {

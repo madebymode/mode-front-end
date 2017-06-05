@@ -28,6 +28,7 @@
     "laravel-elixir-imagemin": "^0.2.3",
     "laravel-elixir-livereload": "^1.1.6",
     "laravel-elixir-svgstore": "^1.0.3",
-    "laravel-elixir-webpack-official": "^1.0.10"
+    "laravel-elixir-webpack-official": "^1.0.10",
+    "stylelint-config-property-sort-order-smacss": "^1.1.2"
   }
 }
