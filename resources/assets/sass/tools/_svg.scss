@@ -6,8 +6,8 @@
  * @param  {Number}  $height
  * @return {String}
  */
-@function _buildSvg($icon, $width, $height) {
-  $icon: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 #{$width} #{$height}'>#{$icon}</svg>";
+@function build-svg($icon, $width, $height) {
+  $icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$width} #{$height}">#{$icon}</svg>';
   @return $icon;
 }
 
@@ -18,8 +18,8 @@
  * @param  {Map}    $parameters
  * @return {String}
  */
-@function _buildPath($path, $parameters) {
-  $icon: "<path fill='#{map-get($parameters, color)}' stroke='#{map-get($parameters, stroke-color)}' stroke-width='#{map-get($parameters, stroke-width)}' style='#{map-get($parameters, css)}' d='#{$path}' />";
+@function build-path($path, $parameters) {
+  $icon: '<path fill="#{map-get($parameters, color)}" stroke="#{map-get($parameters, stroke-color)}" stroke-width="#{map-get($parameters, stroke-width)}" style="#{map-get($parameters, css)}" d="#{$path}" />';
   @return $icon;
 }
 
@@ -33,13 +33,13 @@
  * @return {String}
  */
 @function svg($svg, $width, $height) {
-  $svg: _buildSvg($svg, $width, $height);
+  $svg: build-svg($svg, $width, $height);
 
-  $svg: str-replace($svg, '"', "'");
+  $svg: str-replace($svg, '"', "'"); // stylelint-disable-line
   $svg: str-replace($svg, '<', '%3C');
   $svg: str-replace($svg, '>', '%3E');
   $svg: str-replace($svg, '&', '%26');
   $svg: str-replace($svg, '#', '%23');
 
-  @return url("data:image/svg+xml;charset=utf8,#{$svg}");
+  @return url('data:image/svg+xml;charset=utf8,#{$svg}');
 }

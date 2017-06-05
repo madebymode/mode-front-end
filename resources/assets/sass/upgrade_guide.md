@@ -5,6 +5,52 @@ category: Getting Started
 hologram: true
 ---
 
+## Upgrading to 2.3.0 from 2.2.x
+
+Estimated upgrade time: 1–2 hours
+
+### Switching from [scss-lint](https://github.com/brigade/scss-lint) to [stylelint](https://stylelint.io)
+
+#### Uninstall scss-lint
+
+- `gem uninstall scss_lint`
+- Sublime Text > Package Control: Remove Package > SublimeLinter-contrib-scsslint
+
+#### Install stylelint
+
+- `npm install -g stylelint`
+- Install SublimeLinter packages*:
+    - Sublime Text > Package Control: Install Package > SublimeLinter
+    - Sublime Text > Package Control: Install Package > SublimeLinter-contrib-stylelint
+
+*Plugins for other text editors are listed [here](https://stylelint.io/user-guide/complementary-tools/#editor-plugins).
+
+To automatically lint and show errors when you save a file:
+
+- Sublime Text > Preferences > Package Settings > SublimeLinter > Settings - User
+- Add these options:
+
+```json
+{
+  "user": {
+    "lint_mode": "load/save",
+    "show_errors_on_save": true,
+  }
+}
+```
+
+#### Update project
+
+```
+yarn upgrade mode-front-end
+yarn add stylelint-config-property-sort-order-smacss
+npm run init-config --prefix ./node_modules/mode-front-end
+rm -f .scss-lint.yml
+git add .scss-lint.yml && git add .stylelintrc
+git checkout .
+git commit -m "Replace scss-lint with stylelint"
+```
+
 ## Upgrading to 2.2.0 from 2.1.x
 
 Estimated upgrade time: 0.5 hour

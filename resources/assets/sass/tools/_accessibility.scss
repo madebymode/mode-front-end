@@ -29,9 +29,9 @@
   height: 1px;
   margin: -1px;
   padding: 0;
+  clip: rect(0 0 0 0);
   border: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
 }
 
 /**
@@ -58,18 +58,18 @@
  * @see http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
  */
 @mixin show-on-focus {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
   position: absolute !important;
   width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
 
   &:focus,
   &:active {
     position: static !important;
-    height: auto;
     width: auto;
-    overflow: visible;
+    height: auto;
     clip: auto;
+    overflow: visible;
   }
 }

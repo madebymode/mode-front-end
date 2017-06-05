@@ -120,12 +120,12 @@
 <h1 id="install" class="styleguide">Install</h1>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add mode-front-end
+    <pre>yarn add mode-front-end stylelint-config-property-sort-order-smacss
 npm run init-config --prefix ./node_modules/mode-front-end</pre>
   </div>
 </div><p class="styleguide">The <code class="styleguide">init-config</code> script will install the following in your project root:</p><ul class="styleguide"><li><a class="styleguide" href="http://editorconfig.org/" title="http://editorconfig.org/">EditorConfig</a></li>
 <li><a class="styleguide" href="https://github.com/jshint/jshint" title="https://github.com/jshint/jshint">JSHint config</a></li>
-<li><a class="styleguide" href="https://github.com/brigade/scss-lint" title="https://github.com/brigade/scss-lint">scss-lint config</a></li>
+<li><a class="styleguide" href="https://stylelint.io" title="https://stylelint.io">stylelint config</a></li>
 </ul>
 <h2>Starter Kit</h2>
 <div class="codeBlock">
@@ -169,6 +169,44 @@ yarn add svg4everybody</pre>
 </ul>
 <h1 id="upgrade_guide" class="styleguide">Upgrade Guide</h1>
 
+<h2>Upgrading to 2.3.0 from 2.2.x</h2>
+<p class="styleguide">Estimated upgrade time: 1–2 hours</p>
+<h3>Switching from <a class="styleguide" href="https://github.com/brigade/scss-lint" title="https://github.com/brigade/scss-lint">scss-lint</a> to <a class="styleguide" href="https://stylelint.io" title="https://stylelint.io">stylelint</a></h3>
+
+<h4>Uninstall scss-lint</h4>
+<ul class="styleguide"><li><code class="styleguide">gem uninstall scss_lint</code></li>
+<li>Sublime Text &gt; Package Control: Remove Package &gt; SublimeLinter-contrib-scsslint</li>
+</ul>
+<h4>Install stylelint</h4>
+<ul class="styleguide"><li><code class="styleguide">npm install -g stylelint</code></li>
+<li>Install SublimeLinter packages*:
+<ul class="styleguide"><li>Sublime Text &gt; Package Control: Install Package &gt; SublimeLinter</li>
+<li>Sublime Text &gt; Package Control: Install Package &gt; SublimeLinter-contrib-stylelint</li>
+</ul></li>
+</ul><p class="styleguide">*Plugins for other text editors are listed <a class="styleguide" href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins" title="https://stylelint.io/user-guide/complementary-tools/#editor-plugins">here</a>.</p><p class="styleguide">To automatically lint and show errors when you save a file:</p><ul class="styleguide"><li>Sublime Text &gt; Preferences &gt; Package Settings &gt; SublimeLinter &gt; Settings - User</li>
+<li>Add these options:</li>
+</ul><div class="codeBlock">
+  <div class="highlight">
+    <pre>{
+  "user": {
+    "lint_mode": "load/save",
+    "show_errors_on_save": true,
+  }
+}</pre>
+  </div>
+</div>
+<h4>Update project</h4>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>yarn upgrade mode-front-end
+yarn add stylelint-config-property-sort-order-smacss
+npm run init-config --prefix ./node_modules/mode-front-end
+rm -f .scss-lint.yml
+git add .scss-lint.yml &amp;&amp; git add .stylelintrc
+git checkout .
+git commit -m "Replace scss-lint with stylelint"</pre>
+  </div>
+</div>
 <h2>Upgrading to 2.2.0 from 2.1.x</h2>
 <p class="styleguide">Estimated upgrade time: 0.5 hour</p>
 <h3><code class="styleguide">u-object-fit()</code> Mixin</h3>

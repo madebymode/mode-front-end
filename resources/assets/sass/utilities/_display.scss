@@ -39,9 +39,7 @@ category: Utilities
 @mixin u-display($value, $at-breakpoint: null) {
   $class-name: 'u-display-#{$value}';
   @include breakpoints($class-name, $at-breakpoint) {
-    // scss-lint:disable ImportantRule
     display: #{$value} !important;
-    // scss-lint:enable ImportantRule
   }
 }
 
