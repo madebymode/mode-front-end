@@ -33,7 +33,6 @@
 
   $directions: ('vertical', 'horizontal', 'top', 'right', 'bottom', 'left');
   $direction: null;
-
   $temp-direction: $alias;
 
   // Check whether $alias starts with a direction

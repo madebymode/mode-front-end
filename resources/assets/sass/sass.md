@@ -34,6 +34,8 @@ Import `common.scss` into your app’s stylesheet:
     - `explode($string, [$delimiter: ''])`
     - `str-replace($string, $search, [$replace: ''])`
     - `to-string($value)`
+- Responsive
+    - `get-max-width-breakpoint($value)`
 - Typography
     - `tracking($tracking)`
 - Units
