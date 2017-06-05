@@ -114,15 +114,11 @@ code {
   text-overflow: ellipsis;
 }
 
-// .codeExample
-//   .exampleOutput
-//   .codeBlock
-//     .highlight
 .codeBlock + h1 {
   margin-top: 2rem;
 }
 .codeBlock {
-  background: $color-gray-4;
+  background: $color-gray-5;
   margin-bottom: 1rem;
   padding: 0.5rem;
 
@@ -233,6 +229,16 @@ $sidebar-width   : 192;
     padding: 1rem;
     background: $color-gray-4;
   }
+
+  a {
+    color: $color-gray-5;
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+      color: currentColor;
+    }
+  }
 }
 
 // Utilities
@@ -248,6 +254,133 @@ $sidebar-width   : 192;
 }
 
 
+// ------------------------------
+// Style Guide "MODE" Styles
+// ------------------------------
+
+// Typography
+$font-family--quatro: 'quatro', serif;
+$font-family--quatro-slab: 'quatro-slab', serif;
+$font-family--proxima-soft: 'proxima-soft', sans-serif;
+$font-family--code: 'source-code-pro', sans-serif;
+
+// Headings
+@mixin c-heading() {
+  font-family: $font-family--quatro-slab;
+}
+.c-heading {
+  @include c-heading();
+}
+
+@mixin c-heading--xl() {
+  font-size: rem(44);
+  font-weight: 400;
+}
+.c-heading--xl {
+  @include c-heading--xl();
+}
+
+@mixin c-heading--lg() {
+  font-weight: 400;
+  font-size: rem(32);
+  color: #323031;
+}
+.c-heading--lg {
+  @include c-heading--lg();
+}
+
+@mixin c-heading--md() {
+  font-weight: 400;
+  font-size: rem(20);
+  color: #323031;
+}
+.c-heading--md {
+  @include c-heading--md();
+}
+
+@mixin c-heading--sm() {
+  font-family: $font-family--quatro;
+  text-transform: uppercase;
+  font-size: rem(14);
+  letter-spacing: 2px;
+  color: #323031;
+}
+.c-heading--sm {
+  @include c-heading--sm();
+}
+
+// Copy
+@mixin c-copy() {
+  font-family: $font-family--proxima-soft;
+  font-size: rem(16);
+  font-weight: 400;
+  color: #323031;
+}
+.c-copy {
+  @include c-copy();
+}
+
+// Links
+@mixin c-link() {
+  font-family: $font-family--proxima-soft;
+  font-weight: 400;
+  font-size: rem(16);
+  color: $color-gray-5;
+  text-decoration: underline;
+
+  &:active,
+  &:visited {
+    color: currentColor;
+  }
+}
+.c-link {
+  @include c-link();
+}
+
+// Code
+.codeBlock {
+  font-family: $font-family--code;
+  font-weight: 500;
+  font-size: rem(14);
+  color: #e6e4e5;
+}
+
+
+// Navigation
+.c-navigation {
+
+  a {
+    color: $color-gray-5;
+    text-decoration: none;
+  }
+
+  a:active,
+  a:visited {
+    color: currentColor;
+  }
+}
+
+// Styleguide Innards
+.c-layout__wrapper {
+
+  h1 {
+    @include c-heading();
+    @include c-heading--lg();
+  }
+
+  h2 {
+    @include c-heading();
+    @include c-heading--md();
+  }
+
+  p {
+    @include c-copy();
+  }
+
+  a.styleguide {
+    @include c-link();
+  }
+}
 
 // ------------------------------
 // Starter Kit Part 2
