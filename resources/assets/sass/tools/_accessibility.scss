@@ -39,8 +39,9 @@
  * @param  {String}  $active-class
  */
 @mixin invisible-until-active($active-class: 'is-active') {
-  transition: opacity 500ms ease,
-    visibility 500ms linear 0s;
+  transition:
+    opacity 500ms ease,
+    visibility 500ms linear 0ms;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
