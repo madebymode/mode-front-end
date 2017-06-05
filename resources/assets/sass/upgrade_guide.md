@@ -5,6 +5,27 @@ category: Getting Started
 hologram: true
 ---
 
+## Upgrading to 2.2.0 from 2.1.x
+
+Estimated upgrade time: 0.5 hour
+
+### `u-object-fit()` Mixin
+
+Update all `u-object-fit()` references so they include an alias:
+
+For example, `@include u-object-fit('cover');` becomes `@include u-object-fit('cover', cover);`.
+
+If you have any custom `.u-object-fit-*` classes, do the same.
+
+For example, if your `.u-object-fit-cover { … }` class depends on extra `width` and `height` styles you can use:
+
+```scss
+@include u-object-fit('cover-100%', cover) {
+  width: 100%;
+  height: 100%;
+}
+```
+
 ## Upgrading to 2.0.0 from 1.3.x
 
 Estimated upgrade time: 4–6 hours
@@ -132,7 +153,13 @@ For example, `@include u-opacity(50);` becomes `@include u-opacity('50', 0.5);`.
 
 Update all `u-position()` references so they include an alias:
 
-For example, `@include u-position(1, 2);` becomes `@include u-position('1/2', percentage(1 / 2));`.
+For example, `@include u-position(1, 2);` becomes:
+
+```scss
+@include u-position('1/2', absolute, {
+  left: percentage(1 / 2));
+}
+```
 
 If you have any custom `.u-position-*` classes, do the same.
 

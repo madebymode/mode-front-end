@@ -17,7 +17,7 @@ category: Utilities
 
 // Responsive
 @include u-position('relative', relative, 'sm');
-@include u-position('center', absolute) {
+@include u-position('center', absolute, 'sm') {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
