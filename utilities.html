@@ -1459,10 +1459,18 @@
 <div class="codeBlock">
   <div class="highlight">
     <pre>// Basic
-@include u-object-fit('cover');
+@include u-object-fit('cover', cover);
+@include u-object-fit('cover-100%', cover) {
+  width: 100%;
+  height: 100%;
+}
 
 // Responsive
-@include u-object-fit('cover', 'sm');</pre>
+@include u-object-fit('cover', cover, 'sm');
+@include u-object-fit('cover-100%', cover, 'sm') {
+  width: 100%;
+  height: 100%;
+}</pre>
   </div>
 </div>
 <h2>Markup</h2>
@@ -1472,11 +1480,18 @@
   <div class="exampleOutput">
     <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
 
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"u-height-200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-object-fit-cover-100%"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -1486,10 +1501,18 @@
   <div class="exampleOutput">
     <img class="u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm" src="http://placehold.it/200/ff0000/ffffff?text=1" width="200" height="200" alt="Item 1">
 
+<figure class="u-height-200">
+  <img class="u-object-fit-cover-100%@sm" src="http://placehold.it/200/00ff00/ffffff?text=2" width="200" height="200" alt="Item 2">
+</figure>
+
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span></pre>
+      <pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-width-1/1  /  u-height-200  /  u-object-fit-cover@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/ff0000/ffffff?text=1"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 1"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"u-height-200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"u-object-fit-cover-100%@sm"</span> <span class="na">src=</span><span class="s">"http://placehold.it/200/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -1753,7 +1776,7 @@
 
 // Responsive
 @include u-position('relative', relative, 'sm');
-@include u-position('center', absolute) {
+@include u-position('center', absolute, 'sm') {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
