@@ -7,7 +7,11 @@ hologram: true
 ## Color and White-Space
 
 ```html_example
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde rerum <span class="u-color-red-1  /  u-white-space-nowrap">alias veritatis</span> ducimus? Placeat nesciunt commodi quaerat, nobis doloremque vero <span class="u-color-red-1  /  u-white-space-nowrap">temporibus eius</span> explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span></p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde rerum <span class="u-color-red-1  /  u-white-space-nowrap">alias veritatis</span>
+  ducimus? Placeat nesciunt commodi quaerat, nobis doloremque vero <span class="u-color-red-1  /  u-white-space-nowrap">temporibus eius</span>
+  explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span>
+</p>
 ```
 
 ## Display
