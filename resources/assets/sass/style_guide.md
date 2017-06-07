@@ -8,7 +8,7 @@ hologram: true
 
 ### [BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
 
-`block__element--modifier\@breakpoint`
+`block__element--modifier@breakpoint`
 
 ### [Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
 
