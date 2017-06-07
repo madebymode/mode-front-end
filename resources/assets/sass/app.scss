@@ -345,6 +345,11 @@ $font-family--code: 'source-code-pro', sans-serif;
   @include c-link();
 }
 
+.c-link--inherit {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 // Code
 .codeBlock,
 code {
