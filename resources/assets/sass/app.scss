@@ -108,7 +108,7 @@ button {
   transition: opacity 100ms ease-in-out;
 
   @include hover('is-active') {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
