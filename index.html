@@ -15,7 +15,8 @@
 
   <header class="c-layout__wrapper" role="banner">
     <h1 class="c-heading  c-heading--xl  /  u-text-align-center">
-      MODE Front‑End
+      <!-- TODO: Inherit utility? -->
+      <a href="/" class="c-link--inherit">MODE Front‑End</a>
     </h1>
     <nav class="u-text-align-center" role="navigation">
       <ul class="o-list  o-list--inline  /  c-navigation">
@@ -30,43 +31,47 @@
     </nav>
   </header>
 
-
-
+  
+  
   <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar  /  u-text-align-center@lt-sidebar">
     <ul class="o-list  o-list--inline@lt-sidebar  /  c-sticky-sidebar__nav">
-
+      
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#examples">Examples</a></li>
-
+      
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#install">Install</a></li>
-
+      
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#style_guide">Style Guide</a></li>
-
+      
       <li class="o-list__item  /  c-copy  /  "><a href="#upgrade_guide">Upgrade Guide</a></li>
-
+      
     </ul>
   </nav>
 
-
+  
 
   <main class="c-layout__wrapper" role="main">
+<p class="u-margin-top  /  u-font-style-italic  /  u-text-align-center">
+  A collection of tools and patterns to quickly create flexible websites.
+</p>
+
 <h1 id="examples" class="styleguide">Examples</h1>
 
 <h2>Color and White-Space</h2>
 <div class="codeExample">
   <div class="exampleOutput">
     <p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde rerum <span class="u-color-red-1  /  u-white-space-nowrap">alias veritatis</span>
-  ducimus? Placeat nesciunt commodi quaerat, nobis doloremque vero <span class="u-color-red-1  /  u-white-space-nowrap">temporibus eius</span>
-  explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde <span class="u-color-red-1  /  u-white-space-nowrap">rerum alias</span>
+  veritatis ducimus? Placeat nesciunt commodi quaerat, nobis <span class="u-color-red-1  /  u-white-space-nowrap">doloremque vero</span>
+  temporibus eius explicabo nam ad nisi numquam. <span class="u-color-red-1  /  u-white-space-nowrap">Explicabo, tenetur!</span>
 </p>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
       <pre><span class="nt">&lt;p&gt;</span>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde rerum <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>alias veritatis<span class="nt">&lt;/span&gt;</span>
-  ducimus? Placeat nesciunt commodi quaerat, nobis doloremque vero <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>temporibus eius<span class="nt">&lt;/span&gt;</span>
-  explicabo nam ad nisi numquam. <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>Explicabo, tenetur!<span class="nt">&lt;/span&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi unde <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>rerum alias<span class="nt">&lt;/span&gt;</span>
+  veritatis ducimus? Placeat nesciunt commodi quaerat, nobis <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>doloremque vero<span class="nt">&lt;/span&gt;</span>
+  temporibus eius explicabo nam ad nisi numquam. <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"u-color-red-1  /  u-white-space-nowrap"</span><span class="nt">&gt;</span>Explicabo, tenetur!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/p&gt;</span></pre>
     </div>
   </div>
@@ -131,7 +136,7 @@
     <pre>yarn add mode-front-end stylelint-config-property-sort-order-smacss
 npm run init-config --prefix ./node_modules/mode-front-end</pre>
   </div>
-</div><p class="styleguide">The <code class="styleguide">init-config</code> script will install the following in your project root:</p><ul class="styleguide"><li><a class="styleguide" href="http://editorconfig.org/" title="http://editorconfig.org/">EditorConfig</a></li>
+</div><p class="styleguide">The <code class="styleguide">init-config</code> script will install the following in your project root:</p><ul class="styleguide"><li><a class="styleguide" href="http://editorconfig.org" title="http://editorconfig.org">EditorConfig</a></li>
 <li><a class="styleguide" href="https://github.com/jshint/jshint" title="https://github.com/jshint/jshint">JSHint config</a></li>
 <li><a class="styleguide" href="https://stylelint.io" title="https://stylelint.io">stylelint config</a></li>
 </ul>
