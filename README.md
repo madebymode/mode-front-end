@@ -1,6 +1,6 @@
 # MODE Front-End
 
-MODE’s front-end toolkit. Heavily influenced by [@csswizardy](http://csswizardry.com/)’s [inuitcss](https://github.com/inuitcss/inuitcss) framework.
+A collection of tools and patterns to quickly create flexible websites.
 
 ## Documentation
 
