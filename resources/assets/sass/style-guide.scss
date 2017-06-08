@@ -359,10 +359,6 @@ $sidebar-width   : 192;
   li {
     @include c-copy();
 
-    code {
-      font-size: 1rem;
-    }
-
     a {
       @include c-link();
     }
