@@ -1,0 +1,434 @@
+// ------------------------------
+// Style Guide - Settings
+// ------------------------------
+
+// Family
+$font-family             : 'proxima-soft', 'Source Code Pro', sans-serif;
+$font-family--display    : 'quatro-slab', 'Quatro Slab', serif;
+$font-family--subheading : 'quatro', 'Quatro', serif;
+$font-family--code       : 'source-code-pro', 'Proxima Soft', monospace;
+
+
+
+// ------------------------------
+// Style Guide - Reset
+// ------------------------------
+
+html {
+  @include font-smoothing(true);
+  line-height: 1.5;
+}
+
+body {
+  padding-bottom: 4rem;
+}
+
+// Fonts
+p,
+ol,
+ul {
+  font-family: serif;
+}
+
+// Vertical Rhythm
+// https://github.com/inuitcss/inuitcss/blob/04abcb2cb1285a3223b23f3ef28790222e9ef906/generic/_generic.shared.scss
+address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+ol,
+ul,
+figure,
+table,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+main h1:first-child {
+  margin-top: 3rem;
+}
+
+h2,
+h3 {
+  margin-top: 2rem;
+}
+
+// Dividers
+hr {
+  margin: 4rem auto;
+}
+h1.styleguide:not(:first-child) {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid;
+}
+
+// Lists
+ol.styleguide,
+ul.styleguide {
+  padding-left: 2rem;
+}
+ol.styleguide {
+  list-style: decimal;
+}
+ul.styleguide {
+  list-style: disc;
+}
+
+// Links / Buttons
+a,
+button {
+  transition: opacity 100ms ease-in-out;
+
+  @include hover('is-active') {
+    opacity: 0.6;
+  }
+}
+
+// Code Examples
+code,
+kbd,
+pre,
+samp,
+.codeBlock {
+  font-family: $font-family--code;
+  font-size: rem(14);
+  font-weight: 400;
+}
+
+code {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 0.25rem;
+  background: $color-gray-4;
+  vertical-align: bottom;
+  word-break: break-word;
+}
+
+.codeBlock + h1 {
+  margin-top: 2rem;
+}
+.codeBlock {
+  margin-bottom: 1rem;
+  padding: rem(15) rem(20);
+  background: $color-gray-5;
+  color: #e6e4e5;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+.exampleOutput + .codeBlock {
+  margin-top: 1rem;
+}
+.exampleOutput,
+.highlight {
+  @include scroll();
+}
+// HACK: Remove margin from `.o-section` example to avoid cluttering with extra classes
+.codeExample h4 {
+  margin-bottom: 0;
+}
+
+// Todos
+.todo {
+  color: $color-red-1;
+  font-weight: bold;
+}
+
+
+
+// ------------------------------
+// Style Guide - Layout
+// ------------------------------
+
+$container-width : 640;
+$sidebar-width   : 192;
+
+@include add-breakpoint('sidebar', em($container-width, 16) + (2 * em($sidebar-width, 16)));
+
+@include o-list--inline('lt-sidebar');
+
+// Layout
+// .c-layout {
+// }
+
+// Wrapper
+.c-layout__wrapper {
+  max-width: rem($container-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter-xs;
+  padding-left: $gutter-xs;
+  overflow: hidden;
+
+  @include mq('sm') {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+  }
+}
+
+// Sidebar
+.c-layout__sticky-sidebar {
+  display: block;
+  position: sticky;
+  top: 0;
+  margin: 0 $gutter-xs;
+
+  @include mq('lt-sidebar') {
+    @include scroll();
+    padding: 1rem;
+    background: $color-gray-4;
+    z-index: 1; // Keep above `.highlight` on iOS
+  }
+
+  @include mq('btwn-sm-and-sidebar') {
+    margin: 0 $gutter-sm;
+  }
+}
+
+@include mq('sidebar') {
+  .c-layout__wrapper {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+  }
+  .c-layout__sticky-sidebar {
+    top: 0;
+    left: calc(50vw + 20rem); // 1/2 page width + 1/2 wrapper width
+    width: rem($sidebar-width);
+    height: 0;
+    margin: 0 auto;
+    transform: translateY(3rem);
+  }
+}
+
+.c-sticky-sidebar__nav {
+  margin-bottom: 0;
+  list-style: none;
+
+  @include mq('lt-sidebar') {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  @include mq('sidebar') {
+    @include scroll();
+    position: relative;
+    max-height: calc(100vh - 8rem);
+    padding: 1rem;
+    background: $color-gray-4;
+  }
+
+  a {
+    color: $color-gray-5;
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+      color: currentColor;
+    }
+  }
+}
+
+// Utilities
+@include u-margin('right-xs', $gutter-xs, 'lt-sidebar');
+@include u-border('right-gray-1', 1px solid $color-gray-1, 'lt-sidebar');
+@include u-text-align('center', 'lt-sidebar');
+@include u-white-space('nowrap', 'lt-sidebar');
+
+// TODO: Make scroll utilities (like `object-fit`)
+.u-scroll {
+  @include scroll();
+}
+.u-scroll-disabled {
+  @include scroll-disabled();
+}
+@include breakpoints('u-scroll', 'lt-sidebar') {
+  @include scroll();
+}
+
+
+
+// ------------------------------
+// Style Guide - Typography
+// ------------------------------
+
+// Headings
+@mixin c-heading() {
+  font-family: $font-family--display;
+}
+.c-heading {
+  @include c-heading();
+}
+
+@mixin c-heading--xl() {
+  font-size: rem(44);
+  font-weight: 400;
+}
+.c-heading--xl {
+  @include c-heading--xl();
+}
+
+@mixin c-heading--lg() {
+  color: $color-gray-1;
+  font-size: rem(32);
+  font-weight: 400;
+}
+.c-heading--lg {
+  @include c-heading--lg();
+}
+
+@mixin c-heading--md() {
+  color: $color-gray-1;
+  font-size: rem(20);
+  font-weight: 400;
+}
+.c-heading--md {
+  @include c-heading--md();
+}
+
+@mixin c-heading--sm() {
+  color: $color-gray-1;
+  font-family: $font-family--subheading;
+  font-size: rem(14);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.c-heading--sm {
+  @include c-heading--sm();
+}
+
+// Copy
+@mixin c-copy() {
+  color: $color-gray-1;
+  font-family: $font-family;
+  font-size: rem(16);
+  font-weight: 400;
+}
+.c-copy {
+  @include c-copy();
+}
+
+// Links
+@mixin c-link() {
+  color: $color-gray-5;
+  font-family: $font-family;
+  font-size: rem(16);
+  font-weight: 400;
+  text-decoration: underline;
+
+  &:active,
+  &:visited {
+    color: currentColor;
+  }
+}
+
+.c-link {
+  @include c-link();
+}
+
+.c-link--inherit {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Navigation
+.c-navigation {
+  a {
+    color: $color-gray-5;
+  }
+
+  a:active,
+  a:visited {
+    color: currentColor;
+  }
+}
+
+// Styleguide Innards
+.c-layout__wrapper {
+  p,
+  li {
+    @include c-copy();
+
+    a {
+      @include c-link();
+    }
+  }
+
+  .c-link--inherit {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  h1 {
+    @include c-heading();
+    @include c-heading--lg();
+  }
+
+  h2 {
+    @include c-heading();
+    @include c-heading--md();
+  }
+
+  h3,
+  h3 a {
+    @include c-heading();
+    @include c-heading--md();
+    font-size: rem(16);
+    font-weight: 500;
+  }
+
+  h4 {
+    @include c-heading();
+    @include c-heading--md();
+    font-size: rem(14);
+    font-weight: 500;
+  }
+}
+
+.c-back-to-top {
+  position: fixed;
+  right: rem(10);
+  bottom: rem(10);
+  width: rem(20);
+  height: rem(20);
+  border-radius: rem(3);
+  background: $color-gray-4;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-50%);
+    border: solid transparent;
+    border-width: 5px;
+    border-bottom-color: $color-gray-2;
+    content: '';
+
+    @include mq('md') {
+      margin-top: -4px;
+      border-width: 8px;
+    }
+  }
+
+  @include mq('md') {
+    right: rem(20);
+    bottom: rem(20);
+    width: rem(30);
+    height: rem(30);
+  }
+}

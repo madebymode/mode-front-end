@@ -7,117 +7,122 @@
   <title>Utilities | MODE Front-End</title>
   <link rel="stylesheet" href="./css/app.css">
   <script async src="./js/app.js"></script>
+  <script src="https://use.typekit.net/bbx2hlj.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="c-layout">
+<body class="c-layout" id="top">
   <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <header class="c-layout__wrapper" role="banner">
-    <h1 class="u-text-align-center">
-      MODE Front‑End
+    <h1 class="c-heading  c-heading--xl  /  u-text-align-center">
+      <!-- TODO: Inherit utility? -->
+      <a href="/" class="c-link--inherit">MODE Front‑End</a>
     </h1>
-    <nav class="u-text-align-center" role="navigation">
-      <ul class="o-list  o-list--inline">
-        <li class="o-list__item  /  u-margin-right-xs"><a href="index.html">Getting Started</a></li>
-        <li class="o-list__item  /  u-margin-right-xs"><a href="sass.html">Sass</a></li>
-        <li class="o-list__item  /  u-margin-right-xs"><a href="objects.html">Objects</a></li>
-        <li class="o-list__item  /  u-margin-right-xs"><a href="components.html">Components</a></li>
-        <li class="o-list__item  /  u-margin-right-xs"><a href="utilities.html">Utilities</a></li>
-        <li class="o-list__item  /  u-margin-right-xs"><a href="javascript.html">JavaScript</a></li>
-        <li class="o-list__item"><a href="php.html">PHP</a></li>
+    <nav class="u-margin-bottom-xs  /  u-border-right-gray-1@lt-sidebar  /  u-white-space-nowrap@lt-sidebar  /  u-scroll@lt-sidebar" role="navigation">
+      <ul class="o-list  o-list--inline  /  c-navigation  /  u-margin-bottom-0  /  u-text-align-center">
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="index.html">Getting Started</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="sass.html">Sass</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="objects.html">Objects</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="components.html">Components</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="utilities.html">Utilities</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs"><a href="javascript.html">JavaScript</a></li>
+        <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="php.html">PHP</a></li>
       </ul>
     </nav>
   </header>
+
+  <a href="#top" class="c-back-to-top"></a>
 
   
   
   <nav class="c-layout__sticky-sidebar  /  c-sticky-sidebar  /  u-text-align-center@lt-sidebar">
     <ul class="o-list  o-list--inline@lt-sidebar  /  c-sticky-sidebar__nav">
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#align-items">Align Items</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#align-items">Align Items</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#align-self">Align Self</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#align-self">Align Self</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#animation">Animation</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#animation">Animation</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#aspect-ratio">Aspect Ratio</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#aspect-ratio">Aspect Ratio</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#background-color">Background Color</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#background-color">Background Color</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#background-position">Background Position</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#background-position">Background Position</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#border">Border</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#border">Border</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#box-shadow">Box Shadow</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#box-shadow">Box Shadow</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#color">Color</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#color">Color</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#content">Content</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#content">Content</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#depth">Depth (z-index)</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#depth">Depth (z-index)</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#display">Display</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#display">Display</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex">Flex</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#flex">Flex</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex-direction">Flex Direction</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#flex-direction">Flex Direction</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#flex-wrap">Flex Wrap</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#flex-wrap">Flex Wrap</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#float">Float</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#float">Float</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-family">Font Family</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#font-family">Font Family</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-size">Font Size</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#font-size">Font Size</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-style">Font Style</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#font-style">Font Style</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#font-weight">Font Weight</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#font-weight">Font Weight</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#height">Height</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#height">Height</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#hover">Hover</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#hover">Hover</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#justify-content">Justify Content</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#justify-content">Justify Content</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#margin">Margin</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#margin">Margin</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#max-height">Max Height</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#max-height">Max Height</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#max-width">Max Width</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#max-width">Max Width</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#min-height">Min Height</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#min-height">Min Height</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#min-width">Min Width</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#min-width">Min Width</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#object-fit">Object Fit</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#object-fit">Object Fit</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#opacity">Opacity</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#opacity">Opacity</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#order">Order</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#order">Order</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#overflow">Overflow</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#overflow">Overflow</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#padding">Padding</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#padding">Padding</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#pointer-events">Pointer Events</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#pointer-events">Pointer Events</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#position">Position</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#position">Position</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-align">Text Align</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#text-align">Text Align</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-overflow">Text Overflow</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#text-overflow">Text Overflow</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#text-transform">Text Transform</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#text-transform">Text Transform</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#transform">Transform</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#transform">Transform</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#user-select">User Select</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#user-select">User Select</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#vertical-align">Vertical Align</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#vertical-align">Vertical Align</a></li>
       
-      <li class="o-list__item  /  u-margin-right-xs@lt-sidebar"><a href="#white-space">White Space</a></li>
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#white-space">White Space</a></li>
       
-      <li class="o-list__item  /  "><a href="#width">Width</a></li>
+      <li class="o-list__item  /  c-copy  /  "><a href="#width">Width</a></li>
       
     </ul>
   </nav>
@@ -2167,7 +2172,7 @@
   </div>
 </div>
     <footer class="u-margin-top-xl">
-      <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+      <p class="c-copy">This documentation generated using <a href="http://github.com/trulia/hologram" class="c-link">Hologram</a>.
     </footer>
   </main>
 </body>
