@@ -1,6 +1,6 @@
 # MODE Front-End
 
-A collection of tools and patterns that help us quickly create flexible websites.
+A collection of tools and patterns that help us quickly create flexible websites.
 
 ## Documentation
 
