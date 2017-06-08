@@ -191,9 +191,7 @@ $sidebar-width   : 192;
   }
 
   @include mq('btwn-sm-and-sidebar') {
-    .c-layout__sticky-sidebar {
-      margin: 0 $gutter-sm;
-    }
+    margin: 0 $gutter-sm;
   }
 }
 
