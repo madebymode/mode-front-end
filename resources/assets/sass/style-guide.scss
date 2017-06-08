@@ -130,8 +130,7 @@ code {
 }
 .exampleOutput,
 .highlight {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  @include scroll();
 }
 // HACK: Remove margin from `.o-section` example to avoid cluttering with extra classes
 .codeExample h4 {
