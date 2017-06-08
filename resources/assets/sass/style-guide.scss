@@ -306,8 +306,14 @@ $font-family--code: 'source-code-pro', sans-serif;
     color: currentColor;
   }
 }
+
 .c-link {
   @include c-link();
+}
+
+.c-link--inherit {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 // Code
@@ -346,10 +352,15 @@ code {
     code {
       font-size: 1rem;
     }
+
+    a {
+      @include c-link();
+    }
   }
 
-  a {
-    @include c-link();
+  .c-link--inherit {
+    color: inherit;
+    text-decoration: inherit;
   }
 
   h1 {
