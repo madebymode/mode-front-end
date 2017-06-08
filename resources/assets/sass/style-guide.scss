@@ -395,8 +395,8 @@ $sidebar-width   : 192;
 
 .c-back-to-top {
   position: fixed;
+  right: rem(10);
   bottom: rem(10);
-  left: rem(10);
   width: rem(20);
   height: rem(20);
   border-radius: rem(3);
@@ -426,8 +426,8 @@ $sidebar-width   : 192;
   }
 
   @include mq('md') {
+    right: rem(20);
     bottom: rem(20);
-    left: rem(20);
     width: rem(30);
     height: rem(30);
   }
