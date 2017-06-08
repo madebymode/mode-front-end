@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [2.4.0] - 2017-06-08
+
+### Changed
+
+- Added company-themed styles
+- Added [stylelint](https://stylelint.io) rules
+
 ## [2.3.0] - 2017-06-05
 
 ### Changed
