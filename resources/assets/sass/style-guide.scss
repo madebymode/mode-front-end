@@ -240,7 +240,9 @@ $sidebar-width   : 192;
 
 // Utilities
 @include u-margin('right-xs', $gutter-xs, 'lt-sidebar');
+@include u-border('right-gray-1', 1px solid $color-gray-1, 'lt-sidebar');
 @include u-text-align('center', 'lt-sidebar');
+@include u-white-space('nowrap', 'lt-sidebar');
 
 // TODO: Make scroll utilities (like `object-fit`)
 .u-scroll {
@@ -248,6 +250,9 @@ $sidebar-width   : 192;
 }
 .u-scroll-disabled {
   @include scroll-disabled();
+}
+@include breakpoints('u-scroll', 'lt-sidebar') {
+  @include scroll();
 }
 
 
