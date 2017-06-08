@@ -273,7 +273,7 @@ $sidebar-width   : 192;
 }
 
 @mixin c-heading--lg() {
-  color: #323031;
+  color: $color-gray-1;
   font-size: rem(32);
   font-weight: 400;
 }
@@ -282,7 +282,7 @@ $sidebar-width   : 192;
 }
 
 @mixin c-heading--md() {
-  color: #323031;
+  color: $color-gray-1;
   font-size: rem(20);
   font-weight: 400;
 }
@@ -291,7 +291,7 @@ $sidebar-width   : 192;
 }
 
 @mixin c-heading--sm() {
-  color: #323031;
+  color: $color-gray-1;
   font-family: $font-family--subheading;
   font-size: rem(14);
   letter-spacing: 2px;
@@ -303,7 +303,7 @@ $sidebar-width   : 192;
 
 // Copy
 @mixin c-copy() {
-  color: #323031;
+  color: $color-gray-1;
   font-family: $font-family;
   font-size: rem(16);
   font-weight: 400;
