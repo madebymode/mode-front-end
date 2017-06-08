@@ -10,7 +10,7 @@
   <script src="https://use.typekit.net/bbx2hlj.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="c-layout">
+<body class="c-layout" id="top">
   <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <header class="c-layout__wrapper" role="banner">
@@ -30,6 +30,8 @@
       </ul>
     </nav>
   </header>
+
+  <a href="#top" class="c-back-to-top"></a>
 
   <% if @blocks.size > 1 %>
   <% @blocks.sort! { |a, b| a[:title] <=> b[:title] } %>

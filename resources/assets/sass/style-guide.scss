@@ -398,3 +398,43 @@ $sidebar-width   : 192;
     font-weight: 500;
   }
 }
+
+.c-back-to-top {
+  position: fixed;
+  bottom: rem(10);
+  left: rem(10);
+  width: rem(20);
+  height: rem(20);
+  border-radius: rem(3);
+  background: $color-gray-4;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-50%);
+    border: solid transparent;
+    border-width: 5px;
+    border-bottom-color: $color-gray-2;
+    content: '';
+
+    @include mq('md') {
+      margin-top: -4px;
+      border-width: 8px;
+    }
+  }
+
+  @include mq('md') {
+    bottom: rem(20);
+    left: rem(20);
+    width: rem(30);
+    height: rem(30);
+  }
+}
