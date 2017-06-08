@@ -3906,12 +3906,11 @@ samp,
 
 code {
   display: inline-block;
-  max-width: calc(100% - 1em);
+  max-width: 100%;
   padding: 0 0.25rem;
   background: #eee;
-  text-overflow: ellipsis;
-  overflow: hidden;
   vertical-align: bottom;
+  word-break: break-word;
 }
 
 .codeBlock + h1 {
@@ -4151,11 +4150,6 @@ code {
   font-family: "proxima-soft", "Source Code Pro", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-}
-
-.c-layout__wrapper p code,
-.c-layout__wrapper li code {
-  font-size: 1rem;
 }
 
 .c-layout__wrapper p a,
