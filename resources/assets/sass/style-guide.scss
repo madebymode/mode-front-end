@@ -2,10 +2,11 @@
 // Style Guide - Settings
 // ------------------------------
 
-$font-family--quatro: 'quatro', 'Quatro', serif;
-$font-family--quatro-slab: 'quatro-slab', 'Quatro Slab', serif;
-$font-family--proxima-soft: 'proxima-soft', 'Source Code Pro', sans-serif;
-$font-family--code: 'source-code-pro', 'Proxima Soft', monospace;
+// Family
+$font-family           : 'proxima-soft', 'Source Code Pro', sans-serif;
+$font-family--display  : 'quatro-slab', 'Quatro Slab', serif;
+$font-family--subheading : 'quatro', 'Quatro', serif;
+$font-family--code     : 'source-code-pro', 'Proxima Soft', monospace;
 
 
 
@@ -258,7 +259,7 @@ $sidebar-width   : 192;
 
 // Headings
 @mixin c-heading() {
-  font-family: $font-family--quatro-slab;
+  font-family: $font-family--display;
 }
 .c-heading {
   @include c-heading();
@@ -292,7 +293,7 @@ $sidebar-width   : 192;
 
 @mixin c-heading--sm() {
   color: #323031;
-  font-family: $font-family--quatro;
+  font-family: $font-family--subheading;
   font-size: rem(14);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -304,7 +305,7 @@ $sidebar-width   : 192;
 // Copy
 @mixin c-copy() {
   color: #323031;
-  font-family: $font-family--proxima-soft;
+  font-family: $font-family;
   font-size: rem(16);
   font-weight: 400;
 }
@@ -315,7 +316,7 @@ $sidebar-width   : 192;
 // Links
 @mixin c-link() {
   color: $color-gray-5;
-  font-family: $font-family--proxima-soft;
+  font-family: $font-family;
   font-size: rem(16);
   font-weight: 400;
   text-decoration: underline;
