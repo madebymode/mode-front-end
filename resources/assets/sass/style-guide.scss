@@ -234,7 +234,7 @@ $sidebar-width   : 192;
 $font-family--quatro: 'quatro', serif;
 $font-family--quatro-slab: 'quatro-slab', serif;
 $font-family--proxima-soft: 'proxima-soft', sans-serif;
-$font-family--code: 'source-code-pro', sans-serif;
+$font-family--code: 'source-code-pro', monospace;
 
 // Headings
 @mixin c-heading() {
@@ -316,15 +316,17 @@ $font-family--code: 'source-code-pro', sans-serif;
 }
 
 // Code
-.codeBlock,
-code {
+code,
+kbd,
+pre,
+samp,
+.codeBlock {
   font-family: $font-family--code;
-  font-weight: 500;
+  font-size: rem(14);
 }
 
 .codeBlock {
   color: #e6e4e5;
-  font-size: rem(14);
 }
 
 
