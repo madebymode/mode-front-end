@@ -334,6 +334,7 @@ $sidebar-width   : 192;
   @include c-link();
 }
 
+// TODO: Convert this to a utility
 .c-link--inherit {
   color: inherit;
   text-decoration: inherit;
