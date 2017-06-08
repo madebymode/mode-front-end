@@ -4121,6 +4121,31 @@ code {
   color: currentColor;
 }
 
+.c-layout__wrapper p,
+.c-layout__wrapper li {
+  color: #323031;
+  font-family: "proxima-soft", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.c-layout__wrapper p code,
+.c-layout__wrapper li code {
+  font-size: 1rem;
+}
+
+.c-layout__wrapper a {
+  color: #323031;
+  font-family: "proxima-soft", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.c-layout__wrapper a:active, .c-layout__wrapper a:visited {
+  color: currentColor;
+}
+
 .c-layout__wrapper h1 {
   font-family: "quatro-slab", serif;
   color: #323031;
@@ -4135,7 +4160,8 @@ code {
   font-weight: 400;
 }
 
-.c-layout__wrapper h3 {
+.c-layout__wrapper h3,
+.c-layout__wrapper h3 a {
   font-family: "quatro-slab", serif;
   color: #323031;
   font-size: 1.25rem;
@@ -4151,31 +4177,6 @@ code {
   font-weight: 400;
   font-size: 0.875rem;
   font-weight: 500;
-}
-
-.c-layout__wrapper p,
-.c-layout__wrapper li {
-  color: #323031;
-  font-family: "proxima-soft", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.c-layout__wrapper p code,
-.c-layout__wrapper li code {
-  font-size: 1rem;
-}
-
-.c-layout__wrapper a.styleguide {
-  color: #323031;
-  font-family: "proxima-soft", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  text-decoration: underline;
-}
-
-.c-layout__wrapper a.styleguide:active, .c-layout__wrapper a.styleguide:visited {
-  color: currentColor;
 }
 
 .u-align-items-center {
@@ -4731,9 +4732,9 @@ code {
   height: 1px;
   margin: -1px;
   padding: 0;
+  clip: rect(0 0 0 0);
   border: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
 }
 
 @media all and (max-width: 47.9375em) {
@@ -4779,9 +4780,9 @@ code {
     height: 1px;
     margin: -1px;
     padding: 0;
+    clip: rect(0 0 0 0);
     border: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
   }
 }
 
@@ -4828,9 +4829,9 @@ code {
     height: 1px;
     margin: -1px;
     padding: 0;
+    clip: rect(0 0 0 0);
     border: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
   }
 }
 
@@ -4877,9 +4878,9 @@ code {
     height: 1px;
     margin: -1px;
     padding: 0;
+    clip: rect(0 0 0 0);
     border: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
   }
 }
 
@@ -4926,9 +4927,9 @@ code {
     height: 1px;
     margin: -1px;
     padding: 0;
+    clip: rect(0 0 0 0);
     border: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
   }
 }
 
