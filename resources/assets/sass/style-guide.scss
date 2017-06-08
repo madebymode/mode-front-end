@@ -1,3 +1,18 @@
+// ------------------------------
+// Style Guide - Settings
+// ------------------------------
+
+$font-family--quatro: 'quatro', 'Quatro', serif;
+$font-family--quatro-slab: 'quatro-slab', 'Quatro Slab', serif;
+$font-family--proxima-soft: 'proxima-soft', 'Source Code Pro', sans-serif;
+$font-family--code: 'source-code-pro', 'Proxima Soft', monospace;
+
+
+
+// ------------------------------
+// Style Guide - Reset
+// ------------------------------
+
 html {
   @include font-smoothing(true);
   line-height: 1.5;
@@ -77,6 +92,15 @@ button {
 }
 
 // Code Examples
+code,
+kbd,
+pre,
+samp,
+.codeBlock {
+  font-family: $font-family--code;
+  font-size: rem(14);
+}
+
 code {
   display: inline-block;
   max-width: calc(100% - 1em);
@@ -94,6 +118,7 @@ code {
   margin-bottom: 1rem;
   padding: rem(15) rem(20);
   background: $color-gray-5;
+  color: #e6e4e5;
 
   :last-child {
     margin-bottom: 0;
@@ -120,7 +145,7 @@ code {
 
 
 // ------------------------------
-// Style Guide Layout
+// Style Guide - Layout
 // ------------------------------
 
 $container-width : 640;
@@ -226,15 +251,10 @@ $sidebar-width   : 192;
 }
 
 
-// ------------------------------
-// Style Guide "MODE" Styles
-// ------------------------------
 
-// Typography
-$font-family--quatro: 'quatro', serif;
-$font-family--quatro-slab: 'quatro-slab', serif;
-$font-family--proxima-soft: 'proxima-soft', sans-serif;
-$font-family--code: 'source-code-pro', monospace;
+// ------------------------------
+// Style Guide - Typography
+// ------------------------------
 
 // Headings
 @mixin c-heading() {
@@ -315,24 +335,8 @@ $font-family--code: 'source-code-pro', monospace;
   text-decoration: inherit;
 }
 
-// Code
-code,
-kbd,
-pre,
-samp,
-.codeBlock {
-  font-family: $font-family--code;
-  font-size: rem(14);
-}
-
-.codeBlock {
-  color: #e6e4e5;
-}
-
-
 // Navigation
 .c-navigation {
-
   a {
     color: $color-gray-5;
   }
@@ -345,7 +349,6 @@ samp,
 
 // Styleguide Innards
 .c-layout__wrapper {
-
   p,
   li {
     @include c-copy();
