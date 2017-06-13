@@ -51,6 +51,12 @@ git checkout .
 git commit -m "Replace scss-lint with stylelint"
 ```
 
+Use [the stylelint CLI](https://stylelint.io/user-guide/cli) to quickly scan the entire project:
+
+```bash
+stylelint resources/assets/sass/**/*.scss
+```
+
 ## Upgrading to 2.2.0 from 2.1.x
 
 Estimated upgrade time: 0.5 hour
