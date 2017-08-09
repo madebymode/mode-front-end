@@ -1,4 +1,6 @@
 @include o-list();
+@include o-list__item();
+
 @include o-list--border('', 1px solid $color-gray-3);
 @include o-list--bullet('', 1rem);
 @include o-list--comma();
