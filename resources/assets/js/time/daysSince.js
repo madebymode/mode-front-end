@@ -5,7 +5,7 @@ module.exports = (function(window, document, undefined) {
    * @param  {String}    timestamp
    * @return {Boolean}
    */
-  const daysSince = (timestamp) => {
+  function daysSince(timestamp) {
     if (Object.prototype.toString.call(timestamp) === '[object Date]') {
       timestamp = timestamp.getTime();
     } else {
@@ -24,7 +24,7 @@ module.exports = (function(window, document, undefined) {
 
     // time / 1000ms / 60sec / 60min / 24hr = days
     return (now.getTime() - then.getTime()) / 1000 / 60 / 60 / 24;
-  };
+  }
 
   // Example:
   // let today = new Date();
