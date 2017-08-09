@@ -18,10 +18,9 @@
 // ------------------------------
 
 // Max-width
-@include o-list('lt-sm');
 @include o-list--border('', 1px solid $color-gray-3, 'lt-sm');
 @include o-list--bullet('', 1rem, 'lt-sm');
-@include o-list--comma();
+@include o-list--comma('lt-sm');
 @include o-list--disc('', 1.125em, 'lt-sm');
 @include o-list--inline('lt-sm');
 @include o-list--leading-zero('lt-sm');
@@ -30,10 +29,9 @@
 @include o-list--slash('lt-sm');
 
 // Min-width
-@include o-list('sm');
 @include o-list--border('', 1px solid $color-gray-3, 'sm');
 @include o-list--bullet('', 1rem, 'sm');
-@include o-list--comma();
+@include o-list--comma('sm');
 @include o-list--disc('', 1.125em, 'sm');
 @include o-list--inline('sm');
 @include o-list--leading-zero('sm');
