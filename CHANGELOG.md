@@ -250,7 +250,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.4.0...HEAD
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.5.2...HEAD
+[2.5.2]: https://github.com/madebymode/mode-front-end/compare/v2.4.0...v2.5.2
 [2.4.0]: https://github.com/madebymode/mode-front-end/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/madebymode/mode-front-end/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/madebymode/mode-front-end/compare/v2.1.0...v2.2.0
