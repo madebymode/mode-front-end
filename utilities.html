@@ -83,6 +83,8 @@
       
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#justify-content">Justify Content</a></li>
       
+      <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#line-height">Line Height</a></li>
+      
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#margin">Margin</a></li>
       
       <li class="o-list__item  /  c-copy  /  u-margin-right-xs@lt-sidebar"><a href="#max-height">Max Height</a></li>
@@ -1251,6 +1253,46 @@
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/00ff00/ffffff?text=2"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 2"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/100/0000ff/ffffff?text=3"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">alt=</span><span class="s">"Item 3"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="line-height" class="styleguide">Line Height</h1>
+
+<h2>Sass</h2>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>// Basic
+@include u-line-height('0.8', 0.8);
+
+// Responsive
+@include u-line-height('0.8', 0.8, 'sm');</pre>
+  </div>
+</div>
+<h2>Markup</h2>
+
+<h3>Basic</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-line-height-0.8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit aspernatur, non ratione excepturi et quia recusandae repellendus natus, libero facilis doloremque sint inventore voluptatem, voluptatibus odio sapiente iste officiis.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-line-height-0.8"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit aspernatur, non ratione excepturi et quia recusandae repellendus natus, libero facilis doloremque sint inventore voluptatem, voluptatibus odio sapiente iste officiis.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Responsive</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="u-line-height-0.8@sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit aspernatur, non ratione excepturi et quia recusandae repellendus natus, libero facilis doloremque sint inventore voluptatem, voluptatibus odio sapiente iste officiis.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-line-height-0.8@sm"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit aspernatur, non ratione excepturi et quia recusandae repellendus natus, libero facilis doloremque sint inventore voluptatem, voluptatibus odio sapiente iste officiis.<span class="nt">&lt;/p&gt;</span></pre>
     </div>
   </div>
 </div>
