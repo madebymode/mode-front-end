@@ -43,7 +43,7 @@ category: Objects
 @mixin o-grid($at-breakpoint: null) {
   @include breakpoints('o-grid', $at-breakpoint) {
     display: flex;
-    flex-direction: horizontal;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
   }
