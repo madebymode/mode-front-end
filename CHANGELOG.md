@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [2.5.0] - 2017-08-09
+
+### Added
+
+- Add `u-line-height()` utility
+
 ## [2.4.0] - 2017-06-08
 
 ### Changed
