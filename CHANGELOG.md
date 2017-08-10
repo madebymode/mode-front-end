@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+### Changed
+
+- Add latest `.gitignore` files from Laravel 5.4.32
+
 ## [2.6.0] - 2017-08-10
 
 ### Added
