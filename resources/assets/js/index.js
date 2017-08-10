@@ -60,6 +60,7 @@ const dom = require('mode-front-end/resources/assets/js/dom');
 - `clearStack`
 - `customEvent`
 - `debounce`
+- `on`
 - `throttle`
 - `transitionEvents`
 
