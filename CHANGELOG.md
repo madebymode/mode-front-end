@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 ### Changed
 
 - Add latest `.gitignore` files from Laravel 5.4.32
+- Move included JS packages to Starter Kit install script
 
 ## [2.6.0] - 2017-08-10
 

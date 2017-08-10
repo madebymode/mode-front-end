@@ -24,6 +24,7 @@ This adds the following config files your project root:
 ## Starter Kit
 
 ```bash
+yarn add svg4everybody picturefill lazysizes
 npm run init-starter-kit --prefix ./node_modules/mode-front-end
 ```
 
@@ -38,8 +39,5 @@ npm run init-gulp --prefix ./node_modules/mode-front-end
 
 ```bash
 yarn add fontfaceobserver
-yarn add lazysizes
 yarn add object-fit-images
-yarn add picturefill
-yarn add svg4everybody
 ```
