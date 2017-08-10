@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
-## [2.6.2] - 2017-08-10
+## [2.6.3] - 2017-08-10
 
 ### Added
 
@@ -262,8 +262,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.6.2...HEAD
-[2.6.2]: https://github.com/madebymode/mode-front-end/compare/v2.5.3...v2.6.2
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.6.3...HEAD
+[2.6.3]: https://github.com/madebymode/mode-front-end/compare/v2.5.3...v2.6.3
 [2.5.3]: https://github.com/madebymode/mode-front-end/compare/v2.4.0...v2.5.3
 [2.4.0]: https://github.com/madebymode/mode-front-end/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/madebymode/mode-front-end/compare/v2.2.0...v2.3.0
