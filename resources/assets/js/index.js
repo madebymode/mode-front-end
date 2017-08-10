@@ -80,6 +80,10 @@ const dom = require('mode-front-end/resources/assets/js/dom');
 
 - `requestAnimationFrame`
 
+## Time
+
+- `daysSince`
+
 ## Typography
 
 - `balanceText`

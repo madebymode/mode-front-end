@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 ### Added
 
 - Add `on` helper for event delegation
+- Add `daysSince` helper
 
 ## [2.5.3] - 2017-08-09
 
