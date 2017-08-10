@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+### Added
+
+- Add `on` helper for event delegation
+
 ## [2.5.3] - 2017-08-09
 
 ### Added

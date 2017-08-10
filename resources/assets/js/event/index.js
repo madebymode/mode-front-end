@@ -4,6 +4,7 @@ module.exports = (function() {
     clearStack: require('./clearStack'),
     customEvent: require('./customEvent'),
     debounce: require('./debounce'),
+    on: require('./on'),
     throttle: require('./throttle'),
     transitionEvents: require('./transitionEvents')
   };
