@@ -16,7 +16,7 @@ module.exports = (function() {
     el.style.transition = 'initial';
     el.style.visibility = 'hidden';
     el.style.maxHeight = 'initial';
-    var height = el.offsetHeight + 'px';
+    var height = (el.offsetHeight || el.scrollHeight) + 'px';
     el.style.removeProperty('visibility');
     el.style.maxHeight = '0';
     el.style.overflow = 'hidden';
