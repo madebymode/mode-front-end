@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+### Added
+
+- Add `chrome.getVersion()` helper
+
 ## [2.6.3] - 2017-08-10
 
 ### Added
