@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [2.7.0] - 2017-08-28
+
 ### Added
 
 - Add `chrome.getVersion()` helper
@@ -266,7 +268,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.6.3...HEAD
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.7.0...HEAD
+[2.7.0]: https://github.com/madebymode/mode-front-end/compare/v2.6.3...v2.7.0
 [2.6.3]: https://github.com/madebymode/mode-front-end/compare/v2.5.3...v2.6.3
 [2.5.3]: https://github.com/madebymode/mode-front-end/compare/v2.4.0...v2.5.3
 [2.4.0]: https://github.com/madebymode/mode-front-end/compare/v2.3.0...v2.4.0
