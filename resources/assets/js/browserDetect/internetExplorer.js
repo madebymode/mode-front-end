@@ -1,4 +1,3 @@
-// TODO: Move to mode-front-end
 module.exports = (function(window, document) {
 
   /**
@@ -8,7 +7,7 @@ module.exports = (function(window, document) {
    * @return {Number}
    */
   function getVersion() {
-    var ieVersion = -1,
+    let ieVersion = -1,
       ieRegex;
 
     if (navigator.appName === 'Microsoft Internet Explorer') {
@@ -29,7 +28,7 @@ module.exports = (function(window, document) {
    * @return {Boolean}
    */
   function isLessThanIE11() {
-    var version = getVersion();
+    let version = getVersion();
 
     return version >= 0 && version < 11.0;
   }
@@ -47,7 +46,7 @@ module.exports = (function(window, document) {
    * @return {Boolean}
    */
   function updateDocumentClasses() {
-    var version = getVersion();
+    let version = getVersion();
 
     // Return false for non-IE browsers
     if (version < 0) {
