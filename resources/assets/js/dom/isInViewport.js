@@ -10,6 +10,9 @@ module.exports = (function() {
    * @return {Boolean}
    */
   function isInViewport(el, allowPartial) {
+    if (!el || !el.length) {
+      return false;
+    }
     if (typeof jQuery === 'function' && el instanceof jQuery) {
       el = el[0];
     }
