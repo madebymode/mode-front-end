@@ -6,7 +6,7 @@ module.exports = (function(window, document) {
    * @return {Number}
    */
   function getVersion() {
-    let version = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+    var version = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
 
     return version ? parseInt(version[2], 10) : -1;
   }

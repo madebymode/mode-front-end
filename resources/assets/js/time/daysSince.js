@@ -12,12 +12,12 @@ module.exports = (function(window, document, undefined) {
       timestamp = parseInt(timestamp, 10);
     }
 
-    let then = new Date(timestamp);
+    var then = new Date(timestamp);
     then.setHours(0);
     then.setMinutes(0);
     then.setSeconds(0, 0);
 
-    let now = new Date();
+    var now = new Date();
     now.setHours(0);
     now.setMinutes(0);
     now.setSeconds(0, 0);
@@ -27,12 +27,12 @@ module.exports = (function(window, document, undefined) {
   }
 
   // Example:
-  // let today = new Date();
-  // let yesterday = new Date();
+  // var today = new Date();
+  // var yesterday = new Date();
   // yesterday.setDate(yesterday.getDate() - 1);
-  // let lastWeek = new Date();
+  // var lastWeek = new Date();
   // lastWeek.setDate(lastWeek.getDate() - 7);
-  // let tomorrow = new Date();
+  // var tomorrow = new Date();
   // tomorrow.setDate(tomorrow.getDate() + 1);
   // console.log(daysSince(today));
   // console.log(daysSince(yesterday));

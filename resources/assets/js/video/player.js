@@ -1,18 +1,18 @@
-const dom = require('../dom');
-const map = require('../array/map');
-const extend = require('../object/extend');
-const getYouTubeId = require('./getYouTubeId');
-const youTubeReady = require('./youTubeReady');
-// const analytics = require('../analytics');
+var dom = require('../dom');
+var map = require('../array/map');
+var extend = require('../object/extend');
+var getYouTubeId = require('./getYouTubeId');
+var youTubeReady = require('./youTubeReady');
+// var analytics = require('../analytics');
 
 // TODO: Create a reusable Video class from this
 module.exports = (function(window, document, undefined) {
 
-  const readyClass = 'is-ready';
-  const activeClass = 'is-active';
+  var readyClass = 'is-ready';
+  var activeClass = 'is-active';
 
   // Quality Pt. 1
-  const VIDEO_QUALITY_OPTIONS = {
+  var VIDEO_QUALITY_OPTIONS = {
     quality: 'hd720',
     breakpoint: 768
   };
@@ -48,9 +48,9 @@ module.exports = (function(window, document, undefined) {
    * @return {VideoPlayer}
    */
   function initVideoPlayer(videoElement) {
-    let YT = window.YT;
-    let videoOptions, videoId, playerOptions, videoPlayer;
-    let videoContainer = dom.closest(videoElement, '.js-video-wrapper');
+    var YT = window.YT;
+    var videoOptions, videoId, playerOptions, videoPlayer;
+    var videoContainer = dom.closest(videoElement, '.js-video-wrapper');
 
     // Wait for YouTube
     if (typeof YT === 'undefined') {
@@ -109,7 +109,7 @@ module.exports = (function(window, document, undefined) {
       setQuality(event.target, VIDEO_QUALITY_OPTIONS);
 
       // Allow custom play buttons
-      let playButtons = document.querySelectorAll('.js-video-open[data-video="#' + videoElement.id + '"]');
+      var playButtons = document.querySelectorAll('.js-video-open[data-video="#' + videoElement.id + '"]');
       map(playButtons, (button) => button.addEventListener('click', (e) => {
         if (videoPlayer) { videoPlayer.playVideo(); }
       }));

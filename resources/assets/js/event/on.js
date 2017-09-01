@@ -10,19 +10,19 @@ module.exports = (function(window, document, undefined) {
    * @return {Boolean}
    */
   function on(parentSelector, eventName, childSelector, fn) {
-    let parent = document.querySelector(parentSelector);
+    var parent = document.querySelector(parentSelector);
 
     if (!parent) {
       return false;
     }
 
     parent.addEventListener(eventName, function(event) {
-      let possibleTargets = parent.querySelectorAll(childSelector);
-      let target = event.target;
+      var possibleTargets = parent.querySelectorAll(childSelector);
+      var target = event.target;
 
-      for (let i = 0, l = possibleTargets.length; i < l; i++) {
-        let el = target;
-        let p = possibleTargets[i];
+      for (var i = 0, l = possibleTargets.length; i < l; i++) {
+        var el = target;
+        var p = possibleTargets[i];
 
         while (el && el !== parent) {
           if (el === p) {
