@@ -18,5 +18,5 @@ require('mode-front-end/resources/assets/js/browserDetect/ios');
 require('mode-front-end/resources/assets/js/browserDetect/fontFeatures');
 
 // Video
-const video = require('mode-front-end/resources/assets/js/video');
+var video = require('mode-front-end/resources/assets/js/video');
 video.player.init();

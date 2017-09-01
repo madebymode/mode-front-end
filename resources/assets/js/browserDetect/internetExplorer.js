@@ -7,7 +7,7 @@ module.exports = (function(window, document) {
    * @return {Number}
    */
   function getVersion() {
-    let ieVersion = -1,
+    var ieVersion = -1,
       ieRegex;
 
     if (navigator.appName === 'Microsoft Internet Explorer') {
@@ -28,7 +28,7 @@ module.exports = (function(window, document) {
    * @return {Boolean}
    */
   function isLessThanIE11() {
-    let version = getVersion();
+    var version = getVersion();
 
     return version >= 0 && version < 11.0;
   }
@@ -46,7 +46,7 @@ module.exports = (function(window, document) {
    * @return {Boolean}
    */
   function updateDocumentClasses() {
-    let version = getVersion();
+    var version = getVersion();
 
     // Return false for non-IE browsers
     if (version < 0) {

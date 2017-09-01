@@ -7,7 +7,7 @@ category: JavaScript
 Use namespacing to require helper functions in your application:
 
 ```js
-const dom = require('mode-front-end/resources/assets/js/dom');
+var dom = require('mode-front-end/resources/assets/js/dom');
 ```
 
 ## Analytics

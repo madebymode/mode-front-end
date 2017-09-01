@@ -1,4 +1,4 @@
-const internetExplorer = require('./internetExplorer');
+var internetExplorer = require('./internetExplorer');
 
 module.exports = (function(window, document) {
 
@@ -32,11 +32,11 @@ module.exports = (function(window, document) {
       return false;
     }
 
-    let activeClass = 'supports-font-features';
+    var activeClass = 'supports-font-features';
 
     // Check CSS.supports for `font-feature-settings`
     // Make an exception for IE+ since they don't support `supports` (HA!)
-    let supportsFontFeatures =
+    var supportsFontFeatures =
       supports("(font-feature-settings: 'smcp')") ||
       (internetExplorer.version() >= 10.0);
 
