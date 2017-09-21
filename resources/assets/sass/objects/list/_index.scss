@@ -45,6 +45,7 @@ category: Objects
 @mixin o-list($at-breakpoint: null) {
   @include breakpoints('o-list', $at-breakpoint) {
     padding-left: 0;
+    list-style: none;
   }
 }
 

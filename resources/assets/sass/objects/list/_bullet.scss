@@ -51,6 +51,8 @@ category: Objects
   }
 
   @include breakpoints($class-name, $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       position: relative;
       margin-left: $margin;

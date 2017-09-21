@@ -43,6 +43,8 @@ category: Objects
  */
 @mixin o-list--leading-zero($at-breakpoint: null) {
   @include breakpoints('o-list--leading-zero', $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       counter-increment: list-leading-zero;
     }

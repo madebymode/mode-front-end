@@ -43,6 +43,8 @@ category: Objects
  */
 @mixin o-list--roman($at-breakpoint: null) {
   @include breakpoints('o-list--roman', $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       counter-increment: list-roman;
 

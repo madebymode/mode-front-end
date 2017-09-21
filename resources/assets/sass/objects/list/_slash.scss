@@ -43,10 +43,13 @@ category: Objects
  */
 @mixin o-list--slash($at-breakpoint: null) {
   @include breakpoints('o-list--slash', $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       display: inline-block;
       vertical-align: middle;
     }
+
     > .o-list__item:not(:last-child)::after {
       content: '\00a0/';
     }
