@@ -43,9 +43,12 @@ category: Objects
  */
 @mixin o-list--comma($at-breakpoint: null) {
   @include breakpoints('o-list--comma', $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       display: inline-block;
     }
+
     > .o-list__item:not(:last-child)::after {
       content: ',';
     }

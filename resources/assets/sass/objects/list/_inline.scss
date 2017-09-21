@@ -43,6 +43,8 @@ category: Objects
  */
 @mixin o-list--inline($at-breakpoint: null) {
   @include breakpoints('o-list--inline', $at-breakpoint) {
+    list-style: none;
+
     > .o-list__item {
       display: inline-block;
     }
