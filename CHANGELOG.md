@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [Unreleased]
+## [2.9.0] - 2017-09-21
 
 ### Added
 
-- Reset list-style for `o-list` and modifiers (for projects not using the standard reset styles)
 - Touch helper, `hasTouched`
+
+### Fixed
+
+- Reset list-style for `o-list` and modifiers (for projects not using the standard reset styles)
 
 ## [2.8.1] - 2017-09-21
 
@@ -288,7 +291,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.8.1...HEAD
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.9.0...HEAD
+[2.9.0]: https://github.com/madebymode/mode-front-end/compare/v2.8.1...v2.9.0
 [2.8.1]: https://github.com/madebymode/mode-front-end/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/madebymode/mode-front-end/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/madebymode/mode-front-end/compare/v2.6.3...v2.7.0
