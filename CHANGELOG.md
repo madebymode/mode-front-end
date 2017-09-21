@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [2.8.1] - 2017-09-21
+
+### Fixed
+
+- Escape special characters (e.g., %) to prevent SVG data URIs breaking in IE
+- Add `undefined` to all module functions
+
+## [2.8.0] - 2017-09-01
+
+### Fixed
+
+- Fix naming conflicts in on helper (or at least, try to)
+- Fix `isInViewport` failing when element is null
+- Drop `let` and `const` for builds that don't support ES6
+
 ## [2.7.0] - 2017-08-28
 
 ### Added
@@ -268,7 +283,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.7.0...HEAD
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.8.1...HEAD
+[2.8.1]: https://github.com/madebymode/mode-front-end/compare/v2.8.0...v2.8.1
+[2.8.0]: https://github.com/madebymode/mode-front-end/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/madebymode/mode-front-end/compare/v2.6.3...v2.7.0
 [2.6.3]: https://github.com/madebymode/mode-front-end/compare/v2.5.3...v2.6.3
 [2.5.3]: https://github.com/madebymode/mode-front-end/compare/v2.4.0...v2.5.3
