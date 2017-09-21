@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+### Added
+
+- Touch helper, `hasTouched`
+
 ## [2.8.1] - 2017-09-21
 
 ### Fixed
