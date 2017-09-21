@@ -25,8 +25,8 @@
 
 /**
  * Optimize SVGs in data URIs. Based on Taylor Hunt's and jakob-e's work.
- * @see http://codepen.io/tigt/post/optimizing-svgs-in-data-uris
- * @see http://codepen.io/jakob-e/pen/doMoML?editors=0100
+ * @see https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
+ * @see https://codepen.io/jakob-e/pen/doMoML
  * @param  {String}  $svg
  * @param  {Number}  $width
  * @param  {Number}  $height
@@ -36,10 +36,13 @@
   $svg: build-svg($svg, $width, $height);
 
   $svg: str-replace($svg, '"', "'"); // stylelint-disable-line
-  $svg: str-replace($svg, '<', '%3C');
-  $svg: str-replace($svg, '>', '%3E');
+  $svg: str-replace($svg, '%', '%25');
   $svg: str-replace($svg, '&', '%26');
   $svg: str-replace($svg, '#', '%23');
+  $svg: str-replace($svg, '{', '%7B');
+  $svg: str-replace($svg, '}', '%7D');
+  $svg: str-replace($svg, '<', '%3C');
+  $svg: str-replace($svg, '>', '%3E');
 
   @return url('data:image/svg+xml;charset=utf8,#{$svg}');
 }
