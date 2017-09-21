@@ -1,5 +1,5 @@
 // TODO: Move to mode-front-end
-module.exports = (function(window, document) {
+module.exports = (function(window, document, undefined) {
 
   /**
    * Returns iOS device, otherwise null.

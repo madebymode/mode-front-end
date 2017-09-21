@@ -1,6 +1,6 @@
 var internetExplorer = require('./internetExplorer');
 
-module.exports = (function(window, document) {
+module.exports = (function(window, document, undefined) {
 
   /**
    * Return CSS supports API. Otherwise, return falsy function.

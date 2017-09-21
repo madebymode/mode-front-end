@@ -87,7 +87,7 @@ var height = function(elem) {
   return elem.offsetHeight - excludeHeight;
 };
 
-module.exports = (function(window, document) {
+module.exports = (function(window, document, undefined) {
     "use strict";
 
     var style = document.documentElement.style,

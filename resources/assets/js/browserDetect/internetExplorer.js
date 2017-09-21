@@ -1,4 +1,4 @@
-module.exports = (function(window, document) {
+module.exports = (function(window, document, undefined) {
 
   /**
    * Returns the version of Internet Explorer or a -1 (indicating the use of another browser).
