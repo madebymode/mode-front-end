@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.10.0] - 2017-10-26
+
+### Added
+
+- Page title and metadata helpers
+
 ## [2.9.0] - 2017-09-21
 
 ### Added
@@ -291,7 +297,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 - Renamed `.o-grid__cell` to `.o-grid__item` to match standard naming (using "item" as often as possible)
   - For example, `<div class="o-grid__cell"></div>` becomes `<div class="o-grid__item"></div>`
 
-[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.9.0...HEAD
+[Unreleased]: https://github.com/madebymode/mode-front-end/compare/v2.10.0...HEAD
+[2.10.0]: https://github.com/madebymode/mode-front-end/compare/v2.9.0...v2.10.0
 [2.9.0]: https://github.com/madebymode/mode-front-end/compare/v2.8.1...v2.9.0
 [2.8.1]: https://github.com/madebymode/mode-front-end/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/madebymode/mode-front-end/compare/v2.7.0...v2.8.0
