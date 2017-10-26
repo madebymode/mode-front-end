@@ -17,6 +17,16 @@ In your `composer.json`, update the `autoload` key to include the following `fil
 - `fix_widows($text, [$minWords])`
 - `render_attributes($attrs, [$prefix])`
 
+## Title
+- `title()->append($title)`
+- `title()->prepend($title)`
+- `title()->setDelimiter($delimiter)`
+- `title()->render($reverse = false)`
+
+## Meta
+- `meta()->add($name, $content, [$http_equiv = false, [$override = false, [$attrs = []]]])`
+- `meta()->render([$default = []])`
+
 ## Laravel
 
 - `asset_url($src, [$buildDirectory])`
