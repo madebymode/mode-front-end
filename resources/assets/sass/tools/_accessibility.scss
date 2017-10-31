@@ -38,10 +38,10 @@
  * Keep an element invisible until an active class is added to it.
  * @param  {String}  $active-class
  */
-@mixin invisible-until-active($active-class: 'is-active') {
+@mixin invisible-until-active($duration: 500ms, $active-class: 'is-active') {
   transition:
-    opacity 500ms ease,
-    visibility 500ms linear 0ms;
+    opacity $duration ease,
+    visibility $duration linear 0ms;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
