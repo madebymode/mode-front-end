@@ -17,6 +17,7 @@ $font-family--code       : 'source-code-pro', 'Proxima Soft', monospace;
 html {
   @include font-smoothing(true);
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 body {
