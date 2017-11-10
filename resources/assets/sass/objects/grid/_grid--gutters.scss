@@ -50,13 +50,46 @@ category: Objects
     $class-name: '#{$class-name}-#{$alias}';
   }
 
-  @include breakpoints($class-name, $at-breakpoint) {
-    margin-right: 0;
-    margin-left: -$size;
+  $directions: ('vertical', 'horizontal');
+  $direction: null;
+  $temp-direction: $alias;
 
-    > .o-grid__item {
-      padding-right: 0;
-      padding-left: $size;
+  // Check whether $alias starts with a direction
+  $index: str-index($alias, '-');
+  @if ($index) {
+    $temp-direction: str-slice($alias, 1, $index - 1);
+  }
+
+  @each $x-direction in $directions {
+    @if not $direction and $temp-direction == $x-direction {
+      $direction: $x-direction;
+    }
+  }
+
+  // Set properties based on direction
+  @include breakpoints($class-name, $at-breakpoint) {
+    @if ($direction == 'vertical') {
+      margin-bottom: 0;
+      margin-top: -$size;
+
+      > .o-grid__item {
+        padding-bottom: 0;
+        padding-top: $size;
+      }
+    } @else if ($direction == 'horizontal') {
+      margin-right: 0;
+      margin-left: -$size;
+
+      > .o-grid__item {
+        padding-right: 0;
+        padding-left: $size;
+      }
+    } @else {
+      margin: -$size 0 0 -$size;
+
+      > .o-grid__item {
+        padding: -$size 0 0 -$size;
+      }
     }
   }
 }

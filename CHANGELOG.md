@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [Unreleased]
+
+### Changed
+
+- Make `o-grid--gutters` use directional aliases (`horizontal`, `vertical`, and blank for both)
+
 ## [2.11.0] - 2017-10-31
 
 ### Changed
