@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ### Changed
 
-- Added `$duration` option to `invisible-until-active()` mixin.
+- Added `$duration` option to `invisible-until-active()` mixin
 
 ## [2.10.0] - 2017-10-26
 
