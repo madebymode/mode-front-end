@@ -4,6 +4,7 @@ module.exports = (function() {
     children: require('./children'),
     classList: require('./classList'),
     closest: require('./closest'),
+    equalHeight: require('./equalHeight'),
     getIndex: require('./getIndex'),
     isInBounds: require('./isInBounds'),
     isInViewport: require('./isInViewport'),
