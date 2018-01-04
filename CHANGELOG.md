@@ -26,6 +26,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 - Reset list-style for `o-list` and modifiers (for projects not using the standard reset styles)
 
+### Added
+
+- Adblocker helper, `checkAdBlock`
+
 ## [2.8.1] - 2017-09-21
 
 ### Fixed
