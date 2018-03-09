@@ -5,6 +5,18 @@ category: Getting Started
 hologram: true
 ---
 
+## Upgrading to 2.11.1 from 2.3.x
+
+### Switching from yarn back to npm
+
+```
+rm yarn.lock
+npm i
+git add yarn.lock
+git add package-lock.json
+git commit
+```
+
 ## Upgrading to 2.3.0 from 2.2.x
 
 Estimated upgrade time: 1–2 hours

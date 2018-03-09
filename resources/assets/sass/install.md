@@ -5,13 +5,13 @@ category: Getting Started
 hologram: true
 ---
 ```bash
-yarn add mode-front-end
+npm i --save-dev mode-front-end
 ```
 
 ## Config
 
 ```bash
-yarn add stylelint-config-property-sort-order-smacss
+npm i --save-dev stylelint-config-property-sort-order-smacss
 npm run init-config --prefix ./node_modules/mode-front-end
 ```
 
@@ -24,20 +24,20 @@ This adds the following config files your project root:
 ## Starter Kit
 
 ```bash
-yarn add svg4everybody picturefill lazysizes
+npm i --save-dev svg4everybody picturefill lazysizes
 npm run init-starter-kit --prefix ./node_modules/mode-front-end
 ```
 
 ## Gulp Tasks (via [Elixir](http://laravel.com/docs/elixir))
 
 ```
-yarn add gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack
+npm i --save-dev gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack
 npm run init-gulp --prefix ./node_modules/mode-front-end
 ```
 
 ## Other Common Packages
 
 ```bash
-yarn add fontfaceobserver
-yarn add object-fit-images
+npm i --save-dev fontfaceobserver
+npm i --save-dev object-fit-images
 ```
