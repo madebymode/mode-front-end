@@ -5,7 +5,7 @@ category: Getting Started
 hologram: true
 ---
 
-## Upgrading to 2.11.1 from 2.3.x
+## Upgrading to 2.11.3 from 2.3.x
 
 ### Switching from yarn back to npm
 
