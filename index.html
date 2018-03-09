@@ -134,13 +134,13 @@
 <h1 id="install" class="styleguide">Install</h1>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add mode-front-end</pre>
+    <pre>npm i --save-dev mode-front-end</pre>
   </div>
 </div>
 <h2>Config</h2>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add stylelint-config-property-sort-order-smacss
+    <pre>npm i --save-dev stylelint-config-property-sort-order-smacss
 npm run init-config --prefix ./node_modules/mode-front-end</pre>
   </div>
 </div><p class="styleguide">This adds the following config files your project root:</p><ul class="styleguide"><li><a class="styleguide" href="http://editorconfig.org" title="http://editorconfig.org">EditorConfig</a></li>
@@ -150,22 +150,22 @@ npm run init-config --prefix ./node_modules/mode-front-end</pre>
 <h2>Starter Kit</h2>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add svg4everybody picturefill lazysizes
+    <pre>npm i --save-dev svg4everybody picturefill lazysizes
 npm run init-starter-kit --prefix ./node_modules/mode-front-end</pre>
   </div>
 </div>
 <h2>Gulp Tasks (via <a class="styleguide" href="http://laravel.com/docs/elixir" title="http://laravel.com/docs/elixir">Elixir</a>)</h2>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack
+    <pre>npm i --save-dev gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack
 npm run init-gulp --prefix ./node_modules/mode-front-end</pre>
   </div>
 </div>
 <h2>Other Common Packages</h2>
 <div class="codeBlock">
   <div class="highlight">
-    <pre>yarn add fontfaceobserver
-yarn add object-fit-images</pre>
+    <pre>npm i --save-dev fontfaceobserver
+npm i --save-dev object-fit-images</pre>
   </div>
 </div>
 <h1 id="style_guide" class="styleguide">Style Guide</h1>
@@ -187,6 +187,18 @@ yarn add object-fit-images</pre>
 </ul>
 <h1 id="upgrade_guide" class="styleguide">Upgrade Guide</h1>
 
+<h2>Upgrading to 2.11.1 from 2.3.x</h2>
+
+<h3>Switching from yarn back to npm</h3>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>rm yarn.lock
+npm i
+git add yarn.lock
+git add package-lock.json
+git commit</pre>
+  </div>
+</div>
 <h2>Upgrading to 2.3.0 from 2.2.x</h2>
 <p class="styleguide">Estimated upgrade time: 1–2 hours</p>
 <h3>Switching from <a class="styleguide" href="https://github.com/brigade/scss-lint" title="https://github.com/brigade/scss-lint">scss-lint</a> to <a class="styleguide" href="https://stylelint.io" title="https://stylelint.io">stylelint</a></h3>
