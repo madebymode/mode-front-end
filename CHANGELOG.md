@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 ## [2.11.2] - 2018-03-09
 
+### Added
+
+- Set `.python-version` to 2.7.14 for [pyenv](https://github.com/pyenv/pyenv) so Python 3 doesn't cause `npm i` to fail
+
 ### Changed
 
 - Description for `breakpoints()` mixin
