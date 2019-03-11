@@ -177,9 +177,9 @@ $sidebar-width   : 192;
 }
 
 // Sidebar
-.c-layout__sticky-sidebar {
+.c-layout__absolute-sidebar {
   display: block;
-  position: sticky;
+  position: absolute;
   top: 0;
   margin: 0 $gutter-xs;
 
@@ -200,7 +200,7 @@ $sidebar-width   : 192;
     padding-right: $gutter-sm;
     padding-left: $gutter-sm;
   }
-  .c-layout__sticky-sidebar {
+  .c-layout__absolute-sidebar {
     top: 0;
     left: calc(50vw + 20rem); // 1/2 page width + 1/2 wrapper width
     width: rem($sidebar-width);
