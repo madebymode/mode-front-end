@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com) and this project adheres to [Semantic Versioning](http://semver.org).
+The format is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
@@ -120,7 +120,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 - Add [Hologram](https://github.com/trulia/hologram) for generating docs
 - [Docs for CSS objects, components, and utilities](https://madebymode.github.io/mode-front-end)
-- [Upgrade Guide](http://mode-front-end.app/index.html#upgrade_guide)
+- [Upgrade Guide](https://mode-front-end.app/index.html#upgrade_guide)
 - Add `devDependencies` in `package.json`
 - Add `escape-selector()` function
 - Add `to-string()` function

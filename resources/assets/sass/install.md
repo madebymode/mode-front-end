@@ -17,7 +17,7 @@ npm run init-config --prefix ./node_modules/mode-front-end
 
 This adds the following config files your project root:
 
-- [EditorConfig](http://editorconfig.org)
+- [EditorConfig](https://editorconfig.org)
 - [JSHint config](https://github.com/jshint/jshint)
 - [stylelint config](https://stylelint.io)
 
@@ -28,7 +28,7 @@ npm i --save-dev svg4everybody picturefill lazysizes
 npm run init-starter-kit --prefix ./node_modules/mode-front-end
 ```
 
-## Gulp Tasks (via [Elixir](http://laravel.com/docs/elixir))
+## Gulp Tasks (via [Elixir](https://laravel.com/docs/elixir))
 
 ```
 npm i --save-dev gulp gulp-gzip gulp-responsive laravel-elixir laravel-elixir-imagemin laravel-elixir-livereload laravel-elixir-svgstore laravel-elixir-webpack-official webpack

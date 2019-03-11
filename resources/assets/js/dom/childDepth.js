@@ -4,7 +4,7 @@ module.exports = (function() {
   /**
    * Get the number of nested layers between an element and its ancestor.
    * Optionally filters layers by a selector.
-   * @see http://tympanus.net/codrops/2013/08/13/multi-level-push-menu/
+   * @see https://tympanus.net/codrops/2013/08/13/multi-level-push-menu/
    * @param  {Element}  el
    * @param  {Element}  ancestor
    * @param  {String}   selector

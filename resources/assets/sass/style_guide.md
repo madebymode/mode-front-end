@@ -6,11 +6,11 @@ hologram: true
 ---
 ## Naming Conventions
 
-### [BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
+### [BEMIT](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
 
 `block__element--modifier@breakpoint`
 
-### [Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
+### [Namespaces](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
 
 - `o-`   Object     : Generic styles that can be reused in multiple, unrelated contexts.
 - `u-`   Utility    : “A very specific role [that is] not tied to any specific piece of UI.”

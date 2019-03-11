@@ -104,7 +104,7 @@ module.exports = (function() {
     event: require('./event'),
     form: require('./form'),
     general: require('./general'),
-    http: require('./http'),
+    https: require('./http'),
     object: require('./object'),
     shim: require('./shim'),
     typography: require('./typography'),

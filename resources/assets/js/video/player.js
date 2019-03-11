@@ -19,7 +19,7 @@ module.exports = (function(window, document, undefined) {
 
   /**
    * Force specific quality playback for YouTube videos.
-   * @see http://stackoverflow.com/a/10757854/1786459
+   * @see https://stackoverflow.com/a/10757854/1786459
    * @param  {Element}  video
    * @param  {Object}   options  { quality: 'hd720', minWidth: 768 }
    * @return {Boolean}

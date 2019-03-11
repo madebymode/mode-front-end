@@ -1,6 +1,6 @@
 /**
  * Accessible hover styles. Applies :hover styles to :focus and :active.
- * @see http://24ways.org/2007/css-for-accessibility
+ * @see https://24ways.org/2007/css-for-accessibility
  */
 @mixin hover($active-classes...) {
   &:hover,
@@ -21,7 +21,7 @@
 
 /**
  * Hide only visually, but have it available for screen readers:
- * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * @see https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 @mixin visually-hidden {
   position: absolute;
@@ -56,7 +56,7 @@
 /**
  * From Foundation's visibility classes
  * @see https://github.com/zurb/foundation-sites/blob/develop/scss/components/_visibility.scss
- * @see http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
+ * @see https://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
  */
 @mixin show-on-focus {
   position: absolute !important;

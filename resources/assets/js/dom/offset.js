@@ -9,7 +9,7 @@ module.exports = (function() {
 
   /**
    * Get an element's offset (top and left).
-   * @see http://stackoverflow.com/a/18452333/176192
+   * @see https://stackoverflow.com/a/18452333/176192
    * @param  {Element}  elem
    * @return {Object}
    */

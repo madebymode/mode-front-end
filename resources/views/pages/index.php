@@ -9,7 +9,7 @@
   <script async src="./js/app.js"></script>
 </head>
 <body>
-  <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+  <!--[if IE]><p class="c-browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <main class="o-section  /  u-max-width-640  /  u-margin-horizontal-auto  /  u-padding-horizontal-xs  u-padding-horizontal-sm@sm" role="main">
     <h1 class="u-text-align-center">

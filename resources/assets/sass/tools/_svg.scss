@@ -1,19 +1,19 @@
 /**
  * Build an SVG. Based on Noah Blon's work.
- * @see http://codepen.io/noahblon/pen/xGbXdV
+ * @see https://codepen.io/noahblon/pen/xGbXdV
  * @param  {String}  $icon
  * @param  {Number}  $width
  * @param  {Number}  $height
  * @return {String}
  */
 @function build-svg($icon, $width, $height) {
-  $icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$width} #{$height}">#{$icon}</svg>';
+  $icon: '<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 #{$width} #{$height}">#{$icon}</svg>';
   @return $icon;
 }
 
 /**
  * Build an SVG path. Based on Noah Blon's work.
- * @see http://codepen.io/noahblon/pen/xGbXdV
+ * @see https://codepen.io/noahblon/pen/xGbXdV
  * @param  {String} $path
  * @param  {Map}    $parameters
  * @return {String}

@@ -3,7 +3,7 @@ module.exports = (function(window, document, undefined) {
 
   /**
    * Returns iOS device, otherwise null.
-   * @see http://stackoverflow.com/a/9039885/1786459
+   * @see https://stackoverflow.com/a/9039885/1786459
    * @return {String}
    */
   function getDevice() {

@@ -2,7 +2,7 @@ module.exports = (function(window, document, undefined) {
 
   /**
    * Returns the version of Internet Explorer or a -1 (indicating the use of another browser).
-   * @see http://stackoverflow.com/a/17907562/1786459
+   * @see https://stackoverflow.com/a/17907562/1786459
    * @see https://msdn.microsoft.com/en-us/library/ms537509(v=vs.85).aspx#ParsingUA
    * @return {Number}
    */

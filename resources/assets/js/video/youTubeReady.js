@@ -1,5 +1,5 @@
 // Based on answer to "Listening for Youtube Event in JavaScript"
-// @see http://stackoverflow.com/a/7988536/1786459
+// @see https://stackoverflow.com/a/7988536/1786459
 module.exports = (function(window, document, undefined) {
 
   // Define YT_ready function.

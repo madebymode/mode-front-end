@@ -9,7 +9,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -57,7 +57,7 @@
  * used in advertising or otherwise to promote the sale, use or other
  * dealings in this Software without prior written authorization.
  *
- * http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+ * https://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
  *
  */
 var debounce = function(func, threshold, caller) {

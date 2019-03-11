@@ -5,7 +5,7 @@ module.exports = (function(window, document, undefined) {
   /**
    * Return CSS supports API. Otherwise, return falsy function.
    * @see https://github.com/Modernizr/Modernizr/blob/74655c45ad2cd05c002e4802cdd74cba70310f08/feature-detects/css/supports.js
-   * @see http://caniuse.com/#feat=css-supports-api
+   * @see https://caniuse.com/#feat=css-supports-api
    * @return {Function}
    */
   function supports() {
@@ -23,7 +23,7 @@ module.exports = (function(window, document, undefined) {
   /**
    * Determine whether the browser supports OpenType Features (e.g., small
    * caps). Adds a helper class to the document.
-   * @see http://caniuse.com/#feat=font-feature
+   * @see https://caniuse.com/#feat=font-feature
    * @return {Boolean}
    */
   function supportsFontFeatures() {

@@ -2,7 +2,7 @@ module.exports = (function(window, document, undefined) {
   /**
    * Plain JavaScript event delegation. Add a handler for whenever an element's
    * children trigger a specified event.
-   * @see http://bdadam.com/blog/plain-javascript-event-delegation.html
+   * @see https://bdadam.com/blog/plain-javascript-event-delegation.html
    * @param  {String}    parentSelector
    * @param  {String}    eventName
    * @param  {String}    childSelector
