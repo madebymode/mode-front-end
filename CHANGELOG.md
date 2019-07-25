@@ -20,6 +20,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 
 - `yarn.lock`
 
+## [Unreleased]
+
+### Added
+
+- `equalHeight` JS helper
+
 ## [2.11.0] - 2017-10-31
 
 ### Changed
