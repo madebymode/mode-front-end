@@ -53,7 +53,7 @@ category: Utilities
   $class-name: 'u-hover-#{$alias}';
 
   // Cast $active-classes as a list
-  @if $active-classes && type-of($active-classes) != 'list' {
+  @if $active-classes and type-of($active-classes) != 'list' {
     $active-classes: ($active-classes);
   }
 
