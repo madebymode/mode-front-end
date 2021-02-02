@@ -17,6 +17,7 @@ $font-size: 16 !default; // Define in `settings/typography`
  */
 @function escape-selector($selector) {
   $selector: to-string($selector);
+  $selector: str-replace($selector, '"', '');
   $selector: str-replace($selector, '.', '\\.');
   $selector: str-replace($selector, '%', '\\%');
   $selector: str-replace($selector, '/', '\\\/');
