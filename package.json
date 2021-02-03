@@ -19,7 +19,9 @@
     "url": "https://github.com/madebymode/mode-front-end/issues"
   },
   "homepage": "https://github.com/madebymode/mode-front-end#readme",
-  "dependencies": {},
+  "dependencies": {
+    "glob": "^7.1.6"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-gzip": "^1.4.0",
@@ -29,6 +31,7 @@
     "laravel-elixir-livereload": "^1.1.6",
     "laravel-elixir-svgstore": "^1.0.3",
     "laravel-elixir-webpack-official": "^1.0.10",
+    "sharp": "^0.27.1",
     "stylelint-config-property-sort-order-smacss": "^1.1.2"
   }
 }
