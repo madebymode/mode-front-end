@@ -3,7 +3,7 @@ const glob = require('glob');
 const path = require('path')
 const fs = require('fs')
 
-module.exports.responseImages = function(sourceConfig, options = {}) {
+module.exports = function(sourceConfig, options = {}) {
 
   sharp.concurrency(6);
 
