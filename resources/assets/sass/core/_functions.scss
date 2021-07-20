@@ -43,7 +43,7 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {Number}          Unitless number
  */
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, ($value * 0 + 1));
 }
 
 /**
@@ -56,7 +56,7 @@ $font-size: 16 !default; // Define in `settings/typography`
 @function em($pixels, $context: $font-size) {
   // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
   // @return strip-units($pixels) / strip-units($context) * 1em;
-  @return $pixels / $context * 1em;
+  @return math.div($pixels, $context) * 1em;
 }
 
 /**
@@ -68,7 +68,7 @@ $font-size: 16 !default; // Define in `settings/typography`
 @function rem($pixels) {
   // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
   // @return strip-units($pixels) / strip-units($font-size) * 1rem;
-  @return $pixels / $font-size * 1rem;
+  @return math.div($pixels, $font-size) * 1rem;
 }
 
 
@@ -109,5 +109,5 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {Number}             em value
  */
 @function tracking($tracking) {
-  @return ($tracking / 1000) * 1em;
+  @return math.div($tracking / 1000) * 1em;
 }
