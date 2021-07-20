@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Default
 @include u-position('relative', relative);
 @include u-position('absolute', absolute);
@@ -21,7 +23,7 @@
 
 // Percentage
 @include u-position('1/2', absolute) {
-  left: percentage(1 / 2);
+  left: percentage(math.div(1, 2));
 }
 
 

@@ -1,10 +1,12 @@
+@use "sass:math";
+
 // Rem
 @include u-width('100', rem(100));
 
 // Percentage
-@include u-width('1/1', percentage(1 / 1));
-@include u-width('1/2', percentage(1 / 2));
-@include u-width('1/3', percentage(1 / 3));
+@include u-width('1/1', percentage(math.div(1, 1)));
+@include u-width('1/2', percentage(math.div(1, 2)));
+@include u-width('1/3', percentage(math.div(1, 3)));
 
 
 
@@ -13,19 +15,19 @@
 // ------------------------------
 
 // Max-width
-@include u-width('1/1', percentage(1 / 1), 'lt-md');
-@include u-width('1/2', percentage(1 / 2), 'lt-md');
-@include u-width('1/3', percentage(1 / 3), 'lt-md');
+@include u-width('1/1', percentage(math.div(1, 1)), 'lt-md');
+@include u-width('1/2', percentage(math.div(1, 2)), 'lt-md');
+@include u-width('1/3', percentage(math.div(1, 3)), 'lt-md');
 
-@include u-width('1/1', percentage(1 / 1), 'lt-sm');
-@include u-width('1/2', percentage(1 / 2), 'lt-sm');
-@include u-width('1/3', percentage(1 / 3), 'lt-sm');
+@include u-width('1/1', percentage(math.div(1, 1)), 'lt-sm');
+@include u-width('1/2', percentage(math.div(1, 2)), 'lt-sm');
+@include u-width('1/3', percentage(math.div(1, 3)), 'lt-sm');
 
 // Min-width
-@include u-width('1/1', percentage(1 / 1), 'sm');
-@include u-width('1/2', percentage(1 / 2), 'sm');
-@include u-width('1/3', percentage(1 / 3), 'sm');
+@include u-width('1/1', percentage(math.div(1, 1)), 'sm');
+@include u-width('1/2', percentage(math.div(1, 2)), 'sm');
+@include u-width('1/3', percentage(math.div(1, 3)), 'sm');
 
-@include u-width('1/1', percentage(1 / 1), 'md');
-@include u-width('1/2', percentage(1 / 2), 'md');
-@include u-width('1/3', percentage(1 / 3), 'md');
+@include u-width('1/1', percentage(math.div(1, 1)), 'md');
+@include u-width('1/2', percentage(math.div(1, 2)), 'md');
+@include u-width('1/3', percentage(math.div(1, 3)), 'md');
