@@ -111,5 +111,5 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {Number}             em value
  */
 @function tracking($tracking) {
-  @return math.div($tracking / 1000) * 1em;
+  @return math.div($tracking, 1000) * 1em;
 }
