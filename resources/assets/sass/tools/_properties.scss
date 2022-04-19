@@ -66,3 +66,108 @@
 // Examples:
 
 // @include u-property-directional('border', 'top', 1px solid $color-gray-3, 'sm');
+
+/**
+ * Generate fluid padding. padding: top left bottom right
+ *
+ * @param $top - single value or list (min px, max px)
+ * @param $left - single value or list (min px, max px)
+ * @param $bottom - single value or list (min px, max px)
+ * @param $right - single value or list (min px, max px)
+ */
+@mixin fluid-padding($top, $left, $bottom, $right) {//, $left, $bottom, $right
+
+  $top-val: $top;
+  @if type-of($top) == 'list' {
+    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
+  }
+
+  $left-val: $left;
+  @if type-of($left) == 'list' {
+    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
+  }
+
+  $bottom-val: $bottom;
+  @if type-of($bottom) == 'list' {
+    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+  }
+
+  $right-val: $right;
+  @if type-of($right) == 'list' {
+    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
+  }
+
+  padding: $top-val $left-val $bottom-val $right-val;
+}
+
+/**
+ * Generate fluid margin. padding: top left bottom right
+ *
+ * @param $top - single value or list (min px, max px)
+ * @param $left - single value or list (min px, max px)
+ * @param $bottom - single value or list (min px, max px)
+ * @param $right - single value or list (min px, max px)
+ */
+@mixin fluid-margin($top, $left, $bottom, $right) {//, $left, $bottom, $right
+
+  $top-val: $top;
+  @if type-of($top) == 'list' {
+    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
+  }
+
+  $left-val: $left;
+  @if type-of($left) == 'list' {
+    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
+  }
+
+  $bottom-val: $bottom;
+  @if type-of($bottom) == 'list' {
+    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+  }
+
+  $right-val: $right;
+  @if type-of($right) == 'list' {
+    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
+  }
+
+  margin: $top-val $left-val $bottom-val $right-val;
+}
+
+/**
+ * Generate fluid spacing. padding: top left bottom right
+ *
+ * @param $top - single value or list (min px, max px)
+ * @param $left - single value or list (min px, max px)
+ * @param $bottom - single value or list (min px, max px)
+ * @param $right - single value or list (min px, max px)
+ */
+// @mixin fluid-spacing($props) {
+//   // We iterate over each property of the defaultMap
+//   @each $prop, $value in $props {
+//     @if type-of($value) == 'list' {
+//       @if list.length($value) == 1 {
+//         #{$prop}: list.nth($value, 1);
+//       } @else {
+//         #{$prop}: fluid(list.nth($value, 1), list.nth($value, 2));
+//       }
+//     } @else {
+//       #{$prop}: $value;
+//     }
+//   }
+// }
+
+/**
+ * Generate a fluid property class. e.g u-padding-top-sm
+ *
+ * @param $property - e.g margin-top, padding-bottom
+ * @param $alias - simple string indicating the size. e.g sm, lg
+ * @param $value - list (min px, max px)
+ * @param $bp-min - min breakpoint
+ * @param $bp-max - max-breakpoint
+ */
+@mixin fluid-property($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+  $class-name: escape-selector('u-#{$property}-#{$alias}');
+  .#{$class-name} {
+    #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+  }
+}

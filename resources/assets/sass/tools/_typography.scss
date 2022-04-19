@@ -13,3 +13,12 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+
+@mixin font-size($size-min, $size-max-at-design, $line-height: "") {
+  font-size: fluid($size-min, $size-max-at-design);
+
+  @if $line-height != "" {
+    line-height: line-height(unquote($line-height), $size-max-at-design);
+  }
+}

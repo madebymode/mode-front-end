@@ -1,3 +1,9 @@
+$design-size-max: 1920px !default;
+$design-size: 1680px !default;
+
+$breakpoint-max: 1920px !default;
+$breakpoint-min: 1040px !default;
+
 /**
  * Global breakpoints for your application.
  * @note Always set the `em` context to 16 when you're using them for media

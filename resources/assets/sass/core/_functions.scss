@@ -113,3 +113,49 @@ $font-size: 16 !default; // Define in `settings/typography`
 @function tracking($tracking) {
   @return math.div($tracking, 1000) * 1em;
 }
+
+/**
+ * Convert line height to unit relative to the font size
+ * @param % or px value
+ */
+@function line-height($value, $font-size: $font-size) {
+  @if unit($value) == '%' {
+    @return math.div(strip-unit($value), 100);
+  }
+
+  @if unit($value) == 'px' {
+    @return math.div($value, $font-size);
+  }
+
+  @return $value;
+}
+
+/**
+ * Uses clamp to set a fluid valid with min/max values using clamp()
+ * By default, this uses $breakpoint-min and $breakpoint-max
+ *
+ * @param px value min
+ * @param px value max at design size
+ * @param bp-min
+ * @param bp-max
+ *
+ */
+@function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+
+  $min-rem: rem($size-min);
+
+  // Find the ratio at the design size and calculate the size for our max breakpoint
+  $size-ratio: strip-unit(math.div($size-max-at-design, $design-size));
+  $size-max: floor($design-size-max * $size-ratio);
+  $max-rem: rem($size-max);
+
+  @return clamp(
+    #{$min-rem},
+    #{scaler-vw($size-max, $size-min, $bp-min, $bp-max)} + #{scaler-rem($size-max, $size-min, $bp-min, $bp-max)},
+    #{$max-rem}
+  )
+}
+
+
+
+
