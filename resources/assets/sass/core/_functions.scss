@@ -58,7 +58,7 @@ $font-size: 16 !default; // Define in `settings/typography`
 @function em($pixels, $context: $font-size) {
   // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
   // @return strip-units($pixels) / strip-units($context) * 1em;
-  @return math.div($pixels, $context) * 1em;
+  @return math.div(strip-unit($pixels), strip-unit($context)) * 1em;
 }
 
 /**
@@ -70,7 +70,7 @@ $font-size: 16 !default; // Define in `settings/typography`
 @function rem($pixels) {
   // Note: `strip-units` is what's causing the invalid multiplication errors. Possible to fix?
   // @return strip-units($pixels) / strip-units($font-size) * 1rem;
-  @return math.div($pixels, $font-size) * 1rem;
+  @return math.div(strip-unit($pixels), strip-unit($font-size)) * 1rem;
 }
 
 
