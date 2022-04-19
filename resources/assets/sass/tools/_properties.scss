@@ -171,3 +171,43 @@
     #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
   }
 }
+
+
+@mixin fluid-property-directional($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+  $class-name: 'u-#{$property}';
+
+  @if ($alias and str-length($alias) > 0) {
+    $class-name: '#{$class-name}-#{$alias}';
+  }
+
+  $directions: ('vertical', 'horizontal', 'top', 'right', 'bottom', 'left');
+  $direction: null;
+  $temp-direction: $alias;
+
+  // Check whether $alias starts with a direction
+  $index: str-index($alias, '-');
+  @if ($index) {
+    $temp-direction: str-slice($alias, 1, $index - 1);
+  }
+
+  @each $x-direction in $directions {
+    @if not $direction and $temp-direction == $x-direction {
+      $direction: $x-direction;
+    }
+  }
+
+  // Set properties based on direction
+  @include breakpoints($class-name, $at-breakpoint) {
+    @if ($direction == 'vertical') {
+      #{$property}-top: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-bottom: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    } @else if ($direction == 'horizontal') {
+      #{$property}-right: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-left: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    } @else if ($direction) {
+      #{$property}-#{$direction}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    } @else {
+      #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    }
+  }
+}

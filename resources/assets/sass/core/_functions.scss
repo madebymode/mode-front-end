@@ -130,6 +130,14 @@ $font-size: 16 !default; // Define in `settings/typography`
   @return $value;
 }
 
+@function scaler-vw($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+  @return (100 * math.div(($size-max - $size-min), ($bp-max - $bp-min))) * 1vw;
+}
+
+@function scaler-rem($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+  @return rem(math.div(($bp-min * $size-max - $bp-max * $size-min), ($bp-min - $bp-max)));
+}
+
 /**
  * Uses clamp to set a fluid valid with min/max values using clamp()
  * By default, this uses $breakpoint-min and $breakpoint-max
@@ -155,7 +163,6 @@ $font-size: 16 !default; // Define in `settings/typography`
     #{$max-rem}
   )
 }
-
 
 
 

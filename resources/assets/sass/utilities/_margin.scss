@@ -40,3 +40,8 @@ Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
 @mixin u-margin($alias, $value, $at-breakpoint: null) {
   @include u-property-directional('margin', $alias, $value, $at-breakpoint);
 }
+
+
+@mixin u-fluid-margin($alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+  @include fluid-property-directional('margin', $alias, $value, $bp-min, $bp-max);
+}
