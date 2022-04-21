@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/madebymode/mode-front-end#readme",
   "dependencies": {
-    "glob": "^7.1.6",
+    "glob": "^7.1.6"
   }
 }
