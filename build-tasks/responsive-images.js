@@ -1,4 +1,4 @@
-const sharp = require('sharp')
+const gm = require('gm')
 const glob = require('glob');
 const path = require('path')
 const fs = require('fs')
@@ -50,14 +50,20 @@ module.exports = function(sourceConfig, options = {}) {
                     sizes.map((size) => {
                       let destinationFile = path.join(destinationDirectory, `${sourceBasename}${size.rename.suffix}${sourceExtension}`)
 
-                       return sharp(sourceFile)
+                       return gm(sourceFile)
                          .resize(size.width, null)
-                         .toFile(destinationFile)
+                         .write(destinationFile, function(err) {
+                            if (err) {
+                              console.warn(err)
+                              return;
+                            }
+
+                            console.log(destinationFile)
+                         })
                          .then((info) => {
                            info.file = destinationFile
                            return info
                          })
-                         // .then((info) => console.log(info))
                     })
                   )
                 })
