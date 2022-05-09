@@ -10,8 +10,6 @@ const mkdir = promisify(fs.mkdir)
 
 module.exports = function(sourceConfig, options = {}) {
 
-  // sharp.concurrency(6);
-
   let sizeGlobs = Object.keys(sourceConfig)
 
   options = {
@@ -59,10 +57,6 @@ module.exports = function(sourceConfig, options = {}) {
                             }
 
                             console.log(destinationFile)
-                         })
-                         .then((info) => {
-                           info.file = destinationFile
-                           return info
                          })
                     })
                   )
