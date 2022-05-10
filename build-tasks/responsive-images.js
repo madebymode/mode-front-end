@@ -48,16 +48,20 @@ module.exports = function(sourceConfig, options = {}) {
                     sizes.map((size) => {
                       let destinationFile = path.join(destinationDirectory, `${sourceBasename}${size.rename.suffix}${sourceExtension}`)
 
-                       return gm(sourceFile)
-                         .resize(size.width, null)
-                         .write(destinationFile, function(err) {
+                      return new Promise((resolve, reject) => {
+                        gm(sourceFile)
+                          .resize(size.width, null)
+                          .write(destinationFile, function(err) {
                             if (err) {
                               console.warn(err)
+                              reject()
                               return;
                             }
 
                             console.log(destinationFile)
+                            resolve(destinationFile)
                          })
+                      })
                     })
                   )
                 })
