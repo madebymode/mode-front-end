@@ -173,7 +173,7 @@
 }
 
 
-@mixin fluid-property-directional($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+@mixin fluid-property-directional($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max, $at-breakpoint: null) {
   $class-name: 'u-#{$property}';
 
   @if ($alias and str-length($alias) > 0) {
