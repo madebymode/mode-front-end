@@ -73,7 +73,9 @@ $font-size: 16 !default; // Define in `settings/typography`
   @return math.div(strip-unit($pixels), strip-unit($font-size)) * 1rem;
 }
 
-
+@function em2px($em) {
+  @return strip-unit($em) * strip-unit($font-size);
+}
 
 // ------------------------------
 // Responsive
