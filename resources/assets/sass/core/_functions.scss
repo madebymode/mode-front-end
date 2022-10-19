@@ -117,6 +117,13 @@ $font-size: 16 !default; // Define in `settings/typography`
 }
 
 /**
+ * Convert px letter spacing to em based on font size
+ */
+@function letter-spacing($spacing-px, $font-size: $font-size) {
+  @return math.div($spacing-px, $font-size: ) * 1em;
+}
+
+/**
  * Convert line height to unit relative to the font size
  * @param % or px value
  */
