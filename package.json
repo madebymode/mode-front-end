@@ -21,7 +21,7 @@
   "homepage": "https://github.com/madebymode/mode-front-end#readme",
   "dependencies": {
     "gm": "^1.23.1",
-    "glob": "^7.1.6"
+    "glob": "^10.0"
   },
   "devDependencies": {
   }
