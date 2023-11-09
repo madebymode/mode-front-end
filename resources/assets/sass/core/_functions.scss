@@ -157,21 +157,19 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @param bp-max
  *
  */
-@function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
-
+ @function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
-  $size-ratio: strip-unit(math.div($size-max-at-design, $design-size));
-  $size-max: floor($design-size-max * $size-ratio);
+  $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
+
+  // Adjust the max value to scale up to the design size max
+  $size-max: floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
     #{$min-rem},
-    #{scaler-vw($size-max, $size-min, $bp-min, $bp-max)} + #{scaler-rem($size-max, $size-min, $bp-min, $bp-max)},
+    #{scaler-vw($size-max, $size-max-at-design, $bp-min, $bp-max)} + #{scaler-rem($size-max-at-design, $size-min, $bp-min, $bp-max)},
     #{$max-rem}
   )
 }
-
-
-
