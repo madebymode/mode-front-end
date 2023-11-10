@@ -169,7 +169,7 @@ $font-size: 16 !default; // Define in `settings/typography`
 
   @return clamp(
     #{$min-rem},
-    #{scaler-vw($size-max, $size-max-at-design, $bp-min, $bp-max)} + #{scaler-rem($size-max-at-design, $size-min, $bp-min, $bp-max)},
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
     #{$max-rem}
   )
 }
