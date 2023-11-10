@@ -173,3 +173,20 @@ $font-size: 16 !default; // Define in `settings/typography`
     #{$max-rem}
   )
 }
+
+@function fluid-at-size($size-min, $size-max-at-design, $des-size: $design-size, $des-size-max: $design-size-max) {
+  $min-rem: rem($size-min);
+
+  // Find the ratio at the design size and calculate the size for our max breakpoint
+  $design-size-max-ratio: strip-unit(math.div($des-size-max, $des-size));
+
+  // Adjust the max value to scale up to the design size max
+  $size-max: floor($size-max-at-design * $design-size-max-ratio);
+  $max-rem: rem($size-max);
+
+  @return clamp(
+    #{$min-rem},
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
+    #{$max-rem}
+  )
+}
