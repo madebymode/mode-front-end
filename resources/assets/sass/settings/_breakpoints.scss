@@ -1,11 +1,3 @@
-@use "sass:meta";
-@use "sass:string";
-@use "../core/functions";
-@use "responsive";
-
-@use "sass:list";
-@use "sass:map";
-
 $design-size-max: 1920px !default;
 $design-size: 1680px !default;
 
@@ -21,9 +13,9 @@ $breakpoint-min: 1040px !default;
  * @type {Map}
  */
 $breakpoints: (
-  'xs': functions.em(320, 16),
-  'sm': functions.em(480, 16),
-  'md': functions.em(768, 16),
-  'lg': functions.em(980, 16),
-  'xl': functions.em(1200, 16)
+  'xs': em(320, 16),
+  'sm': em(480, 16),
+  'md': em(768, 16),
+  'lg': em(980, 16),
+  'xl': em(1200, 16)
 ) !default;
