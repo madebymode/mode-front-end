@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Max Height
@@ -36,5 +38,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-max-height($alias, $value, $at-breakpoint: null) {
-  @include u-property('max-height', $alias, $value, $at-breakpoint);
+  @include properties.u-property('max-height', $alias, $value, $at-breakpoint);
 }

@@ -1,3 +1,7 @@
+@use "sass:meta";
+@use "../settings/breakpoints";
+@use "strings";
+
 @use "sass:math";
 
 // ------------------------------
@@ -18,11 +22,11 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {String}
  */
 @function escape-selector($selector) {
-  $selector: to-string($selector);
-  $selector: str-replace($selector, '"', '');
-  $selector: str-replace($selector, '.', '\\.');
-  $selector: str-replace($selector, '%', '\\%');
-  $selector: str-replace($selector, '/', '\\\/');
+  $selector: strings.to-string($selector);
+  $selector: strings.str-replace($selector, '"', '');
+  $selector: strings.str-replace($selector, '.', '\\.');
+  $selector: strings.str-replace($selector, '%', '\\%');
+  $selector: strings.str-replace($selector, '/', '\\\/');
 
   // TODO: Invalid characters?
   // $selector: str-replace($selector, '@', '\\@');
@@ -89,11 +93,11 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {Number}
  */
 @function get-max-width-breakpoint($breakpoint) {
-  @if type-of($breakpoint) != 'number' {
+  @if meta.type-of($breakpoint) != 'number' {
     @error '"#{$breakpoint}" should be a number value.';
-  } @else if unit($breakpoint) == 'em' {
+  } @else if math.unit($breakpoint) == 'em' {
     $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
-  } @else if unit($breakpoint) == 'px' {
+  } @else if math.unit($breakpoint) == 'px' {
     $breakpoint: $breakpoint - 1px;
   } @else {
     @error '#{$breakpoint} should be either em or px.';
@@ -128,22 +132,22 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @param % or px value
  */
 @function line-height($value, $font-size: $font-size) {
-  @if unit($value) == '%' {
+  @if math.unit($value) == '%' {
     @return math.div(strip-unit($value), 100);
   }
 
-  @if unit($value) == 'px' {
+  @if math.unit($value) == 'px' {
     @return math.div($value, $font-size);
   }
 
   @return $value;
 }
 
-@function scaler-vw($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+@function scaler-vw($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
   @return (100 * math.div(($size-max - $size-min), ($bp-max - $bp-min))) * 1vw;
 }
 
-@function scaler-rem($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+@function scaler-rem($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
   @return rem(math.div(($bp-min * $size-max - $bp-max * $size-min), ($bp-min - $bp-max)));
 }
 
@@ -157,36 +161,36 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @param bp-max
  *
  */
- @function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
+ @function fluid($size-min, $size-max-at-design, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
-  $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
+  $design-size-max-ratio: strip-unit(math.div(breakpoints.$design-size-max, breakpoints.$design-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, $design-size) * 100}vw,
+    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
     #{$max-rem}
   )
 }
 
-@function fluid-at-size($size-min, $size-max-at-design, $des-size: $design-size, $des-size-max: $design-size-max) {
+@function fluid-at-size($size-min, $size-max-at-design, $des-size: breakpoints.$design-size, $des-size-max: breakpoints.$design-size-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
   $design-size-max-ratio: strip-unit(math.div($des-size-max, $des-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, $design-size) * 100}vw,
+    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
     #{$max-rem}
   )
 }

@@ -1,3 +1,10 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "../core/functions";
+@use "../core/strings";
+@use "../settings/breakpoints";
+
 /**
  * Add new breakpoint alias.
  * @see https://oddbird.net/2013/10/19/map-merge
@@ -11,7 +18,7 @@
  * @return {Boolean}
  */
 @mixin add-breakpoint($alias, $value) {
-  $breakpoints: map-merge($breakpoints, ($alias: $value)) !global;
+  breakpoints.$breakpoints: map.merge(breakpoints.$breakpoints, ($alias: $value));
 }
 
 /**
@@ -39,9 +46,9 @@
   $temp-prefix: $alias;
 
   // Check whether $alias starts with a prefix
-  $index: str-index($alias, '-');
+  $index: string.index($alias, '-');
   @if ($index) {
-    $temp-prefix: str-slice($alias, 1, $index);
+    $temp-prefix: string.slice($alias, 1, $index);
   }
 
   @each $x-prefix in $prefixes {
@@ -52,26 +59,26 @@
 
   // Strip $prefix from $alias
   @if $prefix {
-    $alias: str-slice($alias, str-length($prefix) + 1);
+    $alias: string.slice($alias, string.length($prefix) + 1);
   }
 
   // Build media query
-  $breakpoint: map-get($breakpoints, $alias);
+  $breakpoint: map.get(breakpoints.$breakpoints, $alias);
 
   // Default: Mobile-first, min-width queries
   $media-query: '(min-width: #{$breakpoint})';
 
   // `lt-`: Desktop-first, max-width queries
   @if $prefix == 'lt-' {
-    $media-query: '(max-width: #{get-max-width-breakpoint($breakpoint)})';
+    $media-query: '(max-width: #{functions.get-max-width-breakpoint($breakpoint)})';
   }
 
   // `btwn-`: Between min- and max-width queries
   @else if $prefix == 'btwn-' {
-    $alias-parts: explode($alias, '-and-');
-    $min-breakpoint: map-get($breakpoints, nth($alias-parts, 1));
-    $max-breakpoint: map-get($breakpoints, nth($alias-parts, 2));
-    $media-query: '(min-width: #{$min-breakpoint}) and (max-width: #{get-max-width-breakpoint($max-breakpoint)})';
+    $alias-parts: strings.explode($alias, '-and-');
+    $min-breakpoint: map.get(breakpoints.$breakpoints, list.nth($alias-parts, 1));
+    $max-breakpoint: map.get(breakpoints.$breakpoints, list.nth($alias-parts, 2));
+    $media-query: '(min-width: #{$min-breakpoint}) and (max-width: #{functions.get-max-width-breakpoint($max-breakpoint)})';
   }
 
   @media all and #{$media-query} {
@@ -87,14 +94,14 @@
 @mixin breakpoints($class-name, $at-breakpoint: null) {
   @if ($at-breakpoint) {
     @include mq($at-breakpoint) {
-      $class-name: escape-selector($class-name);
-      $at-breakpoint: escape-selector($at-breakpoint);
+      $class-name: functions.escape-selector($class-name);
+      $at-breakpoint: functions.escape-selector($at-breakpoint);
       .#{$class-name}\@#{$at-breakpoint} {
         @content;
       }
     }
   } @else {
-    $class-name: escape-selector($class-name);
+    $class-name: functions.escape-selector($class-name);
     .#{$class-name} {
       @content;
     }

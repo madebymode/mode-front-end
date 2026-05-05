@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Font Weight
@@ -40,5 +42,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-font-weight($alias, $value, $at-breakpoint: null) {
-  @include u-property('font-weight', $alias, $value, $at-breakpoint);
+  @include properties.u-property('font-weight', $alias, $value, $at-breakpoint);
 }

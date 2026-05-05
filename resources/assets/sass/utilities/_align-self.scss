@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Align Self
@@ -45,5 +47,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-align-self($value, $at-breakpoint: null) {
-  @include u-property('align-self', $value, $value, $at-breakpoint);
+  @include properties.u-property('align-self', $value, $value, $at-breakpoint);
 }

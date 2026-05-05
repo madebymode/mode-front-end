@@ -1,3 +1,9 @@
+@use "sass:meta";
+@use "sass:string";
+@use "../core/functions";
+@use "../settings/breakpoints";
+@use "responsive";
+
 @use "sass:list";
 @use "sass:map";
 
@@ -10,7 +16,7 @@
  */
 @mixin u-property($property, $alias, $value, $at-breakpoint: null) {
   $class-name: 'u-#{$property}-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     #{$property}: #{$value};
   }
 }
@@ -30,7 +36,7 @@
 @mixin u-property-directional($property, $alias, $value, $at-breakpoint: null) {
   $class-name: 'u-#{$property}';
 
-  @if ($alias and str-length($alias) > 0) {
+  @if ($alias and string.length($alias) > 0) {
     $class-name: '#{$class-name}-#{$alias}';
   }
 
@@ -39,9 +45,9 @@
   $temp-direction: $alias;
 
   // Check whether $alias starts with a direction
-  $index: str-index($alias, '-');
+  $index: string.index($alias, '-');
   @if ($index) {
-    $temp-direction: str-slice($alias, 1, $index - 1);
+    $temp-direction: string.slice($alias, 1, $index - 1);
   }
 
   @each $x-direction in $directions {
@@ -51,7 +57,7 @@
   }
 
   // Set properties based on direction
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     @if ($direction == 'vertical') {
       #{$property}-top: #{$value};
       #{$property}-bottom: #{$value};
@@ -81,23 +87,23 @@
 @mixin fluid-padding($top, $left, $bottom, $right) {//, $left, $bottom, $right
 
   $top-val: $top;
-  @if type-of($top) == 'list' {
-    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
+  @if meta.type-of($top) == 'list' {
+    $top-val: functions.fluid(list.nth($top, 1), list.nth($top, 2));
   }
 
   $left-val: $left;
-  @if type-of($left) == 'list' {
-    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
+  @if meta.type-of($left) == 'list' {
+    $left-val: functions.fluid(list.nth($left, 1), list.nth($left, 2));
   }
 
   $bottom-val: $bottom;
-  @if type-of($bottom) == 'list' {
-    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+  @if meta.type-of($bottom) == 'list' {
+    $bottom-val: functions.fluid(list.nth($bottom, 1), list.nth($bottom, 2));
   }
 
   $right-val: $right;
-  @if type-of($right) == 'list' {
-    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
+  @if meta.type-of($right) == 'list' {
+    $right-val: functions.fluid(list.nth($right, 1), list.nth($right, 2));
   }
 
   padding: $top-val $left-val $bottom-val $right-val;
@@ -114,23 +120,23 @@
 @mixin fluid-margin($top, $left, $bottom, $right) {//, $left, $bottom, $right
 
   $top-val: $top;
-  @if type-of($top) == 'list' {
-    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
+  @if meta.type-of($top) == 'list' {
+    $top-val: functions.fluid(list.nth($top, 1), list.nth($top, 2));
   }
 
   $left-val: $left;
-  @if type-of($left) == 'list' {
-    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
+  @if meta.type-of($left) == 'list' {
+    $left-val: functions.fluid(list.nth($left, 1), list.nth($left, 2));
   }
 
   $bottom-val: $bottom;
-  @if type-of($bottom) == 'list' {
-    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+  @if meta.type-of($bottom) == 'list' {
+    $bottom-val: functions.fluid(list.nth($bottom, 1), list.nth($bottom, 2));
   }
 
   $right-val: $right;
-  @if type-of($right) == 'list' {
-    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
+  @if meta.type-of($right) == 'list' {
+    $right-val: functions.fluid(list.nth($right, 1), list.nth($right, 2));
   }
 
   margin: $top-val $left-val $bottom-val $right-val;
@@ -168,18 +174,18 @@
  * @param $bp-min - min breakpoint
  * @param $bp-max - max-breakpoint
  */
-@mixin fluid-property($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
-  $class-name: escape-selector('u-#{$property}-#{$alias}');
+@mixin fluid-property($property, $alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+  $class-name: functions.escape-selector('u-#{$property}-#{$alias}');
   .#{$class-name} {
-    #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    #{$property}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
   }
 }
 
 
-@mixin fluid-property-directional($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max, $at-breakpoint: null) {
+@mixin fluid-property-directional($property, $alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max, $at-breakpoint: null) {
   $class-name: 'u-fluid-#{$property}';
 
-  @if ($alias and str-length($alias) > 0) {
+  @if ($alias and string.length($alias) > 0) {
     $class-name: '#{$class-name}-#{$alias}';
   }
 
@@ -188,9 +194,9 @@
   $temp-direction: $alias;
 
   // Check whether $alias starts with a direction
-  $index: str-index($alias, '-');
+  $index: string.index($alias, '-');
   @if ($index) {
-    $temp-direction: str-slice($alias, 1, $index - 1);
+    $temp-direction: string.slice($alias, 1, $index - 1);
   }
 
   @each $x-direction in $directions {
@@ -200,17 +206,17 @@
   }
 
   // Set properties based on direction
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     @if ($direction == 'vertical') {
-      #{$property}-top: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
-      #{$property}-bottom: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-top: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-bottom: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else if ($direction == 'horizontal') {
-      #{$property}-right: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
-      #{$property}-left: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-right: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-left: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else if ($direction) {
-      #{$property}-#{$direction}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-#{$direction}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else {
-      #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     }
   }
 }

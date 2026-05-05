@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Pointer Events
@@ -39,5 +41,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-pointer-events($value, $at-breakpoint: null) {
-  @include u-property('pointer-events', $value, $value, $at-breakpoint);
+  @include properties.u-property('pointer-events', $value, $value, $at-breakpoint);
 }

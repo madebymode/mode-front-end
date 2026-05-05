@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: User Select
@@ -35,5 +37,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-user-select($value, $at-breakpoint: null) {
-  @include u-property('user-select', $value, $value, $at-breakpoint);
+  @include properties.u-property('user-select', $value, $value, $at-breakpoint);
 }

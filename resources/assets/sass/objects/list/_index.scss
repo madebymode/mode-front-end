@@ -1,3 +1,7 @@
+@use "sass:meta";
+@use 'border';
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: List
@@ -43,7 +47,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-list($at-breakpoint: null) {
-  @include breakpoints('o-list', $at-breakpoint) {
+  @include responsive.breakpoints('o-list', $at-breakpoint) {
     padding-left: 0;
     list-style: none;
   }
@@ -54,7 +58,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-list__item($at-breakpoint: null) {
-  @include breakpoints('o-list__item', $at-breakpoint) {
+  @include responsive.breakpoints('o-list__item', $at-breakpoint) {
     break-inside: avoid;
   }
 }
@@ -65,12 +69,11 @@ category: Objects
 // Modifiers
 // ------------------------------
 
-@import 'border';
-@import 'bullet';
-@import 'comma';
-@import 'disc';
-@import 'inline';
-@import 'leading-zero';
-@import 'number';
-@import 'roman';
-@import 'slash';
+@include meta.load-css('bullet');
+@include meta.load-css('comma');
+@include meta.load-css('disc');
+@include meta.load-css('inline');
+@include meta.load-css('leading-zero');
+@include meta.load-css('number');
+@include meta.load-css('roman');
+@include meta.load-css('slash');

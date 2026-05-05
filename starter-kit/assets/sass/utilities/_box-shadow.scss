@@ -1,4 +1,6 @@
-@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1));
+@use "../settings/colors";
+
+@include u-box-shadow('down-black-1', 0 2px 5px rgba(colors.$color-black-1, 0.1));
 
 
 
@@ -7,7 +9,7 @@
 // ------------------------------
 
 // Max-width
-@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1), 'lt-sm');
+@include u-box-shadow('down-black-1', 0 2px 5px rgba(colors.$color-black-1, 0.1), 'lt-sm');
 
 // Min-width
-@include u-box-shadow('down-black-1', 0 2px 5px rgba($color-black-1, 0.1), 'sm');
+@include u-box-shadow('down-black-1', 0 2px 5px rgba(colors.$color-black-1, 0.1), 'sm');

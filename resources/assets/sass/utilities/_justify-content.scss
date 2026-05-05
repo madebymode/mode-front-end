@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Justify Content
@@ -43,5 +45,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-justify-content($value, $at-breakpoint: null) {
-  @include u-property('justify-content', $value, $value, $at-breakpoint);
+  @include properties.u-property('justify-content', $value, $value, $at-breakpoint);
 }

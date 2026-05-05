@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Flex
@@ -44,5 +46,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-flex($alias, $value, $at-breakpoint: null) {
-  @include u-property('flex', $alias, $value, $at-breakpoint);
+  @include properties.u-property('flex', $alias, $value, $at-breakpoint);
 }

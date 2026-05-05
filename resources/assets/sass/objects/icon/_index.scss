@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Icon
@@ -49,7 +51,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-icon($at-breakpoint: null) {
-  @include breakpoints('o-icon', $at-breakpoint) {
+  @include responsive.breakpoints('o-icon', $at-breakpoint) {
     display: inline-block;
     max-width: 100%;
     max-height: 100%;
@@ -75,7 +77,7 @@ category: Objects
  */
 @mixin o-icon--size($width, $height, $at-breakpoint: null) {
   $class-name: 'o-icon--#{$width}x#{$height}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     width: $width * 1px;
     height: $height * 1px;
   }

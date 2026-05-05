@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Order
@@ -49,5 +51,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-order($value, $at-breakpoint: null) {
-  @include u-property('order', $value, $value, $at-breakpoint);
+  @include properties.u-property('order', $value, $value, $at-breakpoint);
 }

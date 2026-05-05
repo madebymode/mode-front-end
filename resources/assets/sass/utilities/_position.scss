@@ -1,3 +1,5 @@
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Position
@@ -51,7 +53,7 @@ category: Utilities
  */
 @mixin u-position($alias, $value, $at-breakpoint: null) {
   $class-name: 'u-position-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     @content;
     position: #{$value};
   }

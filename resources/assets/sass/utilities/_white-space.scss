@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: White Space
@@ -39,5 +41,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-white-space($value, $at-breakpoint: null) {
-  @include u-property('white-space', $value, $value, $at-breakpoint);
+  @include properties.u-property('white-space', $value, $value, $at-breakpoint);
 }

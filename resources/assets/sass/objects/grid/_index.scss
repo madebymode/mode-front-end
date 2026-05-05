@@ -1,3 +1,6 @@
+@use 'grid--gutters';
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Grid
@@ -41,7 +44,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-grid($at-breakpoint: null) {
-  @include breakpoints('o-grid', $at-breakpoint) {
+  @include responsive.breakpoints('o-grid', $at-breakpoint) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,7 +57,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-grid__item($at-breakpoint: null) {
-  @include breakpoints('o-grid__item', $at-breakpoint) {
+  @include responsive.breakpoints('o-grid__item', $at-breakpoint) {
     // Empty default
   }
 }
@@ -65,4 +68,3 @@ category: Objects
 // Modifiers
 // ------------------------------
 
-@import 'grid--gutters';

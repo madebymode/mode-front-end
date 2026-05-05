@@ -1,3 +1,5 @@
+@use "../tools/responsive";
+
 @use "sass:math";
 
 /*doc
@@ -47,9 +49,9 @@ category: Utilities
  */
 @mixin u-aspect-ratio($width, $height, $at-breakpoint: null) {
   $class-name: 'u-aspect-ratio-#{$width}x#{$height}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     width: 100%;
     height: 0;
-    padding: 0 0 percentage(math.div($height, $width));
+    padding: 0 0 math.percentage(math.div($height, $width));
   }
 }

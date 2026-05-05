@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: List Inline
@@ -42,7 +44,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-list--inline($at-breakpoint: null) {
-  @include breakpoints('o-list--inline', $at-breakpoint) {
+  @include responsive.breakpoints('o-list--inline', $at-breakpoint) {
     list-style: none;
 
     > .o-list__item {

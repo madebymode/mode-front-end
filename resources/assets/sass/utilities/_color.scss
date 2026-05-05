@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Color
@@ -40,5 +42,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-color($alias, $value, $at-breakpoint: null) {
-  @include u-property('color', $alias, $value, $at-breakpoint);
+  @include properties.u-property('color', $alias, $value, $at-breakpoint);
 }

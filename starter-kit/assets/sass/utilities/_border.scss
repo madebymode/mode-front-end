@@ -1,6 +1,8 @@
+@use "../settings/colors";
+
 // Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`
 
-@include u-border('top-gray-3', 1px solid $color-gray-3);
+@include u-border('top-gray-3', 1px solid colors.$color-gray-3);
 
 
 
@@ -9,7 +11,7 @@
 // ------------------------------
 
 // Max-width
-@include u-border('top-gray-3', 1px solid $color-gray-3, 'lt-sm');
+@include u-border('top-gray-3', 1px solid colors.$color-gray-3, 'lt-sm');
 
 // Min-width
-@include u-border('top-gray-3', 1px solid $color-gray-3, 'sm');
+@include u-border('top-gray-3', 1px solid colors.$color-gray-3, 'sm');

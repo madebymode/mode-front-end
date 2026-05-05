@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Align Items
@@ -43,5 +45,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-align-items($value, $at-breakpoint: null) {
-  @include u-property('align-items', $value, $value, $at-breakpoint);
+  @include properties.u-property('align-items', $value, $value, $at-breakpoint);
 }

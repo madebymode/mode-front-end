@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Text Transform
@@ -35,5 +37,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-text-transform($value, $at-breakpoint: null) {
-  @include u-property('text-transform', $value, $value, $at-breakpoint);
+  @include properties.u-property('text-transform', $value, $value, $at-breakpoint);
 }

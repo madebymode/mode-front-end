@@ -1,7 +1,9 @@
-@include u-background-color('white-1', $color-white-1);
-@include u-background-color('gray-1', $color-gray-1);
-@include u-background-color('gray-3', $color-gray-3);
-@include u-background-color('red-1', $color-red-1);
+@use "../settings/colors";
+
+@include u-background-color('white-1', colors.$color-white-1);
+@include u-background-color('gray-1', colors.$color-gray-1);
+@include u-background-color('gray-3', colors.$color-gray-3);
+@include u-background-color('red-1', colors.$color-red-1);
 
 
 
@@ -10,13 +12,13 @@
 // ------------------------------
 
 // Max-width
-@include u-background-color('white-1', $color-white-1, 'lt-sm');
-@include u-background-color('gray-1', $color-gray-1, 'lt-sm');
-@include u-background-color('gray-3', $color-gray-3, 'lt-sm');
-@include u-background-color('red-1', $color-red-1, 'lt-sm');
+@include u-background-color('white-1', colors.$color-white-1, 'lt-sm');
+@include u-background-color('gray-1', colors.$color-gray-1, 'lt-sm');
+@include u-background-color('gray-3', colors.$color-gray-3, 'lt-sm');
+@include u-background-color('red-1', colors.$color-red-1, 'lt-sm');
 
 // Min-width
-@include u-background-color('white-1', $color-white-1, 'sm');
-@include u-background-color('gray-1', $color-gray-1, 'sm');
-@include u-background-color('gray-3', $color-gray-3, 'sm');
-@include u-background-color('red-1', $color-red-1, 'sm');
+@include u-background-color('white-1', colors.$color-white-1, 'sm');
+@include u-background-color('gray-1', colors.$color-gray-1, 'sm');
+@include u-background-color('gray-3', colors.$color-gray-3, 'sm');
+@include u-background-color('red-1', colors.$color-red-1, 'sm');

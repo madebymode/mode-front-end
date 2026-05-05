@@ -1,3 +1,7 @@
+@use "sass:meta";
+@use "../tools/accessibility";
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Hover
@@ -53,14 +57,14 @@ category: Utilities
   $class-name: 'u-hover-#{$alias}';
 
   // Cast $active-classes as a list
-  @if $active-classes and type-of($active-classes) != 'list' {
+  @if $active-classes and meta.type-of($active-classes) != 'list' {
     $active-classes: ($active-classes);
   }
 
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     // Use `...` to pass list as individual arguments
     // https://github.com/sass/sass/issues/1849#issuecomment-144904646
-    @include hover($active-classes...) {
+    @include accessibility.hover($active-classes...) {
       @content;
     }
   }

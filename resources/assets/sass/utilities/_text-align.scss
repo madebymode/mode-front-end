@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Text Align
@@ -35,5 +37,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-text-align($value, $at-breakpoint: null) {
-  @include u-property('text-align', $value, $value, $at-breakpoint);
+  @include properties.u-property('text-align', $value, $value, $at-breakpoint);
 }

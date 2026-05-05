@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Font Size
@@ -40,5 +42,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-font-size($alias, $value, $at-breakpoint: null) {
-  @include u-property('font-size', $alias, $value, $at-breakpoint);
+  @include properties.u-property('font-size', $alias, $value, $at-breakpoint);
 }

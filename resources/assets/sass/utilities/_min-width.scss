@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Min Width
@@ -36,5 +38,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-min-width($alias, $value, $at-breakpoint: null) {
-  @include u-property('min-width', $alias, $value, $at-breakpoint);
+  @include properties.u-property('min-width', $alias, $value, $at-breakpoint);
 }

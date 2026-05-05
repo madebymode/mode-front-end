@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Border
@@ -38,5 +40,5 @@ Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
  * @param  {String}  $at-breakpoint
  */
 @mixin u-border($alias, $value, $at-breakpoint: null) {
-  @include u-property-directional('border', $alias, $value, $at-breakpoint);
+  @include properties.u-property-directional('border', $alias, $value, $at-breakpoint);
 }
