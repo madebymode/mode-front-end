@@ -1,13 +1,13 @@
 // Core
-@use 'core/functions';
-@use 'core/math';
-@use 'core/strings';
+@use 'core/functions' as *;
+@use 'core/math' as *;
+@use 'core/strings' as *;
 
 // Settings
-@use 'settings/breakpoints';
-@use 'settings/colors';
-@use 'settings/gutters';
-@use 'settings/typography';
+@use 'settings/breakpoints' as *;
+@use 'settings/colors' as *;
+@use 'settings/gutters' as *;
+@use 'settings/typography' as *;
 
 // Tools
 @use 'tools/accessibility';
