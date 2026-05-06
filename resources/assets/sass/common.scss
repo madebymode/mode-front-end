@@ -10,12 +10,12 @@
 @use 'settings/typography' as *;
 
 // Tools
-@use 'tools/accessibility';
-@use 'tools/assets';
-@use 'tools/clearfix';
-@use 'tools/object-fit';
+@use 'tools/accessibility' as *;
+@use 'tools/assets' as *;
+@use 'tools/clearfix' as *;
+@use 'tools/object-fit' as *;
 @use 'tools/placeholder';
-@use 'tools/properties';
+@use 'tools/properties' as *;
 @use 'tools/responsive' as *;
 @use 'tools/scroll';
 @use 'tools/svg';
