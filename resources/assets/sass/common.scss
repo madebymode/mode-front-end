@@ -16,7 +16,7 @@
 @use 'tools/object-fit';
 @use 'tools/placeholder';
 @use 'tools/properties';
-@use 'tools/responsive';
+@use 'tools/responsive' as *;
 @use 'tools/scroll';
 @use 'tools/svg';
 @use 'tools/typography' as typography2;
@@ -55,7 +55,7 @@
 @use 'utilities/flex-wrap';
 @use 'utilities/float';
 @use 'utilities/font-family';
-@use 'utilities/font-size';
+@use 'utilities/font-size' as *;
 @use 'utilities/font-style';
 @use 'utilities/font-weight';
 @use 'utilities/height';
