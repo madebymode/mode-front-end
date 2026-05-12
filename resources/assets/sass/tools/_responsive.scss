@@ -66,11 +66,11 @@
   $breakpoint: map.get(breakpoints.$breakpoints, $alias);
 
   // Default: Mobile-first, min-width queries
-  $media-query: '(min-width: #{$breakpoint})';
+  $media-query: '(min-width: $breakpoint)';
 
   // `lt-`: Desktop-first, max-width queries
   @if $prefix == 'lt-' {
-    $media-query: '(max-width: #{functions.get-max-width-breakpoint($breakpoint)})';
+    $media-query: '(max-width: functions.get-max-width-breakpoint($breakpoint))';
   }
 
   // `btwn-`: Between min- and max-width queries
