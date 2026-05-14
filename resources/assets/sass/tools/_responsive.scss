@@ -5,21 +5,6 @@
 @use "../core/strings";
 @use "../settings/breakpoints";
 
-/**
- * Add new breakpoint alias.
- * @see https://oddbird.net/2013/10/19/map-merge
- * @see https://github.com/sass/sass/issues/1511#issuecomment-61907897
- *
- * Example:
- * `@include add-breakpoint('sidebar', 60em);`
- *
- * @param  {String}  $alias
- * @param  {Number}  $value
- * @return {Boolean}
- */
-@mixin add-breakpoint($alias, $value) {
-  breakpoints.$breakpoints: map.merge(breakpoints.$breakpoints, ($alias: $value));
-}
 
 /**
  * Generate media queries based on a map of `$breakpoints`. Defaults to
