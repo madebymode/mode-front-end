@@ -37,7 +37,7 @@
 @use 'components/browser-upgrade/index' as index8;
 
 // Utilities
-@use 'utilities/align-items';
+@use 'utilities/align-items' as *;
 @use 'utilities/align-self';
 @use 'utilities/animation';
 @use 'utilities/aspect-ratio';
