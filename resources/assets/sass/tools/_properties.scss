@@ -2,7 +2,7 @@
 @use "sass:string";
 @use "../core/functions";
 @use "../settings/breakpoints" as *;
-@use "responsive";
+@use "responsive" as *;
 
 @use "sass:list";
 @use "sass:map";
@@ -16,7 +16,7 @@
  */
 @mixin u-property($property, $alias, $value, $at-breakpoint: null) {
   $class-name: 'u-#{$property}-#{$alias}';
-  @include responsive.breakpoints($class-name, $at-breakpoint) {
+  @include breakpoints($class-name, $at-breakpoint) {
     #{$property}: #{$value};
   }
 }
@@ -57,7 +57,7 @@
   }
 
   // Set properties based on direction
-  @include responsive.breakpoints($class-name, $at-breakpoint) {
+  @include breakpoints($class-name, $at-breakpoint) {
     @if ($direction == 'vertical') {
       #{$property}-top: #{$value};
       #{$property}-bottom: #{$value};
@@ -206,7 +206,7 @@
   }
 
   // Set properties based on direction
-  @include responsive.breakpoints($class-name, $at-breakpoint) {
+  @include breakpoints($class-name, $at-breakpoint) {
     @if ($direction == 'vertical') {
       #{$property}-top: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
       #{$property}-bottom: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
