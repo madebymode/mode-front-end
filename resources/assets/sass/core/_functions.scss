@@ -1,5 +1,5 @@
 @use "sass:meta";
-@use "../settings/breakpoints";
+@use "../settings/breakpoints" as *;
 @use "strings";
 
 @use "sass:math";
@@ -143,11 +143,11 @@ $font-size: 16 !default; // in px
   @return $value;
 }
 
-@function scaler-vw($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@function scaler-vw($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   @return (100 * math.div(($size-max - $size-min), ($bp-max - $bp-min))) * 1vw;
 }
 
-@function scaler-rem($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@function scaler-rem($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   @return rem(math.div(($bp-min * $size-max - $bp-max * $size-min), ($bp-min - $bp-max)));
 }
 
@@ -161,11 +161,11 @@ $font-size: 16 !default; // in px
  * @param bp-max
  *
  */
- @function fluid($size-min, $size-max-at-design, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+ @function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
-  $design-size-max-ratio: strip-unit(math.div(breakpoints.$design-size-max, breakpoints.$design-size));
+  $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
 
   // Adjust the max value to scale up to the design size max
   $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
@@ -173,12 +173,12 @@ $font-size: 16 !default; // in px
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
     #{$max-rem}
   )
 }
 
-@function fluid-at-size($size-min, $size-max-at-design, $des-size: breakpoints.$design-size, $des-size-max: breakpoints.$design-size-max) {
+@function fluid-at-size($size-min, $size-max-at-design, $des-size: $design-size, $des-size-max: $design-size-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
@@ -190,7 +190,7 @@ $font-size: 16 !default; // in px
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
     #{$max-rem}
   )
 }

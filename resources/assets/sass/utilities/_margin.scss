@@ -1,4 +1,4 @@
-@use "../settings/breakpoints";
+@use "../settings/breakpoints" as *;
 @use "../tools/properties";
 
 /*doc
@@ -45,6 +45,6 @@ Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
 }
 
 
-@mixin u-fluid-margin($alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@mixin u-fluid-margin($alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   @include properties.fluid-property-directional('margin', $alias, $value, $bp-min, $bp-max);
 }

@@ -3,7 +3,7 @@
 @use "sass:string";
 @use "../core/functions";
 @use "../core/strings";
-@use "../settings/breakpoints";
+@use "../settings/breakpoints" as *;
 
 
 /**
@@ -48,7 +48,7 @@
   }
 
   // Build media query
-  $breakpoint: map.get(breakpoints.$breakpoints, $alias);
+  $breakpoint: map.get($breakpoints, $alias);
 
   // Default: Mobile-first, min-width queries
   $media-query: '(min-width: $breakpoint)';
@@ -61,8 +61,8 @@
   // `btwn-`: Between min- and max-width queries
   @else if $prefix == 'btwn-' {
     $alias-parts: strings.explode($alias, '-and-');
-    $min-breakpoint: map.get(breakpoints.$breakpoints, list.nth($alias-parts, 1));
-    $max-breakpoint: map.get(breakpoints.$breakpoints, list.nth($alias-parts, 2));
+    $min-breakpoint: map.get($breakpoints, list.nth($alias-parts, 1));
+    $max-breakpoint: map.get($breakpoints, list.nth($alias-parts, 2));
     $media-query: '(min-width: #{$min-breakpoint}) and (max-width: #{functions.get-max-width-breakpoint($max-breakpoint)})';
   }
 
