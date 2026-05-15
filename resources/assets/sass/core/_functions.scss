@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "sass:math";
 
 // ------------------------------
@@ -89,11 +90,11 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @return {Number}
  */
 @function get-max-width-breakpoint($breakpoint) {
-  @if type-of($breakpoint) != 'number' {
+  @if meta.type-of($breakpoint) != 'number' {
     @error '"#{$breakpoint}" should be a number value.';
-  } @else if unit($breakpoint) == 'em' {
+  } @else if math.unit($breakpoint) == 'em' {
     $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
-  } @else if unit($breakpoint) == 'px' {
+  } @else if math.unit($breakpoint) == 'px' {
     $breakpoint: $breakpoint - 1px;
   } @else {
     @error '#{$breakpoint} should be either em or px.';
@@ -128,11 +129,11 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @param % or px value
  */
 @function line-height($value, $font-size: $font-size) {
-  @if unit($value) == '%' {
+  @if math.unit($value) == '%' {
     @return math.div(strip-unit($value), 100);
   }
 
-  @if unit($value) == 'px' {
+  @if math.unit($value) == 'px' {
     @return math.div($value, $font-size);
   }
 
@@ -164,7 +165,7 @@ $font-size: 16 !default; // Define in `settings/typography`
   $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
@@ -181,7 +182,7 @@ $font-size: 16 !default; // Define in `settings/typography`
   $design-size-max-ratio: strip-unit(math.div($des-size-max, $des-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(

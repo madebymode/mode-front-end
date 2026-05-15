@@ -1,9 +1,5 @@
 @use "sass:meta";
 @use "sass:string";
-@use "../core/functions";
-@use "../settings/breakpoints" as *;
-@use "responsive" as *;
-
 @use "sass:list";
 @use "sass:map";
 
@@ -88,22 +84,22 @@
 
   $top-val: $top;
   @if meta.type-of($top) == 'list' {
-    $top-val: functions.fluid(list.nth($top, 1), list.nth($top, 2));
+    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
   }
 
   $left-val: $left;
   @if meta.type-of($left) == 'list' {
-    $left-val: functions.fluid(list.nth($left, 1), list.nth($left, 2));
+    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
   }
 
   $bottom-val: $bottom;
   @if meta.type-of($bottom) == 'list' {
-    $bottom-val: functions.fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
   }
 
   $right-val: $right;
   @if meta.type-of($right) == 'list' {
-    $right-val: functions.fluid(list.nth($right, 1), list.nth($right, 2));
+    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
   }
 
   padding: $top-val $left-val $bottom-val $right-val;
@@ -121,22 +117,22 @@
 
   $top-val: $top;
   @if meta.type-of($top) == 'list' {
-    $top-val: functions.fluid(list.nth($top, 1), list.nth($top, 2));
+    $top-val: fluid(list.nth($top, 1), list.nth($top, 2));
   }
 
   $left-val: $left;
   @if meta.type-of($left) == 'list' {
-    $left-val: functions.fluid(list.nth($left, 1), list.nth($left, 2));
+    $left-val: fluid(list.nth($left, 1), list.nth($left, 2));
   }
 
   $bottom-val: $bottom;
   @if meta.type-of($bottom) == 'list' {
-    $bottom-val: functions.fluid(list.nth($bottom, 1), list.nth($bottom, 2));
+    $bottom-val: fluid(list.nth($bottom, 1), list.nth($bottom, 2));
   }
 
   $right-val: $right;
   @if meta.type-of($right) == 'list' {
-    $right-val: functions.fluid(list.nth($right, 1), list.nth($right, 2));
+    $right-val: fluid(list.nth($right, 1), list.nth($right, 2));
   }
 
   margin: $top-val $left-val $bottom-val $right-val;
@@ -175,9 +171,9 @@
  * @param $bp-max - max-breakpoint
  */
 @mixin fluid-property($property, $alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
-  $class-name: functions.escape-selector('u-#{$property}-#{$alias}');
+  $class-name: escape-selector('u-#{$property}-#{$alias}');
   .#{$class-name} {
-    #{$property}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+    #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
   }
 }
 
@@ -208,40 +204,15 @@
   // Set properties based on direction
   @include breakpoints($class-name, $at-breakpoint) {
     @if ($direction == 'vertical') {
-      #{$property}-top: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
-      #{$property}-bottom: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-top: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-bottom: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else if ($direction == 'horizontal') {
-      #{$property}-right: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
-      #{$property}-left: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-right: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-left: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else if ($direction) {
-      #{$property}-#{$direction}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}-#{$direction}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     } @else {
-      #{$property}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
+      #{$property}: fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
     }
-  }
-}
-
-/**
- * Font smoothing on OS X.
- * @see https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
- * @param  {Boolean}  $value
- * @return {[type]}
- */
-@mixin font-smoothing($is-bold: false) {
-  @if $is-bold {
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: subpixel-antialiased;
-  } @else {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  }
-}
-
-
-@mixin font-size($size-min, $size-max-at-design, $line-height: "") {
-  font-size: functions.fluid($size-min, $size-max-at-design);
-
-  @if $line-height != "" {
-    line-height: functions.line-height(string.unquote($line-height), $size-max-at-design);
   }
 }
