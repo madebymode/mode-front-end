@@ -1,15 +1,11 @@
-@use "sass:meta";
-@use "../settings/breakpoints" as *;
-@use "strings";
-
 @use "sass:math";
 
 // ------------------------------
 // Required Variables
 // ------------------------------
 
-// Size
-$font-size: 16 !default; // in px
+$font-size: 16 !default; // Define in `settings/typography`
+
 
 
 // ------------------------------
@@ -22,11 +18,11 @@ $font-size: 16 !default; // in px
  * @return {String}
  */
 @function escape-selector($selector) {
-  $selector: strings.to-string($selector);
-  $selector: strings.str-replace($selector, '"', '');
-  $selector: strings.str-replace($selector, '.', '\\.');
-  $selector: strings.str-replace($selector, '%', '\\%');
-  $selector: strings.str-replace($selector, '/', '\\\/');
+  $selector: to-string($selector);
+  $selector: str-replace($selector, '"', '');
+  $selector: str-replace($selector, '.', '\\.');
+  $selector: str-replace($selector, '%', '\\%');
+  $selector: str-replace($selector, '/', '\\\/');
 
   // TODO: Invalid characters?
   // $selector: str-replace($selector, '@', '\\@');
@@ -93,11 +89,11 @@ $font-size: 16 !default; // in px
  * @return {Number}
  */
 @function get-max-width-breakpoint($breakpoint) {
-  @if meta.type-of($breakpoint) != 'number' {
+  @if type-of($breakpoint) != 'number' {
     @error '"#{$breakpoint}" should be a number value.';
-  } @else if math.unit($breakpoint) == 'em' {
+  } @else if unit($breakpoint) == 'em' {
     $breakpoint: $breakpoint - 0.0625em; // 1px = 1em / 16
-  } @else if math.unit($breakpoint) == 'px' {
+  } @else if unit($breakpoint) == 'px' {
     $breakpoint: $breakpoint - 1px;
   } @else {
     @error '#{$breakpoint} should be either em or px.';
@@ -132,11 +128,11 @@ $font-size: 16 !default; // in px
  * @param % or px value
  */
 @function line-height($value, $font-size: $font-size) {
-  @if math.unit($value) == '%' {
+  @if unit($value) == '%' {
     @return math.div(strip-unit($value), 100);
   }
 
-  @if math.unit($value) == 'px' {
+  @if unit($value) == 'px' {
     @return math.div($value, $font-size);
   }
 
@@ -168,7 +164,7 @@ $font-size: 16 !default; // in px
   $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
@@ -185,7 +181,7 @@ $font-size: 16 !default; // in px
   $design-size-max-ratio: strip-unit(math.div($des-size-max, $des-size));
 
   // Adjust the max value to scale up to the design size max
-  $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
+  $size-max: floor($size-max-at-design * $design-size-max-ratio);
   $max-rem: rem($size-max);
 
   @return clamp(
