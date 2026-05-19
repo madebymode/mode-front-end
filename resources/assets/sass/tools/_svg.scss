@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../core/strings";
+
 /**
  * Build an SVG. Based on Noah Blon's work.
  * @see https://codepen.io/noahblon/pen/xGbXdV
@@ -19,7 +22,7 @@
  * @return {String}
  */
 @function build-path($path, $parameters) {
-  $icon: '<path fill="#{map-get($parameters, color)}" stroke="#{map-get($parameters, stroke-color)}" stroke-width="#{map-get($parameters, stroke-width)}" style="#{map-get($parameters, css)}" d="#{$path}" />';
+  $icon: '<path fill="#{map.get($parameters, color)}" stroke="#{map.get($parameters, stroke-color)}" stroke-width="#{map.get($parameters, stroke-width)}" style="#{map.get($parameters, css)}" d="#{$path}" />';
   @return $icon;
 }
 
@@ -35,14 +38,14 @@
 @function svg($svg, $width, $height) {
   $svg: build-svg($svg, $width, $height);
 
-  $svg: str-replace($svg, '"', "'"); // stylelint-disable-line
-  $svg: str-replace($svg, '%', '%25');
-  $svg: str-replace($svg, '&', '%26');
-  $svg: str-replace($svg, '#', '%23');
-  $svg: str-replace($svg, '{', '%7B');
-  $svg: str-replace($svg, '}', '%7D');
-  $svg: str-replace($svg, '<', '%3C');
-  $svg: str-replace($svg, '>', '%3E');
+  $svg: strings.str-replace($svg, '"', "'"); // stylelint-disable-line
+  $svg: strings.str-replace($svg, '%', '%25');
+  $svg: strings.str-replace($svg, '&', '%26');
+  $svg: strings.str-replace($svg, '#', '%23');
+  $svg: strings.str-replace($svg, '{', '%7B');
+  $svg: strings.str-replace($svg, '}', '%7D');
+  $svg: strings.str-replace($svg, '<', '%3C');
+  $svg: strings.str-replace($svg, '>', '%3E');
 
   @return url('data:image/svg+xml;charset=utf8,#{$svg}');
 }

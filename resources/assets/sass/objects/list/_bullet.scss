@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: List Bullet
@@ -46,11 +49,11 @@ category: Objects
 @mixin o-list--bullet($alias, $margin: 1rem, $at-breakpoint: null) {
   $class-name: 'o-list--bullet';
 
-  @if ($alias and str-length($alias) > 0) {
+  @if ($alias and string.length($alias) > 0) {
     $class-name: '#{$class-name}-#{$alias}';
   }
 
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     list-style: none;
 
     > .o-list__item {

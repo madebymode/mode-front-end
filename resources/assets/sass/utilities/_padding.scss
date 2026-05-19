@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Padding
@@ -42,5 +44,5 @@ Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
  * @param  {String}  $at-breakpoint
  */
 @mixin u-padding($alias, $value, $at-breakpoint: null) {
-  @include u-property-directional('padding', $alias, $value, $at-breakpoint);
+  @include properties.u-property-directional('padding', $alias, $value, $at-breakpoint);
 }

@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "../core/functions";
+
 /**
  * Font smoothing on OS X.
  * @see https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
@@ -16,9 +19,9 @@
 
 
 @mixin font-size($size-min, $size-max-at-design, $line-height: "") {
-  font-size: fluid($size-min, $size-max-at-design);
+  font-size: functions.fluid($size-min, $size-max-at-design);
 
   @if $line-height != "" {
-    line-height: line-height(unquote($line-height), $size-max-at-design);
+    line-height: functions.line-height(string.unquote($line-height), $size-max-at-design);
   }
 }

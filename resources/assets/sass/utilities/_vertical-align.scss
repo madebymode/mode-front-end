@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Vertical Align
@@ -39,5 +41,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-vertical-align($value, $at-breakpoint: null) {
-  @include u-property('vertical-align', $value, $value, $at-breakpoint);
+  @include properties.u-property('vertical-align', $value, $value, $at-breakpoint);
 }

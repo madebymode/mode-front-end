@@ -1,3 +1,5 @@
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Animation
@@ -46,7 +48,7 @@ category: Utilities
  */
 @mixin u-animation($alias, $value, $at-breakpoint: null) {
   $class-name: 'u-animation-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     @content;
     animation: #{$value};
   }

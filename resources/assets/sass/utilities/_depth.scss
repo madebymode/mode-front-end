@@ -1,3 +1,5 @@
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Depth (z-index)
@@ -52,7 +54,7 @@ category: Utilities
  */
 @mixin u-depth($value, $at-breakpoint: null) {
   $class-name: 'u-depth-#{$value}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     z-index: #{$value};
   }
 }

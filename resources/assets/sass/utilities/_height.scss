@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Height
@@ -36,5 +38,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-height($alias, $value, $at-breakpoint: null) {
-  @include u-property('height', $alias, $value, $at-breakpoint);
+  @include properties.u-property('height', $alias, $value, $at-breakpoint);
 }

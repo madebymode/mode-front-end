@@ -1,3 +1,5 @@
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Content
@@ -43,7 +45,7 @@ category: Utilities
  */
 @mixin u-content-before($alias, $value, $at-breakpoint: null) {
   $class-name: 'u-content-before-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     &::before {
       content: '#{$value}';
     }
@@ -51,7 +53,7 @@ category: Utilities
 }
 @mixin u-content-after($alias, $value, $at-breakpoint: null) {
   $class-name: 'u-content-after-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     &::after {
       content: '#{$value}';
     }

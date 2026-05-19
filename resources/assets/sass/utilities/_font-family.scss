@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Font Family
@@ -36,5 +38,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-font-family($alias, $value, $at-breakpoint: null) {
-  @include u-property('font-family', $alias, $value, $at-breakpoint);
+  @include properties.u-property('font-family', $alias, $value, $at-breakpoint);
 }

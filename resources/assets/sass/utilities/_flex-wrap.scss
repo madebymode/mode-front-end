@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Flex Wrap
@@ -43,5 +45,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-flex-wrap($value, $at-breakpoint: null) {
-  @include u-property('flex-wrap', $value, $value, $at-breakpoint);
+  @include properties.u-property('flex-wrap', $value, $value, $at-breakpoint);
 }

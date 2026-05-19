@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Media
@@ -52,7 +54,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-media($at-breakpoint: null) {
-  @include breakpoints('o-media', $at-breakpoint) {
+  @include responsive.breakpoints('o-media', $at-breakpoint) {
     display: flex;
     align-items: flex-start;
   }
@@ -63,7 +65,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-media__figure($at-breakpoint: null) {
-  @include breakpoints('o-media__figure', $at-breakpoint) {
+  @include responsive.breakpoints('o-media__figure', $at-breakpoint) {
     flex: 0 1 auto;
   }
 }
@@ -73,7 +75,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-media__body($at-breakpoint: null) {
-  @include breakpoints('o-media__body', $at-breakpoint) {
+  @include responsive.breakpoints('o-media__body', $at-breakpoint) {
     flex: 1 1 auto;
   }
 }

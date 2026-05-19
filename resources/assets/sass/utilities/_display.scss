@@ -1,3 +1,6 @@
+@use "../tools/accessibility";
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Display
@@ -38,7 +41,7 @@ category: Utilities
  */
 @mixin u-display($value, $at-breakpoint: null) {
   $class-name: 'u-display-#{$value}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     display: #{$value} !important;
   }
 }
@@ -52,7 +55,7 @@ category: Utilities
  */
 @mixin u-visually-hidden($at-breakpoint: null) {
   $class-name: 'u-visually-hidden';
-  @include breakpoints($class-name, $at-breakpoint) {
-    @include visually-hidden();
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
+    @include accessibility.visually-hidden();
   }
 }

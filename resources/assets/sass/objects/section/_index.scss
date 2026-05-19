@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Section
@@ -40,7 +42,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-section($at-breakpoint: null) {
-  @include breakpoints('o-section', $at-breakpoint) {
+  @include responsive.breakpoints('o-section', $at-breakpoint) {
     position: relative;
     background-repeat: no-repeat;
     background-position: center;

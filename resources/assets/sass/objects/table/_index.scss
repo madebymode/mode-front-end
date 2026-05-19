@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Table
@@ -41,7 +43,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-table($at-breakpoint: null) {
-  @include breakpoints('o-table', $at-breakpoint) {
+  @include responsive.breakpoints('o-table', $at-breakpoint) {
     display: table;
     width: 100%;
     table-layout: fixed;
@@ -57,7 +59,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-table__item($at-breakpoint: null) {
-  @include breakpoints('o-table__item', $at-breakpoint) {
+  @include responsive.breakpoints('o-table__item', $at-breakpoint) {
     // Empty default
   }
 }

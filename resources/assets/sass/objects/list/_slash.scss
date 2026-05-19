@@ -1,3 +1,5 @@
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: List Slash
@@ -42,7 +44,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-list--slash($at-breakpoint: null) {
-  @include breakpoints('o-list--slash', $at-breakpoint) {
+  @include responsive.breakpoints('o-list--slash', $at-breakpoint) {
     list-style: none;
 
     > .o-list__item {

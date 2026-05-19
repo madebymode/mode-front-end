@@ -1,3 +1,7 @@
+@use "../tools/clearfix";
+@use "../tools/properties";
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Float
@@ -43,7 +47,7 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-float($value, $at-breakpoint: null) {
-  @include u-property('float', $value, $value, $at-breakpoint);
+  @include properties.u-property('float', $value, $value, $at-breakpoint);
 }
 
 /**
@@ -51,7 +55,7 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-clearfix($at-breakpoint: null) {
-  @include breakpoints('u-clearfix', $at-breakpoint) {
-    @include clearfix;
+  @include responsive.breakpoints('u-clearfix', $at-breakpoint) {
+    @include clearfix.clearfix;
   }
 }

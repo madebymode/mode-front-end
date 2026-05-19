@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Background Position
@@ -40,5 +42,5 @@ category: Utilities
  * @param  {String} $at-breakpoint
  */
 @mixin u-background-position($alias, $value, $at-breakpoint: null) {
-  @include u-property('background-position', $alias, $value, $at-breakpoint);
+  @include properties.u-property('background-position', $alias, $value, $at-breakpoint);
 }

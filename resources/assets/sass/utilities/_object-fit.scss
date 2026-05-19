@@ -1,3 +1,6 @@
+@use "../tools/object-fit";
+@use "../tools/responsive";
+
 /*doc
 ---
 title: Object Fit
@@ -57,8 +60,8 @@ Values: `fill`, `contain`, `cover`, `none`, `scale-down`.
  */
 @mixin u-object-fit($alias, $value, $at-breakpoint: null) {
   $class-name: 'u-object-fit-#{$alias}';
-  @include breakpoints($class-name, $at-breakpoint) {
+  @include responsive.breakpoints($class-name, $at-breakpoint) {
     @content;
-    @include object-fit($value);
+    @include object-fit.object-fit($value);
   }
 }

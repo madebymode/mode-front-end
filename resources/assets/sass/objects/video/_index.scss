@@ -1,3 +1,6 @@
+@use "../../settings/colors";
+@use "../../tools/responsive";
+
 /*doc
 ---
 title: Video
@@ -51,7 +54,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video($at-breakpoint: null) {
-  @include breakpoints('o-video', $at-breakpoint) {
+  @include responsive.breakpoints('o-video', $at-breakpoint) {
     position: relative;
   }
 }
@@ -61,9 +64,9 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video__wrapper($at-breakpoint: null) {
-  @include breakpoints('o-video__wrapper', $at-breakpoint) {
+  @include responsive.breakpoints('o-video__wrapper', $at-breakpoint) {
     position: relative;
-    background: $color-black-1;
+    background: colors.$color-black-1;
   }
 }
 
@@ -74,7 +77,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video__element($at-breakpoint: null) {
-  @include breakpoints('o-video__element', $at-breakpoint) {
+  @include responsive.breakpoints('o-video__element', $at-breakpoint) {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,7 +103,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video__play($at-breakpoint: null) {
-  @include breakpoints('o-video__play', $at-breakpoint) {
+  @include responsive.breakpoints('o-video__play', $at-breakpoint) {
     // Empty default
   }
 }
@@ -110,7 +113,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video__close($at-breakpoint: null) {
-  @include breakpoints('o-video__close', $at-breakpoint) {
+  @include responsive.breakpoints('o-video__close', $at-breakpoint) {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -129,7 +132,7 @@ category: Objects
  * @param  {String}  $at-breakpoint
  */
 @mixin o-video--overlay($at-breakpoint: null) {
-  @include breakpoints('o-video--overlay', $at-breakpoint) {
+  @include responsive.breakpoints('o-video--overlay', $at-breakpoint) {
     .o-video__wrapper {
       position: absolute;
       top: 0;

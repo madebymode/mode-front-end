@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
 /**
  * Casting any value to a string.
  * @see https://hugogiraudel.com/2014/01/27/casting-types-in-sass/
@@ -5,7 +8,7 @@
  * @return {String}
  */
 @function to-string($value) {
-  @return inspect($value);
+  @return meta.inspect($value);
 }
 
 /**
@@ -17,10 +20,10 @@
  * @return {String} - Updated string
  */
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -35,11 +38,11 @@
  */
 @function explode($string, $delimiter: '') {
   $result: ();
-  $length: str-length($string);
+  $length: string.length($string);
 
-  @if str-length($delimiter) == 0 {
+  @if string.length($delimiter) == 0 {
     @for $i from 1 through $length {
-      $result: append($result, str-slice($string, $i, $i));
+      $result: list.append($result, string.slice($string, $i, $i));
     }
 
     @return $result;
@@ -49,16 +52,16 @@
   $remaining: $string;
 
   @while $running {
-    $index: str-index($remaining, $delimiter);
+    $index: string.index($remaining, $delimiter);
 
     @if $index {
-      $slice: str-slice($remaining, 1, $index - 1);
-      $result: append($result, $slice);
-      $remaining: str-slice($remaining, $index + str-length($delimiter));
+      $slice: string.slice($remaining, 1, $index - 1);
+      $result: list.append($result, $slice);
+      $remaining: string.slice($remaining, $index + string.length($delimiter));
     } @else {
       $running: false;
     }
   }
 
-  @return append($result, $remaining);
+  @return list.append($result, $remaining);
 }

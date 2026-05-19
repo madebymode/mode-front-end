@@ -1,3 +1,5 @@
+@use "../tools/typography";
+
 @mixin css-reset {
   // ------------------------------
   // Universal Rules
@@ -18,7 +20,7 @@
   }
 
   html {
-    @include font-smoothing();
+    @include typography.font-smoothing();
     min-height: 100%;
     -webkit-text-size-adjust: 100%;                // Prevent mobile browsers from automatically zooming fonts.
     -ms-text-size-adjust: 100%;

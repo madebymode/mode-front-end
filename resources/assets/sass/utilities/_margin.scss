@@ -1,3 +1,6 @@
+@use "../settings/breakpoints";
+@use "../tools/properties";
+
 /*doc
 ---
 title: Margin
@@ -38,10 +41,10 @@ Directions: null, `vertical`, `horizontal`, `top`, `right`, `bottom`, `left`.
  * @param  {String}  $at-breakpoint
  */
 @mixin u-margin($alias, $value, $at-breakpoint: null) {
-  @include u-property-directional('margin', $alias, $value, $at-breakpoint);
+  @include properties.u-property-directional('margin', $alias, $value, $at-breakpoint);
 }
 
 
-@mixin u-fluid-margin($alias, $value, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
-  @include fluid-property-directional('margin', $alias, $value, $bp-min, $bp-max);
+@mixin u-fluid-margin($alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+  @include properties.fluid-property-directional('margin', $alias, $value, $bp-min, $bp-max);
 }

@@ -1,3 +1,5 @@
+@use "../tools/properties";
+
 /*doc
 ---
 title: Font Style
@@ -35,5 +37,5 @@ category: Utilities
  * @param  {String}  $at-breakpoint
  */
 @mixin u-font-style($value, $at-breakpoint: null) {
-  @include u-property('font-style', $value, $value, $at-breakpoint);
+  @include properties.u-property('font-style', $value, $value, $at-breakpoint);
 }
