@@ -18,7 +18,7 @@
  * @return {Boolean}
  */
 @mixin add-breakpoint($alias, $value) {
-  breakpoints.$breakpoints: map.merge(breakpoints.$breakpoints, ($alias: $value)) !global;
+  breakpoints.$breakpoints: map.merge(breakpoints.$breakpoints, ($alias: $value));
 }
 
 /**
