@@ -3,7 +3,7 @@
 @use "sass:string";
 @use "../core/functions";
 @use "../core/strings";
-@use "../settings/breakpoints";
+
 
 /**
  * Add new breakpoint alias.
@@ -18,7 +18,7 @@
  * @return {Boolean}
  */
 @mixin add-breakpoint($alias, $value) {
-  breakpoints.$breakpoints: map.merge(breakpoints.$breakpoints, ($alias: $value));
+  functions.$breakpoints: map.merge(functions.$breakpoints, ($alias: $value));
 }
 
 /**

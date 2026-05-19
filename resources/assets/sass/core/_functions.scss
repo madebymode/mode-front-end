@@ -1,6 +1,5 @@
 @use "sass:meta";
 @use "strings";
-@use "../settings/breakpoints";
 @use "sass:math";
 
 // ------------------------------
@@ -8,6 +7,12 @@
 // ------------------------------
 
 $font-size: 16 !default; // Define in `settings/typography`
+
+$design-size-max: 1920px !default;
+$design-size: 1680px !default;
+
+$breakpoint-max: 1920px !default;
+$breakpoint-min: 1040px !default;
 
 
 
@@ -63,6 +68,23 @@ $font-size: 16 !default; // Define in `settings/typography`
   // @return strip-units($pixels) / strip-units($context) * 1em;
   @return math.div(strip-unit($pixels), strip-unit($context)) * 1em;
 }
+
+/**
+ * Global breakpoints for your application.
+ * @note Always set the `em` context to 16 when you're using them for media
+ * queries. Otherwise, if you change `$font-size` you'll get wonky values that
+ * technically work but aren't what you wanted.
+ * @see https://zellwk.com/blog/media-query-units/
+ * @type {Map}
+ */
+
+$breakpoints: (
+  'xs': em(320, 16),
+  'sm': em(480, 16),
+  'md': em(768, 16),
+  'lg': em(980, 16),
+  'xl': em(1200, 16)
+) !default;
 
 /**
  * Convert px values (e.g. from a PSD) to rems.
@@ -142,11 +164,11 @@ $font-size: 16 !default; // Define in `settings/typography`
   @return $value;
 }
 
-@function scaler-vw($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@function scaler-vw($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   @return (100 * math.div(($size-max - $size-min), ($bp-max - $bp-min))) * 1vw;
 }
 
-@function scaler-rem($size-max, $size-min, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@function scaler-rem($size-max, $size-min, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   @return rem(math.div(($bp-min * $size-max - $bp-max * $size-min), ($bp-min - $bp-max)));
 }
 
@@ -160,11 +182,11 @@ $font-size: 16 !default; // Define in `settings/typography`
  * @param bp-max
  *
  */
- @function fluid($size-min, $size-max-at-design, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+ @function fluid($size-min, $size-max-at-design, $bp-min: $breakpoint-min, $bp-max: $breakpoint-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
-  $design-size-max-ratio: strip-unit(math.div(breakpoints.$design-size-max, breakpoints.$design-size));
+  $design-size-max-ratio: strip-unit(math.div($design-size-max, $design-size));
 
   // Adjust the max value to scale up to the design size max
   $size-max: math.floor($size-max-at-design * $design-size-max-ratio);
@@ -172,12 +194,12 @@ $font-size: 16 !default; // Define in `settings/typography`
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
     #{$max-rem}
   )
 }
 
-@function fluid-at-size($size-min, $size-max-at-design, $des-size: breakpoints.$design-size, $des-size-max: breakpoints.$design-size-max) {
+@function fluid-at-size($size-min, $size-max-at-design, $des-size: $design-size, $des-size-max: $design-size-max) {
   $min-rem: rem($size-min);
 
   // Find the ratio at the design size and calculate the size for our max breakpoint
@@ -189,7 +211,9 @@ $font-size: 16 !default; // Define in `settings/typography`
 
   @return clamp(
     #{$min-rem},
-    #{math.div($size-max-at-design, breakpoints.$design-size) * 100}vw,
+    #{math.div($size-max-at-design, $design-size) * 100}vw,
     #{$max-rem}
   )
 }
+
+

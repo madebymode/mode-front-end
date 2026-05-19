@@ -1,7 +1,6 @@
 @use "sass:meta";
 @use "sass:string";
 @use "../core/functions";
-@use "../settings/breakpoints";
 @use "responsive";
 
 @use "sass:list";
@@ -174,7 +173,7 @@
  * @param $bp-min - min breakpoint
  * @param $bp-max - max-breakpoint
  */
-@mixin fluid-property($property, $alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max) {
+@mixin fluid-property($property, $alias, $value, $bp-min: functions.$breakpoint-min, $bp-max: functions.$breakpoint-max) {
   $class-name: functions.escape-selector('u-#{$property}-#{$alias}');
   .#{$class-name} {
     #{$property}: functions.fluid(list.nth($value, 1), list.nth($value, 2), $bp-min, $bp-max);
@@ -182,7 +181,7 @@
 }
 
 
-@mixin fluid-property-directional($property, $alias, $value, $bp-min: breakpoints.$breakpoint-min, $bp-max: breakpoints.$breakpoint-max, $at-breakpoint: null) {
+@mixin fluid-property-directional($property, $alias, $value, $bp-min: functions.$breakpoint-min, $bp-max: functions.$breakpoint-max, $at-breakpoint: null) {
   $class-name: 'u-fluid-#{$property}';
 
   @if ($alias and string.length($alias) > 0) {
